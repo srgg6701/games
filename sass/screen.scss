@@ -4,7 +4,18 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
-html, body, #screen {
+html, body {
 	height: 100%;
 	margin: 0;
 }
+/* исходный размер: 1024х768 */
+@media (min-aspect-ratio: 8/6){
+	body{
+		background-color: lime;
+	}
+	//#screen{background-color:#CFC;}
+}
+/*@media(orientation:portrait){
+	//#screen{background-color:#CCF;}
+}*/
+

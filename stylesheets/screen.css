@@ -1,3 +1,4 @@
+@charset "IBM866";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -66,3 +67,20 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+/* line 7, ../sass/screen.scss */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* исходный размер: 1024х768 */
+@media (min-aspect-ratio: 8 / 6) {
+  /* line 13, ../sass/screen.scss */
+  body {
+    background-color: lime;
+  }
+}
+/*@media(orientation:portrait){
+	//#screen{background-color:#CCF;}
+}*/
