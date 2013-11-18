@@ -6,6 +6,19 @@ section {
   box-shadow: 0 0 0 1px #FFA500 inset;
 }
 
+/* line 7, ../sass/debug.scss */
+#tblCalculations {
+  background-color: #333;
+  border: solid 2px orange;
+}
+/* line 11, ../sass/debug.scss */
+#tblCalculations th,
+#tblCalculations td {
+  border: solid 1px darkorange;
+  font-family: Arial, Helvetica;
+  padding: 4px;
+}
+
 /*
 @media(orientation:landscape){
 	body{

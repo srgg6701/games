@@ -5,27 +5,23 @@
 
 @import "compass/reset";
 html, body {
-	height: 100%;
-	margin: 0;
+ height: 100%;
+ margin:0;
+ padding:0;
 }
-#screen_wrapper{
-	background-color: yellow;
+body{
+	overflow:hidden;
 }
-#screen{
-	background-color: orange;
-	//left: 0;
-	//position: absolute;
-	//top: 0;
-	// height: (6/8);
-	// width: (8/6);
+#wrapper {
+	background:url(../images/bg.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+	position:absolute;
 }
-/* если не менее стандартного соотношения (напр. 1027/768; исходный размер макета) */
-/*@media (min-aspect-ratio: 8/6){ 
-	body{
-		background-color: #efefef;
-	}
-	#screen_wrapper{
-		height:100%;		
-	}
-}*/
+#main {
+	color: white;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+
 
