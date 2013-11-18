@@ -92,6 +92,25 @@ div{
 	#promotions{
 		margin-bottom: 10px;
 	}
+	
+#scene
+	>div{
+	height:138px;
+	left:255px;
+	width: 576px;
+}
+#scene
+	>div:nth-child(1){
+	top:123px;	
+}	
+#scene
+	>div:nth-child(2){
+	top: 324px;	
+}	
+#scene
+	>div:nth-child(3){
+	top:528px;	
+}	
 
 #bottom_menu{
 	left:0;
@@ -104,6 +123,26 @@ div{
 		position:relative;
 	}
 	
+	#my_balance,
+	#currency,
+	#currency_sum{
+		display:inline-block;
+		line-height:50px;
+		position:static;
+	}
+	#my_balance{
+		margin-left:12px;
+	}
+	
+	#currency{
+		text-align:center;
+		width: 112px;
+	}
+	#currency_sum{
+		background-color:#0F0E32;
+		color:white;
+		line-height:28px;
+	}
 	#top_left{
 		height:31px;
 		width:80px;

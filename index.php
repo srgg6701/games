@@ -37,14 +37,42 @@
         <div id="top_box"></div>
         <div id="bottom_box"></div>
     </div>
-    <div id="scene"></div>
+    <div id="scene">
+    	<div>
+        	<div></div>
+        	<div></div>
+        	<div></div>
+        	<div></div>
+        </div>
+    	<div>
+        	<div></div>
+        	<div></div>
+        	<div></div>
+        	<div></div>
+        </div>
+    	<div>
+        	<div></div>
+        	<div></div>
+        	<div></div>
+        	<div></div>
+        </div>
+    </div>
     <div id="right_block">
     	<div id="promotions"></div>
         <div id="live_support"></div>
     </div>
     <div id="bottom_menu">
     	<div id="top_left"></div>
-    	<div id="bottom_menu_left_side"></div>
+    	<div id="bottom_menu_left_side">
+        	<div id="my_balance">
+            	<a href="#">My <b>Balance</b></a>
+            </div>
+            <div id="currency">
+            	<div id="currency_sum">
+                	3.52 &euro;
+                </div>
+            </div>
+        </div>
     	<div id="bottom_menu_right_side">
 	        <span id="bottom_menu_profile"><a href="#">Profile</a></span>
 	        <span id="bottom_menu_cashier"><a href="#">Cashier</a></span>
