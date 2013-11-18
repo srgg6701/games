@@ -81,7 +81,7 @@ body {
 
 /* line 15, ../sass/screen.scss */
 #wrapper {
-  background: url(../images/bg_full.jpg);
+  background: url(../images/bg_full_white.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.5;

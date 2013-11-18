@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+.abs{
+	position:absolute;
+}
+div{
+	box-shadow: 0 0 0 1px #F00;	
+}
+#wrapper {
+	/* */
+	
+	background:url(../images/bg_full_white.jpg);
+	width:1027px;
+	height:768px
+	/* */	
+}
+#leftBoxes{
+	height: 270px;
+	width: 180px;
+	
+	top:124px;
+	left: 10px;
+}
+
