@@ -42,7 +42,10 @@
     	<div id="promotions"></div>
         <div id="live_support"></div>
     </div>
-    <div id="bottom_menu"></div>
+    <div id="bottom_menu">
+    	<div id="bottom_menu_left_side"></div>
+    	<div id="bottom_menu_right_side"></div>
+    </div>
 </div>
 </body>
 </html>

@@ -94,3 +94,18 @@ div{
 	height:82px;
 	width:100%;
 }
+	#bottom_menu_left_side,
+	#bottom_menu_right_side{
+		bottom:0;
+		display:inline-block;
+		position:relative;
+	}
+	#bottom_menu_left_side{
+		height: 83px;
+		margin-right: 6px;
+		width:201px;
+	}
+	#bottom_menu_right_side{
+		height:50px;
+		width:819px;
+	}	
