@@ -76,6 +76,14 @@ div{
 	#bottom_box{
 		height: 260px;
 	}
+	#bottom_box
+		div{
+		height:50px;
+		border-bottom: solid 1px #333;
+		color: red;
+		padding: 8px 13px;
+		position:static;
+	}
 
 #right_block{
 	height: 350px;
@@ -148,8 +156,9 @@ div{
 		width: 123px;
 	}	
 
-#scene buttons{
+#scene button{
 	display:block;
+	height: 25px;
 	margin: auto;
 }
 	

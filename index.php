@@ -35,7 +35,13 @@
     <div id="welcome_back"></div>
 	<div id="left_block">
         <div id="top_box"></div>
-        <div id="bottom_box"></div>
+        <div id="bottom_box">
+        	<div>Resent Winners</div>
+        	<div>Slot Machine</div>
+        	<div>Bingo</div>
+        	<div>Scratch to win</div>
+        	<div>Rotate it</div>
+        </div>
     </div>
     <div id="scene">
     	<div>
