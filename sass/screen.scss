@@ -13,9 +13,10 @@ body{
 	overflow:hidden;
 }
 #wrapper {
-	background:url(../images/bg.jpg);
+	background:url(../images/bg_full.jpg);
 	background-size: cover;
     background-repeat: no-repeat;
+    opacity: 0.5;
 	position:absolute;
 }
 #main {

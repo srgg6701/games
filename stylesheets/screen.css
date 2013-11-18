@@ -81,13 +81,14 @@ body {
 
 /* line 15, ../sass/screen.scss */
 #wrapper {
-  background: url(../images/bg.jpg);
+  background: url(../images/bg_full.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0.5;
   position: absolute;
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 #main {
   color: white;
   position: absolute;
