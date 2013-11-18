@@ -1,8 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
-div{
+div,span{
 	box-shadow: 0 0 0 1px #F00;
 	box-sizing:border-box;	
+}
+div{
 	position:absolute;
 }
 #wrapper {
@@ -51,7 +53,10 @@ div{
 		width: 217px;
 	}
 #welcome_back{
+	height:40px;
 	left:10px;
+	top: 64px;
+	width:188px;
 }				
 
 #left_block{
@@ -94,18 +99,40 @@ div{
 	height:82px;
 	width:100%;
 }
+	#top_left,
+	#bottom_menu_left_side{
+		position:relative;
+	}
+	
+	#top_left{
+		height:31px;
+		width:80px;
+	}
+	
 	#bottom_menu_left_side,
 	#bottom_menu_right_side{
 		bottom:0;
 		display:inline-block;
-		position:relative;
 	}
 	#bottom_menu_left_side{
-		height: 83px;
+		height: 50px;
 		margin-right: 6px;
 		width:201px;
 	}
 	#bottom_menu_right_side{
-		height:50px;
+		height: 47px;
+		text-align:right;
+		padding: 18px 0;
 		width:819px;
 	}	
+	#bottom_menu_right_side
+		>span{
+		margin-left: 19px;
+		padding:4px;	
+	}
+	#bottom_menu_right_side
+		>span
+			a{
+		color:white;
+		text-decoration:none;
+	}

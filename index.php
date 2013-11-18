@@ -43,8 +43,15 @@
         <div id="live_support"></div>
     </div>
     <div id="bottom_menu">
+    	<div id="top_left"></div>
     	<div id="bottom_menu_left_side"></div>
-    	<div id="bottom_menu_right_side"></div>
+    	<div id="bottom_menu_right_side">
+	        <span id="bottom_menu_profile"><a href="#">Profile</a></span>
+	        <span id="bottom_menu_cashier"><a href="#">Cashier</a></span>
+	        <span id="bottom_menu_games"><a href="#">Games</a></span>
+	        <span id="bottom_menu_chat"><a href="#">Live Chat</a></span>
+	        <span id="bottom_menu_logout"><a href="#">Logout</a></span>
+        </div>
     </div>
 </div>
 </body>
