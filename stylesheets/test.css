@@ -14,11 +14,16 @@ div{
 	height:768px
 	/* */	
 }
+#leftBoxes,#leftBoxesBottom{
+	width: 180px;
+	left: 10px;	
+}
 #leftBoxes{
 	height: 270px;
-	width: 180px;
-	
 	top:124px;
-	left: 10px;
 }
-
+#leftBoxesBottom{
+	left: 10px;	
+	height: 260px;
+	top: 406px;
+}
