@@ -43,7 +43,14 @@ div{
 			margin-right:2px;
 			text-align:center;
 			width: 72px;
-		}		
+		}
+	#current_time{
+		height: 26px;
+		right: 5px;
+		top:14px;
+		width: 217px;
+	}
+				
 #leftBoxes,#leftBoxesBottom{
 	width: 180px;
 	left: 10px;	

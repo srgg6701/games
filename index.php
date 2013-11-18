@@ -28,6 +28,9 @@
             	<div>999</div>
             </div>
         </div>
+        <div id="current_time">
+            17:06 GMT - Friday 07 Sept, 2013
+        </div>
     </div>
 	<div id="leftBoxes"></div>
 	<div id="leftBoxesBottom"></div>
