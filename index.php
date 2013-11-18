@@ -11,7 +11,7 @@
 <body>
 <div id="wrapper">
     <div id="main">
-    <?	if($_GET['debug']):
+    <?	if(isset($_GET['debug'])):
 	?>
         <table id="tblCalculations">
         	<tr>
