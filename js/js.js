@@ -2,7 +2,7 @@
 $(function(){  
 	var d=document;
 	var gameContainer=d.getElementById('wrapper');	
-	
+	//var maxWidth =  
 	var setScreenParams = function(){
 		
 		var hDiff;
@@ -34,37 +34,17 @@ $(function(){
 				}); //console.log('Выровнять по вертикали, hDiff/2 = '+(hDiff/2));
 			}
 		}
-		if(defaultOffsets){
-			var dInits=defaultOffsets.inits();
-			var newOffsets = [
-				gameContainer.offsetWidth/dInits[0], 
-				gameContainer.offsetHeight/dInits[1]
-			];
-			var newZoomScale=(newOffsets[0]+newOffsets[1])/2; 
-			//console.log('new scale: %c%d','color:red',newZoomScale);
-			//console.log('%cgameContainer offsets: ','color:blue');
-			console.table({
-				init_values:{width:dInits[0],height:dInits[1]},
-				new_values:{width:gameContainer.offsetWidth,height:gameContainer.offsetHeight},
-				ratio:{byWidth:newOffsets[0],byHeight:newOffsets[1]},
-				new_scale:{zoom:newZoomScale}
-			});
-		}
+		var maxContainerWidth=screen.width/6*8; 
+		var scale=gameContainer.offsetWidth/maxContainerWidth; 
+		// 	0.8789 =			       900 / 1024 
+		//0.1
+		$('#container').text(gameContainer.offsetWidth);
+		$('#max').text(maxContainerWidth);
+		$('#screen').text(screen.width);
+		$('#scale').text(scale);
+		$('td',gameContainer).css('zoom',scale);
 	}
-	
-	setScreenParams();	
-
-	var defaultOffsets=function(){
-		var initWidth=gameContainer.offsetWidth;
-		var initHeight=gameContainer.offsetHeight;
-		return {
-			inits:function(){
-				//console.log('defaultOffsets.inits() works!');
-				return [initWidth,initHeight];
-			}
-		};
-	}();	
-
+	setScreenParams();
 	window.onresize=function(){
 		setScreenParams();
 	} 

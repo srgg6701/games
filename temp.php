@@ -8,7 +8,7 @@ html, body {
  height: 100%;
  margin:0;
  padding:0;
- position:relative;
+ font-size: 100% normal;
 }
 #wrapper {
  	position: absolute;
@@ -19,6 +19,9 @@ html, body {
 	background-color: rgb(0, 162, 232);
 	font-family: 'Arial', Helvetica, Sans-Serif;
 	color: white;
+}
+td{
+	color:black;
 }
 /*
 @media (min-aspect-ratio: 8/6){ 
@@ -36,49 +39,19 @@ html, body {
 </style>
 <script src="js/jquery-1.9.1.js"></script>
 <script>
- $(function(){  
-	var d=document;
-	var wrapper=d.getElementById('wrapper');
-	var main=d.getElementById('main');
-	
-	var currentRatio=function(){
-		return document.body.clientWidth/document.body.clientHeight;
-	};
-	var setScreenParams = function(){
-		/*var ratio=currentRatio();
-		if(ratio>=1.33){ // wide, height = 100%
-			$(wrapper).css({
-				height:'100%',
-				width:$(wrapper)
-			});
-			wrapper.offsetWidth=wrapper.offsetHeight/6*8+'px';
-		}else{	// narrow, width = 100%
-			wrapper.style.width='100%';
-			wrapper.offsetHeight=wrapper.offsetWidth/8*6+'px';		
-		}*/
-		
-		console.log('wrapper.height: '+wrapper.offsetHeight+', wrapper.widht: '+wrapper.offsetWidth)
-	}
-
-	var calc=function(){
-		var Height=d.body.clientHeight,
-			Width=d.body.clientWidth,
-			wrapperHeight=wrapper.offsetHeight,
-			wrapperWidth=wrapper.offsetWidth;
-		
-		d.getElementById('vwHeight').innerHTML=Height;
-		d.getElementById('vwWidth').innerHTML=Width;
-		d.getElementById('vwRatio').innerHTML=(Width/Height);
-		d.getElementById('wrHeight').innerHTML=wrapperHeight;
-		d.getElementById('wrWidth').innerHTML=wrapperWidth;
-		d.getElementById('wrRatio').innerHTML=(wrapperWidth/wrapperHeight);
-	};
-	calc();
-	this.onresize=function(){
-		calc();
-		setScreenParams();
-	} 
+$(function(){ 
+ $(window).bind('resize', function(){
+        resizeMe();
+  }).trigger('resize');
 });
+function  resizeMe(){
+	var preferredHeight = 768;  
+
+var displayHeight = $(window).height();
+var percentage = displayHeight / preferredHeight;
+var newFontSize = Math.floor(fontsize * percentage) - 1;
+$("body").css("font-size", newFontSize);
+}
 </script>
 </head>
 <body>
