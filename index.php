@@ -15,10 +15,9 @@
 </head>
 <body>
 <div id="wrapper">
-	<div class="abs" id="leftBoxes"></div>
-	<div class="abs" id="leftBoxesBottom"></div>
-    <div id="main">
-    </div>
+	<div id="leftBoxes"></div>
+	<div id="leftBoxesBottom"></div>
+    <div id="bottomMenu"></div>
 </div>
 </body>
 </html>

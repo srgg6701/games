@@ -1,10 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
-.abs{
-	position:absolute;
-}
 div{
 	box-shadow: 0 0 0 1px #F00;	
+	position:absolute;
 }
 #wrapper {
 	/* */
@@ -26,4 +24,10 @@ div{
 	left: 10px;	
 	height: 260px;
 	top: 406px;
+}
+#bottomMenu{
+	left:0;
+	bottom:0;
+	height:82px;
+	width:100%;
 }
