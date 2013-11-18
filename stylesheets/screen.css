@@ -74,13 +74,22 @@ html, body {
   margin: 0;
 }
 
-/* исходный размер: 1024х768 */
-@media (min-aspect-ratio: 8 / 6) {
-  /* line 13, ../sass/screen.scss */
-  body {
-    background-color: lime;
-  }
+/* line 11, ../sass/screen.scss */
+#screen_wrapper {
+  background-color: yellow;
 }
-/*@media(orientation:portrait){
-	//#screen{background-color:#CCF;}
+
+/* line 14, ../sass/screen.scss */
+#screen {
+  background-color: orange;
+}
+
+/* если не менее стандартного соотношения (напр. 1027/768; исходный размер макета) */
+/*@media (min-aspect-ratio: 8/6){ 
+	body{
+		background-color: #efefef;
+	}
+	#screen_wrapper{
+		height:100%;		
+	}
 }*/

@@ -8,14 +8,24 @@ html, body {
 	height: 100%;
 	margin: 0;
 }
-/* исходный размер: 1024х768 */
-@media (min-aspect-ratio: 8/6){
-	body{
-		background-color: lime;
-	}
-	//#screen{background-color:#CFC;}
+#screen_wrapper{
+	background-color: yellow;
 }
-/*@media(orientation:portrait){
-	//#screen{background-color:#CCF;}
+#screen{
+	background-color: orange;
+	//left: 0;
+	//position: absolute;
+	//top: 0;
+	// height: (6/8);
+	// width: (8/6);
+}
+/* если не менее стандартного соотношения (напр. 1027/768; исходный размер макета) */
+/*@media (min-aspect-ratio: 8/6){ 
+	body{
+		background-color: #efefef;
+	}
+	#screen_wrapper{
+		height:100%;		
+	}
 }*/
 

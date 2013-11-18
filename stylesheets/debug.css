@@ -6,15 +6,14 @@ section {
   box-shadow: 0 0 0 1px #FFA500 inset;
 }
 
-@media (orientation: landscape) {
-  /* line 9, ../sass/debug.scss */
-  body {
-    background-color: #CFC;
-  }
+/*
+@media(orientation:landscape){
+	body{
+		background-color:#CFC;
+	}
 }
-@media (orientation: portrait) {
-  /* line 14, ../sass/debug.scss */
-  body {
-    background-color: #CCF;
-  }
-}
+@media(orientation:portrait){
+	body{
+		background-color:#CCF;
+	}
+}*/
