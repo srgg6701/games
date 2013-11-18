@@ -18,6 +18,16 @@
     <div id="topBar">
     	<div id="logo">
         </div>
+        <div id="winings">
+            <div id="total">
+            	Total Winings
+            </div>
+            <div id="win_numb">
+            	<div>999</div>
+            	<div>999</div>
+            	<div>999</div>
+            </div>
+        </div>
     </div>
 	<div id="leftBoxes"></div>
 	<div id="leftBoxesBottom"></div>

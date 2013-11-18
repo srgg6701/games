@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 div{
-	box-shadow: 0 0 0 1px #F00;	
+	box-shadow: 0 0 0 1px #F00;
+	box-sizing:border-box;	
 	position:absolute;
 }
 #wrapper {
@@ -22,7 +23,27 @@ div{
 	
 		height: 30px;
 		width: 38%;
-}
+	}
+	#winings{
+		left:430px;
+		top:8px;
+		height: 67px;
+		width: 235px;
+	}
+		#total,#win_numb{
+			position:relative;
+			text-align:center;
+			width:100%;
+		}
+		#win_numb
+			>div{
+			display:inline-block;
+			height: 50px;
+			position:relative;
+			margin-right:2px;
+			text-align:center;
+			width: 72px;
+		}		
 #leftBoxes,#leftBoxesBottom{
 	width: 180px;
 	left: 10px;	
