@@ -13,7 +13,7 @@ div{
 	height:768px
 	/* */	
 }
-#topBar{
+#top_bar{
 	height:90px;
 	width:100%;
 }
@@ -50,20 +50,27 @@ div{
 		top:14px;
 		width: 217px;
 	}
-				
-#leftBoxes,#leftBoxesBottom{
+#welcome_back{
+	left:10px;
+}				
+
+#left_block{
+	height:540px;	
+	left: 10px;	
+	top: 124px;
 	width: 180px;
-	left: 10px;	
 }
-#leftBoxes{
-	height: 270px;
-	top:124px;
-}
-#leftBoxesBottom{
-	left: 10px;	
-	height: 260px;
-	top: 406px;
-}
+	#top_box,#bottom_box{
+		position:relative;
+		width:100%;
+	}
+	#top_box{
+		height: 270px;
+		margin-bottom: 12px;
+	}
+	#bottom_box{
+		height: 260px;
+	}
 
 #right_block{
 	height: 350px;
@@ -81,7 +88,7 @@ div{
 		margin-bottom: 10px;
 	}
 
-#bottomMenu{
+#bottom_menu{
 	left:0;
 	bottom:0;
 	height:82px;

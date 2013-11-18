@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <div id="topBar">
+    <div id="top_bar">
     	<div id="logo">
         </div>
         <div id="winings">
@@ -32,14 +32,17 @@
             17:06 GMT - Friday 07 Sept, 2013
         </div>
     </div>
-	<div id="leftBoxes"></div>
-	<div id="leftBoxesBottom"></div>
+    <div id="welcome_back"></div>
+	<div id="left_block">
+        <div id="top_box"></div>
+        <div id="bottom_box"></div>
+    </div>
     <div id="scene"></div>
     <div id="right_block">
     	<div id="promotions"></div>
         <div id="live_support"></div>
     </div>
-    <div id="bottomMenu"></div>
+    <div id="bottom_menu"></div>
 </div>
 </body>
 </html>
