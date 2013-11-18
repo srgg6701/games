@@ -64,6 +64,23 @@ div{
 	height: 260px;
 	top: 406px;
 }
+
+#right_block{
+	height: 350px;
+	right: 12px;
+	top: 66px;
+	width: 134px;
+}
+	#promotions,
+	#live_support{
+		height: 171px;
+		position:relative;
+		width:100%;
+	}
+	#promotions{
+		margin-bottom: 10px;
+	}
+
 #bottomMenu{
 	left:0;
 	bottom:0;

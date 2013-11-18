@@ -34,6 +34,11 @@
     </div>
 	<div id="leftBoxes"></div>
 	<div id="leftBoxesBottom"></div>
+    <div id="scene"></div>
+    <div id="right_block">
+    	<div id="promotions"></div>
+        <div id="live_support"></div>
+    </div>
     <div id="bottomMenu"></div>
 </div>
 </body>
