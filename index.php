@@ -29,6 +29,10 @@
 	#screen_wrapper{
 		height:100%;		
 	}
+	#spacer{
+		height:100%;
+		width:100%;
+	}
 }
 
 @media (max-aspect-ratio: 8/6){ 
