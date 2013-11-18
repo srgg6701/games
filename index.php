@@ -1,70 +1,121 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Las Vegas</title>
-<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/screen.css">
-<script src="js/jquery-1.9.1.js"></script>
-<script src="js/js.js"></script>
-<script src="js/debug.js"></script>
+<title>Exps</title>
 <style>
-/*body{
-	font-weight: normal; 
-	font-size:100% !important;
-}*/
-/*
-#screen_wrapper {
-    display: inline-block;
-	font-size:2em;
-    position: relative;
-	width:100%;		
-}*/
-#spacer{
-	height:100%;
-	width:100%;
+html, body {
+ height: 100%;
+ margin:0;
+ padding:0;
 }
-/* 	если "широкий" -  
-	не менее стандартного соотношения (напр. 1027/768; исходный размер макета) */
-@media (min-aspect-ratio: 8/6){ 
-	#screen_wrapper{
-		height:100%;		
-	}
-	#spacer{
-		height:100%;
-		width:100%;
-	}
+body{
+	overflow:hidden;
 }
-
-@media (max-aspect-ratio: 8/6){ 
-	#screen_wrapper{
-		width:100%;		
-	}
+#wrapper {
+	background:url(images/bg.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+	position:absolute;
 }
-
-/*
-#screen_wrapper:after {
-    padding-top: 133.33%; 
-    display: block;
-    content: '';
-}
-*/
-/*#screen {
-    position: absolute;
-	font-size:1em;
-    top: 0; bottom: 0; right: 0; left: 0; 
-}*/
-/*
-#inner_screen{
-	background:#CCFF99;
-	font-size:2em;
+#main {
+	color: white;
 	position: absolute;
-	top:20%; bottom: 20%; right: 20%; left: 20%;
-}*/
+	top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
+}
 </style>
+<script src="js/jquery-1.9.1.js"></script>
+<script>
+ $(function(){  
+	var d=document;
+	var wrapper=d.getElementById('wrapper');
+	var main=d.getElementById('main');
+	
+	var currentRatio=function(){
+		return d.body.clientWidth/d.body.clientHeight;
+	};
+	var setScreenParams = function(){
+		
+		var ratio=currentRatio();
+		
+		var hDiff;
+		if(ratio>=1.33333333333333){ // wide, height = 100%
+			console.log('wide');
+			$(wrapper).outerHeight('100%')
+					  .outerWidth($(wrapper).outerHeight()/6*8)
+					  .css({
+						bottom:0,
+						top:0
+					});
+			if(hDiff=d.body.clientWidth-$(wrapper).outerWidth()){
+				$(wrapper).css({
+					left:hDiff/2
+				});
+				console.log('Выровнять по горизонтали, hDiff/2 = '+(hDiff/2));
+			}
+		}else{	
+			console.log('narrow');
+			$(wrapper).outerWidth('100%') // narrow, width = 100%
+					  .outerHeight($(wrapper).outerWidth()/8*6)
+					  .css({
+						left:0,
+						right:0
+					});
+			if(hDiff=d.body.clientHeight-$(wrapper).outerHeight()){
+				$(wrapper).css({
+					top:hDiff/2
+				});
+				console.log('Выровнять по вертикали, hDiff/2 = '+(hDiff/2));
+			}
+		}
+	}
+
+	var calc=function(){
+		var Height=d.body.clientHeight,
+			Width=d.body.clientWidth,
+			wrapperHeight=wrapper.offsetHeight,
+			wrapperWidth=wrapper.offsetWidth;
+		
+		d.getElementById('vwHeight').innerHTML=Height;
+		d.getElementById('vwWidth').innerHTML=Width;
+		d.getElementById('vwRatio').innerHTML=(Width/Height);
+		d.getElementById('wrHeight').innerHTML=wrapperHeight;
+		d.getElementById('wrWidth').innerHTML=wrapperWidth;
+		d.getElementById('wrRatio').innerHTML=(wrapperWidth/wrapperHeight);
+	};
+	setScreenParams();
+	calc();
+	window.onresize=function(){
+		calc();
+		setScreenParams();
+	} 
+});
+</script>
 </head>
 <body>
-<div id="screen_wrapper">
-	<img id="spacer" src="sources/pix/spacer.png" width="240" height="180">
+<div id="wrapper">
+    <div id="main">
+        <table cellpadding="4" border="1" bgcolor="#333">
+        	<tr>
+            	<th>Object</th>
+            	<th>Height</th>
+            	<th>Width</th>
+            	<th>Ratio</th>
+            </tr>
+        	<tr>
+            	<td>viewport</td>
+            	<td id="vwHeight"></td>
+            	<td id="vwWidth"></td>
+            	<td id="vwRatio"></td>
+            </tr>
+        	<tr>
+            	<td>wrapper</td>
+            	<td id="wrHeight"></td>
+            	<td id="wrWidth"></td>
+            	<td id="wrRatio"></td>
+            </tr>
+        </table>
+    </div>
 </div>
 </body>
 </html>
