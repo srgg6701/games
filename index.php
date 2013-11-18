@@ -39,22 +39,46 @@
     </div>
     <div id="scene">
     	<div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
+        	<div>
+            	<button>Cool Farmers</button>
+            </div>
+        	<div>
+            	<button>Las Vegas Party</button>
+            </div>
+        	<div>
+            	<button>Cool Farmers</button>
+            </div>
+        	<div>
+            	<button>Las Vegas Party</button>
+            </div>
         </div>
     	<div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
+        	<div>
+            	<button>Cool Farmers</button>
+            </div>
+        	<div>
+            	<button>Las Vegas Party</button>
+            </div>
+        	<div>
+            	<button>Cool Farmers</button>
+            </div>
+        	<div>
+            	<button>Las Vegas Party</button>
+            </div>
         </div>
     	<div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
-        	<div></div>
+        	<div>
+            	<button>Cool Farmers</button>
+            </div>
+        	<div>
+            	<button>Las Vegas Party</button>
+            </div>
+        	<div>
+            	<button>Cool Farmers</button>
+            </div>
+        	<div>
+            	<button>Las Vegas Party</button>
+            </div>
         </div>
     </div>
     <div id="right_block">

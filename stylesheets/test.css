@@ -99,18 +99,60 @@ div{
 	left:255px;
 	width: 576px;
 }
-#scene
-	>div:nth-child(1){
-	top:123px;	
+	#scene
+		>div:nth-child(1){
+		top:123px;	
+	}	
+	#scene
+		>div:nth-child(2){
+		top: 324px;	
+	}	
+	#scene
+		>div:nth-child(3){
+		top:528px;	
+	}
+	
+	#scene
+		>div
+			>div{
+		height:137px;
+		display: inline-block;
+		padding-top: 113px; /* прижать к низу кнопку */
+		width: 118px;
+	}	
+	
+	#scene
+		>div
+			>div:nth-child(1){
+		left:0;
+	}	
+	
+	#scene
+		>div
+			>div:nth-child(2){
+		left:150px;
+	
+		width: 123px;
 }	
-#scene
-	>div:nth-child(2){
-	top: 324px;	
-}	
-#scene
-	>div:nth-child(3){
-	top:528px;	
-}	
+	
+	#scene
+		>div
+			>div:nth-child(3){
+		left:304px;
+	}	
+	
+	#scene
+		>div
+			>div:nth-child(4){
+		left:453px;
+		width: 123px;
+	}	
+
+#scene buttons{
+	display:block;
+	margin: auto;
+}
+	
 
 #bottom_menu{
 	left:0;
