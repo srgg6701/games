@@ -11,11 +11,12 @@ section {
   background-color: #333;
   border: solid 2px orange;
 }
-/* line 11, ../sass/debug.scss */
+/* line 12, ../sass/debug.scss */
 #tblCalculations th,
 #tblCalculations td {
   border: solid 1px darkorange;
   font-family: Arial, Helvetica;
+  font-size: 100%;
   padding: 4px;
 }
 
