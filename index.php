@@ -15,6 +15,10 @@
 </head>
 <body>
 <div id="wrapper">
+    <div id="topBar">
+    	<div id="logo">
+        </div>
+    </div>
 	<div id="leftBoxes"></div>
 	<div id="leftBoxesBottom"></div>
     <div id="bottomMenu"></div>

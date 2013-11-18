@@ -12,6 +12,17 @@ div{
 	height:768px
 	/* */	
 }
+#topBar{
+	height:90px;
+	width:100%;
+}
+	#logo{
+		left:15px;
+		top:8px;
+	
+		height: 30px;
+		width: 38%;
+}
 #leftBoxes,#leftBoxesBottom{
 	width: 180px;
 	left: 10px;	
