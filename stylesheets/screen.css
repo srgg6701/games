@@ -69,30 +69,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* inc clearfix */
-/* line 36, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 html, body {
   height: 100%;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 body {
+  background-color: #0D193E;
   overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font: 100% normal;
+  font-size: 100%;
+  font-weight: normal;
 }
-/* line 43, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 body * {
+  font-size: 100%;
+  font-weight: normal;
   font-family: Avenir, Amaranth, Righteous-Regular;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .block {
   display: block;
 }
 
-/* line 49, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 #wrapper {
   background: url(../images/bg_bench.jpg);
   background-size: cover;
@@ -100,27 +104,27 @@ body * {
   position: absolute;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 div, span {
   box-shadow: 0 0 0 1px #F00;
   box-sizing: border-box;
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 div {
   position: absolute;
 }
 
-/* line 63, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 #top_bar {
   height: 6.64063%;
   background: url(../images/bg_top_bar.png) repeat-x;
-  border: solid 1px black;
-  box-shadow: 0 0px 30px #252424;
+  border: solid 6.25% black;
+  box-shadow: 0 0 187.5% #252424;
   width: 100%;
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #logo {
   left: 1.46484%;
   height: 3.90625%;
@@ -130,91 +134,91 @@ div {
   font-family: Avenir-Medium;
   font-size: 0;
   font-weight: bold;
-  letter-spacing: 1.5px;
-  text-shadow: 1px 0 #000;
+  letter-spacing: 9.375%;
+  text-shadow: 6.25%  0 #000;
   top: 1.17188%;
   padding: 0;
   width: 38%;
 }
-/* line 86, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #logo > span {
   font-size: 71%;
-  letter-spacing: 1px;
+  letter-spacing: 6.25%;
 }
 
-/* line 92, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 #free {
-  background: url(../images/free.png);
+  background: url(../images/free.png) 100% 0 no-repeat;
   height: 7.55208%;
   left: 12.98828%;
   top: 16.14583%;
   width: 5.66406%;
 }
 
-/* line 100, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #take_it {
   height: 1.95313%;
   color: white;
   font-weight: bold;
   left: 3.32031%;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.9375%;
   top: 20.44271%;
   width: 15.23438%;
 }
 
-/* line 110, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 #seven {
-  background: url(../images/7euros.png);
+  background: url(../images/7euros.png) no-repeat;
   height: 14.58333%;
   left: 4.00391%;
   top: 25.52083%;
   width: 12.69531%;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 #get_it_now {
   background: url(../images/bg_get_it_now.png);
   background-repeat: repeat-x;
   border-radius: 3px;
-  border-left: solid 1px #000;
-  border-right: solid 1px #000;
+  border-left: solid 6.25% #000;
+  border-right: solid 6.25% #000;
   font-style: italic;
   font-weight: bold;
   height: 4.81771%;
   left: 4.00391%;
-  line-height: 37px;
+  line-height: 231.25%;
   text-align: center;
   text-transform: uppercase;
   top: 42.1875%;
   width: 11.42578%;
 }
 
-/* line 135, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 #no_deposit_required {
   color: white;
   font-style: italic;
   font-size: 75%;
   left: 4.39453%;
-  letter-spacing: 0.2px;
+  letter-spacing: 14.375%;
   top: 47.78646%;
   width: 11.03516%;
 }
 
-/* line 145, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 #total {
   color: white;
   font-style: italic;
-  font-size: 14.5px;
+  font-size: 90.625%;
   left: 49.41406%;
   text-align: center;
   top: 0.78125%;
 }
 
-/* line 153, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 .win_numb {
-  background: url(../images/bg_666.jpg) repeat-x -4px;
-  border: solid 1px #333;
-  border-radius: 5px;
+  background: url(../images/bg_666.jpg) repeat-x -25%;
+  border: solid 6.25% #333;
+  border-radius: 31.25%;
   height: 6.25%;
   text-align: center;
   top: 3.38542%;
@@ -222,97 +226,97 @@ div {
   z-index: 0;
 }
 
-/* line 163, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .h666 {
-  background: url(../images/666.png) no-repeat -2px 12px;
+  background: url(../images/666.png) no-repeat -12.5% 75%;
   height: 4.81771%;
   top: 3.25521%;
   width: 7.32422%;
   z-index: 2;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 #hell666_1 {
   left: 42.08984%;
 }
 
-/* line 174, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 #hell666_2 {
   left: 49.80469%;
 }
 
-/* line 177, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 #hell666_3 {
   left: 57.51953%;
 }
 
-/* line 181, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 #win_numb_1 {
   left: 42.08984%;
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 #win_numb_2 {
   left: 49.80469%;
 }
 
-/* line 187, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 #win_numb_3 {
   left: 57.51953%;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 #current_time {
-  background: url(../images/clock.png) no-repeat 0 -2px #151647;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  background: url(../images/clock.png) no-repeat 0 -12.5% #151647;
+  border-top-left-radius: 75%;
+  border-bottom-left-radius: 75%;
   height: 3.38542%;
   color: white;
   font-family: "Avenir lt 35 light";
   font-size: 76%;
   font-weight: 100;
-  line-height: 26px;
-  padding-left: 27px;
+  line-height: 162.5%;
+  padding-left: 168.75%;
   right: 0.48828%;
   top: 1.82292%;
   width: 21.19141%;
 }
-/* line 204, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 #current_time b {
   font-family: "Avenir-Heavy";
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 #welcome_back {
-  background: url(../images/euro_coin.png) no-repeat 5px -5px;
+  background: url(../images/euro_coin.png) no-repeat 31.25% -31.25%;
   color: white;
   height: 5.20833%;
   font-size: 75%;
   font-family: "Avenir-Medium";
   font-weight: 100;
-  padding-left: 50px;
+  padding-left: 312.5%;
   top: 8.33333%;
   width: 18.35938%;
 }
 
-/* line 221, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .user_name {
   font-weight: bold;
 }
 
-/* line 225, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .small_header {
   color: white;
   font-size: 100%;
   width: 100%;
 }
 
-/* line 230, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .small_header:after {
   content: "";
 }
 
-/* line 234, ../sass/screen.scss */
+/* line 239, ../sass/screen.scss */
 .small_header
 div.subheader {
   font-family: Avenir;
@@ -322,7 +326,7 @@ div.subheader {
   width: 100%;
 }
 
-/* line 241, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 .subsrtrate {
   background-color: #01040b;
   opacity: 0.45;
@@ -330,22 +334,22 @@ div.subheader {
   width: 100%;
 }
 
-/* line 249, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .float_panel,
 .right_block {
-  border: solid 1px #000;
+  border: solid 6.25% #000;
   border-radius: 3px;
   opacity: 0.25;
 }
 
-/* line 256, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 #left_bottom_palette {
   background-color: #FC00FF;
   height: 35.9375%;
   top: 52.73438%;
 }
 
-/* line 266, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 #left_top_box,
 .left_bottom_box,
 #left_bottom_palette {
@@ -353,27 +357,27 @@ div.subheader {
   width: 17.57813%;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 #left_top_box {
   background-color: #ff0eff;
-  box-shadow: 0 0 0 1px #000;
+  box-shadow: 0 0 0 6.25% #000;
   height: 35.41667%;
   top: 16.01563%;
 }
 
-/* line 276, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 .left_bottom_box {
   height: 6.51042%;
   font-size: 100%;
   font-weight: bold;
   letter-spacing: 0px;
   line-height: 187.5%;
-  border-bottom: solid 1px #001;
+  border-bottom: solid 6.25% #001;
   color: white;
   padding: 0 81.25%;
 }
 
-/* line 288, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .left_bottom_box
 > div {
   color: #FFF;
@@ -388,60 +392,60 @@ div.subheader {
   width: 100%;
 }
 
-/* line 301, ../sass/screen.scss */
+/* line 306, ../sass/screen.scss */
 .left_bottom_box
 > div > div {
   font-size: 110%;
   letter-spacing: 0;
   right: 0;
-  margin-right: 18px;
+  margin-right: 112.5%;
   position: absolute;
   top: 0;
 }
 
-/* line 310, ../sass/screen.scss */
+/* line 315, ../sass/screen.scss */
 #left_bottom_box_1 {
-  background: url(../images/copa.png) no-repeat 10px 17px;
+  background: url(../images/copa.png) no-repeat 62.5% 106.25%;
   font-style: italic;
   font-size: 110%;
   letter-spacing: 0.2px;
-  padding-top: 10px;
-  padding-left: 39px;
+  padding-top: 62.5%;
+  padding-left: 243.75%;
   top: 52.73438%;
 }
 
-/* line 319, ../sass/screen.scss */
+/* line 324, ../sass/screen.scss */
 #left_bottom_box_2 {
-  background: url(../images/flag_germany.png) no-repeat 12px 29px;
+  background: url(../images/flag_germany.png) no-repeat 75% 181.25%;
   top: 59.24479%;
 }
 
-/* line 323, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 #left_bottom_box_3 {
-  background: url(../images/flag_italy.png) no-repeat 12px 29px;
+  background: url(../images/flag_italy.png) no-repeat 75% 181.25%;
   top: 65.75521%;
 }
 
-/* line 327, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 #left_bottom_box_4 {
-  background: url(../images/flag_gb.png) no-repeat 12px 29px;
+  background: url(../images/flag_gb.png) no-repeat 75% 181.25%;
   top: 72.26563%;
 }
 
-/* line 331, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 #left_bottom_box_5 {
-  background: url(../images/flag_greece.png) no-repeat 12px 29px;
+  background: url(../images/flag_greece.png) no-repeat 75% 181.25%;
   top: 78.77604%;
 }
 
-/* line 336, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .panel_content {
   font-size: 100%;
   top: 4.55729%;
-  padding: 6px 10px;
+  padding: 37.5% 62.5%;
 }
 
-/* line 343, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 .panel_content
 p {
   font-weight: normal;
@@ -449,13 +453,13 @@ p {
   margin: 4.2% auto;
 }
 
-/* line 350, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 .panel_content
 p:first-child {
   margin-top: 1.5%;
 }
 
-/* line 355, ../sass/screen.scss */
+/* line 360, ../sass/screen.scss */
 .panel_content
 p:first-child
 img {
@@ -463,7 +467,7 @@ img {
   margin-left: 4%;
 }
 
-/* line 362, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 .right_block,
 .right_panel {
   border-radius: 4px;
@@ -472,141 +476,141 @@ img {
   width: 13.08594%;
 }
 
-/* line 369, ../sass/screen.scss */
+/* line 374, ../sass/screen.scss */
 .right_panel
 .panel_content {
   color: white;
   font-size: 83%;
 }
 
-/* line 374, ../sass/screen.scss */
+/* line 379, ../sass/screen.scss */
 .right_block {
   background-color: #3D025C;
   height: 22.13542%;
   opacity: 0.9;
 }
 
-/* line 381, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 #right_block_promotions,
 #right_promotion {
   top: 8.72396%;
 }
 
-/* line 385, ../sass/screen.scss */
+/* line 390, ../sass/screen.scss */
 #right_block_live_support,
 #right_live_support {
   top: 32.03125%;
 }
 
-/* line 389, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 #right_promotion
 .subheader {
-  background: url(../images/right_promo.png) no-repeat 9px 11px;
-}
-
-/* line 393, ../sass/screen.scss */
-#right_live_support
-.subheader {
-  background: url(../images/right_live_chat.png) no-repeat 9px 11px;
+  background: url(../images/right_promo.png) no-repeat 56.25% 68.75%;
 }
 
 /* line 398, ../sass/screen.scss */
+#right_live_support
+.subheader {
+  background: url(../images/right_live_chat.png) no-repeat 56.25% 68.75%;
+}
+
+/* line 403, ../sass/screen.scss */
 .scene_bingo {
-  background: url(../images/game_bingo.png);
+  background: url(../images/game_bingo.png) no-repeat;
   height: 18.61979%;
   width: 11.52344%;
 }
 
-/* line 404, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 .pointer_left {
   background: url(../images/pointer_left.png);
   left: 20.01953%;
 }
 
-/* line 409, ../sass/screen.scss */
+/* line 414, ../sass/screen.scss */
 .pointer_right {
   background: url(../images/pointer_right.png);
   right: 14.35547%;
 }
 
-/* line 414, ../sass/screen.scss */
+/* line 419, ../sass/screen.scss */
 [class^="pointer_"] {
   height: 4.94792%;
   width: 3.71094%;
 }
 
-/* line 419, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 [class^="pointer_"].top {
   top: 19.53125%;
 }
 
-/* line 423, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 [class^="pointer_"].middle {
   top: 45.83333%;
 }
 
-/* line 427, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 [class^="pointer_"].bottom {
   top: 72.00521%;
 }
 
-/* line 431, ../sass/screen.scss */
+/* line 436, ../sass/screen.scss */
 .scene_bingo.top {
   top: 15.36458%;
 }
 
-/* line 434, ../sass/screen.scss */
+/* line 439, ../sass/screen.scss */
 .scene_bingo.middle {
   top: 41.79688%;
 }
 
-/* line 437, ../sass/screen.scss */
+/* line 442, ../sass/screen.scss */
 .scene_bingo.bottom {
   top: 68.09896%;
 }
 
-/* line 442, ../sass/screen.scss */
+/* line 447, ../sass/screen.scss */
 .scene_bingo
 + div {
   /*кнопки во всех рядах: высота, ширина*/
   display: block;
   height: 3.25521%;
   font-size: 100%;
-  line-height: 25px;
+  line-height: 156.25%;
   text-align: center;
   width: 11.52344%;
 }
 
-/* line 452, ../sass/screen.scss */
+/* line 457, ../sass/screen.scss */
 .scene_bingo
 + div > div {
   background-color: #EAE4FD;
-  border: solid 1px #000;
+  border: solid 6.25% #000;
   border-radius: 4px;
-  box-shadow: 0 -6px 10px 0 #CCC inset;
+  box-shadow: 0 -37.5% 62.5% 0 #CCC inset;
   font-size: 90%;
   margin: auto;
-  padding: 0 10px;
+  padding: 0 62.5%;
   position: static;
   /* у родительского блока размер шрифта - 100%*/
   white-space: nowrap;
 }
 
-/* line 465, ../sass/screen.scss */
+/* line 470, ../sass/screen.scss */
 .scene_bingo.top
 + div {
   /*кнопка в первом ряду: позиция по вертикали*/
   top: 30.72917%;
 }
 
-/* line 470, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .scene_bingo.middle
 + div {
   /*кнопка во втором ряду: позиция по вертикали*/
   top: 57.16146%;
 }
 
-/* line 475, ../sass/screen.scss */
+/* line 480, ../sass/screen.scss */
 .scene_bingo.bottom
 + div {
   /*кнопка в третьем ряду: позиция по вертикали*/
@@ -615,79 +619,79 @@ img {
 
 /* позиции по горизонтали */
 /* первая колонка */
-/* line 482, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 .scene_bingo.left {
   left: 24.60938%;
 }
 
-/* line 485, ../sass/screen.scss */
+/* line 490, ../sass/screen.scss */
 .scene_bingo.left + div {
   left: 24.60938%;
 }
 
 /* вторая колонка */
-/* line 489, ../sass/screen.scss */
+/* line 494, ../sass/screen.scss */
 .scene_bingo.center_left {
   left: 39.55078%;
 }
 
-/* line 492, ../sass/screen.scss */
+/* line 497, ../sass/screen.scss */
 .scene_bingo.center_left + div {
   left: 39.55078%;
 }
 
 /* третья колонка */
-/* line 496, ../sass/screen.scss */
+/* line 501, ../sass/screen.scss */
 .scene_bingo.center_right {
   left: 54.58984%;
 }
 
-/* line 499, ../sass/screen.scss */
+/* line 504, ../sass/screen.scss */
 .scene_bingo.center_right + div {
   left: 54.58984%;
 }
 
 /* четвёртая колонка */
-/* line 503, ../sass/screen.scss */
+/* line 508, ../sass/screen.scss */
 .scene_bingo.right {
   left: 69.14063%;
 }
 
-/* line 506, ../sass/screen.scss */
+/* line 511, ../sass/screen.scss */
 .scene_bingo.right + div {
   left: 69.14063%;
 }
 
-/* line 511, ../sass/screen.scss */
+/* line 516, ../sass/screen.scss */
 #my_balance,
 #currency_sum {
-  line-height: 50px;
+  line-height: 312.5%;
 }
 
-/* line 514, ../sass/screen.scss */
+/* line 519, ../sass/screen.scss */
 #my_balance {
   bottom: 0;
   color: white;
-  letter-spacing: -0.5px;
-  margin-left: 12px;
+  letter-spacing: 3.125%;
+  margin-left: 75%;
 }
 
-/* line 520, ../sass/screen.scss */
+/* line 525, ../sass/screen.scss */
 #currency_sum {
   background-color: #0F0E32;
-  border-bottom: solid 1px #999;
+  border-bottom: solid 6.25% #999;
   border-radius: 5px;
-  bottom: 11px;
+  bottom: 68.75%;
   color: #FFD900 !important;
   font-size: 110%;
   height: 3.77604%;
-  line-height: 28px;
+  line-height: 175%;
   left: 9.66797%;
   text-align: center;
   width: 8.59375%;
 }
 
-/* line 533, ../sass/screen.scss */
+/* line 538, ../sass/screen.scss */
 #bottom_top_left {
   background: url(../images/half_round.png) no-repeat;
   bottom: 6.38021%;
@@ -696,13 +700,13 @@ img {
   z-index: 1;
 }
 
-/* line 541, ../sass/screen.scss */
+/* line 546, ../sass/screen.scss */
 #bottom_menu_left_side,
 #bottom_menu_right_side {
   bottom: 0.13021%;
 }
 
-/* line 544, ../sass/screen.scss */
+/* line 549, ../sass/screen.scss */
 #bottom_menu_left_side {
   background: url(../images/bg_bottom_panel_left.png);
   height: 6.51042%;
@@ -710,7 +714,7 @@ img {
   z-index: 0;
 }
 
-/* line 550, ../sass/screen.scss */
+/* line 555, ../sass/screen.scss */
 #bottom_menu_right_side {
   background: url(../images/bg_bottom_panel_right.png);
   bottom: 0.5%;
@@ -720,73 +724,75 @@ img {
   width: 79.98047%;
 }
 
-/* line 559, ../sass/screen.scss */
+/* line 564, ../sass/screen.scss */
 #make_a_deposite {
   background: url(../images/make_a_deposite.png) no-repeat;
   border-radius: 4px;
-  border: solid 1px #000;
+  border: solid 6.25% #000;
   height: 3.90625%;
   left: 1.36719%;
   line-height: 187.5%;
   font-style: italic;
   font-weight: bold;
-  padding-right: 15px;
-  padding-left: 47px;
+  padding-right: 93.75%;
+  padding-left: 293.75%;
   position: absolute;
   top: 1.43229%;
   width: auto;
 }
 
-/* line 575, ../sass/screen.scss */
+/* line 580, ../sass/screen.scss */
 .bottom_menu_item {
   bottom: 0.39063%;
   color: white;
   font-size: 100%;
   font-weight: bold;
-  line-height: 29px;
-  letter-spacing: -0.8px;
-  padding: 4px;
-  padding-top: 3px;
-  padding-left: 19px;
+  line-height: 181.25%;
+  letter-spacing: -5%;
+  padding: 25%;
+  padding-top: 18.75%;
+  padding-left: 118.75%;
 }
 
-/* line 587, ../sass/screen.scss */
+/* line 592, ../sass/screen.scss */
 #bottom_menu_item_profile {
-  background: url(../images/bottom_menu_user.png) no-repeat -8px 2px;
+  background: url(../images/bottom_menu_user.png) no-repeat -50% 12.5%;
   left: 58.00781%;
 }
 
-/* line 591, ../sass/screen.scss */
+/* line 596, ../sass/screen.scss */
 #bottom_menu_item_cashier {
-  background: url(../images/bottom_menu_casher.png) no-repeat -6px 2px;
+  background: url(../images/bottom_menu_casher.png) no-repeat -37.5% 12.5%;
   left: 66.01563%;
 }
 
-/* line 595, ../sass/screen.scss */
+/* line 600, ../sass/screen.scss */
 #bottom_menu_item_games {
-  background: url(../images/bottom_menu_pointer_right.png) no-repeat 3px black;
-  border-bottom: solid 1px #999;
+  /*	 */
+  display: none;
+  background: url(../images/bottom_menu_pointer_right.png) no-repeat 18.75% black;
+  border-bottom: solid 6.25% #999;
   border-radius: 20px;
-  box-shadow: 0 -3px 10px #140D30 inset;
+  box-shadow: 0 -18.75% 62.5% #140D30 inset;
   height: 2.86458%;
   left: 74.21875%;
-  line-height: 19px;
-  padding-bottom: 11px;
+  line-height: 118.75%;
+  padding-bottom: 68.75%;
   padding-top: 0;
-  padding-left: 30px;
+  padding-left: 187.5%;
   bottom: 1.30208%;
   width: 8.20313%;
 }
 
-/* line 609, ../sass/screen.scss */
+/* line 617, ../sass/screen.scss */
 #bottom_menu_item_chat {
-  background: url(../images/bottom_menu_chat.png) no-repeat -8px;
+  background: url(../images/bottom_menu_chat.png) no-repeat -50%;
   left: 83.69141%;
 }
 
-/* line 613, ../sass/screen.scss */
+/* line 621, ../sass/screen.scss */
 #bottom_menu_item_logout {
-  background: url(../images/bottom_menu_switch_off.png) no-repeat -7px 3px;
+  background: url(../images/bottom_menu_switch_off.png) no-repeat -43.75% 18.75%;
   left: 92.87109%;
-  padding-left: 21px;
+  padding-left: 131.25%;
 }

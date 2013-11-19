@@ -39,7 +39,7 @@ $(function(){
 		// 	0.8789 =			       900 / 1024 
 		//0.1
 		console.log('scale: '+scale);
-		$('div',gameContainer).css('zoom',scale);
+		$('>*',gameContainer).css('zoom',scale/6*8);
 	}
 	setScreenParams();
 	window.onresize=function(){

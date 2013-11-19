@@ -11,6 +11,7 @@
 
 
 // перерасчитать пикселы в %%:
+
 @mixin calcHeight($height){
 	height: ($height/768*100)*1%;
 }
@@ -31,16 +32,20 @@
 }
 
 
-//$base-font-size: 16px;
+$base-font-size: 16px;
 
 html, body {
 	height: 100%;
 }
 body{
+	background-color: #0D193E;
 	overflow:hidden;
 	@include box-sizing(border-box);
-	font: 100% normal;
-	*{
+	font-size: 100%; 
+	font-weight:normal;
+	*{	
+		font-size: 100%; 
+		font-weight:normal;
 		font-family: Avenir, Amaranth, Righteous-Regular;
 	}
 }
@@ -63,8 +68,8 @@ div{
 #top_bar{
 	@include calcHeight(51);
 	background: url(../images/bg_top_bar.png) repeat-x;
-	border: solid 1px black;
-	box-shadow: 0 0px 30px #252424;
+	border: solid 6.25% black;//1px
+	box-shadow: 0 0 187.5% #252424;//30px 
 	width:100%;
 }
 
@@ -78,19 +83,19 @@ div{
 	font-family: Avenir-Medium;
 	font-size: 0;
 	font-weight: bold;
-	letter-spacing: 1.5px;
-	text-shadow: 1px 0 #000;
+	letter-spacing: 9.375%;//1.5px;
+	text-shadow: 6.25%  0 #000;//1px
 	@include calcTop(9);//top: 9px;
 	padding: 0;
 	width: 38%;
 	&>span{
 		font-size: 71%;
-		letter-spacing: 1px;
+		letter-spacing: 6.25%;
 	}
 }
 
 #free{
-	background:url(../images/free.png);
+	background:url(../images/free.png) 100% 0 no-repeat;
 	@include calcHeight(58);			//height:58px;
 	@include calcLeft(133); //left:133px;
 	@include calcTop(124);  //top:124px;
@@ -102,13 +107,13 @@ div{
 	color: white; 
 	font-weight: bold;
 	@include calcLeft(34); //left:34px;
-	letter-spacing: 0.15px;
+	letter-spacing: 0.9375%;//0.15px
 	@include calcTop(157); //top: 157px;
 	@include calcWidth(156); //width: 156px;
 }
 
 #seven{
-	background:url(../images/7euros.png);
+	background:url(../images/7euros.png) no-repeat;
 	@include calcHeight(112); //height:112px;
 	@include calcLeft(41); //left:41px;
 	@include calcTop(196); //top: 196px;
@@ -118,14 +123,14 @@ div{
 #get_it_now{
 	background:url(../images/bg_get_it_now.png);
 	background-repeat: repeat-x;
-	border-radius: 3px;
-	border-left: solid 1px #000;
-	border-right: solid 1px #000;
+	border-radius: 3px;//18.75%;
+	border-left: solid 6.25% #000;
+	border-right: solid 6.25% #000;
 	font-style: italic;
 	font-weight: bold;
-	@include calcHeight( 37); //height: 37px;
+	@include calcHeight(37); //height: 37px;
 	@include calcLeft(41); //left:41px;
-	line-height: 37px;
+	line-height: 231.25%;//37px;
 	text-align: center;
 	text-transform: uppercase;
 	@include calcTop(324); //top: 324px;
@@ -137,7 +142,7 @@ div{
 	font-style:italic;
 	font-size: 75%;
 	@include calcLeft(45); //left:45px;
-	letter-spacing: 0.2px;
+	letter-spacing: 14.375%;//0.2px;
 	@include calcTop(367); //top: 367px;
 	@include calcWidth(113); //width: 113px;
 }
@@ -145,15 +150,15 @@ div{
 #total{
 	color: white;
 	font-style: italic;
-	font-size: 14.5px;
+	font-size: 90.625%;//14.5px;
 	@include calcLeft(506); //left: 506px;
 	text-align:center;
 	@include calcTop(6); //top: 6px;
 }
 .win_numb{
-	background: url(../images/bg_666.jpg) repeat-x -4px;
-	border: solid 1px #333;
-	border-radius: 5px;
+	background: url(../images/bg_666.jpg) repeat-x -25%;//-4px; 
+	border: solid 6.25% #333;
+	border-radius: 31.25%;//5px;
 	@include calcHeight(48); //height: 48px;
 	text-align:center;
 	@include calcTop(26); //top:26px;
@@ -161,7 +166,7 @@ div{
 	z-index: 0;
 }
 .h666{
-	background: url(../images/666.png) no-repeat -2px 12px;
+	background: url(../images/666.png) no-repeat -12.5% 75%;//-2px 12px;
 	@include calcHeight(37); //height: 37px;
 	@include calcTop(25); //top: 25px;
 	@include calcWidth(75); //width: 75px;
@@ -188,16 +193,16 @@ div{
 	@include calcLeft(589); //left: 589px;
 }
 #current_time{
-	background: url(../images/clock.png) no-repeat 0 -2px #151647;
-	border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
+	background: url(../images/clock.png) no-repeat 0 -12.5% #151647;//-2px 
+	border-top-left-radius: 75%; //12px
+	border-bottom-left-radius: 75%; //12px
 	@include calcHeight(26); //height: 26px;
 	color: white;
 	font-family: "Avenir lt 35 light";
 	font-size: 76%;
 	font-weight: 100;
-	line-height: 26px;
-	padding-left: 27px;
+	line-height: 162.5%;//26px;
+	padding-left: 168.75%;//27px;
 	@include calcRight(5); //right: 5px;
 	@include calcTop(14); //top:14px;
 	@include calcWidth(217); //width: 217px;
@@ -207,13 +212,13 @@ div{
 }
 
 #welcome_back{
-	background: url(../images/euro_coin.png) no-repeat 5px -5px;
+	background: url(../images/euro_coin.png) no-repeat 31.25% -31.25%;//5px -5px;
 	color: white;
 	@include calcHeight(40); //height:40px;
 	font-size: 75%;
 	font-family: "Avenir-Medium";
 	font-weight: 100;
-	padding-left: 50px;
+	padding-left: 312.5%;//50px;
 	@include calcTop(64); //top: 64px;
 	@include calcWidth(188); //width:188px;
 }				
@@ -247,8 +252,8 @@ div{
 	
 .float_panel, 
 .right_block{
-	border: solid 1px #000;
-	border-radius: 3px;
+	border: solid 6.25% #000;
+	border-radius: 3px;//18.75%;
 	opacity: 0.25;
 }
 
@@ -269,7 +274,7 @@ div{
 	}
 	#left_top_box{
 		background-color: rgb(255,14,255);
-		box-shadow: 0 0 0 1px #000;
+		box-shadow: 0 0 0 6.25% #000;
 		@include calcHeight(272); //height: 272px;
 		@include calcTop(123); //top: 123px;
 	}
@@ -279,7 +284,7 @@ div{
 		font-weight: bold;
 		letter-spacing: 0px;
 		line-height: 187.5%;//30px;
-		border-bottom: solid 1px #001;
+		border-bottom: solid 6.25% #001;
 		color: white;
 		padding: 0 81.25%;//13px;
 	
@@ -302,41 +307,41 @@ div{
 		font-size: 110%;
 		letter-spacing: 0;
 		right: 0;
-		margin-right: 18px;
+		margin-right: 112.5%;//18px;
 		position: absolute;
 	
 		top: 0;
 }
 		#left_bottom_box_1{
-			background: url(../images/copa.png) no-repeat 10px 17px;
+			background: url(../images/copa.png) no-repeat 62.5% 106.25%;//10px 17px;
 			font-style: italic;
 			font-size: 110%;
 			letter-spacing: 0.2px;
-			padding-top: 10px;
-			padding-left: 39px;
+			padding-top: 62.5%;//10px;
+			padding-left: 243.75%;//39px;
 			@include calcTop(405); //top:405px; /* далее +50px	*/
 		}
 		#left_bottom_box_2{
-			background: url(../images/flag_germany.png) no-repeat 12px 29px;
+			background: url(../images/flag_germany.png) no-repeat 75% 181.25%;//12px 
 			@include calcTop(455); //top:455px;
 		}
 		#left_bottom_box_3{
-			background:url(../images/flag_italy.png) no-repeat 12px 29px;
+			background:url(../images/flag_italy.png) no-repeat 75% 181.25%;//12px
 			@include calcTop(505); //top:505px;
 		}
 		#left_bottom_box_4{
-			background:url(../images/flag_gb.png) no-repeat 12px 29px;
+			background:url(../images/flag_gb.png) no-repeat 75% 181.25%;//12px
 			@include calcTop(555); //top:555px;
 		}
 		#left_bottom_box_5{
-			background:url(../images/flag_greece.png) no-repeat 12px 29px;
+			background:url(../images/flag_greece.png) no-repeat 75% 181.25%;//12px 
 			@include calcTop(605); //top:605px;
 		}
 		
 	.panel_content{
 		font-size:100%;
     	@include calcTop(35); //top: 35px;
-		padding: 6px 10px;
+		padding: 37.5% 62.5%;//6px 10px;
 	}
 	
 	.panel_content
@@ -360,7 +365,7 @@ div{
 
 	.right_block, 
 	.right_panel{
-		border-radius: 4px;
+		border-radius: 4px;//25%;//4px;
 		font-size:100%;
 		@include calcRight(12); //right: 12px;
 		@include calcWidth(134); //width: 134px;
@@ -387,16 +392,16 @@ div{
 	}
 		#right_promotion
 		.subheader{
-			background: url(../images/right_promo.png) no-repeat 9px 11px;
+			background: url(../images/right_promo.png) no-repeat 56.25% 68.75%;
 		}
 		#right_live_support
 		.subheader{
-			background: url(../images/right_live_chat.png) no-repeat 9px 11px;
+			background: url(../images/right_live_chat.png) no-repeat 56.25% 68.75%;
 		}
 
 	
 .scene_bingo{
-	background: url(../images/game_bingo.png);
+	background: url(../images/game_bingo.png) no-repeat;
 	@include calcHeight(143); //height: 143px;
 	@include calcWidth(118); //width: 118px;
 }
@@ -444,19 +449,19 @@ div{
 		display: block;
 		@include calcHeight(25); //height: 25px;
 		font-size: 100%;
-		line-height: 25px;
+		line-height: 156.25%;//25px;
 		text-align: center;
 		@include calcWidth(118); //width: 118px; /* та же, что и у родительского блока, иначе возникнут проблемы - при относительном позиционировании увеличение размера шрифта может привести к непредсказуемым последствиям */
 	}
 	.scene_bingo
 		+div >div{
 		background-color: #EAE4FD;
-		border: solid 1px #000;
-		border-radius: 4px;
-		box-shadow: 0 -6px 10px 0 #CCC inset;
+		border: solid 6.25% #000;
+		border-radius: 4px;//25%;//4px;
+		box-shadow: 0 -37.5% 62.5% 0 #CCC inset; //-6px 10px
 		font-size: 90%;
 		margin:auto;
-		padding: 0 10px;
+		padding: 0 62.5%;//10px;
 		position:static; /* у родительского блока размер шрифта - 100%*/
 	
 		white-space: nowrap;
@@ -509,23 +514,23 @@ div{
 
 	#my_balance,
 	#currency_sum{
-		line-height:50px;
+		line-height: 312.5%;//50px;
 	}
 	#my_balance{
 		bottom:0;
 		color: white;
-		letter-spacing: -0.5px;
-		margin-left:12px;
+		letter-spacing: 3.125%;//-0.5px;
+		margin-left: 75%;//12px;
 	}
 	#currency_sum{
 		background-color:#0F0E32;
-		border-bottom: solid 1px #999;
-		border-radius: 5px;
-		bottom: 11px;
+		border-bottom: solid 6.25% #999;
+		border-radius: 5px;//31.25%;//5px;
+		bottom: 68.75%;
 		color: #FFD900 !important;
 		font-size: 110%;
 		@include calcHeight(29); //height: 29px;
-		line-height:28px;	
+		line-height: 175%;//28px;	
 		@include calcLeft(99); //left: 99px;
 		text-align: center;
 		@include calcWidth(88); //width: 88px;
@@ -558,15 +563,15 @@ div{
 
 	#make_a_deposite{
 		background: url(../images/make_a_deposite.png) no-repeat ;
-		border-radius: 4px;
-		border: solid 1px #000;
+		border-radius: 4px;//25%;//4px;
+		border: solid 6.25% #000;
 		@include calcHeight(30); //height: 30px;
 		@include calcLeft(14); //left: 14px;
 		line-height: 187.5%;
 		font-style: italic;
 		font-weight: bold;
-		padding-right: 15px;
-		padding-left: 47px;
+		padding-right: 93.75%;//15px;
+		padding-left: 293.75%;//47px;
 		position: absolute;
 		@include calcTop(11); //top: 11px;
 		width: auto;
@@ -577,42 +582,45 @@ div{
 		color: white;
 		font-size: 100%;
 		font-weight: bold;
-		line-height: 29px;
-		letter-spacing: -0.8px;
-		padding:4px;	
-		padding-top: 3px;
-		padding-left: 19px;
+		line-height: 181.25%;
+		letter-spacing: -5%;//-0.8px;
+		padding: 25%;//4px;	
+		padding-top: 18.75%;
+		padding-left: 118.75%;
 	
 }
 	#bottom_menu_item_profile{
-		background: url(../images/bottom_menu_user.png) no-repeat -8px 2px;
+		background: url(../images/bottom_menu_user.png) no-repeat -50% 12.5%; //-8px 2px;
 		@include calcLeft(594); //left: 594px;
 	}
 	#bottom_menu_item_cashier{
-		background: url(../images/bottom_menu_casher.png) no-repeat -6px 2px;
+		background: url(../images/bottom_menu_casher.png) no-repeat -37.5% 12.5%; //-6px 2px;
 		@include calcLeft(676); //left: 676px;
 	}
 	#bottom_menu_item_games{
-		background: url(../images/bottom_menu_pointer_right.png) no-repeat 3px black;
-		border-bottom: solid 1px #999;
-		border-radius: 20px;
-		box-shadow: 0 -3px 10px #140D30 inset;
+
+		/*	 */
+		display: none;
+		background: url(../images/bottom_menu_pointer_right.png) no-repeat 18.75% black;//3px 
+		border-bottom: solid 6.25% #999;
+		border-radius: 20px;//125%;//20px;
+		box-shadow: 0 -18.75% 62.5% #140D30 inset;//-3px 10px
 		@include calcHeight(22); //height: 22px;
 		@include calcLeft(760); //	left: 760px;
-		line-height: 19px;
-		padding-bottom: 11px;
+		line-height: 118.75%;
+		padding-bottom: 68.75%;
 		padding-top: 0;
-		padding-left: 30px;
+		padding-left: 187.5%;//30px;
 		@include calcBottom(10); //bottom: 10px;
 		@include calcWidth(84); //width: 84px;
 	}
 	#bottom_menu_item_chat{
-		background: url(../images/bottom_menu_chat.png) no-repeat -8px;
+		background: url(../images/bottom_menu_chat.png) no-repeat -50%;//-8px;
 		@include calcLeft(857); //left: 857px;
 	}
 	#bottom_menu_item_logout{
-		background: url(../images/bottom_menu_switch_off.png) no-repeat -7px 3px;
-		@include calcLeft(951); //	left: 951px;
-		padding-left: 21px;
+		background: url(../images/bottom_menu_switch_off.png) no-repeat -43.75% 18.75%;//-7px 3px;
+		@include calcLeft(951); //	left: 956.25%;
+		padding-left: 131.25%;//21px;
 }
 	
