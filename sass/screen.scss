@@ -14,17 +14,24 @@
 @mixin calcHeight($height){
 	height: ($height/768*100)*1%;
 }
+@mixin calcBottom($bottom){
+	bottom: ($bottom/768*100)*1%;
+}
 @mixin calcTop($top){
 	top: ($top/768*100)*1%;
 }
 @mixin calcLeft($left){
 	left: ($left/1024*100)*1%;
 }
+@mixin calcRight($right){
+	right: ($right/1024*100)*1%;
+}
 @mixin calcWidth($width){
 	width: ($width/1024*100)*1%;
 }
 
-$base-font-size: 16px;
+
+//$base-font-size: 16px;
 
 html, body {
 	height: 100%;
@@ -73,7 +80,7 @@ div{
 	font-weight: bold;
 	letter-spacing: 1.5px;
 	text-shadow: 1px 0 #000;
-	top: 9px;
+	@include calcTop(9);//top: 9px;
 	padding: 0;
 	width: 38%;
 	&>span{
@@ -84,28 +91,28 @@ div{
 
 #free{
 	background:url(../images/free.png);
-	height:58px;
-	left:133px;
-	top:124px;
-	width:58px;
+	@include calcHeight(58);			//height:58px;
+	@include calcLeft(133); //left:133px;
+	@include calcTop(124);  //top:124px;
+	@include calcWidth(58);	//width:58px;
 }
 
 #take_it{
-	height:15px;
+	@include calcHeight(15);//height:15px;
 	color: white; 
 	font-weight: bold;
-	left:34px;
+	@include calcLeft(34); //left:34px;
 	letter-spacing: 0.15px;
-	top: 157px;
-	width: 156px;
+	@include calcTop(157); //top: 157px;
+	@include calcWidth(156); //width: 156px;
 }
 
 #seven{
 	background:url(../images/7euros.png);
-	height:112px;
-	left:41px;
-	top: 196px;
-	width: 130px;
+	@include calcHeight(112); //height:112px;
+	@include calcLeft(41); //left:41px;
+	@include calcTop(196); //top: 196px;
+	@include calcWidth(130); //width: 130px;
 }
 
 #get_it_now{
@@ -116,84 +123,84 @@ div{
 	border-right: solid 1px #000;
 	font-style: italic;
 	font-weight: bold;
-	height: 37px;
-	left:41px;
+	@include calcHeight( 37); //height: 37px;
+	@include calcLeft(41); //left:41px;
 	line-height: 37px;
 	text-align: center;
 	text-transform: uppercase;
-	top: 324px;
-	width: 117px;
+	@include calcTop(324); //top: 324px;
+	@include calcWidth(117); //width: 117px;
 }
 
 #no_deposit_required{
 	color:white;
 	font-style:italic;
 	font-size: 75%;
-	left:45px;
+	@include calcLeft(45); //left:45px;
 	letter-spacing: 0.2px;
-	top: 367px;
-	width: 113px;
+	@include calcTop(367); //top: 367px;
+	@include calcWidth(113); //width: 113px;
 }
 
 #total{
 	color: white;
 	font-style: italic;
 	font-size: 14.5px;
-	left: 506px;
+	@include calcLeft(506); //left: 506px;
 	text-align:center;
-	top: 6px;
+	@include calcTop(6); //top: 6px;
 }
 .win_numb{
 	background: url(../images/bg_666.jpg) repeat-x -4px;
 	border: solid 1px #333;
 	border-radius: 5px;
-	height: 48px;
+	@include calcHeight(48); //height: 48px;
 	text-align:center;
-	top:26px;
-	width: 70px;
+	@include calcTop(26); //top:26px;
+	@include calcWidth(70); //width: 70px;
 	z-index: 0;
 }
 .h666{
 	background: url(../images/666.png) no-repeat -2px 12px;
-	height: 37px;
-	top: 25px;
-	width: 75px;
+	@include calcHeight(37); //height: 37px;
+	@include calcTop(25); //top: 25px;
+	@include calcWidth(75); //width: 75px;
 	z-index: 2;
 }
 
 #hell666_1{
-	left: 431px;
+	@include calcLeft(431); //left: 431px;
 }
 #hell666_2{
-	left: 510px;
+	@include calcLeft(510); //left: 510px;
 }
 #hell666_3{
-	left: 589px;
+	@include calcLeft(589); //left: 589px;
 }
 
 #win_numb_1{
-	left: 431px;
+	@include calcLeft(431); //left: 431px;
 }
 #win_numb_2{
-	left: 510px;
+	@include calcLeft(510); //left: 510px;
 }
 #win_numb_3{
-	left: 589px;
+	@include calcLeft(589); //left: 589px;
 }
 #current_time{
 	background: url(../images/clock.png) no-repeat 0 -2px #151647;
 	border-top-left-radius: 12px;
 	border-bottom-left-radius: 12px;
-	height: 26px;
+	@include calcHeight(26); //height: 26px;
 	color: white;
 	font-family: "Avenir lt 35 light";
 	font-size: 76%;
 	font-weight: 100;
 	line-height: 26px;
 	padding-left: 27px;
-	right: 5px;
-	top:14px;
-	width: 217px;
+	@include calcRight(5); //right: 5px;
+	@include calcTop(14); //top:14px;
+	@include calcWidth(217); //width: 217px;
 	b{
     	font-family: "Avenir-Heavy";
 	}
@@ -202,13 +209,13 @@ div{
 #welcome_back{
 	background: url(../images/euro_coin.png) no-repeat 5px -5px;
 	color: white;
-	height:40px;
+	@include calcHeight(40); //height:40px;
 	font-size: 75%;
 	font-family: "Avenir-Medium";
 	font-weight: 100;
 	padding-left: 50px;
-	top: 64px;
-	width:188px;
+	@include calcTop(64); //top: 64px;
+	@include calcWidth(188); //width:188px;
 }				
 
 .user_name{
@@ -228,14 +235,13 @@ div{
 	font-family: Avenir;
 	font-style: italic;
 	font-weight: bold;
-	padding: 8px 4px 8px 25px;
+	padding: 50% 25% 50% 156.25%; //8px 4px 8px 25px;
 	width:100%;
 }
 .subsrtrate{
 	background-color:rgb(1,4,11);
 	opacity:0.45;
-	height: 34px;   
-
+	@include calcHeight(34); //height: 34px;   
 	width: 100%;
 }
 	
@@ -249,8 +255,8 @@ div{
 
 #left_bottom_palette{
 	background-color: #FC00FF;
-	height:276px;
-	top: 405px;
+	@include calcHeight(276); //height:276px;
+	@include calcTop(405); //top: 405px;
 }
 
 
@@ -258,24 +264,24 @@ div{
 	#left_top_box,
 	.left_bottom_box,
 	#left_bottom_palette{
-		left: 10px;
-		width:180px;
+		@include calcLeft(10); //left: 10px;
+		@include calcWidth(180); //width:180px;
 	}
 	#left_top_box{
 		background-color: rgb(255,14,255);
 		box-shadow: 0 0 0 1px #000;
-		height: 272px;
-		top: 123px;
+		@include calcHeight(272); //height: 272px;
+		@include calcTop(123); //top: 123px;
 	}
 	.left_bottom_box{
-		height:50px;
+		@include calcHeight(50); //height:50px;
 		font-size:100%;
 		font-weight: bold;
 		letter-spacing: 0px;
-		line-height: 30px;
+		line-height: 187.5%;//30px;
 		border-bottom: solid 1px #001;
 		color: white;
-		padding: 0 13px;
+		padding: 0 81.25%;//13px;
 	
 }
 	.left_bottom_box
@@ -286,9 +292,9 @@ div{
 		font-weight: 100;
 		margin-right: 0;
 		right: 0px;
-		left: 12px;
-		bottom: -2px;
-		padding-left: 30px;
+		@include calcLeft(12); //left: 12px;
+		@include calcBottom(-2); //bottom: -2px;
+		padding-left: 187.5%;//30px;
 		width: 100%;
 	}
 	.left_bottom_box
@@ -308,28 +314,28 @@ div{
 			letter-spacing: 0.2px;
 			padding-top: 10px;
 			padding-left: 39px;
-			top:405px; /* далее +50px	*/
+			@include calcTop(405); //top:405px; /* далее +50px	*/
 		}
 		#left_bottom_box_2{
 			background: url(../images/flag_germany.png) no-repeat 12px 29px;
-			top:455px;
+			@include calcTop(455); //top:455px;
 		}
 		#left_bottom_box_3{
 			background:url(../images/flag_italy.png) no-repeat 12px 29px;
-			top:505px;
+			@include calcTop(505); //top:505px;
 		}
 		#left_bottom_box_4{
 			background:url(../images/flag_gb.png) no-repeat 12px 29px;
-			top:555px;
+			@include calcTop(555); //top:555px;
 		}
 		#left_bottom_box_5{
 			background:url(../images/flag_greece.png) no-repeat 12px 29px;
-			top:605px;
+			@include calcTop(605); //top:605px;
 		}
 		
 	.panel_content{
 		font-size:100%;
-    	top: 35px;
+    	@include calcTop(35); //top: 35px;
 		padding: 6px 10px;
 	}
 	
@@ -356,8 +362,8 @@ div{
 	.right_panel{
 		border-radius: 4px;
 		font-size:100%;
-		right: 12px;
-		width: 134px;
+		@include calcRight(12); //right: 12px;
+		@include calcWidth(134); //width: 134px;
 	}
 	.right_panel
 	.panel_content{
@@ -367,18 +373,17 @@ div{
 	
 	.right_block{
 		background-color: #3D025C;
-		/* border-radius: 4px; */
-		height: 170px;
+		@include calcHeight(170); //height: 170px;
 		opacity: 0.9;
 	}
 	
 	#right_block_promotions,
 	#right_promotion{
-		top: 67px;
+		@include calcTop(67); //top: 67px;
 	}
 	#right_block_live_support,
 	#right_live_support{
-		top: 246px	
+		@include calcTop(246); //top: 246px	
 	}
 		#right_promotion
 		.subheader{
@@ -392,56 +397,56 @@ div{
 	
 .scene_bingo{
 	background: url(../images/game_bingo.png);
-	height: 143px;
-	width: 118px;
+	@include calcHeight(143); //height: 143px;
+	@include calcWidth(118); //width: 118px;
 }
 
 	.pointer_left{
 		background: url(../images/pointer_left.png);
-		left:205px;
+		@include calcLeft(205); //left:205px;
 	}
 	
 	.pointer_right{
 		background: url(../images/pointer_right.png);
-		right:147px;
+		@include calcRight(147); //right:147px;
 	}
 	
 	[class^="pointer_"]{
-		height: 38px;
-		width: 38px;
+		@include calcHeight(38); //height: 38px;
+		@include calcWidth(38); //width: 38px;
 	}
 
 	[class^="pointer_"].top{
-		top:150px;
+		@include calcTop(150); //top:150px;
 	}
 	
 	[class^="pointer_"].middle{
-		top:352px;
+		@include calcTop(352); //top:352px;
 	}	
 	
 	[class^="pointer_"].bottom{
-		top:553px;
+		@include calcTop(553); //top:553px;
 	}
 	
 	.scene_bingo.top{
-		top: 118px;	
+		@include calcTop(118); //top: 118px;	
 	}	
 	.scene_bingo.middle{
-		top: 321px;	
+		@include calcTop(321); //top: 321px;	
 	}	
 	.scene_bingo.bottom{
-		top: 523px;	
+		@include calcTop(523); //top: 523px;	
 	}
 	
 	.scene_bingo
 		+div{
 		/*кнопки во всех рядах: высота, ширина*/
 		display: block;
-		height: 25px;
+		@include calcHeight(25); //height: 25px;
 		font-size: 100%;
 		line-height: 25px;
 		text-align: center;
-		width: 118px; /* та же, что и у родительского блока, иначе возникнут проблемы - при относительном позиционировании увеличение размера шрифта может привести к непредсказуемым последствиям */
+		@include calcWidth(118); //width: 118px; /* та же, что и у родительского блока, иначе возникнут проблемы - при относительном позиционировании увеличение размера шрифта может привести к непредсказуемым последствиям */
 	}
 	.scene_bingo
 		+div >div{
@@ -459,47 +464,47 @@ div{
 	.scene_bingo.top
 		+div{
 		/*кнопка в первом ряду: позиция по вертикали*/
-		top: 236px;
+		@include calcTop(236); //top: 236px;
 	}
 	.scene_bingo.middle
 		+div{
 		/*кнопка во втором ряду: позиция по вертикали*/
-		top: 439px;
+		@include calcTop(439); //top: 439px;
 	}
 	.scene_bingo.bottom
 		+div{
 		/*кнопка в третьем ряду: позиция по вертикали*/
-		top: 641px;
+		@include calcTop(641); //top: 641px;
 	}
 
 		/* позиции по горизонтали */
 		/* первая колонка */
 		.scene_bingo.left{
-			left: 252px;
+			@include calcLeft(252); //	left: 252px;
 		}
 			.scene_bingo.left +div{
-				left: 252px;
+				@include calcLeft(252); //	left: 252px;
 			}
 		/* вторая колонка */
 		.scene_bingo.center_left{
-			left:405px;
+			@include calcLeft(405); //	left:405px;
 		}
 			.scene_bingo.center_left +div{
-				left:405px;
+				@include calcLeft(405); //	left:405px;
 			}
 		/* третья колонка */
 		.scene_bingo.center_right{
-			left:559px;
+			@include calcLeft(559); //	left:559px;
 		}
 			.scene_bingo.center_right +div{
-				left:559px;
+				@include calcLeft(559); //	left:559px;
 			}
 		/* четвёртая колонка */
 		.scene_bingo.right{
-			left:708px;
+			@include calcLeft(708); //	left:708px;
 		}	
 			.scene_bingo.right +div{
-				left:708px;
+				@include calcLeft(708); //	left:708px;
 			}	
 
 	#my_balance,
@@ -519,60 +524,56 @@ div{
 		bottom: 11px;
 		color: #FFD900 !important;
 		font-size: 110%;
-		height: 29px;
-		line-height:28px;
-	
-		left: 99px;
+		@include calcHeight(29); //height: 29px;
+		line-height:28px;	
+		@include calcLeft(99); //left: 99px;
 		text-align: center;
-		width: 88px;
+		@include calcWidth(88); //width: 88px;
 	}
 	#bottom_top_left{
 		background: url(../images/half_round.png) no-repeat;
-		bottom: 49px;
-		height:31px;
-		width:80px;
-	
+		@include calcBottom(49); //bottom: 49px;
+		@include calcHeight(31); //height:31px;
+		@include calcWidth(80); //width:80px;
 		z-index: 1;
 }	
 	#bottom_menu_left_side,
 	#bottom_menu_right_side{
-		bottom: 1px;
+		@include calcBottom(1); //bottom: 1px;
 	}
 	#bottom_menu_left_side{
 		background: url(../images/bg_bottom_panel_left.png);
-		height: 50px;
-		width:201px;
-	
+		@include calcHeight(50); //height: 50px;
+		@include calcWidth(201); //width:201px;
 		z-index: 0;
 }
 	#bottom_menu_right_side{
 		background: url(../images/bg_bottom_panel_right.png);
 		bottom: 0.5%;
-		height: 45px;
-		left: 207px;
+		@include calcHeight(45); //height: 45px;
+		@include calcLeft(207); //left: 207px;
 		text-align:right;
-		width:819px;
+		@include calcWidth(819); //width:819px;
 	}	
 
 	#make_a_deposite{
 		background: url(../images/make_a_deposite.png) no-repeat ;
-	
 		border-radius: 4px;
 		border: solid 1px #000;
-		height: 30px;
-		left: 14px;
+		@include calcHeight(30); //height: 30px;
+		@include calcLeft(14); //left: 14px;
 		line-height: 187.5%;
 		font-style: italic;
 		font-weight: bold;
 		padding-right: 15px;
 		padding-left: 47px;
 		position: absolute;
-		top: 11px;
+		@include calcTop(11); //top: 11px;
 		width: auto;
 }
 
 	.bottom_menu_item{
-		bottom: 3px;
+		@include calcBottom(3); //bottom: 3px;
 		color: white;
 		font-size: 100%;
 		font-weight: bold;
@@ -585,35 +586,33 @@ div{
 }
 	#bottom_menu_item_profile{
 		background: url(../images/bottom_menu_user.png) no-repeat -8px 2px;
-		left: 594px;
+		@include calcLeft(594); //left: 594px;
 	}
 	#bottom_menu_item_cashier{
 		background: url(../images/bottom_menu_casher.png) no-repeat -6px 2px;
-		left: 676px;
+		@include calcLeft(676); //left: 676px;
 	}
 	#bottom_menu_item_games{
 		background: url(../images/bottom_menu_pointer_right.png) no-repeat 3px black;
 		border-bottom: solid 1px #999;
 		border-radius: 20px;
 		box-shadow: 0 -3px 10px #140D30 inset;
-		height: 22px;
-		left: 760px;
-	
+		@include calcHeight(22); //height: 22px;
+		@include calcLeft(760); //	left: 760px;
 		line-height: 19px;
 		padding-bottom: 11px;
 		padding-top: 0;
 		padding-left: 30px;
-		bottom: 10px;
-		width: 84px;
+		@include calcBottom(10); //bottom: 10px;
+		@include calcWidth(84); //width: 84px;
 	}
 	#bottom_menu_item_chat{
 		background: url(../images/bottom_menu_chat.png) no-repeat -8px;
-		left: 857px;
+		@include calcLeft(857); //left: 857px;
 	}
 	#bottom_menu_item_logout{
 		background: url(../images/bottom_menu_switch_off.png) no-repeat -7px 3px;
-		left: 951px;
-	
+		@include calcLeft(951); //	left: 951px;
 		padding-left: 21px;
 }
 	
