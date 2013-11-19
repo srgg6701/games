@@ -15,9 +15,10 @@
 <?	endif;
 ?>
 <style>
-<?	if(isset($_GET['bg'])):?>
+<?	if(isset($_GET['bg'])):
+		$pic=($_GET['bg']==1)? 'bg_bench':'bg_full_white';?>
 #wrapper{
-	background:url(images/bg_full_white.jpg);
+	background:url(images/<?=$pic?>.jpg);
 	<?	if($_GET['bg']):
 	?>
 	opacity:<?=$_GET['bg']?>;
@@ -59,12 +60,28 @@
             <div id="get_it_now">Get it now!</div>
             <div id="no_deposit_required">No deposit required</div>
         
-            <div class="left_bottom_box" id="left_bottom_box_1">Resent Winners</div>
-        	<div class="left_bottom_box" id="left_bottom_box_2">Slot Machine</div>
-        	<div class="left_bottom_box" id="left_bottom_box_3">Bingo</div>
-        	<div class="left_bottom_box" id="left_bottom_box_4">Scratch to win</div>
-        	<div class="left_bottom_box" id="left_bottom_box_5">Rotate it</div>
-
+            <div class="left_bottom_box" id="left_bottom_box_1">Resent Winners
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_2">Slot Machine
+            	<div>Nikki S
+                	<div>500 &euro;</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_3">Bingo
+            	<div>Green G
+                	<div>500 &euro;</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_4">Scratch to win
+            	<div>Whatever M
+                	<div>500 &euro;</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_5">Rotate it
+            	<div>Some Big Name
+                	<div>500 &euro;</div>
+                </div>
+            </div>
             <!-- ! Buttons	-->
         
         	<div class="scene_bingo top left" id="scene_bingo_top_1"></div>

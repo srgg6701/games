@@ -1,470 +1,77 @@
-@charset "IBM866";
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
+/*
+Syntax error: Undefined mixin 'box-sizing'.
+        on line 30 of D:/WebServers/home/localhost/www/-WMSoftware/games/sass/screen.scss, in `box-sizing'
+        from line 30 of D:/WebServers/home/localhost/www/-WMSoftware/games/sass/screen.scss
 
-/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
-
-/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
-/* line 25, ../sass/screen.scss */
-html, body {
-  height: 100%;
-}
-
-/* line 28, ../sass/screen.scss */
-body {
-  overflow: hidden;
-  font: 100% normal;
-}
-/* line 31, ../sass/screen.scss */
-body * {
-  font-family: Avenir, Amaranth, Righteous-Regular;
-}
-
-/* line 35, ../sass/screen.scss */
-#wrapper {
-  background: url(../images/bg_bench.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-}
-
-/* line 42, ../sass/screen.scss */
-div, span {
-  box-shadow: 0 0 0 1px #F00;
-  box-sizing: border-box;
-}
-
-/* line 46, ../sass/screen.scss */
-div {
-  position: absolute;
-}
-
-/* line 49, ../sass/screen.scss */
-#top_bar {
-  height: 11.71875%;
-  width: 100%;
-}
-
-/* line 55, ../sass/screen.scss */
-#logo {
-  left: 1.17188%;
-  height: 3.90625%;
-  font-size: 200%;
-  width: 38%;
-}
-
-/* line 62, ../sass/screen.scss */
-#free {
-  background: url(../images/free.png);
-  height: 58px;
-  left: 133px;
-  top: 124px;
-  width: 58px;
-}
-
-/* line 70, ../sass/screen.scss */
-#take_it {
-  height: 15px;
-  color: white;
-  font-weight: bold;
-  left: 34px;
-  letter-spacing: 0.15px;
-  top: 157px;
-  width: 156px;
-}
-
-/* line 80, ../sass/screen.scss */
-#seven {
-  background: url(../images/7euros.png);
-  height: 112px;
-  left: 41px;
-  top: 196px;
-  width: 130px;
-}
-
-/* line 88, ../sass/screen.scss */
-#get_it_now {
-  background: url(../images/bg_get_it_now.png);
-  background-repeat: repeat-x;
-  border-radius: 3px;
-  border-left: solid 1px #000;
-  border-right: solid 1px #000;
-  font-style: italic;
-  font-weight: bold;
-  height: 37px;
-  left: 41px;
-  line-height: 37px;
-  text-align: center;
-  text-transform: uppercase;
-  top: 324px;
-  width: 117px;
-}
-
-/* line 105, ../sass/screen.scss */
-#no_deposit_required {
-  color: white;
-  font-style: italic;
-  font-size: 80%;
-  left: 45px;
-  letter-spacing: 0.2px;
-  top: 367px;
-  width: 113px;
-}
-
-/* line 115, ../sass/screen.scss */
-#total {
-  color: white;
-  font-style: italic;
-  font-size: 14.5px;
-  left: 506px;
-  text-align: center;
-  top: 6px;
-}
-
-/* line 123, ../sass/screen.scss */
-.win_numb {
-  height: 49px;
-  text-align: center;
-  top: 26px;
-  width: 74px;
-}
-
-/* line 129, ../sass/screen.scss */
-#win_numb_1 {
-  left: 431px;
-}
-
-/* line 132, ../sass/screen.scss */
-#win_numb_2 {
-  left: 510px;
-}
-
-/* line 135, ../sass/screen.scss */
-#win_numb_3 {
-  left: 589px;
-}
-
-/* line 138, ../sass/screen.scss */
-#current_time {
-  height: 26px;
-  color: white;
-  font-size: 13.5px;
-  line-height: 26px;
-  padding-left: 27px;
-  right: 5px;
-  top: 14px;
-  width: 217px;
-}
-
-/* line 148, ../sass/screen.scss */
-#welcome_back {
-  height: 40px;
-  left: 10px;
-  top: 64px;
-  width: 188px;
-}
-
-/* line 156, ../sass/screen.scss */
-#left_top_box,
-.left_bottom_box {
-  left: 10px;
-  width: 180px;
-}
-
-/* line 160, ../sass/screen.scss */
-#left_top_box {
-  height: 272px;
-  top: 123px;
-}
-
-/* line 164, ../sass/screen.scss */
-.left_bottom_box {
-  height: 50px;
-  border-bottom: solid 1px #333;
-  color: red;
-  padding: 8px 13px;
-}
-
-/* line 170, ../sass/screen.scss */
-#left_bottom_box_1 {
-  top: 405px;
-  /* далее +50px	*/
-}
-
-/* line 173, ../sass/screen.scss */
-#left_bottom_box_2 {
-  top: 455px;
-}
-
-/* line 176, ../sass/screen.scss */
-#left_bottom_box_3 {
-  top: 505px;
-}
-
-/* line 179, ../sass/screen.scss */
-#left_bottom_box_4 {
-  top: 555px;
-}
-
-/* line 182, ../sass/screen.scss */
-#left_bottom_box_5 {
-  top: 605px;
-}
-
-/* line 186, ../sass/screen.scss */
-.right_block {
-  height: 170px;
-  right: 12px;
-  width: 134px;
-}
-
-/* line 191, ../sass/screen.scss */
-#right_block_promotions {
-  top: 67px;
-}
-
-/* line 194, ../sass/screen.scss */
-#right_block_live_support {
-  top: 246px;
-}
-
-/* line 198, ../sass/screen.scss */
-.scene_bingo {
-  background: url(../images/game_bingo.png);
-  height: 143px;
-  width: 118px;
-  /* позиции по горизонтали */
-  /* первая колонка */
-  /* вторая колонка */
-  /* третья колонка */
-  /* четвёртая колонка */
-}
-/* line 202, ../sass/screen.scss */
-.scene_bingo.top {
-  top: 118px;
-}
-/* line 204, ../sass/screen.scss */
-.scene_bingo.top + div {
-  /*кнопка в первом ряду: позиция по вертикали*/
-  top: 236px;
-}
-/* line 209, ../sass/screen.scss */
-.scene_bingo.middle {
-  top: 321px;
-}
-/* line 211, ../sass/screen.scss */
-.scene_bingo.middle + div {
-  /*кнопка во втором ряду: позиция по вертикали*/
-  top: 439px;
-}
-/* line 216, ../sass/screen.scss */
-.scene_bingo.bottom {
-  top: 523px;
-}
-/* line 218, ../sass/screen.scss */
-.scene_bingo.bottom + div {
-  /*кнопка в третьем ряду: позиция по вертикали*/
-  top: 641px;
-}
-/* line 223, ../sass/screen.scss */
-.scene_bingo + div {
-  /*кнопки во всех рядах: высота, ширина*/
-  display: block;
-  height: 25px;
-  font-size: 100%;
-  /* тот же, что и у wrapper'а!*/
-  line-height: 25px;
-  text-align: center;
-  width: 118px;
-  /* та же, что и у родительского блока, иначе возникнут проблемы - при относительном позиционировании увеличение размера шрифта может привести к непредсказуемым последствиям */
-}
-/* line 231, ../sass/screen.scss */
-.scene_bingo + div > div {
-  margin: auto;
-  position: static;
-  /* у родительского блока размер шрифта - 100%*/
-}
-/* line 238, ../sass/screen.scss */
-.scene_bingo.left {
-  left: 252px;
-}
-/* line 240, ../sass/screen.scss */
-.scene_bingo.left + div {
-  left: 252px;
-}
-/* line 245, ../sass/screen.scss */
-.scene_bingo .scene_bingo.center_left {
-  left: 405px;
-}
-/* line 247, ../sass/screen.scss */
-.scene_bingo .scene_bingo.center_left + div {
-  left: 405px;
-}
-/* line 252, ../sass/screen.scss */
-.scene_bingo .scene_bingo.center_right {
-  left: 559px;
-}
-/* line 254, ../sass/screen.scss */
-.scene_bingo .scene_bingo.center_right + div {
-  left: 559px;
-}
-/* line 259, ../sass/screen.scss */
-.scene_bingo .scene_bingo.right {
-  left: 708px;
-}
-/* line 261, ../sass/screen.scss */
-.scene_bingo .scene_bingo.right + div {
-  left: 708px;
-}
-
-/* line 269, ../sass/screen.scss */
-#my_balance,
-#currency_sum {
-  line-height: 50px;
-}
-
-/* line 272, ../sass/screen.scss */
-#my_balance {
-  bottom: 0;
-  margin-left: 12px;
-}
-
-/* line 276, ../sass/screen.scss */
-#currency_sum {
-  background-color: #0F0E32;
-  bottom: 11px;
-  color: white;
-  height: 29px;
-  line-height: 28px;
-  left: 99px;
-  text-align: center;
-  width: 88px;
-}
-
-/* line 286, ../sass/screen.scss */
-#bottom_top_left {
-  bottom: 51px;
-  height: 31px;
-  width: 80px;
-}
-
-/* line 292, ../sass/screen.scss */
-#bottom_menu_left_side,
-#bottom_menu_right_side {
-  bottom: 1px;
-}
-
-/* line 295, ../sass/screen.scss */
-#bottom_menu_left_side {
-  height: 50px;
-  width: 201px;
-}
-
-/* line 299, ../sass/screen.scss */
-#bottom_menu_right_side {
-  height: 47px;
-  left: 207px;
-  text-align: right;
-  padding: 18px 0;
-  width: 819px;
-}
-
-/* line 306, ../sass/screen.scss */
-.bottom_menu_item {
-  bottom: 3px;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 29px;
-  padding: 4px;
-  padding-left: 19px;
-}
-
-/* line 315, ../sass/screen.scss */
-#bottom_menu_item_profile {
-  left: 594px;
-}
-
-/* line 318, ../sass/screen.scss */
-#bottom_menu_item_cashier {
-  left: 676px;
-}
-
-/* line 321, ../sass/screen.scss */
-#bottom_menu_item_games {
-  left: 759px;
-  width: 84px;
-}
-
-/* line 325, ../sass/screen.scss */
-#bottom_menu_item_chat {
-  left: 855px;
-}
-
-/* line 328, ../sass/screen.scss */
-#bottom_menu_item_logout {
-  left: 954px;
-}
+Backtrace:
+D:/WebServers/home/localhost/www/-WMSoftware/games/sass/screen.scss:30:in `box-sizing'
+D:/WebServers/home/localhost/www/-WMSoftware/games/sass/screen.scss:30
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:100:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/visitors/perform.rb:7:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/engine.rb:315:in `_render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.10/lib/sass/engine.rb:262:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `call'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
+C:/Ruby200-x64/bin/compass:23:in `load'
+C:/Ruby200-x64/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'box-sizing'.\A         on line 30 of D:/WebServers/home/localhost/www/-WMSoftware/games/sass/screen.scss, in `box-sizing'\A         from line 30 of D:/WebServers/home/localhost/www/-WMSoftware/games/sass/screen.scss"; }

@@ -27,6 +27,7 @@ html, body {
 }
 body{
 	overflow:hidden;
+	@include box-sizing(border-box);
 	font: 100% normal;
 	*{
 		font-family: Avenir, Amaranth, Righteous-Regular;
@@ -166,22 +167,51 @@ div{
 	border-bottom: solid 1px #333;
 	color: red;
 	padding: 8px 13px;
+	&>div{
+		color:#FFF;
+		font-style:italic;
+		font-size: 78%;
+		font-weight: 100;
+		margin-right: 0;
+		right: 0px;
+		left: 12px;
+		bottom: -2px;
+		padding-left: 30px;
+		width: 170px;
+		&>div{
+			float:right;
+			font-size: 110%;
+			letter-spacing: 0;
+			margin-right: 4px;
+			position: static;
+		}
+	}
 }
-	#left_bottom_box_1{
-		top:405px; /* далее +50px	*/
-	}
-	#left_bottom_box_2{
-		top:455px;
-	}
-	#left_bottom_box_3{
-		top:505px;
-	}
-	#left_bottom_box_4{
-		top:555px;
-	}
-	#left_bottom_box_5{
-		top:605px;
-	}
+#left_bottom_box_1{
+	background: url(../images/copa.png) no-repeat 10px 17px;
+	font-style: italic;
+	font-size: 110%;
+	letter-spacing: 0.2px;
+	padding-top: 10px;
+	padding-left: 39px;
+	top:405px; /* далее +50px	*/
+}
+#left_bottom_box_2{
+	background: url(../images/flag_germany.png) no-repeat 12px 29px;
+	top:455px;
+}
+#left_bottom_box_3{
+	background:url(../images/flag_italy.png) no-repeat 12px 29px;
+	top:505px;
+}
+#left_bottom_box_4{
+	background:url(../images/flag_gb.png) no-repeat 12px 29px;
+	top:555px;
+}
+#left_bottom_box_5{
+	background:url(../images/flag_greece.png) no-repeat 12px 29px;
+	top:605px;
+}
 
 .right_block{
 	height: 170px;
