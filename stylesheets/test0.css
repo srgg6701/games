@@ -1,6 +1,9 @@
-
+body 
+*{
+	font-family: Avenir, Amaranth, Righteous-Regular;
+}
 div,span{
-	box-shadow: 0 0 0 1px #F00;
+	/* box-shadow: 0 0 0 1px #F00; */
 	box-sizing:border-box;	
 }
 div{
@@ -15,18 +18,71 @@ div{
 	width:100%;
 }
 	#logo{
-		left:15px;
-		top:8px;
+		/* color: #FFB600; */
+		font-size: 215%;
+		font-weight: bold;
+		left: 12px;
+		letter-spacing: 1.5px;
+		/* top: 0px; */
 	
 		height: 30px;
+		padding: 0;
 		width: 38%;
 	}
-	#winings{
-		left:430px;
-		top:8px;
-		height: 67px;
-		width: 235px;
+	#logo>span{
+		font-size: 71%;
+		letter-spacing: 1px;
+	}	
+	
+	#free{
+		background:url(../images/free.png);
+		height:58px;
+		left:133px;
+		top:124px;
+		width:58px;
 	}
+	#take_it{
+		height:15px;
+		color: white; 
+		font-weight: bold;
+		left:34px;
+		letter-spacing: 0.15px;
+		top: 157px;
+		width: 156px;
+	}
+	#seven{
+		background:url(../images/7euros.png);
+		height:112px;
+		left:41px;
+		top: 196px;
+		width: 130px;
+	}
+	#get_it_now{
+		background:url(../images/bg_get_it_now.png);
+		background-repeat: repeat-x;
+		border-radius: 3px;
+		border-left: solid 1px #000;
+		border-right: solid 1px #000;
+		font-style: italic;
+		font-weight: bold;
+		height: 37px;
+		left:41px;
+		line-height: 37px;
+		text-align: center;
+		text-transform: uppercase;
+		top: 324px;
+		width: 117px;
+	}
+	#no_deposit_required{
+		color:white;
+		font-style:italic;
+		font-size: 80%;
+		left:45px;
+		letter-spacing: 0.2px;
+		top: 367px;
+		width: 113px;
+	}
+
 		#total{
 			color: white;
 			font-style: italic;
@@ -35,7 +91,7 @@ div{
 			text-align:center;
 			top: 6px;
 		}
-		[id^="win_numb_"]{
+		.win_numb{
 			height: 49px;
 			text-align:center;
 			top:26px;
@@ -68,7 +124,7 @@ div{
 }				
 
 	#left_top_box,
-	[id^="left_bottom_box_"]{
+	.left_bottom_box{
 		/*position:relative;*/
 		left: 10px;
 		width:180px;
@@ -77,7 +133,7 @@ div{
 		height: 272px;
 		top: 123px;
 	}
-	[id^="left_bottom_box_"]{
+	.left_bottom_box{
 		height:50px;
 		border-bottom: solid 1px #333;
 		color: red;
@@ -99,7 +155,7 @@ div{
 			top:605px;
 		}
 
-	[id^="right_block_"]{
+	.right_block{
 		height: 170px;
 		right: 12px;
 		width: 134px;
@@ -111,43 +167,48 @@ div{
 		top: 246px	
 	}
 	
-[id^="scene_btn_"]{
-	height:138px;
+.scene_bingo{
+	background: url(../images/game_bingo.png);
+	height: 143px;
 	width: 118px;
 }
 	
-	[id^="scene_btn_top_"]{
-		top: 123px;	
+	.scene_bingo.top{
+		top: 118px;	
 	}	
-	[id^="scene_btn_middle_"]{
-		top: 324px;	
+	.scene_bingo.middle{
+		top: 321px;	
 	}	
-	[id^="scene_btn_bottom_"]{
-		top: 528px;	
+	.scene_bingo.bottom{
+		top: 523px;	
 	}
-
 	
-	[id^="scene_btn_"] 
+	.scene_bingo
 		+div{
 		/*кнопки во всех рядах: высота, ширина*/
+		display: block;
 		height: 25px;
-		font-size: 15px;
+		font-size: 100%;
 		line-height: 25px;
 		text-align: center;
 		width: 118px; /* та же, что и у родительского блока, иначе возникнут проблемы - при относительном позиционировании увеличение размера шрифта может привести к непредсказуемым последствиям */
 	}
-	
-	[id^="scene_btn_top_"] 
+	.scene_bingo
+		+div >div{
+		margin:auto;
+		position:static; /* у родительского блока размер шрифта - 100%*/
+	}
+	.scene_bingo.top
 		+div{
 		/*кнопка в первом ряду: позиция по вертикали*/
 		top: 236px;
 	}
-	[id^="scene_btn_middle_"] 
+	.scene_bingo.middle
 		+div{
 		/*кнопка во втором ряду: позиция по вертикали*/
-		top: 437px;
+		top: 439px;
 	}
-	[id^="scene_btn_bottom_"] 
+	.scene_bingo.bottom
 		+div{
 		/*кнопка в третьем ряду: позиция по вертикали*/
 		top: 641px;
@@ -155,72 +216,42 @@ div{
 
 		/* позиции по горизонтали */
 		/* первая колонка */
-		#scene_btn_top_1,
-		#scene_btn_middle_1,
-		#scene_btn_bottom_1{
-			left:255px;
+		.scene_bingo.left{
+			left: 252px;
 		}
-			#scene_btn_top_1 +div,
-			#scene_btn_middle_1 +div,
-			#scene_btn_bottom_1 +div{
-				left: 255px;
+			.scene_bingo.left +div{
+				left: 252px;
 			}
 		/* вторая колонка */
-		#scene_btn_top_2,
-		#scene_btn_middle_2,
-		#scene_btn_bottom_2{
+		.scene_bingo.center_left{
 			left:405px;
 		}
-			#scene_btn_top_2 +div,
-			#scene_btn_middle_2 +div,
-			#scene_btn_bottom_2 +div{
+			.scene_bingo.center_left +div{
 				left:405px;
 			}
 		/* третья колонка */
-		#scene_btn_top_3,
-		#scene_btn_middle_3,
-		#scene_btn_bottom_3{
+		.scene_bingo.center_right{
 			left:559px;
 		}
-			#scene_btn_top_3 +div,
-			#scene_btn_middle_3 +div,
-			#scene_btn_bottom_3 +div{
+			.scene_bingo.center_right +div{
 				left:559px;
 			}
 		/* четвёртая колонка */
-		#scene_btn_top_4,
-		#scene_btn_middle_4,
-		#scene_btn_bottom_4{
+		.scene_bingo.right{
 			left:708px;
 		}	
-			#scene_btn_top_4 +div,
-			#scene_btn_middle_4 +div,
-			#scene_btn_bottom_4 +div{
+			.scene_bingo.right +div{
 				left:708px;
 			}	
 
-/*#bottom_menu{
-	left:0;
-	bottom:0;
-	height:82px;
-	width:100%;
-}*/
-	
 	#my_balance,
 	#currency_sum{
-		/*display:inline-block;*/
 		line-height:50px;
-		/*position:static;*/
 	}
 	#my_balance{
 		bottom:0;
 		margin-left:12px;
 	}
-	/*
-	#currency{
-		text-align:center;
-		width: 112px;
-	}*/
 	#currency_sum{
 		background-color:#0F0E32;
 		bottom: 11px;
@@ -231,21 +262,18 @@ div{
 		left: 99px;
 		text-align: center;
 		width: 88px;
-}
+	}
 	#bottom_top_left{
 		bottom: 51px;
 		height:31px;
 		width:80px;
-	}
-	
+	}	
 	#bottom_menu_left_side,
 	#bottom_menu_right_side{
 		bottom: 1px;
-		/*display:inline-block;*/
 	}
 	#bottom_menu_left_side{
 		height: 50px;
-		/*margin-right: 6px;*/
 		width:201px;
 	}
 	#bottom_menu_right_side{
@@ -255,7 +283,7 @@ div{
 		padding: 18px 0;
 		width:819px;
 	}	
-	[id^="bottom_menu_item_"]{
+	.bottom_menu_item{
 		bottom: 3px;
 		color:white;
 		font-size: 16px;
@@ -274,7 +302,7 @@ div{
 		left: 759px;
 	
 		width: 84px;
-}
+	}
 	#bottom_menu_item_chat{
 		left: 855px;
 	}

@@ -76,10 +76,14 @@ html, body {
 /* line 28, ../sass/screen.scss */
 body {
   overflow: hidden;
-  font: 300% normal Avenir, Amaranth, Righteous-Regular;
+  font: 100% normal;
+}
+/* line 31, ../sass/screen.scss */
+body * {
+  font-family: Avenir, Amaranth, Righteous-Regular;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 #wrapper {
   background: url(../images/bg_bench.jpg);
   background-size: cover;
@@ -87,64 +91,135 @@ body {
   position: absolute;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 div, span {
   box-shadow: 0 0 0 1px #F00;
   box-sizing: border-box;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 div {
   position: absolute;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 49, ../sass/screen.scss */
 #top_bar {
   height: 11.71875%;
   width: 100%;
 }
 
-/* line 50, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 #logo {
-  left: 1.46484%;
-  top: 1.04167%;
+  left: 1.17188%;
   height: 3.90625%;
+  font-size: 200%;
   width: 38%;
 }
 
-/* line 56, ../sass/screen.scss */
-#winings {
-  left: 41.99219%;
-  top: 1.04167%;
-  height: 8.72396%;
-  width: 22.94922%;
-}
-
 /* line 62, ../sass/screen.scss */
-#total, #win_numb {
-  text-align: center;
-  width: 100%;
+#free {
+  background: url(../images/free.png);
+  height: 58px;
+  left: 133px;
+  top: 124px;
+  width: 58px;
 }
 
-/* line 68, ../sass/screen.scss */
-#win_numb
-> div {
-  display: inline-block;
-  height: 50px;
-  margin-right: 2px;
-  text-align: center;
-  width: 72px;
+/* line 70, ../sass/screen.scss */
+#take_it {
+  height: 15px;
+  color: white;
+  font-weight: bold;
+  left: 34px;
+  letter-spacing: 0.15px;
+  top: 157px;
+  width: 156px;
 }
 
-/* line 75, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
+#seven {
+  background: url(../images/7euros.png);
+  height: 112px;
+  left: 41px;
+  top: 196px;
+  width: 130px;
+}
+
+/* line 88, ../sass/screen.scss */
+#get_it_now {
+  background: url(../images/bg_get_it_now.png);
+  background-repeat: repeat-x;
+  border-radius: 3px;
+  border-left: solid 1px #000;
+  border-right: solid 1px #000;
+  font-style: italic;
+  font-weight: bold;
+  height: 37px;
+  left: 41px;
+  line-height: 37px;
+  text-align: center;
+  text-transform: uppercase;
+  top: 324px;
+  width: 117px;
+}
+
+/* line 105, ../sass/screen.scss */
+#no_deposit_required {
+  color: white;
+  font-style: italic;
+  font-size: 80%;
+  left: 45px;
+  letter-spacing: 0.2px;
+  top: 367px;
+  width: 113px;
+}
+
+/* line 115, ../sass/screen.scss */
+#total {
+  color: white;
+  font-style: italic;
+  font-size: 14.5px;
+  left: 506px;
+  text-align: center;
+  top: 6px;
+}
+
+/* line 123, ../sass/screen.scss */
+.win_numb {
+  height: 49px;
+  text-align: center;
+  top: 26px;
+  width: 74px;
+}
+
+/* line 129, ../sass/screen.scss */
+#win_numb_1 {
+  left: 431px;
+}
+
+/* line 132, ../sass/screen.scss */
+#win_numb_2 {
+  left: 510px;
+}
+
+/* line 135, ../sass/screen.scss */
+#win_numb_3 {
+  left: 589px;
+}
+
+/* line 138, ../sass/screen.scss */
 #current_time {
   height: 26px;
+  color: white;
+  font-size: 13.5px;
+  line-height: 26px;
+  padding-left: 27px;
   right: 5px;
   top: 14px;
   width: 217px;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 #welcome_back {
   height: 40px;
   left: 10px;
@@ -152,189 +227,244 @@ div {
   width: 188px;
 }
 
-/* line 88, ../sass/screen.scss */
-#left_block {
-  height: 540px;
+/* line 156, ../sass/screen.scss */
+#left_top_box,
+.left_bottom_box {
   left: 10px;
-  top: 124px;
   width: 180px;
 }
 
-/* line 94, ../sass/screen.scss */
-#top_box, #bottom_box {
-  width: 100%;
+/* line 160, ../sass/screen.scss */
+#left_top_box {
+  height: 272px;
+  top: 123px;
 }
 
-/* line 97, ../sass/screen.scss */
-#top_box {
-  height: 270px;
-  margin-bottom: 12px;
-}
-
-/* line 102, ../sass/screen.scss */
-#bottom_box {
-  height: 260px;
-}
-/* line 104, ../sass/screen.scss */
-#bottom_box div {
+/* line 164, ../sass/screen.scss */
+.left_bottom_box {
   height: 50px;
   border-bottom: solid 1px #333;
   color: red;
   padding: 8px 13px;
 }
 
-/* line 113, ../sass/screen.scss */
-#right_block {
-  height: 350px;
-  right: 12px;
-  top: 66px;
-  width: 134px;
-}
-
-/* line 120, ../sass/screen.scss */
-#promotions,
-#live_support {
-  height: 171px;
-  width: 100%;
-}
-
-/* line 124, ../sass/screen.scss */
-#promotions {
-  margin-bottom: 10px;
-}
-
-/* главная (центральная) сцена	*/
-/* line 129, ../sass/screen.scss */
-#scene
-> div {
-  height: 138px;
-  left: 255px;
-  width: 576px;
-}
-/* line 133, ../sass/screen.scss */
-#scene
-> div:nth-child(1) {
-  top: 123px;
-}
-/* line 134, ../sass/screen.scss */
-#scene
-> div:nth-child(2) {
-  top: 324px;
-}
-/* line 135, ../sass/screen.scss */
-#scene
-> div:nth-child(3) {
-  top: 528px;
-}
-/* line 136, ../sass/screen.scss */
-#scene
-> div > div {
-  height: 137px;
-  display: inline-block;
-  padding-top: 113px;
-  /* прижать к низу кнопку */
-  width: 118px;
-}
-/* line 141, ../sass/screen.scss */
-#scene
-> div > div:nth-child(1) {
-  left: 0;
-}
-/* line 142, ../sass/screen.scss */
-#scene
-> div > div:nth-child(2) {
-  left: 150px;
-}
-/* line 143, ../sass/screen.scss */
-#scene
-> div > div:nth-child(3) {
-  left: 304px;
-}
-/* line 144, ../sass/screen.scss */
-#scene
-> div > div:nth-child(4) {
-  left: 453px;
-  width: 123px;
-}
-/* line 146, ../sass/screen.scss */
-#scene
-> div button {
-  display: block;
-  height: 25px;
-  margin: auto;
-}
-
-/* line 153, ../sass/screen.scss */
-#bottom_menu {
-  left: 0;
-  bottom: 0;
-  height: 82px;
-  width: 100%;
-}
-
-/* line 161, ../sass/screen.scss */
-#my_balance,
-#currency,
-#currency_sum {
-  display: inline-block;
-  line-height: 50px;
-}
-
-/* line 166, ../sass/screen.scss */
-#my_balance {
-  margin-left: 12px;
-}
-
 /* line 170, ../sass/screen.scss */
-#currency {
-  text-align: center;
-  width: 112px;
+#left_bottom_box_1 {
+  top: 405px;
+  /* далее +50px	*/
 }
 
-/* line 174, ../sass/screen.scss */
-#currency_sum {
-  background-color: #0F0E32;
-  color: white;
-  line-height: 28px;
+/* line 173, ../sass/screen.scss */
+#left_bottom_box_2 {
+  top: 455px;
+}
+
+/* line 176, ../sass/screen.scss */
+#left_bottom_box_3 {
+  top: 505px;
 }
 
 /* line 179, ../sass/screen.scss */
-#top_left {
+#left_bottom_box_4 {
+  top: 555px;
+}
+
+/* line 182, ../sass/screen.scss */
+#left_bottom_box_5 {
+  top: 605px;
+}
+
+/* line 186, ../sass/screen.scss */
+.right_block {
+  height: 170px;
+  right: 12px;
+  width: 134px;
+}
+
+/* line 191, ../sass/screen.scss */
+#right_block_promotions {
+  top: 67px;
+}
+
+/* line 194, ../sass/screen.scss */
+#right_block_live_support {
+  top: 246px;
+}
+
+/* line 198, ../sass/screen.scss */
+.scene_bingo {
+  background: url(../images/game_bingo.png);
+  height: 143px;
+  width: 118px;
+  /* позиции по горизонтали */
+  /* первая колонка */
+  /* вторая колонка */
+  /* третья колонка */
+  /* четвёртая колонка */
+}
+/* line 202, ../sass/screen.scss */
+.scene_bingo.top {
+  top: 118px;
+}
+/* line 204, ../sass/screen.scss */
+.scene_bingo.top + div {
+  /*кнопка в первом ряду: позиция по вертикали*/
+  top: 236px;
+}
+/* line 209, ../sass/screen.scss */
+.scene_bingo.middle {
+  top: 321px;
+}
+/* line 211, ../sass/screen.scss */
+.scene_bingo.middle + div {
+  /*кнопка во втором ряду: позиция по вертикали*/
+  top: 439px;
+}
+/* line 216, ../sass/screen.scss */
+.scene_bingo.bottom {
+  top: 523px;
+}
+/* line 218, ../sass/screen.scss */
+.scene_bingo.bottom + div {
+  /*кнопка в третьем ряду: позиция по вертикали*/
+  top: 641px;
+}
+/* line 223, ../sass/screen.scss */
+.scene_bingo + div {
+  /*кнопки во всех рядах: высота, ширина*/
+  display: block;
+  height: 25px;
+  font-size: 100%;
+  /* тот же, что и у wrapper'а!*/
+  line-height: 25px;
+  text-align: center;
+  width: 118px;
+  /* та же, что и у родительского блока, иначе возникнут проблемы - при относительном позиционировании увеличение размера шрифта может привести к непредсказуемым последствиям */
+}
+/* line 231, ../sass/screen.scss */
+.scene_bingo + div > div {
+  margin: auto;
+  position: static;
+  /* у родительского блока размер шрифта - 100%*/
+}
+/* line 238, ../sass/screen.scss */
+.scene_bingo.left {
+  left: 252px;
+}
+/* line 240, ../sass/screen.scss */
+.scene_bingo.left + div {
+  left: 252px;
+}
+/* line 245, ../sass/screen.scss */
+.scene_bingo .scene_bingo.center_left {
+  left: 405px;
+}
+/* line 247, ../sass/screen.scss */
+.scene_bingo .scene_bingo.center_left + div {
+  left: 405px;
+}
+/* line 252, ../sass/screen.scss */
+.scene_bingo .scene_bingo.center_right {
+  left: 559px;
+}
+/* line 254, ../sass/screen.scss */
+.scene_bingo .scene_bingo.center_right + div {
+  left: 559px;
+}
+/* line 259, ../sass/screen.scss */
+.scene_bingo .scene_bingo.right {
+  left: 708px;
+}
+/* line 261, ../sass/screen.scss */
+.scene_bingo .scene_bingo.right + div {
+  left: 708px;
+}
+
+/* line 269, ../sass/screen.scss */
+#my_balance,
+#currency_sum {
+  line-height: 50px;
+}
+
+/* line 272, ../sass/screen.scss */
+#my_balance {
+  bottom: 0;
+  margin-left: 12px;
+}
+
+/* line 276, ../sass/screen.scss */
+#currency_sum {
+  background-color: #0F0E32;
+  bottom: 11px;
+  color: white;
+  height: 29px;
+  line-height: 28px;
+  left: 99px;
+  text-align: center;
+  width: 88px;
+}
+
+/* line 286, ../sass/screen.scss */
+#bottom_top_left {
+  bottom: 51px;
   height: 31px;
   width: 80px;
 }
 
-/* line 185, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 #bottom_menu_left_side,
 #bottom_menu_right_side {
-  bottom: 0;
-  display: inline-block;
+  bottom: 1px;
 }
 
-/* line 189, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 #bottom_menu_left_side {
   height: 50px;
-  margin-right: 6px;
   width: 201px;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 299, ../sass/screen.scss */
 #bottom_menu_right_side {
   height: 47px;
+  left: 207px;
   text-align: right;
   padding: 18px 0;
   width: 819px;
 }
 
-/* line 201, ../sass/screen.scss */
-#bottom_menu_right_side
-> span {
-  margin-left: 19px;
-  padding: 4px;
-}
-/* line 204, ../sass/screen.scss */
-#bottom_menu_right_side
-> span a {
+/* line 306, ../sass/screen.scss */
+.bottom_menu_item {
+  bottom: 3px;
   color: white;
-  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 29px;
+  padding: 4px;
+  padding-left: 19px;
+}
+
+/* line 315, ../sass/screen.scss */
+#bottom_menu_item_profile {
+  left: 594px;
+}
+
+/* line 318, ../sass/screen.scss */
+#bottom_menu_item_cashier {
+  left: 676px;
+}
+
+/* line 321, ../sass/screen.scss */
+#bottom_menu_item_games {
+  left: 759px;
+  width: 84px;
+}
+
+/* line 325, ../sass/screen.scss */
+#bottom_menu_item_chat {
+  left: 855px;
+}
+
+/* line 328, ../sass/screen.scss */
+#bottom_menu_item_logout {
+  left: 954px;
 }

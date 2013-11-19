@@ -79,31 +79,31 @@ div{
 		width:136px;
 	}
 	
-[id^="scene_btn_"]{
+[id^="scene_bingo_"]{
 	height:138px;
 }
-	[id^="scene_btn_top_"] 
+	[id^="scene_bingo_top_"] 
 		+div{
 		/*кнопка: высота, ширина*/
 		height: 25px;
 		width: 123px;
 	}
-	[id^="scene_btn_top_"]{
+	[id^="scene_bingo_top_"]{
 		top:123px;	
 	}	
-		[id^="scene_btn_top"] +div{
+		[id^="scene_bingo_top"] +div{
 			/*кнопка, position*/
 		}
-	[id^="scene_btn_middle_"]{
+	[id^="scene_bingo_middle_"]{
 		top: 324px;	
 	}	
-		[id^="scene_btn_middle_"] +div{
+		[id^="scene_bingo_middle_"] +div{
 			/*кнопка, position*/
 		}
-	[id^="scene_btn_bottom_"]{
+	[id^="scene_bingo_bottom_"]{
 		top:528px;	
 	}
-		[id^="scene_btn_bottom_"] +div{
+		[id^="scene_bingo_bottom_"] +div{
 			/*кнопка, position*/
 		}
 
