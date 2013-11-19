@@ -1,0 +1,284 @@
+
+div,span{
+	box-shadow: 0 0 0 1px #F00;
+	box-sizing:border-box;	
+}
+div{
+	position:absolute;
+}
+#wrapper {
+	width:1027px;
+	height:768px
+}
+#top_bar{
+	height:90px;
+	width:100%;
+}
+	#logo{
+		left:15px;
+		top:8px;
+	
+		height: 30px;
+		width: 38%;
+	}
+	#winings{
+		left:430px;
+		top:8px;
+		height: 67px;
+		width: 235px;
+	}
+		#total{
+			color: white;
+			font-style: italic;
+			font-size: 14.5px;
+			left: 506px;
+			text-align:center;
+			top: 6px;
+		}
+		[id^="win_numb_"]{
+			height: 49px;
+			text-align:center;
+			top:26px;
+			width: 74px;
+		}		
+		#win_numb_1{
+			left: 431px;
+		}
+		#win_numb_2{
+			left: 510px;
+		}
+		#win_numb_3{
+			left: 589px;
+		}
+	#current_time{
+		height: 26px;
+		color: white;
+		font-size: 13.5px;
+		line-height: 26px;
+		padding-left: 27px;
+		right: 5px;
+		top:14px;
+		width: 217px;
+	}
+#welcome_back{
+	height:40px;
+	left:10px;
+	top: 64px;
+	width:188px;
+}				
+
+	#left_top_box,
+	[id^="left_bottom_box_"]{
+		/*position:relative;*/
+		left: 10px;
+		width:180px;
+	}
+	#left_top_box{
+		height: 272px;
+		top: 123px;
+	}
+	[id^="left_bottom_box_"]{
+		height:50px;
+		border-bottom: solid 1px #333;
+		color: red;
+		padding: 8px 13px;
+	}
+		#left_bottom_box_1{
+			top:405px; /* далее +50px	*/
+		}
+		#left_bottom_box_2{
+			top:455px;
+		}
+		#left_bottom_box_3{
+			top:505px;
+		}
+		#left_bottom_box_4{
+			top:555px;
+		}
+		#left_bottom_box_5{
+			top:605px;
+		}
+
+	[id^="right_block_"]{
+		height: 170px;
+		right: 12px;
+		width: 134px;
+	}
+	#right_block_promotions{
+		top: 67px;
+	}
+	#right_block_live_support{
+		top: 246px	
+	}
+	
+[id^="scene_btn_"]{
+	height:138px;
+	width: 118px;
+}
+	
+	[id^="scene_btn_top_"]{
+		top: 123px;	
+	}	
+	[id^="scene_btn_middle_"]{
+		top: 324px;	
+	}	
+	[id^="scene_btn_bottom_"]{
+		top: 528px;	
+	}
+
+	
+	[id^="scene_btn_"] 
+		+div{
+		/*кнопки во всех рядах: высота, ширина*/
+		height: 25px;
+		font-size: 15px;
+		line-height: 25px;
+		text-align: center;
+		width: 118px; /* та же, что и у родительского блока, иначе возникнут проблемы - при относительном позиционировании увеличение размера шрифта может привести к непредсказуемым последствиям */
+	}
+	
+	[id^="scene_btn_top_"] 
+		+div{
+		/*кнопка в первом ряду: позиция по вертикали*/
+		top: 236px;
+	}
+	[id^="scene_btn_middle_"] 
+		+div{
+		/*кнопка во втором ряду: позиция по вертикали*/
+		top: 437px;
+	}
+	[id^="scene_btn_bottom_"] 
+		+div{
+		/*кнопка в третьем ряду: позиция по вертикали*/
+		top: 641px;
+	}
+
+		/* позиции по горизонтали */
+		/* первая колонка */
+		#scene_btn_top_1,
+		#scene_btn_middle_1,
+		#scene_btn_bottom_1{
+			left:255px;
+		}
+			#scene_btn_top_1 +div,
+			#scene_btn_middle_1 +div,
+			#scene_btn_bottom_1 +div{
+				left: 255px;
+			}
+		/* вторая колонка */
+		#scene_btn_top_2,
+		#scene_btn_middle_2,
+		#scene_btn_bottom_2{
+			left:405px;
+		}
+			#scene_btn_top_2 +div,
+			#scene_btn_middle_2 +div,
+			#scene_btn_bottom_2 +div{
+				left:405px;
+			}
+		/* третья колонка */
+		#scene_btn_top_3,
+		#scene_btn_middle_3,
+		#scene_btn_bottom_3{
+			left:559px;
+		}
+			#scene_btn_top_3 +div,
+			#scene_btn_middle_3 +div,
+			#scene_btn_bottom_3 +div{
+				left:559px;
+			}
+		/* четвёртая колонка */
+		#scene_btn_top_4,
+		#scene_btn_middle_4,
+		#scene_btn_bottom_4{
+			left:708px;
+		}	
+			#scene_btn_top_4 +div,
+			#scene_btn_middle_4 +div,
+			#scene_btn_bottom_4 +div{
+				left:708px;
+			}	
+
+/*#bottom_menu{
+	left:0;
+	bottom:0;
+	height:82px;
+	width:100%;
+}*/
+	
+	#my_balance,
+	#currency_sum{
+		/*display:inline-block;*/
+		line-height:50px;
+		/*position:static;*/
+	}
+	#my_balance{
+		bottom:0;
+		margin-left:12px;
+	}
+	/*
+	#currency{
+		text-align:center;
+		width: 112px;
+	}*/
+	#currency_sum{
+		background-color:#0F0E32;
+		bottom: 11px;
+		color:white;
+		height: 29px;
+		line-height:28px;
+	
+		left: 99px;
+		text-align: center;
+		width: 88px;
+}
+	#bottom_top_left{
+		bottom: 51px;
+		height:31px;
+		width:80px;
+	}
+	
+	#bottom_menu_left_side,
+	#bottom_menu_right_side{
+		bottom: 1px;
+		/*display:inline-block;*/
+	}
+	#bottom_menu_left_side{
+		height: 50px;
+		/*margin-right: 6px;*/
+		width:201px;
+	}
+	#bottom_menu_right_side{
+		height: 47px;
+		left: 207px;
+		text-align:right;
+		padding: 18px 0;
+		width:819px;
+	}	
+	[id^="bottom_menu_item_"]{
+		bottom: 3px;
+		color:white;
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 29px;
+		padding:4px;	
+		padding-left: 19px;
+	}
+	#bottom_menu_item_profile{
+		left: 594px;
+	}
+	#bottom_menu_item_cashier{
+		left: 676px;
+	}
+	#bottom_menu_item_games{
+		left: 759px;
+	
+		width: 84px;
+}
+	#bottom_menu_item_chat{
+		left: 855px;
+	}
+	#bottom_menu_item_logout{
+		left: 954px;
+	}
+	
