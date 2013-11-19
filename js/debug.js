@@ -19,7 +19,7 @@ function getUrlParams(){
 	return args;
 }
 $(function(){
-	var bg=false,
+/*	var bg=false,
 		d=document;
 	if(bg=getUrlParams().debug){
 		var calc=function(){
@@ -40,6 +40,6 @@ $(function(){
 		//calc();
 		//window.onresize=function(){calc();};
 		var urlParams=getUrlParams();
+	}*/
 		$('#css_screen').after('<link media="screen" href="stylesheets/debug.css" rel="stylesheet" type="text/css">');
-	}
 });

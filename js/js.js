@@ -38,6 +38,7 @@ $(function(){
 		var scale=gameContainer.offsetWidth/maxContainerWidth; 
 		// 	0.8789 =			       900 / 1024 
 		//0.1
+		console.log('scale: '+scale);
 		$('div',gameContainer).css('zoom',scale);
 	}
 	setScreenParams();
