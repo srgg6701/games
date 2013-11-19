@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<!--<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />-->
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <title>Las Vegas</title>
 <script src="js/jquery-1.9.1.js"></script>
-<!--<script src="js/debug.js"></script>-->
+<script src="js/debug.js"></script>
 <?	if(isset($_GET['test'])):?>
 <link media="screen" rel="stylesheet" type="text/css" href="stylesheets/test0.css">
 <?	else:
