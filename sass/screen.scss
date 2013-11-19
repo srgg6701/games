@@ -60,7 +60,7 @@ div{
 		@include calcWidth(235);
 	}
 		#total,#win_numb{
-			position:relative;
+			//position:relative;
 			text-align:center;
 			width:100%;
 		}
@@ -68,7 +68,6 @@ div{
 			>div{
 			display:inline-block;
 			height: 50px;
-			position:relative;
 			margin-right:2px;
 			text-align:center;
 			width: 72px;
@@ -93,7 +92,6 @@ div{
 	width: 180px;
 }
 	#top_box,#bottom_box{
-		position:relative;
 		width:100%;
 	}
 	#top_box{
@@ -108,7 +106,7 @@ div{
 			border-bottom: solid 1px #333;
 			color: red;
 			padding: 8px 13px;
-			position:static;
+			//position:static;
 		}
 	}
 
@@ -121,7 +119,6 @@ div{
 	#promotions,
 	#live_support{
 		height: 171px;
-		position:relative;
 		width:100%;
 	}
 	#promotions{
@@ -159,17 +156,12 @@ div{
 	height:82px;
 	width:100%;
 }
-	#top_left,
-	#bottom_menu_left_side{
-		position:relative;
-	}
-	
 	#my_balance,
 	#currency,
 	#currency_sum{
 		display:inline-block;
 		line-height:50px;
-		position:static;
+		//position:static;
 	}
 	#my_balance{
 		margin-left:12px;

@@ -16,7 +16,6 @@ div{
 	background:url(images/bg_full_white.jpg);
 	width:1027px;
 	height:768px
-	/* */	
 }
 #top_bar{
 	height:90px;
@@ -35,23 +34,23 @@ div{
 		height: 67px;
 		width: 235px;
 	}
-		#total,#win_numb{
-			position:relative;
+		#total,
+		[id^="win_numb"]{
+			/*position:relative;*/
 			text-align:center;
-			width:100%;
+			/*width:100%;*/
 		}
-		#win_numb
-			>div{
-			display:inline-block;
+		[id^="win_numb"]{
+			/*display:inline-block;*/
 			height: 50px;
-			position:relative;
-			margin-right:2px;
+			/*position:relative;
+			margin-right:2px;*/
 			text-align:center;
 			width: 72px;
 		}
 	#current_time{
 		height: 26px;
-		right: 5px;
+		/*right: 5px;*/
 		top:14px;
 		width: 217px;
 	}
@@ -62,30 +61,16 @@ div{
 	width:188px;
 }				
 
-#left_block{
-	height:540px;	
-	left: 10px;	
-	top: 124px;
-	width: 180px;
-}
-	#top_box,#bottom_box{
-		position:relative;
-		width:100%;
+	#left_top_box,#left_bottom_box{
+		/*position:relative;*/
+		width:180px;
 	}
-	#top_box{
-		height: 270px;
-		margin-bottom: 12px;
-	}
-	#bottom_box{
-		height: 260px;
-	}
-	#bottom_box
-		div{
+	[id^="left_bottom_box_"]{
 		height:50px;
 		border-bottom: solid 1px #333;
 		color: red;
 		padding: 8px 13px;
-		position:static;
+		/*position:static;*/
 	}
 
 #right_block{
@@ -94,77 +79,39 @@ div{
 	top: 66px;
 	width: 134px;
 }
-	#promotions,
-	#live_support{
+	[id^="right_block_"]{
 		height: 171px;
-		position:relative;
-		width:100%;
-	}
-	#promotions{
-		margin-bottom: 10px;
+		/*position:relative;*/
+		width:136px;
 	}
 	
-#scene
-	>div{
+[id^="scene_btn_"]{
 	height:138px;
-	left:255px;
-	width: 576px;
 }
-	#scene
-		>div:nth-child(1){
+	[id^="scene_btn_top_"] 
+		+div{
+		/*кнопка: высота, ширина*/
+		height: 25px;
+		width: 123px;
+	}
+	[id^="scene_btn_top_"]{
 		top:123px;	
 	}	
-	#scene
-		>div:nth-child(2){
+		[id^="scene_btn_top"] +div{
+			/*кнопка, position*/
+		}
+	[id^="scene_btn_middle_"]{
 		top: 324px;	
 	}	
-	#scene
-		>div:nth-child(3){
+		[id^="scene_btn_middle_"] +div{
+			/*кнопка, position*/
+		}
+	[id^="scene_btn_bottom_"]{
 		top:528px;	
 	}
-	
-	#scene
-		>div
-			>div{
-		height:137px;
-		display: inline-block;
-		padding-top: 113px; /* прижать к низу кнопку */
-		width: 118px;
-	}	
-	
-	#scene
-		>div
-			>div:nth-child(1){
-		left:0;
-	}	
-	
-	#scene
-		>div
-			>div:nth-child(2){
-		left:150px;
-	
-		width: 123px;
-}	
-	
-	#scene
-		>div
-			>div:nth-child(3){
-		left:304px;
-	}	
-	
-	#scene
-		>div
-			>div:nth-child(4){
-		left:453px;
-		width: 123px;
-	}	
-
-#scene button{
-	display:block;
-	height: 25px;
-	margin: auto;
-}
-	
+		[id^="scene_btn_bottom_"] +div{
+			/*кнопка, position*/
+		}
 
 #bottom_menu{
 	left:0;
@@ -172,26 +119,22 @@ div{
 	height:82px;
 	width:100%;
 }
-	#top_left,
-	#bottom_menu_left_side{
-		position:relative;
-	}
 	
 	#my_balance,
-	#currency,
+	/*#currency,*/
 	#currency_sum{
-		display:inline-block;
+		/*display:inline-block;*/
 		line-height:50px;
-		position:static;
+		/*position:static;*/
 	}
 	#my_balance{
 		margin-left:12px;
 	}
-	
+	/*
 	#currency{
 		text-align:center;
 		width: 112px;
-	}
+	}*/
 	#currency_sum{
 		background-color:#0F0E32;
 		color:white;
@@ -205,11 +148,11 @@ div{
 	#bottom_menu_left_side,
 	#bottom_menu_right_side{
 		bottom:0;
-		display:inline-block;
+		/*display:inline-block;*/
 	}
 	#bottom_menu_left_side{
 		height: 50px;
-		margin-right: 6px;
+		/*margin-right: 6px;*/
 		width:201px;
 	}
 	#bottom_menu_right_side{
@@ -218,118 +161,133 @@ div{
 		padding: 18px 0;
 		width:819px;
 	}	
-	#bottom_menu_right_side
-		>span{
-		margin-left: 19px;
-		padding:4px;	
-	}
-	#bottom_menu_right_side
-		>span
-			a{
+	[id^="bottom_menu_item_"]{
+		/*margin-left: 19px;*/
 		color:white;
-		text-decoration:none;
+		padding:4px;	
 	}
 </style>
 
 </head>
 <body>
 <div id="wrapper">
+    
     <div id="top_bar">
-    	<div id="logo">
-        </div>
-        <div id="winings">
-            <div id="total">
-            	Total Winings
-            </div>
-            <div id="win_numb">
-            	<div>999</div>
-            	<div>999</div>
-            	<div>999</div>
-            </div>
-        </div>
+    </div>
+        
         <div id="current_time">
             17:06 GMT - Friday 07 Sept, 2013
         </div>
-    </div>
+    	
+        <div id="logo">
+        </div>
+        
+        <div id="winings">
+        </div>
+
+            <div id="total">
+            	Total Winings
+            </div>
+
+            <div id="win_numb">
+            </div>
+
+            	<div id="win_numb_1">999</div>
+            	<div id="win_numb_2">999</div>
+            	<div id="win_numb_3">999</div>
+
+    
     <div id="welcome_back"></div>
-	<div id="left_block">
-        <div id="top_box"></div>
-        <div id="bottom_box">
-        	<div>Resent Winners</div>
-        	<div>Slot Machine</div>
-        	<div>Bingo</div>
-        	<div>Scratch to win</div>
-        	<div>Rotate it</div>
+	
+    <!--<div id="left_block">
+    </div>-->
+
+        <div id="left_top_box"></div>
+        
+        <div id="left_bottom_box">
         </div>
-    </div>
-    <div id="scene">
-    	<div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        </div>
-    	<div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        </div>
-    	<div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        </div>
-    </div>
-    <div id="right_block">
-    	<div id="promotions"></div>
-        <div id="live_support"></div>
-    </div>
+        	
+            <div id="left_bottom_box_1">Resent Winners</div>
+        	<div id="left_bottom_box_2">Slot Machine</div>
+        	<div id="left_bottom_box_3">Bingo</div>
+        	<div id="left_bottom_box_4">Scratch to win</div>
+        	<div id="left_bottom_box_5">Rotate it</div>
+
+    <!--<div id="scene">
+    </div>-->
+
+    	<!--<div>
+        </div>-->
+    		
+            <!-- ! Buttons	-->
+        
+        	<div id="scene_btn_top_1"></div>
+				<div>Cool Farmers</div>
+        	<div id="scene_btn_top_2"></div>
+				<div>Las Vegas Party</div>
+        	<div id="scene_btn_top_3"></div>
+				<div>Cool Farmers</div>
+        	<div id="scene_btn_top_4"></div>						
+            	<div>Las Vegas Party</div>
+        
+        <!--<div>
+        </div>-->
+
+        	<div id="scene_btn_middle_1"></div>
+				<div>Cool Farmers</div>
+        	<div id="scene_btn_middle_2"></div>
+				<div>Las Vegas Party</div>
+        	<div id="scene_btn_middle_3"></div>
+				<div>Cool Farmers</div>
+        	<div id="scene_btn_middle_4"></div>
+				<div>Las Vegas Party</div>
+
+    	<!--<div>
+        </div>-->
+
+        	<div id="scene_btn_bottom_1"></div>
+				<div>Cool Farmers</div>
+        	<div id="scene_btn_bottom_2"></div>
+				<div>Las Vegas Party</div>
+        	<div id="scene_btn_bottom_3"></div>
+				<div>Cool Farmers</div>
+        	<div id="scene_btn_bottom_4"></div>
+				<div>Las Vegas Party</div>
+
+    <!--<div id="right_block">
+    </div>-->
+    	
+        <div id="right_block_promotions"></div>
+        <div id="right_block_live_support"></div>
+    
     <div id="bottom_menu">
-    	<div id="top_left"></div>
-    	<div id="bottom_menu_left_side">
-        	<div id="my_balance">
-            	<a href="#">My <b>Balance</b></a>
+    </div>
+
+    	<!-- background -->
+        <div id="top_left"></div>
+    	<!-- background -->
+        <div id="bottom_menu_left_side"></div>
+    	
+        	<div id="my_balance">My <b>Balance</b>
+            	<!--<a href="#"></a>-->
             </div>
-            <div id="currency">
-            	<div id="currency_sum">
+            
+            <!--<div id="currency">
+            </div>-->
+            	
+                <div id="currency_sum">
                 	3.52 &euro;
                 </div>
-            </div>
+        
+    	<!-- background -->
+        <div id="bottom_menu_right_side">
         </div>
-    	<div id="bottom_menu_right_side">
-	        <span id="bottom_menu_profile"><a href="#">Profile</a></span>
-	        <span id="bottom_menu_cashier"><a href="#">Cashier</a></span>
-	        <span id="bottom_menu_games"><a href="#">Games</a></span>
-	        <span id="bottom_menu_chat"><a href="#">Live Chat</a></span>
-	        <span id="bottom_menu_logout"><a href="#">Logout</a></span>
-        </div>
-    </div>
+
+	        <div id="bottom_menu_item_profile">Profile</div>
+	        <div id="bottom_menu_item_cashier">Cashier</div>
+	        <div id="bottom_menu_item_games">Games</div>
+	        <div id="bottom_menu_item_chat">Live Chat</div>
+	        <div id="bottom_menu_item_logout">Logout</div>
 </div>
 </body>
 </html>
