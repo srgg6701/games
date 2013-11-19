@@ -4,15 +4,33 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/typography";
+
+// перерасчитать пикселы в %%:
+@mixin calcHeight($height){
+	height: ($height/768*100)*1%;
+}
+@mixin calcTop($top){
+	top: ($top/768*100)*1%;
+}
+@mixin calcLeft($left){
+	left: ($left/1024*100)*1%;
+}
+@mixin calcWidth($width){
+	width: ($width/1024*100)*1%;
+}
+
+$base-font-size: 16px;
 
 html, body {
 	height: 100%;
 }
 body{
 	overflow:hidden;
+	font: 300% normal Avenir, Amaranth, Righteous-Regular;
 }
 #wrapper {
-	//background:url(../images/bg_bench.jpg);
+	background:url(../images/bg_bench.jpg);
 	background-size: cover;
     background-repeat: no-repeat;
 	position:absolute;
@@ -26,21 +44,20 @@ div{
 	position:absolute;
 }
 #top_bar{
-	height:90px;
+	@include calcHeight(90);
 	width:100%;
 }
 	#logo{
-		left:15px;
-		top:8px;
-	
-		height: 30px;
+		@include calcLeft(15);
+		@include calcTop(8);
+		@include calcHeight(30);
 		width: 38%;
 	}
 	#winings{
-		left: 41.95%;/*left:430px; */
-		top:8px;
-		height: 67px;
-		width: 235px;
+		@include calcLeft(430);
+		@include calcTop(8);	
+		@include calcHeight(67);
+		@include calcWidth(235);
 	}
 		#total,#win_numb{
 			position:relative;

@@ -6,18 +6,23 @@
 <title>Las Vegas</title>
 <link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/screen.css">
 <script src="js/jquery-1.9.1.js"></script>
-<!--<script src="js/debug.js"></script>
-<script src="js/js.js"></script>-->
-
+<!--<script src="js/debug.js"></script>-->
+<script src="js/js.js"></script>
+<?	if(isset($_GET['test'])):?>
 <link media="screen" rel="stylesheet" type="text/css" href="stylesheets/test.css">
-
-
+<?	endif;?>
 </head>
 <body>
 <div id="wrapper">
     <div id="top_bar">
-    	<div id="logo">
+        <div id="current_time">
+            17:06 GMT - Friday 07 Sept, 2013
         </div>
+    </div>
+    	
+        <div id="logo">
+        </div>
+        
         <div id="winings">
             <div id="total">
             	Total Winings
@@ -28,10 +33,8 @@
             	<div>999</div>
             </div>
         </div>
-        <div id="current_time">
-            17:06 GMT - Friday 07 Sept, 2013
-        </div>
-    </div>
+
+    
     <div id="welcome_back"></div>
 	<div id="left_block">
         <div id="top_box"></div>

@@ -68,65 +68,66 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 html, body {
   height: 100%;
 }
 
-/* line 11, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 body {
   overflow: hidden;
+  font: 300% normal Avenir, Amaranth, Righteous-Regular;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 #wrapper {
+  background: url(../images/bg_bench.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 div, span {
   box-shadow: 0 0 0 1px #F00;
   box-sizing: border-box;
 }
 
-/* line 25, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 div {
   position: absolute;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 #top_bar {
-  height: 90px;
+  height: 11.71875%;
   width: 100%;
 }
 
-/* line 32, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 #logo {
-  left: 15px;
-  top: 8px;
-  height: 30px;
+  left: 1.46484%;
+  top: 1.04167%;
+  height: 3.90625%;
   width: 38%;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 #winings {
-  left: 41.95%;
-  /*left:430px; */
-  top: 8px;
-  height: 67px;
-  width: 235px;
+  left: 41.99219%;
+  top: 1.04167%;
+  height: 8.72396%;
+  width: 22.94922%;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 #total, #win_numb {
   position: relative;
   text-align: center;
   width: 100%;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 #win_numb
 > div {
   display: inline-block;
@@ -137,7 +138,7 @@ div {
   width: 72px;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 #current_time {
   height: 26px;
   right: 5px;
@@ -145,7 +146,7 @@ div {
   width: 217px;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 #welcome_back {
   height: 40px;
   left: 10px;
@@ -153,7 +154,7 @@ div {
   width: 188px;
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 #left_block {
   height: 540px;
   left: 10px;
@@ -161,23 +162,23 @@ div {
   width: 180px;
 }
 
-/* line 78, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 #top_box, #bottom_box {
   position: relative;
   width: 100%;
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 #top_box {
   height: 270px;
   margin-bottom: 12px;
 }
 
-/* line 87, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #bottom_box {
   height: 260px;
 }
-/* line 89, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 #bottom_box div {
   height: 50px;
   border-bottom: solid 1px #333;
@@ -186,7 +187,7 @@ div {
   position: static;
 }
 
-/* line 98, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 #right_block {
   height: 350px;
   right: 12px;
@@ -194,7 +195,7 @@ div {
   width: 134px;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #promotions,
 #live_support {
   height: 171px;
@@ -202,35 +203,35 @@ div {
   width: 100%;
 }
 
-/* line 110, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #promotions {
   margin-bottom: 10px;
 }
 
 /* главная (центральная) сцена	*/
-/* line 115, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 #scene
 > div {
   height: 138px;
   left: 255px;
   width: 576px;
 }
-/* line 119, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 #scene
 > div:nth-child(1) {
   top: 123px;
 }
-/* line 120, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 #scene
 > div:nth-child(2) {
   top: 324px;
 }
-/* line 121, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 #scene
 > div:nth-child(3) {
   top: 528px;
 }
-/* line 122, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 #scene
 > div > div {
   height: 137px;
@@ -239,28 +240,28 @@ div {
   /* прижать к низу кнопку */
   width: 118px;
 }
-/* line 127, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 #scene
 > div > div:nth-child(1) {
   left: 0;
 }
-/* line 128, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 #scene
 > div > div:nth-child(2) {
   left: 150px;
 }
-/* line 129, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 #scene
 > div > div:nth-child(3) {
   left: 304px;
 }
-/* line 130, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 #scene
 > div > div:nth-child(4) {
   left: 453px;
   width: 123px;
 }
-/* line 132, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 #scene
 > div button {
   display: block;
@@ -268,7 +269,7 @@ div {
   margin: auto;
 }
 
-/* line 139, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #bottom_menu {
   left: 0;
   bottom: 0;
@@ -276,13 +277,13 @@ div {
   width: 100%;
 }
 
-/* line 146, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 #top_left,
 #bottom_menu_left_side {
   position: relative;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 #my_balance,
 #currency,
 #currency_sum {
@@ -291,45 +292,45 @@ div {
   position: static;
 }
 
-/* line 157, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 #my_balance {
   margin-left: 12px;
 }
 
-/* line 161, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 #currency {
   text-align: center;
   width: 112px;
 }
 
-/* line 165, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 #currency_sum {
   background-color: #0F0E32;
   color: white;
   line-height: 28px;
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 #top_left {
   height: 31px;
   width: 80px;
 }
 
-/* line 176, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 #bottom_menu_left_side,
 #bottom_menu_right_side {
   bottom: 0;
   display: inline-block;
 }
 
-/* line 180, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 #bottom_menu_left_side {
   height: 50px;
   margin-right: 6px;
   width: 201px;
 }
 
-/* line 185, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 #bottom_menu_right_side {
   height: 47px;
   text-align: right;
@@ -337,13 +338,13 @@ div {
   width: 819px;
 }
 
-/* line 192, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 #bottom_menu_right_side
 > span {
   margin-left: 19px;
   padding: 4px;
 }
-/* line 195, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 #bottom_menu_right_side
 > span a {
   color: white;

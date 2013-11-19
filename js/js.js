@@ -38,11 +38,11 @@ $(function(){
 		var scale=gameContainer.offsetWidth/maxContainerWidth; 
 		// 	0.8789 =			       900 / 1024 
 		//0.1
-		$('#container').text(gameContainer.offsetWidth);
-		$('#max').text(maxContainerWidth);
-		$('#screen').text(screen.width);
-		$('#scale').text(scale);
-		$('td',gameContainer).css('zoom',scale);
+		//$('#container').text(gameContainer.offsetWidth);
+		//$('#max').text(maxContainerWidth);
+		//$('#screen').text(screen.width);
+		//$('#scale').text(scale);
+		$('div',gameContainer).css('zoom',scale);
 	}
 	setScreenParams();
 	window.onresize=function(){
