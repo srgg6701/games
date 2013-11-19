@@ -31,13 +31,13 @@
 </head>
 <body>
 <div id="wrapper">
-    
-    <div id="top_bar">
+	
+  <div id="top_bar">
     </div>
         
         <div id="current_time">
-            17:06 GMT - Friday 07 Sept, 2013
-        </div>
+          <b>17:06</b> GMT - Friday 07 Sept, 2013
+  </div>
     	
         <div id="logo">Brand<span>.com</span></div>
         
@@ -45,20 +45,31 @@
             	Total Winings
             </div>
 
-            	<div class="win_numb" id="win_numb_1">999</div>
-            	<div class="win_numb" id="win_numb_2">999</div>
-            	<div class="win_numb" id="win_numb_3">999</div>
+  <div class="win_numb" id="win_numb_1">
+                </div>
+  <div id="hell666_1" class="h666"></div>
+  <div class="win_numb" id="win_numb_2">
+                </div>
+  <div id="hell666_2" class="h666"></div>
+  <div class="win_numb" id="win_numb_3">
+                </div>
+  <div id="hell666_3" class="h666"></div>
 
     
-    <div id="welcome_back"></div>
+    <div id="welcome_back">
+    	Welcome back, 
+        <div class="user_name">Jhon Doe! <img src="images/pointer_down.png" width="11" height="5"></div>
+  </div>
 	
-        <div id="left_top_box">
+        <div class="float_panel" id="left_top_box">
         </div>
         	<div id="free"></div>
         	<div id="take_it">Take it, it's Yours!</div>
             <div id="seven"></div>
             <div id="get_it_now">Get it now!</div>
             <div id="no_deposit_required">No deposit required</div>
+  			
+        <div class="float_panel" id="left_bottom_palette"></div>
         
             <div class="left_bottom_box" id="left_bottom_box_1">Resent Winners
             </div>
@@ -82,7 +93,16 @@
                 	<div>500 &euro;</div>
                 </div>
             </div>
-            <!-- ! Buttons	-->
+            
+            <!-- Pointers -->
+            <div class="pointer_left top" id="left"></div>
+            <div class="pointer_left middle" id="left"></div>
+            <div class="pointer_left bottom" id="left"></div>
+            <div class="pointer_right top" id="left"></div>
+            <div class="pointer_right middle" id="left"></div>
+            <div class="pointer_right bottom" id="left"></div>
+            
+            <!-- Buttons -->
         
         	<div class="scene_bingo top left" id="scene_bingo_top_1"></div>
 				<div><div>Cool Farmers</div></div>
@@ -112,9 +132,42 @@
 				<div><div>Las Vegas Party</div></div>
 
         <div class="right_block" id="right_block_promotions"></div>
+        	
+            <div class="right_panel" id="right_promotion">
+           	  <div class="small_header">
+                <div class="subsrtrate">&nbsp;</div>
+              	<div class="subheader">Promotions</div>
+              </div>
+                <div class="panel_content">
+                    <p>
+                    	<b>100% Welcome Bonus</b>
+                    </p>
+                    <p>
+                        You measure your-
+                        self by the people
+                        who measure themselves.
+                    </p>
+                </div>
+            </div>       
+        
         <div class="right_block" id="right_block_live_support"></div>
     
-    	<!-- background -->
+            <div class="right_panel" id="right_live_support">
+            	<div class="small_header">
+                    <div class="subsrtrate">&nbsp;</div>
+                	<div class="subheader">Live support</div>
+                </div>
+                <div class="panel_content">
+                    <p>
+                    	<img class="block" src="images/girl.jpg" width="105" height="66">
+                    </p>
+                    <p>
+                      You measure the people.
+                    </p>
+				</div>
+            </div>       
+        
+  <!-- background -->
         <div id="bottom_top_left"></div>
     	<!-- background -->
         <div id="bottom_menu_left_side"></div>
@@ -128,8 +181,11 @@
         
     	<!-- background -->
         <div id="bottom_menu_right_side">
+        	<div id="make_a_deposite">
+            	Make a Deposite
+            </div>
         </div>
-
+			
 	        <div class="bottom_menu_item"  id="bottom_menu_item_profile">Profile</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_cashier">Cashier</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_games">Games</div>

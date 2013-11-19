@@ -5,6 +5,10 @@
 
 @import "compass/reset";
 @import "compass/typography";
+@import "compass/css3";
+@import "compass/layout";
+@import "compass/utilities"; /* inc clearfix */
+
 
 // перерасчитать пикселы в %%:
 @mixin calcHeight($height){
@@ -33,6 +37,8 @@ body{
 		font-family: Avenir, Amaranth, Righteous-Regular;
 	}
 }
+.block{display:block;}
+
 #wrapper {
 	background:url(../images/bg_bench.jpg);
 	background-size: cover;
@@ -48,15 +54,27 @@ div{
 	position:absolute;
 }
 #top_bar{
-	@include calcHeight(90);
+	@include calcHeight(51);
+	background: url(../images/bg_top_bar.png) repeat-x;
+	border: solid 1px black;
+	box-shadow: 0 0px 30px #252424;
 	width:100%;
 }
 
 
 	#logo{
-		@include calcLeft(12);
+		@include calcLeft(15);
 		@include calcHeight(30);
-		font-size: 200%;
+		font-size: 0;//200%;
+		background: url(../images/logo.png) no-repeat;
+		color: #FFB600;
+		font-family: Avenir-Medium;
+		font-size: 0;
+		font-weight: bold;
+		letter-spacing: 1.5px;
+		text-shadow: 1px 0 #000;
+		top: 9px;
+		padding: 0;
 		width: 38%;
 	}
 
