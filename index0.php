@@ -13,7 +13,7 @@ div{
 	position:absolute;
 }
 #wrapper {
-	background:url(../images/bg_full_white.jpg);
+	background:url(images/bg_full_white.jpg);
 	width:1027px;
 	height:768px
 	/* */	

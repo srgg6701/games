@@ -14,106 +14,110 @@
 </head>
 <body>
 <div id="wrapper">
+    
     <div id="top_bar">
+    </div>
+        
         <div id="current_time">
             17:06 GMT - Friday 07 Sept, 2013
         </div>
-    </div>
     	
         <div id="logo">
         </div>
         
         <div id="winings">
+        </div>
+
             <div id="total">
             	Total Winings
             </div>
+
             <div id="win_numb">
-            	<div>999</div>
-            	<div>999</div>
-            	<div>999</div>
             </div>
-        </div>
+
+            	<div>999</div>
+            	<div>999</div>
+            	<div>999</div>
 
     
     <div id="welcome_back"></div>
-	<div id="left_block">
+	
+    <!--<div id="left_block">
+    </div>-->
+
         <div id="top_box"></div>
+        
         <div id="bottom_box">
-        	<div>Resent Winners</div>
+        </div>
+        	
+            <div>Resent Winners</div>
         	<div>Slot Machine</div>
         	<div>Bingo</div>
         	<div>Scratch to win</div>
         	<div>Rotate it</div>
-        </div>
-    </div>
-    <div id="scene">
-    	<div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        </div>
-    	<div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        </div>
-    	<div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        	<div>
-            	<button>Cool Farmers</button>
-            </div>
-        	<div>
-            	<button>Las Vegas Party</button>
-            </div>
-        </div>
-    </div>
-    <div id="right_block">
-    	<div id="promotions"></div>
+
+    <!--<div id="scene">
+    </div>-->
+
+    	<!--<div>
+        </div>-->
+    		
+            <!-- ! Buttons	-->
+        
+        	<div>Cool Farmers</div>
+        	<div>Las Vegas Party</div>
+        	<div>Cool Farmers</div>
+        	<div>Las Vegas Party</div>    
+        
+        <!--<div>
+        </div>-->
+
+        	<div>Cool Farmers</div>
+        	<div>Las Vegas Party</div>
+        	<div>Cool Farmers</div>
+        	<div>Las Vegas Party</div>
+
+    	<!--<div>
+        </div>-->
+
+        	<div>Cool Farmers</div>
+        	<div>Las Vegas Party</div>
+        	<div>Cool Farmers</div>
+        	<div>Las Vegas Party</div>
+
+    <!--<div id="right_block">
+    </div>-->
+    	
+        <div id="promotions"></div>
         <div id="live_support"></div>
-    </div>
-    <div id="bottom_menu">
+    
+    <!--<div id="bottom_menu">
+    </div>-->
+
     	<div id="top_left"></div>
-    	<div id="bottom_menu_left_side">
-        	<div id="my_balance">
-            	<a href="#">My <b>Balance</b></a>
+    	
+        <!--<div id="bottom_menu_left_side">
+        </div>-->
+    	
+        	<div id="my_balance">My <b>Balance</b>
+            	<!--<a href="#"></a>-->
             </div>
-            <div id="currency">
-            	<div id="currency_sum">
+            
+            <!--<div id="currency">
+            </div>-->
+            	
+                <div id="currency_sum">
                 	3.52 &euro;
                 </div>
-            </div>
-        </div>
-    	<div id="bottom_menu_right_side">
-	        <span id="bottom_menu_profile"><a href="#">Profile</a></span>
-	        <span id="bottom_menu_cashier"><a href="#">Cashier</a></span>
-	        <span id="bottom_menu_games"><a href="#">Games</a></span>
-	        <span id="bottom_menu_chat"><a href="#">Live Chat</a></span>
-	        <span id="bottom_menu_logout"><a href="#">Logout</a></span>
-        </div>
-    </div>
+        
+        <!--<div id="bottom_menu_right_side">
+        </div>-->
+
+	        <div id="bottom_menu_profile">Profile</div>
+	        <div id="bottom_menu_cashier">Cashier</div>
+	        <div id="bottom_menu_games">Games</div>
+	        <div id="bottom_menu_chat">Live Chat</div>
+	        <div id="bottom_menu_logout">Logout</div>
 </div>
 </body>
 </html>
