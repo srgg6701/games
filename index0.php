@@ -59,11 +59,14 @@
 	bottom:10%;
 }
 #hello{
-	background-color:#9F6;
-	border-bottom-left-radius: 2ex;
-	border-top-left-radius: 37%;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 0.5em;
+	background-color:white;
+	
+	border-bottom-left-radius: 2ex; 	/* 16px; 	*/
+	border-bottom-right-radius: 0.5em; 	/* 8px 		*/
+	
+	border-top-left-radius: 37%; 		/* 37% 		*/
+	border-top-right-radius: 20px; 		/* 20px 	*/
+	
 	padding:1%; 
 	font-size:100%;
 	left:20%;
@@ -82,7 +85,6 @@
     <div id="total">Total Winings</div>
 
   	<div class="win_numb radial" id="win_numb_1"> </div>
-
   		<div id="hell666_1" class="h666 "> </div>
   	<div class="win_numb radial" id="win_numb_2"> </div>
   		<div id="hell666_2" class="h666"> </div>
