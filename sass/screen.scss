@@ -78,9 +78,9 @@ div{
 #logo{
 	@include calcLeft(15);
 	@include calcHeight(30);
-	font-size: 0;//200%;
+	font-size: 0;	//200%;
 	background: url(../images/logo.png) no-repeat;
-	background-size: 100%;
+		//background-size: 100%;
 	color: #FFB600;
 	font-family: Avenir-Medium;
 	font-size: 0;
