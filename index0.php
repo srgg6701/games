@@ -41,7 +41,7 @@
 	 8 * 6 = 11.03515625 */
 	/*box-shadow:2px 2px 2px 10px red;*/
 	/* от размера контейнера, т.е. wrapper'а: */
-#square{
+#euro7{
 	/*от размера самого блока:*/
 	background:url(images/7euros.png) #FFF;	
 	background-size:100%;
@@ -53,10 +53,12 @@
 	/*padding:1%; */
 #span{
 	background:orange; 
+	bottom:10%;
+	height:20%;
 	font-size:150%; 
 	right:4%; 
-	padding:1%; 
-	bottom:10%;
+	padding:1%;
+	width:35%; 
 }
 #hello{
 	background-color:white;
@@ -84,17 +86,23 @@
     <div id="logo">Brand<span>.com</span></div>
     <div id="total">Total Winings</div>
 
-  	<div class="win_numb radial" id="win_numb_1"> </div>
-  		<div id="hell666_1" class="h666 "> </div>
-  	<div class="win_numb radial" id="win_numb_2"> </div>
-  		<div id="hell666_2" class="h666"> </div>
-  	<div class="win_numb radial" id="win_numb_3"> </div>
-  		<div id="hell666_3" class="h666"></div>
+  	<div class="win_numb radial" id="win_numb_1"> 
+    </div>
+    	<div id="hell666_1" class="h666 "> </div>
+  		
+  	<div class="win_numb radial" id="win_numb_2"> 
+    </div>
+    	<div id="hell666_2" class="h666"> </div>
+  		
+  	<div class="win_numb radial" id="win_numb_3"> 
+    </div>
+    	<div id="hell666_3" class="h666"></div>
+  		
     
     <div id="hello">
     	<h1 style="font-size:200%;">Hello!</h1>
     </div>
-    <div id="square">
+    <div id="euro7">
     </div>
     <div id="span"></div>
     

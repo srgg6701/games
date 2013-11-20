@@ -162,36 +162,44 @@ div{
 	@include calcTop(6); //top: 6px;
 }
 .win_numb{
-	background: url(../images/bg_666.jpg) repeat-x -4px;//-25%;//-4px; 
+	background: url(../images/bg_666.jpg) repeat-x center center #0D193E;//-25%;//-4px; 
 	border: solid 1px/* 6.25% */ #333;
-	border-radius: 5px;//0.3125rem;//31.25%;//5px;
-
-	background-size: 6.25%;// 100%; /* должен быть равен высоте элемента - 48px */
+	border-radius: 5px; //0.3125rem;//31.25%;//5px;
+	background-size: 6.25%; 
 	@include calcHeight(48); //height: 48px;
-
 	text-align:center;
 	@include calcTop(26); //top:26px;
 	@include calcWidth(70); //width: 70px;
 	z-index: 0;
 }
 .h666{
-	background: url(../images/666.png) no-repeat -12.5% 75%;//-2px 12px;
-	//background-size: 3.255208333333333%;//100%; //($height/768*100)*1%;
-	@include calcHeight(37); //height: 37px;
-	@include calcTop(25); //top: 25px;
-	@include calcWidth(75); //width: 75px;
-	z-index: 2;
+	background: url(../images/666.png) no-repeat -2px 12px;
+	background-size:100%;
+	height: 37px;
+	//@include calcTop(30); //
+	top:40px;
+	width: 75px;
+	/*	background: url(../images/666.png) no-repeat;
+		background-size: 100%;
+		height: 27px;
+		position: absolute;
+		
+		top: 5%;
+		width: 74px;
+	*/
 }
 
+/*	999	*/
 #hell666_1{
-	@include calcLeft(431); //left: 431px;
+	@include calcLeft(438); //left: 431px; //585
 }
 #hell666_2{
-	@include calcLeft(510); //left: 510px;
+	@include calcLeft(518); //left: 510px;
 }
 #hell666_3{
-	@include calcLeft(589); //left: 589px;
+	@include calcLeft(597); //left: 589px;
 }
+
 
 #win_numb_1{
 	@include calcLeft(431); //left: 431px;

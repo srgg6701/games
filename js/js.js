@@ -6,7 +6,6 @@ $(function(){
 	// Если оно более 1024/768 (параметры фоновой картинки для блока),
 	// его высота устанавливается в 100% и измеряется реальная ширина,
 	// иначе, наоборот, выставляется максимальная ширина и измеряется высота.
-	//var ratio;
 	// текущий масштаб:
 	var scale;
 	//var maxWidth =  
@@ -28,7 +27,6 @@ $(function(){
 					left:hDiff/2
 				}); //console.log('Выровнять по горизонтали, hDiff/2 = '+(hDiff/2));
 			}
-			//ratio=window.outerWidth/screen.width;
 			scale=screen.height/document.body.offsetHeight;
 		}else{	
 			txtDim = "Width 100%";
@@ -49,7 +47,7 @@ $(function(){
 		// 	0.8789 =			       900 / 1024 
 		//0.1
 		if(scale!==1) {
-			$('div:not(.radial)',gameContainer).css('zoom',1/scale);
+			$('div',gameContainer).css('zoom',1/scale);
 			var scalable="Go zoom!";
 		}
 		else{
