@@ -72,6 +72,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 37, ../sass/screen.scss */
 html, body {
   height: 100%;
+  font-size: 100%;
 }
 
 /* line 40, ../sass/screen.scss */
@@ -81,22 +82,22 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 100%;
-  font-weight: normal;
-}
-/* line 46, ../sass/screen.scss */
-body * {
-  font-size: 100%;
   font-weight: normal;
   font-family: Avenir, Amaranth, Righteous-Regular;
+  /*
+  *{	
+  	font-size: 100%; 
+  	font-weight:normal;
+  	font-family: Avenir, Amaranth, Righteous-Regular;
+  }*/
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 .block {
   display: block;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 #wrapper {
   background: url(../images/bg_bench.jpg);
   background-size: cover;
@@ -104,18 +105,18 @@ body * {
   position: absolute;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 div, span {
   box-shadow: 0 0 0 1px #F00;
   box-sizing: border-box;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 div {
   position: absolute;
 }
 
-/* line 68, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 #top_bar {
   height: 6.64063%;
   background: url(../images/bg_top_bar.png) repeat-x;
@@ -125,7 +126,7 @@ div {
   width: 100%;
 }
 
-/* line 78, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 #logo {
   left: 1.46484%;
   height: 3.90625%;
@@ -141,13 +142,13 @@ div {
   padding: 0;
   width: 38%;
 }
-/* line 93, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 #logo > span {
   font-size: 71%;
   letter-spacing: 6.25%;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 #free {
   background: url(../images/free.png) 100% 0 no-repeat;
   background-size: 100%;
@@ -157,7 +158,7 @@ div {
   width: 5.66406%;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 #take_it {
   height: 1.95313%;
   color: white;
@@ -168,7 +169,7 @@ div {
   width: 15.23438%;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 #seven {
   background: url(../images/7euros.png) no-repeat;
   background-size: 100%;
@@ -178,7 +179,7 @@ div {
   width: 12.69531%;
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 #get_it_now {
   background: url(../images/bg_get_it_now.png);
   background-repeat: repeat-x;
@@ -196,7 +197,7 @@ div {
   width: 11.42578%;
 }
 
-/* line 145, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 #no_deposit_required {
   color: white;
   font-style: italic;
@@ -207,7 +208,7 @@ div {
   width: 11.03516%;
 }
 
-/* line 155, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #total {
   color: white;
   font-style: italic;
@@ -217,12 +218,12 @@ div {
   top: 0.78125%;
 }
 
-/* line 163, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .win_numb {
-  background: url(../images/bg_666.jpg) repeat-x -25%;
-  background-size: 100%;
-  border: solid 6.25% #333;
-  border-radius: 31.25%;
+  background: url(../images/bg_666.jpg) repeat-x -4px;
+  border: solid 1px #333333;
+  border-radius: 5px;
+  background-size: 6.25%;
   height: 6.25%;
   text-align: center;
   top: 3.38542%;
@@ -230,47 +231,46 @@ div {
   z-index: 0;
 }
 
-/* line 174, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 .h666 {
   background: url(../images/666.png) no-repeat -12.5% 75%;
-  background-size: 100%;
   height: 4.81771%;
   top: 3.25521%;
   width: 7.32422%;
   z-index: 2;
 }
 
-/* line 183, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 #hell666_1 {
   left: 42.08984%;
 }
 
-/* line 186, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 #hell666_2 {
   left: 49.80469%;
 }
 
-/* line 189, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 #hell666_3 {
   left: 57.51953%;
 }
 
-/* line 193, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 #win_numb_1 {
   left: 42.08984%;
 }
 
-/* line 196, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 #win_numb_2 {
   left: 49.80469%;
 }
 
-/* line 199, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 #win_numb_3 {
   left: 57.51953%;
 }
 
-/* line 202, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 #current_time {
   background: url(../images/clock.png) no-repeat 0 -12.5% #151647;
   background-size: 100%;
@@ -287,12 +287,12 @@ div {
   top: 1.82292%;
   width: 21.19141%;
 }
-/* line 217, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 #current_time b {
   font-family: "Avenir-Heavy";
 }
 
-/* line 222, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 #welcome_back {
   background: url(../images/euro_coin.png) no-repeat 31.25% -31.25%;
   background-size: 100%;
@@ -306,24 +306,24 @@ div {
   width: 18.35938%;
 }
 
-/* line 235, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 .user_name {
   font-weight: bold;
 }
 
-/* line 239, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 .small_header {
   color: white;
   font-size: 100%;
   width: 100%;
 }
 
-/* line 244, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 .small_header:after {
   content: "";
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 251, ../sass/screen.scss */
 .small_header
 div.subheader {
   font-family: Avenir;
@@ -333,7 +333,7 @@ div.subheader {
   width: 100%;
 }
 
-/* line 255, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 .subsrtrate {
   background-color: #01040b;
   opacity: 0.45;
@@ -341,7 +341,7 @@ div.subheader {
   width: 100%;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .float_panel,
 .right_block {
   border: solid 6.25% #000;
@@ -349,14 +349,14 @@ div.subheader {
   opacity: 0.25;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 #left_bottom_palette {
   background-color: #FC00FF;
   height: 35.9375%;
   top: 52.73438%;
 }
 
-/* line 280, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 #left_top_box,
 .left_bottom_box,
 #left_bottom_palette {
@@ -364,7 +364,7 @@ div.subheader {
   width: 17.57813%;
 }
 
-/* line 284, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 #left_top_box {
   background-color: #ff0eff;
   box-shadow: 0 0 0 6.25% #000;
@@ -372,7 +372,7 @@ div.subheader {
   top: 16.01563%;
 }
 
-/* line 290, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .left_bottom_box {
   height: 6.51042%;
   font-size: 100%;
@@ -384,7 +384,7 @@ div.subheader {
   padding: 0 81.25%;
 }
 
-/* line 302, ../sass/screen.scss */
+/* line 305, ../sass/screen.scss */
 .left_bottom_box
 > div {
   color: #FFF;
@@ -399,7 +399,7 @@ div.subheader {
   width: 100%;
 }
 
-/* line 315, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 .left_bottom_box
 > div > div {
   font-size: 110%;
@@ -410,7 +410,7 @@ div.subheader {
   top: 0;
 }
 
-/* line 324, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 #left_bottom_box_1 {
   background: url(../images/copa.png) no-repeat 62.5% 106.25%;
   background-size: 100%;
@@ -422,42 +422,42 @@ div.subheader {
   top: 52.73438%;
 }
 
-/* line 334, ../sass/screen.scss */
+/* line 337, ../sass/screen.scss */
 #left_bottom_box_2 {
   background: url(../images/flag_germany.png) no-repeat 75% 181.25%;
   background-size: 100%;
   top: 59.24479%;
 }
 
-/* line 339, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 #left_bottom_box_3 {
   background: url(../images/flag_italy.png) no-repeat 75% 181.25%;
   background-size: 100%;
   top: 65.75521%;
 }
 
-/* line 344, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 #left_bottom_box_4 {
   background: url(../images/flag_gb.png) no-repeat 75% 181.25%;
   background-size: 100%;
   top: 72.26563%;
 }
 
-/* line 349, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 #left_bottom_box_5 {
   background: url(../images/flag_greece.png) no-repeat 75% 181.25%;
   background-size: 100%;
   top: 78.77604%;
 }
 
-/* line 355, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 .panel_content {
   font-size: 100%;
   top: 4.55729%;
   padding: 37.5% 62.5%;
 }
 
-/* line 362, ../sass/screen.scss */
+/* line 365, ../sass/screen.scss */
 .panel_content
 p {
   font-weight: normal;
@@ -465,13 +465,13 @@ p {
   margin: 4.2% auto;
 }
 
-/* line 369, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 .panel_content
 p:first-child {
   margin-top: 1.5%;
 }
 
-/* line 374, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 .panel_content
 p:first-child
 img {
@@ -479,7 +479,7 @@ img {
   margin-left: 4%;
 }
 
-/* line 381, ../sass/screen.scss */
+/* line 384, ../sass/screen.scss */
 .right_block,
 .right_panel {
   border-radius: 4px;
@@ -488,47 +488,47 @@ img {
   width: 13.08594%;
 }
 
-/* line 388, ../sass/screen.scss */
+/* line 391, ../sass/screen.scss */
 .right_panel
 .panel_content {
   color: white;
   font-size: 83%;
 }
 
-/* line 393, ../sass/screen.scss */
+/* line 396, ../sass/screen.scss */
 .right_block {
   background-color: #3D025C;
   height: 22.13542%;
   opacity: 0.9;
 }
 
-/* line 400, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 #right_block_promotions,
 #right_promotion {
   top: 8.72396%;
 }
 
-/* line 404, ../sass/screen.scss */
+/* line 407, ../sass/screen.scss */
 #right_block_live_support,
 #right_live_support {
   top: 32.03125%;
 }
 
-/* line 408, ../sass/screen.scss */
+/* line 411, ../sass/screen.scss */
 #right_promotion
 .subheader {
   background: url(../images/right_promo.png) no-repeat 56.25% 68.75%;
   background-size: 100%;
 }
 
-/* line 413, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 #right_live_support
 .subheader {
   background: url(../images/right_live_chat.png) no-repeat 56.25% 68.75%;
   background-size: 100%;
 }
 
-/* line 419, ../sass/screen.scss */
+/* line 422, ../sass/screen.scss */
 .scene_bingo {
   background: url(../images/game_bingo.png) no-repeat;
   background-size: 100%;
@@ -536,57 +536,57 @@ img {
   width: 11.52344%;
 }
 
-/* line 426, ../sass/screen.scss */
+/* line 429, ../sass/screen.scss */
 .pointer_left {
   background: url(../images/pointer_left.png);
   background-size: 100%;
   left: 20.01953%;
 }
 
-/* line 432, ../sass/screen.scss */
+/* line 435, ../sass/screen.scss */
 .pointer_right {
   background: url(../images/pointer_right.png);
   background-size: 100%;
   right: 14.35547%;
 }
 
-/* line 438, ../sass/screen.scss */
+/* line 441, ../sass/screen.scss */
 [class^="pointer_"] {
   height: 4.94792%;
   width: 3.71094%;
 }
 
-/* line 443, ../sass/screen.scss */
+/* line 446, ../sass/screen.scss */
 [class^="pointer_"].top {
   top: 19.53125%;
 }
 
-/* line 447, ../sass/screen.scss */
+/* line 450, ../sass/screen.scss */
 [class^="pointer_"].middle {
   top: 45.83333%;
 }
 
-/* line 451, ../sass/screen.scss */
+/* line 454, ../sass/screen.scss */
 [class^="pointer_"].bottom {
   top: 72.00521%;
 }
 
-/* line 455, ../sass/screen.scss */
+/* line 458, ../sass/screen.scss */
 .scene_bingo.top {
   top: 15.36458%;
 }
 
-/* line 458, ../sass/screen.scss */
+/* line 461, ../sass/screen.scss */
 .scene_bingo.middle {
   top: 41.79688%;
 }
 
-/* line 461, ../sass/screen.scss */
+/* line 464, ../sass/screen.scss */
 .scene_bingo.bottom {
   top: 68.09896%;
 }
 
-/* line 466, ../sass/screen.scss */
+/* line 469, ../sass/screen.scss */
 .scene_bingo
 + div {
   /*кнопки во всех рядах: высота, ширина*/
@@ -598,7 +598,7 @@ img {
   width: 11.52344%;
 }
 
-/* line 476, ../sass/screen.scss */
+/* line 479, ../sass/screen.scss */
 .scene_bingo
 + div > div {
   background-color: #EAE4FD;
@@ -612,21 +612,21 @@ img {
   white-space: nowrap;
 }
 
-/* line 488, ../sass/screen.scss */
+/* line 491, ../sass/screen.scss */
 .scene_bingo.top
 + div {
   /*кнопка в первом ряду: позиция по вертикали*/
   top: 30.72917%;
 }
 
-/* line 493, ../sass/screen.scss */
+/* line 496, ../sass/screen.scss */
 .scene_bingo.middle
 + div {
   /*кнопка во втором ряду: позиция по вертикали*/
   top: 57.16146%;
 }
 
-/* line 498, ../sass/screen.scss */
+/* line 501, ../sass/screen.scss */
 .scene_bingo.bottom
 + div {
   /*кнопка в третьем ряду: позиция по вертикали*/
@@ -635,56 +635,56 @@ img {
 
 /* позиции по горизонтали */
 /* первая колонка */
-/* line 505, ../sass/screen.scss */
+/* line 508, ../sass/screen.scss */
 .scene_bingo.left {
   left: 24.60938%;
 }
 
-/* line 508, ../sass/screen.scss */
+/* line 511, ../sass/screen.scss */
 .scene_bingo.left + div {
   left: 24.60938%;
 }
 
 /* вторая колонка */
-/* line 512, ../sass/screen.scss */
+/* line 515, ../sass/screen.scss */
 .scene_bingo.center_left {
   left: 39.55078%;
 }
 
-/* line 515, ../sass/screen.scss */
+/* line 518, ../sass/screen.scss */
 .scene_bingo.center_left + div {
   left: 39.55078%;
 }
 
 /* третья колонка */
-/* line 519, ../sass/screen.scss */
+/* line 522, ../sass/screen.scss */
 .scene_bingo.center_right {
   left: 54.58984%;
 }
 
-/* line 522, ../sass/screen.scss */
+/* line 525, ../sass/screen.scss */
 .scene_bingo.center_right + div {
   left: 54.58984%;
 }
 
 /* четвёртая колонка */
-/* line 526, ../sass/screen.scss */
+/* line 529, ../sass/screen.scss */
 .scene_bingo.right {
   left: 69.14063%;
 }
 
-/* line 529, ../sass/screen.scss */
+/* line 532, ../sass/screen.scss */
 .scene_bingo.right + div {
   left: 69.14063%;
 }
 
-/* line 534, ../sass/screen.scss */
+/* line 537, ../sass/screen.scss */
 #my_balance,
 #currency_sum {
   line-height: 312.5%;
 }
 
-/* line 537, ../sass/screen.scss */
+/* line 540, ../sass/screen.scss */
 #my_balance {
   bottom: 0;
   color: white;
@@ -692,7 +692,7 @@ img {
   margin-left: 75%;
 }
 
-/* line 543, ../sass/screen.scss */
+/* line 546, ../sass/screen.scss */
 #currency_sum {
   background-color: #0F0E32;
   border-bottom: solid 6.25% #999;
@@ -707,7 +707,7 @@ img {
   width: 8.59375%;
 }
 
-/* line 556, ../sass/screen.scss */
+/* line 559, ../sass/screen.scss */
 #bottom_top_left {
   background: url(../images/half_round.png) no-repeat;
   background-size: 100%;
@@ -717,13 +717,13 @@ img {
   z-index: 1;
 }
 
-/* line 565, ../sass/screen.scss */
+/* line 568, ../sass/screen.scss */
 #bottom_menu_left_side,
 #bottom_menu_right_side {
   bottom: 0.13021%;
 }
 
-/* line 568, ../sass/screen.scss */
+/* line 571, ../sass/screen.scss */
 #bottom_menu_left_side {
   background: url(../images/bg_bottom_panel_left.png);
   background-size: 100%;
@@ -732,7 +732,7 @@ img {
   z-index: 0;
 }
 
-/* line 575, ../sass/screen.scss */
+/* line 578, ../sass/screen.scss */
 #bottom_menu_right_side {
   background: url(../images/bg_bottom_panel_right.png);
   background-size: 100%;
@@ -743,7 +743,7 @@ img {
   width: 79.98047%;
 }
 
-/* line 585, ../sass/screen.scss */
+/* line 588, ../sass/screen.scss */
 #make_a_deposite {
   background: url(../images/make_a_deposite.png) no-repeat;
   background-size: 100%;
@@ -761,7 +761,7 @@ img {
   width: auto;
 }
 
-/* line 602, ../sass/screen.scss */
+/* line 605, ../sass/screen.scss */
 .bottom_menu_item {
   bottom: 0.39063%;
   color: white;
@@ -774,21 +774,21 @@ img {
   padding-left: 118.75%;
 }
 
-/* line 614, ../sass/screen.scss */
+/* line 617, ../sass/screen.scss */
 #bottom_menu_item_profile {
   background: url(../images/bottom_menu_user.png) no-repeat -50% 12.5%;
   background-size: 100%;
   left: 58.00781%;
 }
 
-/* line 619, ../sass/screen.scss */
+/* line 622, ../sass/screen.scss */
 #bottom_menu_item_cashier {
   background: url(../images/bottom_menu_casher.png) no-repeat -37.5% 12.5%;
   background-size: 100%;
   left: 66.01563%;
 }
 
-/* line 624, ../sass/screen.scss */
+/* line 627, ../sass/screen.scss */
 #bottom_menu_item_games {
   /*	 */
   display: none;
@@ -807,14 +807,14 @@ img {
   width: 8.20313%;
 }
 
-/* line 642, ../sass/screen.scss */
+/* line 645, ../sass/screen.scss */
 #bottom_menu_item_chat {
   background: url(../images/bottom_menu_chat.png) no-repeat -50%;
   background-size: 100%;
   left: 83.69141%;
 }
 
-/* line 647, ../sass/screen.scss */
+/* line 650, ../sass/screen.scss */
 #bottom_menu_item_logout {
   background: url(../images/bottom_menu_switch_off.png) no-repeat -43.75% 18.75%;
   background-size: 100%;

@@ -5,7 +5,7 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <title>Las Vegas</title>
 <script src="js/jquery-1.9.1.js"></script>
-<script src="js/debug.js"></script>
+<!--<script src="js/debug.js"></script>-->
 <?	if(isset($_GET['test'])):?>
 <link media="screen" rel="stylesheet" type="text/css" href="stylesheets/test0.css">
 <?	else:
@@ -28,10 +28,31 @@
 <?	endif;
 	?>
 #wrapper{
-	font-size:100%;
+	font-size:1rem;
 }
 </style>
 </head>
+<style>
+#square{
+	/*background-color:#FFFF00;*/
+	/*	vRatio: 130px (width) / 1024 / 12.6953125
+		 6 * 8 = 16.92708333333333
+			
+		hRatio:113px (height) / 768 / 14.71354166666667
+		 8 * 6 = 11.03515625
+		
+	*/
+	/*от размера самого блока:*/
+	background:url(images/7euros.png) #FFF;	
+	/*box-shadow:2px 2px 2px 10px red;*/
+	/* от размера контейнера, т.е. wrapper'а: */
+	left:20%;
+	top:50%;
+	/*padding:1%; */
+	width: 	12.6953125%;
+	height:	14.71354166666667%; 
+}
+</style>
 <body>
 <div id="wrapper">
 	
@@ -41,18 +62,27 @@
     <div id="current_time"><b>17:06</b> GMT - Friday 07 Sept, 2013</div>-->
     	
     <div id="logo">Brand<span>.com</span></div>
+    <div id="total">Total Winings</div>
+
+  	<div class="win_numb radial" id="win_numb_1"> </div>
+
+  		<div id="hell666_1" class="h666 "> </div>
+  	<div class="win_numb radial" id="win_numb_2"> </div>
+  		<div id="hell666_2" class="h666"> </div>
+  	<div class="win_numb radial" id="win_numb_3"> </div>
+  		<div id="hell666_3" class="h666"></div>
+    
+    <div style="left:20%;top:40%; font-size:100%;">
+    	<h1 style="font-size:200%; color:yellow;">Hello!</h1>
+    </div>
+    <div id="square">
+    </div>
+    <div id="span" style="padding:10%; background:orange; font-size:150%; left:10%; top:70%;"></div>
+    
+    
 <?	$show=false;
 	if($show){
 ?>        
-    <div id="total">Total Winings</div>
-
-  	<div class="win_numb" id="win_numb_1"> </div>
-  	<div id="hell666_1" class="h666"> </div>
-  	<div class="win_numb" id="win_numb_2"> </div>
-  	<div id="hell666_2" class="h666"> </div>
-  	<div class="win_numb" id="win_numb_3"> </div>
-  	<div id="hell666_3" class="h666"></div>
-    
     <div id="welcome_back">Welcome back, 
         <div class="user_name">Jhon Doe! <img src="images/pointer_down.png" width="11" height="5"></div>
   	</div>
