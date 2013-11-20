@@ -33,24 +33,41 @@
 </style>
 </head>
 <style>
-#square{
-	/*background-color:#FFFF00;*/
-	/*	vRatio: 130px (width) / 1024 / 12.6953125
-		 6 * 8 = 16.92708333333333
-			
-		hRatio:113px (height) / 768 / 14.71354166666667
-		 8 * 6 = 11.03515625
+/*background-color:#FFFF00;*/
+/*	vRatio: 130px (width) / 1024 / 12.6953125
+	 6 * 8 = 16.92708333333333
 		
-	*/
-	/*от размера самого блока:*/
-	background:url(images/7euros.png) #FFF;	
+	hRatio:113px (height) / 768 / 14.71354166666667
+	 8 * 6 = 11.03515625 */
 	/*box-shadow:2px 2px 2px 10px red;*/
 	/* от размера контейнера, т.е. wrapper'а: */
+#square{
+	/*от размера самого блока:*/
+	background:url(images/7euros.png) #FFF;	
+	background-size:100%;
 	left:20%;
 	top:50%;
-	/*padding:1%; */
 	width: 	12.6953125%;
 	height:	14.71354166666667%; 
+}
+	/*padding:1%; */
+#span{
+	background:orange; 
+	font-size:150%; 
+	right:4%; 
+	padding:1%; 
+	bottom:10%;
+}
+#hello{
+	background-color:#9F6;
+	border-bottom-left-radius: 2ex;
+	border-top-left-radius: 37%;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 0.5em;
+	padding:1%; 
+	font-size:100%;
+	left:20%;
+	top:40%; 
 }
 </style>
 <body>
@@ -72,12 +89,12 @@
   	<div class="win_numb radial" id="win_numb_3"> </div>
   		<div id="hell666_3" class="h666"></div>
     
-    <div style="left:20%;top:40%; font-size:100%;">
-    	<h1 style="font-size:200%; color:yellow;">Hello!</h1>
+    <div id="hello">
+    	<h1 style="font-size:200%;">Hello!</h1>
     </div>
     <div id="square">
     </div>
-    <div id="span" style="padding:10%; background:orange; font-size:150%; left:10%; top:70%;"></div>
+    <div id="span"></div>
     
     
 <?	$show=false;
