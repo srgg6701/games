@@ -1,0 +1,420 @@
+@charset "IBM866";
+/* variables, mixins etc */
+/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* inc clearfix */
+@font-face {
+  font-family: 'Amaranth';
+  src: url("../sources/fonts/Amaranth.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirBook';
+  src: url("../sources/fonts/Avenir-Book.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirMedium';
+  src: url("../sources/fonts/Avenir-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url("../sources/fonts/AvenirLTStd-Black.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirHeavy';
+  src: url("../sources/fonts/AvenirLTStd-Heavy.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirOblique';
+  src: url("../sources/fonts/AvenirLTStd-Oblique.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirBlackOblique';
+  src: url("../sources/fonts/AvenirLTStd-BlackOblique.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirLight';
+  src: url("../sources/fonts/avenir-lt-35-light-1361499806.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype");
+}
+
+/* recalculate */
+/* line 5, ../sass/scene.scss */
+.pointer_left {
+  background: url(../images/pointer_left.png);
+  left: 204.69231px;
+}
+
+/* line 10, ../sass/scene.scss */
+.pointer_right {
+  background: url(../images/pointer_right.png);
+  right: 147px;
+}
+
+/* line 15, ../sass/scene.scss */
+[class^="pointer_"] {
+  height: 38px;
+  width: 38px;
+}
+
+/* line 19, ../sass/scene.scss */
+[class^="pointer_"].top {
+  top: 150px;
+}
+
+/* line 22, ../sass/scene.scss */
+[class^="pointer_"].middle {
+  top: 352px;
+}
+
+/* line 25, ../sass/scene.scss */
+[class^="pointer_"].bottom {
+  top: 553px;
+}
+
+/* line 28, ../sass/scene.scss */
+[id^="bingo_header_"] {
+  color: #FFD800;
+  height: 32px;
+  left: 200px;
+  right: 146px;
+  text-align: center;
+  text-shadow: #000 1.5px 1.5px 0, #000 -1.5px -1.5px 0, #000 -2px 0px 0;
+}
+/* line 35, ../sass/scene.scss */
+[id^="bingo_header_"] span {
+  background: none;
+  font-family: Amaranth;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+  left: 240px;
+  letter-spacing: -0.31px;
+  padding-bottom: 4px;
+  position: absolute;
+  vertical-align: text-bottom;
+  width: auto;
+}
+/* line 47, ../sass/scene.scss */
+[id^="bingo_header_"] span:first-of-type {
+  height: 11px;
+  overflow: hidden;
+  z-index: 1;
+}
+/* line 52, ../sass/scene.scss */
+[id^="bingo_header_"] span:last-of-type {
+  color: #FB0;
+  z-index: 0;
+}
+/* line 57, ../sass/scene.scss */
+[id^="bingo_header_"] div {
+  background: url(../images/star.png) no-repeat 0 1px;
+  display: inline-block;
+  height: 25px;
+  margin-top: 2px;
+  padding-top: 0;
+  width: 18px;
+}
+/* line 64, ../sass/scene.scss */
+[id^="bingo_header_"] div:nth-child(2) {
+  background: none;
+  font-family: Amaranth;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: -0.31px;
+  padding-bottom: 4px;
+  vertical-align: text-bottom;
+  width: auto;
+}
+/* line 75, ../sass/scene.scss */
+[id^="bingo_header_"] div:last-child {
+  margin-left: 4px;
+  margin-right: -4px;
+}
+
+/* line 81, ../sass/scene.scss */
+#bingo_header_1 {
+  top: 92px;
+}
+/* line 84, ../sass/scene.scss */
+#bingo_header_1 div:first-child {
+  left: 247px;
+}
+/* line 87, ../sass/scene.scss */
+#bingo_header_1 div:last-child {
+  left: 411px;
+}
+/* line 91, ../sass/scene.scss */
+#bingo_header_1 span {
+  left: 269px;
+}
+
+/* line 95, ../sass/scene.scss */
+#bingo_header_2 {
+  top: 295px;
+}
+/* line 98, ../sass/scene.scss */
+#bingo_header_2 div:first-child {
+  left: 243px;
+}
+/* line 101, ../sass/scene.scss */
+#bingo_header_2 div:last-child {
+  left: 415px;
+}
+/* line 105, ../sass/scene.scss */
+#bingo_header_2 span {
+  left: 268px;
+}
+
+/* line 109, ../sass/scene.scss */
+#bingo_header_3 {
+  top: 497px;
+}
+/* line 112, ../sass/scene.scss */
+#bingo_header_3 div:first-child {
+  left: 247px;
+}
+/* line 115, ../sass/scene.scss */
+#bingo_header_3 div:last-child {
+  left: 411px;
+}
+/* line 119, ../sass/scene.scss */
+#bingo_header_3 span {
+  left: 271px;
+}
+
+/* line 123, ../sass/scene.scss */
+.scene_bingo {
+  background: url(../images/game_bingo.png) no-repeat;
+  height: 143px;
+  width: 125px;
+  /* позиции по горизонтали */
+  /* первая колонка */
+  /* вторая колонка */
+  /* третья колонка */
+  /* четвёртая колонка */
+}
+/* line 127, ../sass/scene.scss */
+.scene_bingo.top {
+  top: 118px;
+}
+/* line 129, ../sass/scene.scss */
+.scene_bingo.top + div {
+  /*кнопка в первом ряду: позиция по вертикали*/
+  top: 236px;
+}
+/* line 134, ../sass/scene.scss */
+.scene_bingo.middle {
+  top: 321px;
+}
+/* line 136, ../sass/scene.scss */
+.scene_bingo.middle + div {
+  /*кнопка во втором ряду: позиция по вертикали*/
+  top: 439px;
+}
+/* line 141, ../sass/scene.scss */
+.scene_bingo.bottom {
+  top: 523px;
+}
+/* line 143, ../sass/scene.scss */
+.scene_bingo.bottom + div {
+  /*кнопка в третьем ряду: позиция по вертикали*/
+  top: 641px;
+}
+/* line 148, ../sass/scene.scss */
+.scene_bingo + div {
+  /*кнопки во всех рядах: высота, ширина*/
+  display: block;
+  height: 25px;
+  font-size: 13px;
+  font-family: AvenirBlack;
+  text-align: center;
+  width: 125px;
+}
+/* line 156, ../sass/scene.scss */
+.scene_bingo + div > div {
+  background-color: #EAE4FD;
+  border: solid 1px #000;
+  border-radius: 4px;
+  box-shadow: 0 -6px 10px 0 #CCC inset;
+  color: #18134b;
+  line-height: 23.07692px;
+  margin: auto;
+  position: static;
+  white-space: nowrap;
+}
+/* line 170, ../sass/scene.scss */
+.scene_bingo.left {
+  left: 252px;
+}
+/* line 172, ../sass/scene.scss */
+.scene_bingo.left + div {
+  left: 252px;
+}
+/* line 177, ../sass/scene.scss */
+.scene_bingo.center_left {
+  left: 405px;
+}
+/* line 179, ../sass/scene.scss */
+.scene_bingo.center_left + div {
+  left: 405px;
+}
+/* line 184, ../sass/scene.scss */
+.scene_bingo.center_right {
+  left: 559px;
+}
+/* line 186, ../sass/scene.scss */
+.scene_bingo.center_right + div {
+  left: 559px;
+}
+/* line 191, ../sass/scene.scss */
+.scene_bingo.right {
+  left: 708px;
+}
+/* line 193, ../sass/scene.scss */
+.scene_bingo.right + div {
+  left: 708px;
+}
+
+/* line 198, ../sass/scene.scss */
+#shell-corner-left {
+  background: url(../images/shell_corners/vertical_left.jpg);
+  left: 217px;
+  top: 210px;
+  height: 451px;
+  width: 32px;
+  z-index: 1;
+}
+
+/* line 206, ../sass/scene.scss */
+#shell-corner-right {
+  background: url(../images/shell_corners/vertical_right.jpg);
+  left: 841px;
+  height: 434px;
+  top: 210px;
+  width: 32px;
+  z-index: 1;
+}
+
+/*#shell-corner-top-left{
+	background: url(../images/shell_corners/shell_corner_top_left.jpg);
+	left: 217px;
+	top: 210px;
+	height: 32px;
+	width: 24px;
+	z-index: 1;
+}
+#shell-corner-top-right{
+	background: url(../images/shell_corners/shell_corner_top_right.jpg) 100%;
+	left: 841px;
+	height: 46px;
+	top: 210px;
+	width: 23px;
+	z-index: 1;
+}
+#shell-corner-middle-left{
+	background: url(../images/shell_corners/shell_corner_middle_left.jpg);
+	left: 294px;
+	top: 477px;
+	height: 32px;
+	width: 47px;
+	z-index: 1;
+}
+#shell-corner-middle-right{
+	background: url(../images/shell_corners/shell_corner_middle_right.jpg) 100%;
+	left: 1015px;
+	top: 477px;
+	height: 32px;
+	width: 47px;
+	z-index: 1;
+}
+#shell-corner-bottom-left{
+	background: url(../images/shell_corners/shell_corner_bottom_left.jpg);
+	left: 294px;
+	top: 718px;
+	height: 32px;
+	width: 47px;
+	z-index: 1;
+}
+#shell-corner-bottom-right{
+	background: url(../images/shell_corners/shell_corner_bottom_right.jpg) 100%;
+	left: 1015px;
+	top: 718px;
+	height: 32px;
+	width: 47px;
+	z-index: 1;
+}*/
