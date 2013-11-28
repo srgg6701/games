@@ -1,0 +1,40 @@
+/* inc clearfix */
+@font-face {
+  font-family: 'AvenirBook';
+  src: url("../sources/fonts/Avenir-Book.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirMedium';
+  src: url("../sources/fonts/Avenir-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url("../sources/fonts/AvenirLTStd-Black.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirHeavy';
+  src: url("../sources/fonts/AvenirLTStd-Heavy.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirOblique';
+  src: url("../sources/fonts/AvenirLTStd-Oblique.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirBlackOblique';
+  src: url("../sources/fonts/AvenirLTStd-BlackOblique.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirLight';
+  src: url("../sources/fonts/avenir-lt-35-light-1361499806.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype");
+}

@@ -75,46 +75,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("../sources/fonts/Amaranth.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: 'AvenirBook';
-  src: url("../sources/fonts/Avenir-Book.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirMedium';
-  src: url("../sources/fonts/Avenir-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlack';
-  src: url("../sources/fonts/AvenirLTStd-Black.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirHeavy';
-  src: url("../sources/fonts/AvenirLTStd-Heavy.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirOblique';
-  src: url("../sources/fonts/AvenirLTStd-Oblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlackOblique';
-  src: url("../sources/fonts/AvenirLTStd-BlackOblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirLight';
-  src: url("../sources/fonts/avenir-lt-35-light-1361499806.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirRoman';
-  src: url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype");
-}
-
 /* recalculate */
 /* line 9, ../sass/screen.scss */
 html, body {
@@ -237,46 +197,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @font-face {
   font-family: 'Amaranth';
   src: url("../sources/fonts/Amaranth.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBook';
-  src: url("../sources/fonts/Avenir-Book.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirMedium';
-  src: url("../sources/fonts/Avenir-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlack';
-  src: url("../sources/fonts/AvenirLTStd-Black.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirHeavy';
-  src: url("../sources/fonts/AvenirLTStd-Heavy.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirOblique';
-  src: url("../sources/fonts/AvenirLTStd-Oblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlackOblique';
-  src: url("../sources/fonts/AvenirLTStd-BlackOblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirLight';
-  src: url("../sources/fonts/avenir-lt-35-light-1361499806.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirRoman';
-  src: url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype");
 }
 
 /* recalculate */
@@ -534,7 +454,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 38, ../sass/screen.scss */
 #welcome_back {
-  background: url(../images/euro_coin.png) no-repeat 5px -4px;
   color: #FFF;
   height: 34.30769px;
   font-size: 11.5px;
@@ -546,29 +465,46 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 66px;
   width: 153.84615px;
 }
+/* line 49, ../sass/screen.scss */
+#welcome_back div:first-child {
+  background: url(../images/coins.png) no-repeat 0 2px;
+  background-size: 61px;
+  left: 10px;
+  height: 32px;
+  top: 1px;
+  width: 32px;
+}
+/* line 57, ../sass/screen.scss */
+#welcome_back div:first-child.gold {
+  background-position-x: -30px !important;
+}
+/* line 60, ../sass/screen.scss */
+#welcome_back div:first-child.silver {
+  background-position-x: 2px !important;
+}
 
-/* line 52, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 .user_name {
   font-weight: bold;
 }
-/* line 54, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 .user_name img {
-  margin: 7px auto 2px 3px;
+  margin: 6px auto 0px 7px;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .small_header {
   color: white;
   font-size: 100%;
   width: 100%;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .small_header:after {
   content: "";
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .small_header
 div.subheader {
   font-family: Amaranth;
@@ -579,7 +515,7 @@ div.subheader {
   padding: 11px 4px 8px 27px;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 .subsrtrate {
   background-color: #01040B;
   opacity: 0.45;
@@ -660,46 +596,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("../sources/fonts/Amaranth.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: 'AvenirBook';
-  src: url("../sources/fonts/Avenir-Book.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirMedium';
-  src: url("../sources/fonts/Avenir-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlack';
-  src: url("../sources/fonts/AvenirLTStd-Black.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirHeavy';
-  src: url("../sources/fonts/AvenirLTStd-Heavy.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirOblique';
-  src: url("../sources/fonts/AvenirLTStd-Oblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlackOblique';
-  src: url("../sources/fonts/AvenirLTStd-BlackOblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirLight';
-  src: url("../sources/fonts/avenir-lt-35-light-1361499806.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirRoman';
-  src: url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype");
-}
-
 /* recalculate */
 /* line 6, ../sass/left_side.scss */
 #left_top_box,
@@ -753,7 +649,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 46, ../sass/left_side.scss */
 #left_bottom_box_1 {
   background: url(../images/copa.png);
-  background-position: 9.022556390977444px 15.78947368421053px !important;
+  background-position: 10px 16px !important;
+  background-size: 21px;
   font-family: Amaranth;
   font-style: italic;
   font-size: 18px;
@@ -861,46 +758,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("../sources/fonts/Amaranth.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: 'AvenirBook';
-  src: url("../sources/fonts/Avenir-Book.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirMedium';
-  src: url("../sources/fonts/Avenir-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlack';
-  src: url("../sources/fonts/AvenirLTStd-Black.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirHeavy';
-  src: url("../sources/fonts/AvenirLTStd-Heavy.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirOblique';
-  src: url("../sources/fonts/AvenirLTStd-Oblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlackOblique';
-  src: url("../sources/fonts/AvenirLTStd-BlackOblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirLight';
-  src: url("../sources/fonts/avenir-lt-35-light-1361499806.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirRoman';
-  src: url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype");
-}
-
 /* recalculate */
 /* line 5, ../sass/scene.scss */
 .pointer_left {
@@ -908,34 +765,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: 204.69231px;
 }
 
-/* line 10, ../sass/scene.scss */
+/* line 9, ../sass/scene.scss */
 .pointer_right {
   background: url(../images/pointer_right.png);
-  right: 147px;
+  right: 146px;
 }
 
-/* line 15, ../sass/scene.scss */
+/* line 13, ../sass/scene.scss */
 [class^="pointer_"] {
-  height: 38px;
-  width: 38px;
+  background-size: 95%;
+  height: 40px;
+  width: 40px;
 }
 
-/* line 19, ../sass/scene.scss */
+/* line 18, ../sass/scene.scss */
 [class^="pointer_"].top {
-  top: 150px;
+  top: 151px;
 }
 
-/* line 22, ../sass/scene.scss */
+/* line 21, ../sass/scene.scss */
 [class^="pointer_"].middle {
   top: 352px;
 }
 
-/* line 25, ../sass/scene.scss */
+/* line 24, ../sass/scene.scss */
 [class^="pointer_"].bottom {
   top: 553px;
 }
 
-/* line 28, ../sass/scene.scss */
+/* line 27, ../sass/scene.scss */
 [id^="bingo_header_"] {
   color: #FFD800;
   height: 32px;
@@ -944,7 +802,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: center;
   text-shadow: #000 1.5px 1.5px 0, #000 -1.5px -1.5px 0, #000 -2px 0px 0;
 }
-/* line 35, ../sass/scene.scss */
+/* line 34, ../sass/scene.scss */
 [id^="bingo_header_"] span {
   background: none;
   font-family: Amaranth;
@@ -958,18 +816,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   vertical-align: text-bottom;
   width: auto;
 }
-/* line 47, ../sass/scene.scss */
+/* line 46, ../sass/scene.scss */
 [id^="bingo_header_"] span:first-of-type {
   height: 11px;
   overflow: hidden;
   z-index: 1;
 }
-/* line 52, ../sass/scene.scss */
+/* line 51, ../sass/scene.scss */
 [id^="bingo_header_"] span:last-of-type {
   color: #FB0;
   z-index: 0;
 }
-/* line 57, ../sass/scene.scss */
+/* line 56, ../sass/scene.scss */
 [id^="bingo_header_"] div {
   background: url(../images/star.png) no-repeat 0 1px;
   display: inline-block;
@@ -978,7 +836,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   padding-top: 0;
   width: 18px;
 }
-/* line 64, ../sass/scene.scss */
+/* line 63, ../sass/scene.scss */
 [id^="bingo_header_"] div:nth-child(2) {
   background: none;
   font-family: Amaranth;
@@ -990,64 +848,64 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   vertical-align: text-bottom;
   width: auto;
 }
-/* line 75, ../sass/scene.scss */
+/* line 74, ../sass/scene.scss */
 [id^="bingo_header_"] div:last-child {
   margin-left: 4px;
   margin-right: -4px;
 }
 
-/* line 81, ../sass/scene.scss */
+/* line 80, ../sass/scene.scss */
 #bingo_header_1 {
   top: 92px;
 }
-/* line 84, ../sass/scene.scss */
+/* line 83, ../sass/scene.scss */
 #bingo_header_1 div:first-child {
   left: 247px;
 }
-/* line 87, ../sass/scene.scss */
+/* line 86, ../sass/scene.scss */
 #bingo_header_1 div:last-child {
   left: 411px;
 }
-/* line 91, ../sass/scene.scss */
+/* line 90, ../sass/scene.scss */
 #bingo_header_1 span {
   left: 269px;
 }
 
-/* line 95, ../sass/scene.scss */
+/* line 94, ../sass/scene.scss */
 #bingo_header_2 {
   top: 295px;
 }
-/* line 98, ../sass/scene.scss */
+/* line 97, ../sass/scene.scss */
 #bingo_header_2 div:first-child {
   left: 243px;
 }
-/* line 101, ../sass/scene.scss */
+/* line 100, ../sass/scene.scss */
 #bingo_header_2 div:last-child {
   left: 415px;
 }
-/* line 105, ../sass/scene.scss */
+/* line 104, ../sass/scene.scss */
 #bingo_header_2 span {
   left: 268px;
 }
 
-/* line 109, ../sass/scene.scss */
+/* line 108, ../sass/scene.scss */
 #bingo_header_3 {
   top: 497px;
 }
-/* line 112, ../sass/scene.scss */
+/* line 111, ../sass/scene.scss */
 #bingo_header_3 div:first-child {
   left: 247px;
 }
-/* line 115, ../sass/scene.scss */
+/* line 114, ../sass/scene.scss */
 #bingo_header_3 div:last-child {
   left: 411px;
 }
-/* line 119, ../sass/scene.scss */
+/* line 118, ../sass/scene.scss */
 #bingo_header_3 span {
   left: 271px;
 }
 
-/* line 123, ../sass/scene.scss */
+/* line 122, ../sass/scene.scss */
 .scene_bingo {
   background: url(../images/game_bingo.png) no-repeat;
   height: 143px;
@@ -1058,34 +916,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* третья колонка */
   /* четвёртая колонка */
 }
-/* line 127, ../sass/scene.scss */
+/* line 126, ../sass/scene.scss */
 .scene_bingo.top {
   top: 118px;
 }
-/* line 129, ../sass/scene.scss */
+/* line 128, ../sass/scene.scss */
 .scene_bingo.top + div {
   /*кнопка в первом ряду: позиция по вертикали*/
   top: 236px;
 }
-/* line 134, ../sass/scene.scss */
+/* line 133, ../sass/scene.scss */
 .scene_bingo.middle {
   top: 321px;
 }
-/* line 136, ../sass/scene.scss */
+/* line 135, ../sass/scene.scss */
 .scene_bingo.middle + div {
   /*кнопка во втором ряду: позиция по вертикали*/
   top: 439px;
 }
-/* line 141, ../sass/scene.scss */
+/* line 140, ../sass/scene.scss */
 .scene_bingo.bottom {
   top: 523px;
 }
-/* line 143, ../sass/scene.scss */
+/* line 142, ../sass/scene.scss */
 .scene_bingo.bottom + div {
   /*кнопка в третьем ряду: позиция по вертикали*/
   top: 641px;
 }
-/* line 148, ../sass/scene.scss */
+/* line 147, ../sass/scene.scss */
 .scene_bingo + div {
   /*кнопки во всех рядах: высота, ширина*/
   display: block;
@@ -1095,7 +953,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: center;
   width: 125px;
 }
-/* line 156, ../sass/scene.scss */
+/* line 155, ../sass/scene.scss */
 .scene_bingo + div > div {
   background-color: #EAE4FD;
   border: solid 1px #000;
@@ -1107,40 +965,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: static;
   white-space: nowrap;
 }
-/* line 170, ../sass/scene.scss */
+/* line 169, ../sass/scene.scss */
 .scene_bingo.left {
   left: 252px;
 }
-/* line 172, ../sass/scene.scss */
+/* line 171, ../sass/scene.scss */
 .scene_bingo.left + div {
   left: 252px;
 }
-/* line 177, ../sass/scene.scss */
+/* line 176, ../sass/scene.scss */
 .scene_bingo.center_left {
   left: 405px;
 }
-/* line 179, ../sass/scene.scss */
+/* line 178, ../sass/scene.scss */
 .scene_bingo.center_left + div {
   left: 405px;
 }
-/* line 184, ../sass/scene.scss */
+/* line 183, ../sass/scene.scss */
 .scene_bingo.center_right {
   left: 559px;
 }
-/* line 186, ../sass/scene.scss */
+/* line 185, ../sass/scene.scss */
 .scene_bingo.center_right + div {
   left: 559px;
 }
-/* line 191, ../sass/scene.scss */
+/* line 190, ../sass/scene.scss */
 .scene_bingo.right {
   left: 708px;
 }
-/* line 193, ../sass/scene.scss */
+/* line 192, ../sass/scene.scss */
 .scene_bingo.right + div {
   left: 708px;
 }
 
-/* line 198, ../sass/scene.scss */
+/* line 197, ../sass/scene.scss */
 #shell-corner-left {
   background: url(../images/shell_corners/vertical_left.jpg);
   left: 217px;
@@ -1150,7 +1008,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 1;
 }
 
-/* line 206, ../sass/scene.scss */
+/* line 205, ../sass/scene.scss */
 #shell-corner-right {
   background: url(../images/shell_corners/vertical_right.jpg);
   left: 841px;
@@ -1281,46 +1139,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url("../sources/fonts/Amaranth.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: 'AvenirBook';
-  src: url("../sources/fonts/Avenir-Book.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirMedium';
-  src: url("../sources/fonts/Avenir-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlack';
-  src: url("../sources/fonts/AvenirLTStd-Black.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirHeavy';
-  src: url("../sources/fonts/AvenirLTStd-Heavy.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirOblique';
-  src: url("../sources/fonts/AvenirLTStd-Oblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirBlackOblique';
-  src: url("../sources/fonts/AvenirLTStd-BlackOblique.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirLight';
-  src: url("../sources/fonts/avenir-lt-35-light-1361499806.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'AvenirRoman';
-  src: url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype");
-}
-
 /* recalculate */
 /* line 5, ../sass/right_side.scss */
 .panel_content p {
@@ -1396,25 +1214,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 61, ../sass/right_side.scss */
 #right_promotion
 .subheader {
-  background: url(../images/right_promo.png) no-repeat 10px 11px;
+  background: url(../images/right_promo.png) no-repeat 10px 12px;
+  background-size: 12.4%;
 }
 
 /* line 66, ../sass/right_side.scss */
 #right_live_support
 .subheader {
   background: url(../images/right_live_chat.png) no-repeat 8px 11px;
+  background-size: 17%;
   letter-spacing: -0.45px;
   padding-left: 29px;
 }
 
 /* bottom */
-/* line 91, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #my_balance,
 #currency_sum {
   line-height: 35px;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 #my_balance {
   bottom: 7px;
   font-family: AvenirRoman;
@@ -1423,12 +1243,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   letter-spacing: 0.6px;
   margin-left: 12px;
 }
-/* line 101, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 #my_balance b {
   font-family: AvenirBlack;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #currency_sum {
   background-color: #0F0E32;
   border-bottom: solid 1px #999;
@@ -1445,18 +1265,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 90px;
 }
 
-/* line 120, ../sass/screen.scss */
-#bleaks {
+/* line 142, ../sass/screen.scss */
+#bleaks_top {
   background: url(../images/bleaks.png) no-repeat;
-  top: 34px;
-  left: 0;
   opacity: 0.4;
-  height: 705px;
-  width: 246px;
   z-index: 2;
+  background-position: -167px 0;
+  height: 50px;
+  left: 167px;
+  top: 34px;
+  width: 70px;
 }
 
-/* line 129, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
+#bleaks_bottom {
+  background: url(../images/bleaks.png) no-repeat;
+  opacity: 0.4;
+  z-index: 2;
+  background-position: 0 100%;
+  bottom: 29px;
+  height: 70px;
+  left: 0;
+  width: 220px;
+}
+
+/* line 158, ../sass/screen.scss */
 #bottom_top_left {
   background: url(../images/half_round_2.png) no-repeat;
   background-size: contain;
@@ -1467,13 +1300,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 1;
 }
 
-/* line 139, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 #bottom_menu_left_side,
 #bottom_menu_right_side {
   bottom: 1px;
 }
 
-/* line 142, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 #bottom_menu_left_side {
   background: url(../images/bg_bottom_panel_left.png) repeat-x;
   height: 48px;
@@ -1481,7 +1314,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 0;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 #bottom_menu_right_side {
   background: url(../images/bg_bottom_panel_right.png);
   border-top: solid 1px #5A4AF0;
@@ -1492,7 +1325,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: right;
 }
 
-/* line 159, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 #make_a_deposite {
   background: url(../images/make_a_deposite.png) no-repeat;
   border-radius: 5px;
@@ -1513,8 +1346,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: absolute;
 }
 
-/* line 178, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 .bottom_menu_item {
+  background: url(../images/bottom_pyctos.png) no-repeat;
+  background-size: 360px 32px;
+  background-position-y: -6px;
   bottom: 13.84615px;
   color: #FFF;
   font-family: Amaranth;
@@ -1525,27 +1361,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   line-height: 21.53846px;
 }
 
-/* line 188, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 #bottom_menu_item_profile {
-  background: url(../images/bottom_menu_user.png) no-repeat 4px -5px;
-  padding-left: 33px;
+  background-position-x: 7px;
+  padding-left: 34px;
   right: 370px;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 #bottom_menu_item_cashier {
-  background: url(../images/bottom_menu_casher.png) no-repeat 1px -5px;
+  background-position-x: -74px;
   padding-left: 28px;
   right: 285.84615px;
 }
 
-/* line 200, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 #bottom_menu_item_games {
-  background: url(../images/bottom_menu_pointer_right.png) no-repeat 6.01504px -3.00752px black;
   border-bottom: solid 1px #999;
   border-radius: 20px;
   bottom: 9.23077px;
   box-shadow: 0 3px 10px #140D30 inset !important;
+  background-position-x: -157px;
   height: 23.07692px;
   letter-spacing: -0.46154px;
   right: 181.69231px;
@@ -1553,17 +1389,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 51.53846px;
 }
 
-/* line 213, ../sass/screen.scss */
+/* line 242, ../sass/screen.scss */
 #bottom_menu_item_chat {
-  background: url(../images/bottom_menu_chat.png) no-repeat -3.00752px -4.51128px;
+  background-position-x: -243px;
   letter-spacing: -0.38462px;
   padding-left: 25.38462px;
   right: 91.61538px;
 }
 
-/* line 220, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 #bottom_menu_item_logout {
-  background: url(../images/bottom_menu_switch_off.png) no-repeat -3.7594px -4.00752px;
+  background-position-x: -333px;
   letter-spacing: -0.69px;
   padding-left: 26.15385px;
   right: 6.38462px;

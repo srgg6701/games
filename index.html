@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <title>Las Vegas</title>
+<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/fonts_common.css">
+<script>
+var font_table=(navigator.platform.indexOf('Win')!=-1)? 'windows':'common';
+
+<!-- ******************************* -->
+font_table='common';
+
+document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/fonts_'+font_table+'.css">');
+</script>
 <link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/screen.css">
 <!--[if IE]>
 	<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/ie.css">
@@ -53,8 +62,9 @@
     	<div id="ear_right_3"></div>-->
     
     <div id="welcome_back">
+    	<div class="silver"></div>
     	Welcome back, 
-        <div class="user_name">Jhon Doe! <img src="images/pointer_down.png" width="11" height="5"></div>
+        <div class="user_name">Jhon Doe <img src="images/pointer_down.png" width="11" height="5"></div>
   </div>
 	
         	<div id="free"></div>
@@ -192,7 +202,9 @@
                 	3.520 &euro;
                 </div>
             	
-        <div id="bleaks"></div>
+        <div id="bleaks_top"></div>
+
+        <div id="bleaks_bottom"></div>
 
         <!-- background -->
         <div id="bottom_menu_right_side">
