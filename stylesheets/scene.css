@@ -108,117 +108,97 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 27, ../sass/scene.scss */
 [id^="bingo_header_"] {
-  color: #FFD800;
-  height: 32px;
   left: 200px;
   right: 146px;
   text-align: center;
-  text-shadow: #000 1.5px 1.5px 0, #000 -1.5px -1.5px 0, #000 -2px 0px 0;
 }
-/* line 34, ../sass/scene.scss */
-[id^="bingo_header_"] span {
-  background: none;
-  font-family: Amaranth;
-  font-size: 24px;
-  font-style: italic;
-  font-weight: bold;
-  left: 240px;
-  letter-spacing: -0.31px;
-  padding-bottom: 4px;
-  position: absolute;
-  vertical-align: text-bottom;
-  width: auto;
-}
-/* line 46, ../sass/scene.scss */
-[id^="bingo_header_"] span:first-of-type {
-  height: 11px;
-  overflow: hidden;
-  z-index: 1;
-}
-/* line 51, ../sass/scene.scss */
-[id^="bingo_header_"] span:last-of-type {
-  color: #FB0;
-  z-index: 0;
-}
-/* line 56, ../sass/scene.scss */
+/* line 31, ../sass/scene.scss */
 [id^="bingo_header_"] div {
-  background: url(../images/star.png) no-repeat 0 1px;
+  position: relative;
+}
+/* line 33, ../sass/scene.scss */
+[id^="bingo_header_"] div > div {
   display: inline-block;
-  height: 25px;
+  position: relative;
+}
+/* line 37, ../sass/scene.scss */
+[id^="bingo_header_"] div > div:first-child, [id^="bingo_header_"] div > div:last-child {
+  background: url(../images/star.png) no-repeat 0 1px;
+  height: 27px;
   margin-top: 2px;
-  padding-top: 0;
   width: 18px;
 }
-/* line 63, ../sass/scene.scss */
-[id^="bingo_header_"] div:nth-child(2) {
-  background: none;
-  font-family: Amaranth;
-  font-size: 24px;
-  font-style: italic;
-  font-weight: bold;
-  letter-spacing: -0.31px;
-  padding-bottom: 4px;
-  vertical-align: text-bottom;
-  width: auto;
-}
-/* line 74, ../sass/scene.scss */
-[id^="bingo_header_"] div:last-child {
-  margin-left: 4px;
-  margin-right: -4px;
+/* line 43, ../sass/scene.scss */
+[id^="bingo_header_"] div > div:nth-child(2) {
+  background-size: 100%;
+  height: 26px;
 }
 
-/* line 80, ../sass/scene.scss */
+/* line 50, ../sass/scene.scss */
 #bingo_header_1 {
   top: 92px;
 }
-/* line 83, ../sass/scene.scss */
-#bingo_header_1 div:first-child {
-  left: 247px;
+/* line 54, ../sass/scene.scss */
+#bingo_header_1 div > div:nth-child(2) {
+  background: url(../images/scene-instant-games.png);
+  background-size: 100%;
+  margin-left: 3px;
+  margin-top: 3px;
+  width: 146px;
 }
-/* line 86, ../sass/scene.scss */
-#bingo_header_1 div:last-child {
-  left: 411px;
-}
-/* line 90, ../sass/scene.scss */
-#bingo_header_1 span {
-  left: 269px;
+/* line 61, ../sass/scene.scss */
+#bingo_header_1 div > div:last-child {
+  margin-left: 2px;
+  margin-right: -2px;
 }
 
-/* line 94, ../sass/scene.scss */
+/* line 68, ../sass/scene.scss */
 #bingo_header_2 {
   top: 295px;
 }
-/* line 97, ../sass/scene.scss */
-#bingo_header_2 div:first-child {
-  left: 243px;
+/* line 72, ../sass/scene.scss */
+#bingo_header_2 div > div:nth-child(2) {
+  background: url(../images/scene-scratch-games.png);
+  background-size: 100%;
+  margin-left: 3px;
+  margin-top: 3px;
+  width: 146px;
 }
-/* line 100, ../sass/scene.scss */
-#bingo_header_2 div:last-child {
-  left: 415px;
+/* line 79, ../sass/scene.scss */
+#bingo_header_2 div > div:first-child {
+  margin-right: 2px;
+  margin-left: -12px;
+}
+/* line 83, ../sass/scene.scss */
+#bingo_header_2 div > div:last-child {
+  margin-left: 6px;
+  margin-right: -16px;
+}
+
+/* line 90, ../sass/scene.scss */
+#bingo_header_3 {
+  top: 498px;
+}
+/* line 94, ../sass/scene.scss */
+#bingo_header_3 div > div:nth-child(2) {
+  background: url(../images/scene-slots-mashine.png);
+  background-size: 100%;
+  height: 23px;
+  margin-left: 3px;
+  width: 146px;
+}
+/* line 101, ../sass/scene.scss */
+#bingo_header_3 div > div:first-child {
+  margin-bottom: -6px;
 }
 /* line 104, ../sass/scene.scss */
-#bingo_header_2 span {
-  left: 268px;
+#bingo_header_3 div > div:last-child {
+  margin-bottom: -6px;
+  margin-left: 2px;
+  margin-right: -2px;
 }
 
-/* line 108, ../sass/scene.scss */
-#bingo_header_3 {
-  top: 497px;
-}
-/* line 111, ../sass/scene.scss */
-#bingo_header_3 div:first-child {
-  left: 247px;
-}
-/* line 114, ../sass/scene.scss */
-#bingo_header_3 div:last-child {
-  left: 411px;
-}
-/* line 118, ../sass/scene.scss */
-#bingo_header_3 span {
-  left: 271px;
-}
-
-/* line 122, ../sass/scene.scss */
+/* line 112, ../sass/scene.scss */
 .scene_bingo {
   background: url(../images/game_bingo.png) no-repeat;
   height: 143px;
@@ -229,34 +209,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* третья колонка */
   /* четвёртая колонка */
 }
-/* line 126, ../sass/scene.scss */
+/* line 116, ../sass/scene.scss */
 .scene_bingo.top {
   top: 118px;
 }
-/* line 128, ../sass/scene.scss */
+/* line 118, ../sass/scene.scss */
 .scene_bingo.top + div {
   /*кнопка в первом ряду: позиция по вертикали*/
   top: 236px;
 }
-/* line 133, ../sass/scene.scss */
+/* line 123, ../sass/scene.scss */
 .scene_bingo.middle {
   top: 321px;
 }
-/* line 135, ../sass/scene.scss */
+/* line 125, ../sass/scene.scss */
 .scene_bingo.middle + div {
   /*кнопка во втором ряду: позиция по вертикали*/
   top: 439px;
 }
-/* line 140, ../sass/scene.scss */
+/* line 130, ../sass/scene.scss */
 .scene_bingo.bottom {
   top: 523px;
 }
-/* line 142, ../sass/scene.scss */
+/* line 132, ../sass/scene.scss */
 .scene_bingo.bottom + div {
   /*кнопка в третьем ряду: позиция по вертикали*/
   top: 641px;
 }
-/* line 147, ../sass/scene.scss */
+/* line 137, ../sass/scene.scss */
 .scene_bingo + div {
   /*кнопки во всех рядах: высота, ширина*/
   display: block;
@@ -266,7 +246,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: center;
   width: 125px;
 }
-/* line 155, ../sass/scene.scss */
+/* line 145, ../sass/scene.scss */
 .scene_bingo + div > div {
   background-color: #EAE4FD;
   border: solid 1px #000;
@@ -278,40 +258,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: static;
   white-space: nowrap;
 }
-/* line 169, ../sass/scene.scss */
+/* line 159, ../sass/scene.scss */
 .scene_bingo.left {
   left: 252px;
 }
-/* line 171, ../sass/scene.scss */
+/* line 161, ../sass/scene.scss */
 .scene_bingo.left + div {
   left: 252px;
 }
-/* line 176, ../sass/scene.scss */
+/* line 166, ../sass/scene.scss */
 .scene_bingo.center_left {
   left: 405px;
 }
-/* line 178, ../sass/scene.scss */
+/* line 168, ../sass/scene.scss */
 .scene_bingo.center_left + div {
   left: 405px;
 }
-/* line 183, ../sass/scene.scss */
+/* line 173, ../sass/scene.scss */
 .scene_bingo.center_right {
   left: 559px;
 }
-/* line 185, ../sass/scene.scss */
+/* line 175, ../sass/scene.scss */
 .scene_bingo.center_right + div {
   left: 559px;
 }
-/* line 190, ../sass/scene.scss */
+/* line 180, ../sass/scene.scss */
 .scene_bingo.right {
   left: 708px;
 }
-/* line 192, ../sass/scene.scss */
+/* line 182, ../sass/scene.scss */
 .scene_bingo.right + div {
   left: 708px;
 }
 
-/* line 197, ../sass/scene.scss */
+/* line 187, ../sass/scene.scss */
 #shell-corner-left {
   background: url(../images/shell_corners/vertical_left.jpg);
   left: 217px;
@@ -321,7 +301,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 1;
 }
 
-/* line 205, ../sass/scene.scss */
+/* line 195, ../sass/scene.scss */
 #shell-corner-right {
   background: url(../images/shell_corners/vertical_right.jpg);
   left: 841px;
