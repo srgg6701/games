@@ -840,7 +840,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: bold;
   letter-spacing: 0.5px;
   padding-bottom: 4px;
-  text-shadow: #000 1.5px 1.5px 0, #000 -1.5px -1.5px 0, #000 -2px 0px 0;
+  text-shadow: #222 1.5px 1.5px 0, #222 -1.5px -1.5px 0, #222 -2px 0px 0;
   top: -8px;
   white-space: nowrap;
 }
