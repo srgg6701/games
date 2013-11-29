@@ -39,6 +39,6 @@ $(function(){
 	}
 	setScreenParams();
 	window.onresize=function(){
-		if(screen.width>=800) setScreenParams();
+		setScreenParams();
 	} 
 });
