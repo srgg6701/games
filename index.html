@@ -9,6 +9,7 @@ var font_table=(navigator.platform.indexOf('Win')!=-1)? 'windows':'common';
 
 <!-- ******************************* -->
 font_table='common';
+<!-- ******************************* -->
 
 document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/fonts_'+font_table+'.css">');
 </script>
@@ -36,35 +37,40 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
             	Total Winings
             </div>
 
-  <!--<div class="win_numb" id="win_numb_1"> </div>-->
-
 	<div id="hell_trinity"></div>
     
 	<div id="hell666_1" class="h666">
     	<span>999</span>
     	<span>999</span>
     </div>
-    	<!--<div id="ear_left_1"></div>
-    	<div id="ear_right_1"></div>
-  <div class="win_numb" id="win_numb_2"> </div>-->
+
 	<div id="hell666_2" class="h666">
     	<span>999</span>
     	<span>999</span>
     </div>
-    	<!--<div id="ear_left_2"></div>
-    	<div id="ear_right_2"></div>
-  <div class="win_numb" id="win_numb_3"> </div>-->
+
 	<div id="hell666_3" class="h666">
     	<span>999</span>
     	<span>999</span>
     </div>
-    	<!--<div id="ear_left_3"></div>
-    	<div id="ear_right_3"></div>-->
     
     <div id="welcome_back">
     	<div class="silver"></div>
     	Welcome back, 
-        <div class="user_name">Jhon Doe <img src="images/pointer_down.png" width="11" height="5"></div>
+        <div class="user_name">Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
+        	<div id="user_menu_container">
+                <menu id="user_profile_menu">
+                    <li><div></div><a href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
+                    <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
+                        <menu id="cashier_submenu">
+                            <li><a href="#">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
+                            <li><a href="#">Withdraw Money</a></li>
+                        </menu>
+                    </li>
+                    <li><div></div><a href="#">Logout</a></li>
+                </menu>
+            </div>
+        </div>
   </div>
 	
         	<div id="free"></div>

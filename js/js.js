@@ -39,6 +39,47 @@ $(function(){
 	}
 	setScreenParams();
 	window.onresize=function(){
-		setScreenParams();
+		if(screen.width>=800) setScreenParams();
 	} 
+	
+	var menus={
+		dur:100,
+		pointer:'#user_profile_menu_pointer',
+		menuContainer:'#user_menu_container',
+		menuOuter:'#user_profile_menu',
+		menuInner:$('#cashier_submenu'),
+		menu_active:false,
+		showMenu:function(dur,container){
+			if(dur===true) dur=this.dur;
+			if(!container) container=this.menuContainer;
+			$(container).show(dur);
+		},
+		hideMenu:function(){
+			setTimeout( function(){
+				if(!menus.menu_active)
+					$(menus.menuContainer).hide(menus.dur);
+			},300);
+		}
+	};
+	
+	$(menus.pointer).mouseenter(function(){
+		menus.showMenu(true);
+	}).mouseleave(function(){
+		menus.hideMenu();
+	});
+	$(menus.menuContainer).mouseenter(function(){
+		menus.showMenu();
+	});
+	$('menu',menus.menuContainer).mouseenter(function(){
+		menus.menu_active=true;
+	});
+	$(menus.menuOuter).mouseleave(function(){
+		menus.menu_active=false;
+		menus.hideMenu();
+	});
+	$('li:has(menu)').mouseenter(function(){
+		$('menu',this).show(200);
+	}).mouseleave(function(){
+		$('menu',this).hide(200);
+	});
 });

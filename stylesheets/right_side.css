@@ -1,0 +1,167 @@
+/* variables, mixins etc */
+/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* inc clearfix */
+@font-face {
+  font-family: 'Amaranth';
+  src: url("../sources/fonts/Amaranth.ttf") format("truetype");
+}
+
+/* recalculate */
+/* line 5, ../sass/right_side.scss */
+.panel_content p {
+  font-family: AvenirRoman;
+  font-weight: normal;
+  letter-spacing: -0.6px;
+  line-height: 19px;
+  margin-top: 2px;
+}
+/* line 11, ../sass/right_side.scss */
+.panel_content p:first-child {
+  font-family: AvenirBlack;
+  margin-top: 2px;
+}
+/* line 15, ../sass/right_side.scss */
+.panel_content p img {
+  margin-top: 7px;
+  margin-left: 2px;
+  height: 66px;
+  width: 105px;
+}
+/* line 22, ../sass/right_side.scss */
+.panel_content .image_motto {
+  font-family: AvenirRoman;
+  letter-spacing: -0.65px;
+  line-height: 18.9px;
+  margin: 5px auto;
+  padding: 0 10px 0 1px;
+}
+
+/* line 30, ../sass/right_side.scss */
+.right_block {
+  border: solid 1px #000;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  opacity: 0.25;
+}
+
+/* line 36, ../sass/right_side.scss */
+.right_block,
+.right_panel {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  right: 9px;
+  width: 136px;
+}
+
+/* line 42, ../sass/right_side.scss */
+.right_panel
+.panel_content {
+  color: #FFF;
+  font-size: 13.5px;
+  padding: 42px 14px;
+}
+
+/* line 47, ../sass/right_side.scss */
+.right_block {
+  background-color: #19174C;
+  height: 173.84615px;
+  opacity: 0.9;
+}
+
+/* line 53, ../sass/right_side.scss */
+#right_block_promotions,
+#right_promotion {
+  top: 65px;
+}
+
+/* line 57, ../sass/right_side.scss */
+#right_block_live_support,
+#right_live_support {
+  top: 246px;
+}
+
+/* line 61, ../sass/right_side.scss */
+#right_promotion
+.subheader {
+  background: url(../images/right_promo.png) no-repeat 10px 12px;
+  background-size: 12.4%;
+}
+
+/* line 66, ../sass/right_side.scss */
+#right_live_support
+.subheader {
+  background: url(../images/right_live_chat.png) no-repeat 8px 11px;
+  background-size: 17%;
+  letter-spacing: -0.45px;
+  padding-left: 29px;
+}
