@@ -71,6 +71,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* recalculate */
+/* common classes */
+/* line 63, ../sass/shared.scss */
+.btn {
+  cursor: default;
+}
+
 /* line 6, ../sass/left_side.scss */
 #left_top_box,
 .left_bottom_box,

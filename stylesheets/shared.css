@@ -70,3 +70,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* recalculate */
+/* common classes */
+/* line 63, ../sass/shared.scss */
+.btn {
+  cursor: default;
+}

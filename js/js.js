@@ -41,45 +41,140 @@ $(function(){
 	window.onresize=function(){
 		if(screen.width>=800) setScreenParams();
 	} 
-	
+	/**
+	 * How it works.
+	 	see dd_menu.xlsx
+	 */
 	var menus={
 		dur:100,
-		pointer:'#user_profile_menu_pointer',
-		menuContainer:'#user_menu_container',
-		menuOuter:'#user_profile_menu',
-		menuInner:$('#cashier_submenu'),
-		menu_active:false,
-		showMenu:function(dur,container){
+		// the initializer to show menu
+		pointer:'data-container_id',
+		pointer_active:false,
+		// container id that has a menu
+		// we get it when mouse enters in the pointer
+		menu_container_id: false,
+		// the same container id that has a menu
+		// but here we get it when mouse enters in the <menu> wrapper
+		menu_active_container_id:false,
+		// top menu container
+		menu_container_class:'.menu_container',
+		// this block appears if the submenu aims the scroll
+		menu_wrapper_class:'.menu_wrapper',
+		showMenu:function(dur,menu_manager){
+			//console.group('%cshowMenu()','font-weight:bold');
 			if(dur===true) dur=this.dur;
-			if(!container) container=this.menuContainer;
-			$(container).show(dur);
+			var container_id=$(menu_manager).attr(this.pointer);
+			this.menu_container_id='#'+container_id;
+			$(this.menu_container_id).show(dur);
+			//console.log('show menu_container_id: %c'+menus.menu_container_id,'color:green');
+			//console.groupEnd();
 		},
 		hideMenu:function(){
+			//console.group('%chideMenu()','font-weight:bold');
+			//console.log('before Timeout:\nlast_container_id = %c'+menus.menu_container_id,'color:blue');
+			var last_container_id=menus.menu_container_id;
+			var last_pointer_state=menus.pointer_active;
 			setTimeout( function(){
-				if(!menus.menu_active)
-					$(menus.menuContainer).hide(menus.dur);
+				/*console.log(
+'after Timeout:\nmenu_active_container_id = '+menus.menu_active_container_id+
+'\nto hide: menu_container_id = '+menus.menu_container_id+
+'\nlast_container_id = %c'+last_container_id,'color:orange');*/
+				// if we got a new menu active, hide previous one:
+				if( last_container_id
+					&& menus.menu_container_id
+					&& last_container_id != menus.menu_container_id
+				  ){
+					//console.log('hide %clast_container_id','font-weight:bold, color:blue');
+					$(last_container_id).hide(menus.dur);
+				}else if(!menus.menu_active_container_id && !last_pointer_state){ // hide current
+					//console.log('hide %cmenu_container_id','font-weight:bold,color:brown');
+					$(menus.menu_container_id).hide(menus.dur);
+				}
 			},300);
+			//console.groupEnd();
 		}
 	};
-	
-	$(menus.pointer).mouseenter(function(){
-		menus.showMenu(true);
-	}).mouseleave(function(){
+	// set target menu and show it
+	$('['+menus.pointer+']').mouseenter(function(){
+		// str 90
+		//console.log('%cstr 90: pointer.%cmouseenter %s','font-weight:bold','color:blue','pointer ACTIVE');
+		menus.pointer_active=true;
+		menus.showMenu(true,this); 
+	}).mouseleave(function(){ // get target menu and hide it
+		// str 94
+		//console.log('%cstr 94: pointer.%cmouseleave %s','font-weight:bold','color:orange','pointer actve FALSE');
+		menus.pointer_active=false;
 		menus.hideMenu();
 	});
-	$(menus.menuContainer).mouseenter(function(){
-		menus.showMenu();
+	// set menu mark as active
+	$(menus.menu_container_class) // .menu_container
+		.mouseenter(function(){
+			// str 101
+			//console.log('%cstr 101','font-weight:bold');
+			//console.log('menu_active_container_id = %c'+menus.menu_active_container_id,'color:violet');
+			menus.menu_active_container_id=this.id;
 	});
-	$('menu',menus.menuContainer).mouseenter(function(){
-		menus.menu_active=true;
-	});
-	$(menus.menuOuter).mouseleave(function(){
-		menus.menu_active=false;
+	// hide submenu
+	// when mouse leave menu in drops its mark as active; however, remember 
+	// that we can simultaneously enter to the menu on next/previous level.
+	// In that moment we set menu_active_container_id again! See code above.
+	$(menus.menu_container_class+' > menu').mouseleave(function(){		
+		// str 111
+		//console.log('%cstr 111','font-weight:bold')
+		//console.log('menu_active_container_id = %cfalse','color:red');
+		menus.menu_active_container_id=false;
 		menus.hideMenu();
 	});
+	// show submenu
 	$('li:has(menu)').mouseenter(function(){
-		$('menu',this).show(200);
-	}).mouseleave(function(){
+		// str 119
+		//console.log('%cstr 119','font-weight:bold');		
+		//console.log('show '+menus.menu_wrapper_class);
+		if($(this).parent('menu').attr('data-slow-children'))
+			$('menu',this).show(200,function(){
+				$(menus.menu_wrapper_class,this).show(200)
+			});
+		else{
+			$('menu',this).show(0);
+			$(menus.menu_wrapper_class,this).show(0);
+		}
+	}).mouseleave(function(){ // hide submenu
+		// str 130
+		//console.group('%cstr 130','font-weight:bold');
+			//console.log('hide '+menus.menu_wrapper_class);
+			//console.log('hide menu');
+		//console.groupEnd();		
+		$(menus.menu_wrapper_class,this).hide();
 		$('menu',this).hide(200);
 	});
+	// scroll
+	$('div'+menus.menu_wrapper_class+' >div:first-child').click(function(){
+		scrollMenuItems(this,'up');
+	});
+	$('div'+menus.menu_wrapper_class+' >div:last-child').click(function(){
+		scrollMenuItems(this,'down');
+	});
 });
+function scrollMenuItems(obj,direction){
+	var itemsBlock=$(obj)[(direction=='up')? 'next':'prev']('div');
+	var menu = $('>menu',itemsBlock);
+	var topMargin=parseFloat($(menu).css('margin-top'));
+	var menuHeight=parseFloat($(menu).height());
+	var singleItemHeight=menuHeight/$('li',menu).size();
+	var scrollLimit=parseFloat($(itemsBlock).innerHeight()-menuHeight);
+	console.group('%cscrollMenuItems','font-weight:bold');
+	if(direction=='up') {// 640-590=50 //scrollLimit 
+		// -313.313 : -301.312555px : margin-top: -315.31256103515625 
+		// 0 + 14	>		-301
+		if(topMargin-singleItemHeight/4>scrollLimit)  
+			$(menu).css('margin-top',topMargin-singleItemHeight/3+'px');
+	}else if(direction=='down'){
+		if(topMargin<-(singleItemHeight/3)) // 43
+			$(menu).css('margin-top',topMargin+singleItemHeight/3+'px');
+	}
+	//console.log('menu height: '+menuHeight);
+	//console.log('singleItemHeight: '+singleItemHeight);
+	//console.log('scrollLimit: %c'+scrollLimit,'color:violet');
+	//console.log('margin-top: %c'+topMargin,'color:green');
+	//console.groupEnd();
+}

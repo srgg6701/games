@@ -71,6 +71,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* recalculate */
+/* common classes */
+/* line 63, ../sass/shared.scss */
+.btn {
+  cursor: default;
+}
+
 /* line 5, ../sass/right_side.scss */
 .panel_content p {
   font-family: AvenirRoman;
@@ -103,10 +109,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 30, ../sass/right_side.scss */
 .right_block {
   border: solid 1px #000;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
   border-radius: 3px;
   opacity: 0.25;
 }
@@ -114,10 +116,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 36, ../sass/right_side.scss */
 .right_block,
 .right_panel {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
   border-radius: 3px;
   right: 9px;
   width: 136px;
