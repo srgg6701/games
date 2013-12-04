@@ -1,34 +1,51 @@
-// JavaScript Document
 var Game={
 	wrapperContainer:null,
 	shade_id:'global_shade',
+	user_container_id:'.user_profile',
 	myProfile:{
 		data:{
+			window_id:'#my_profile_data',
 		},
 		form:{
 			window_id:'#my_profile_form',
 		},
 		pass:{
+			window_id:'#my_profile_change_password_form',
 		}
 	},
+	appendUserBlock:function(block_name){
+		var userBlock=$(this.myProfile[block_name].window_id);
+		$(this.wrapperContainer).append(userBlock);
+		$(userBlock).css({
+			top: Game.arrangeWindow(block_name,'outerHeight'),
+			left: Game.arrangeWindow(block_name,'outerWidth')
+		}).fadeIn(300);	
+	},
 	arrangeWindow:function(obj_name,func){
-		console.dir(Game.wrapperContainer);
-		console.dir($(this.myProfile[obj_name].window_id));
-		return ($(Game.wrapperContainer)[func]()-$(this.myProfile[obj_name].window_id)[func]()) /2 + 'px';
+		//console.dir(Game.wrapperContainer);
+		//var currentId=Game.myProfile[obj_name].window_id;
+		//console.log('selector = '+currentId); 
+		//console.dir($(currentId));
+		//console.dir($(Game.myProfile[obj_name].window_id));
+		return ($(Game.wrapperContainer)[func]()-$(Game.myProfile[obj_name].window_id)[func]()) /2 + 'px';
 	},
 	showMyProfile:function(){
-		var profileForm=$(this.myProfile.form.window_id);
-		$(this.wrapperContainer)
-			.prepend('<div id="'+this.shade_id+'" class="shade cover"></div>')
-			.append(profileForm);	
-		$(profileForm).css({
-			top: Game.arrangeWindow('form','outerHeight'),
-			left: Game.arrangeWindow('form','outerWidth')
-		}).fadeIn(300);
+		
+		// in test mode: -------------------------------
+		$('#test_inner_submenu').fadeIn(500);
+		// end test mode: -------------------------------
+		
+		//var profileForm=$(this.myProfile.form.window_id);
+		$(this.wrapperContainer).prepend('<div id="'+this.shade_id+'" class="shade cover"></div>');	
+		// show current user block
+		this.appendUserBlock('form');
 	},
 	hideMyProfile:function(){
 		$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
-		$(this.myProfile.form.window_id).fadeOut(300);
+		$(this.user_container_id+':visible').fadeOut(300);
+		// in test mode: -------------------------------
+		$('#test_inner_submenu').fadeOut(500);
+		// end test mode: ------------------------------
 	}
 };
 $(function(){  
@@ -206,6 +223,16 @@ $(function(){
 	$('div'+menus.menu_wrapper_class+' >div:last-child').click(function(){
 		scrollMenuItems(this,'down');
 	});
+	
+	// in test mode: -------------------------------
+	$('#test_inner_submenu a').click(function(){
+		$(Game.user_container_id).hide(100);
+		//my_profile_data, my_profile_form, my_profile_change_password_form:
+		var tBlockId='#'+$(this).attr('data-block'); //
+		//data, pass, form:
+		var entityName=$(tBlockId).attr('data-container');
+		Game.appendUserBlock(entityName);
+	}); //----------------------------------------------
 });
 
 /*	Functions */

@@ -23,6 +23,12 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 </head>
 <body>
 <div id="wrapper">
+
+<div id="test_inner_submenu" style="background:#FFFF99; display:none; padding: 10px; position:absolute;z-index:6;">
+	<a href="#" data-block="my_profile_data">Profile data</a> | 
+	<a href="#" data-block="my_profile_form">Profile data form</a> | 
+    <a href="#" data-block="my_profile_change_password_form">Change password form</a>
+</div>
 	
   <div id="top_bar">
     </div>
@@ -413,13 +419,12 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 	        <div class="bottom_menu_item"  id="bottom_menu_item_logout">Logout</div>
 </div>
 <!-- My Profile Area 600x500 -->
-<div id="my_profile_form">
-  <div class="close"></div>
+<div id="my_profile_form" data-container="form" class="user_profile">
     <form name="form1" method="post" action="">
 	<table width="100%" cellpadding="10">
       <thead>
       	<tr>
-      		<td colspan="2"><h4><div id="pyct_my_profile"></div>My Profile</h4></td>
+      		<td colspan="2"><h4><div class="pyct my_profile"></div>My Profile</h4></td>
         </tr>
      </thead>
       <tr>
@@ -482,7 +487,43 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
      </tfoot>
     </table>
 	</form>
+  <div class="close"></div>
 </div>
-
+<!-- Change password area 430x343 -->
+<div id="my_profile_change_password_form" data-container="pass" class="user_profile">
+	<div>
+    	<h4><div class="pyct"></div>Change Password</h4>
+    </div>
+    <section>
+        <form name="form1" method="post" action="">
+            <input name="current_password" id="current_password" type="text" value="current password">
+            <input name="new_password" id="new_password" type="text" value="new password">
+            <input name="retype_password" id="retype_password" type="text" value="retype new password">
+            <button type="submit">Change Password</button>
+        </form>
+    </section>
+  <div class="go_left"></div>
+  <div class="close"></div>
+</div>
+<!-- User data area 430x343 -->
+<div id="my_profile_data" class="user_profile" data-container="data">
+	<div>
+    	<h4><div class="pyct my_profile"></div>My Profile</h4>
+    </div>    
+    <section>
+    	<div class="column">
+        	<p>username</p>
+        	<p>email</p>
+        	<p>currency</p>
+        </div>    	
+        <div class="column">
+        	<p>Jhon Doe</p>
+        	<p>jhon_doe@gmail.com</p>
+        	<p>EUR</p>
+        </div>
+        <button type="button">Switch to Money Play</button>
+    </section>
+  <div class="close"></div>
+</div>
 </body>
 </html>
