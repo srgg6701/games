@@ -1,0 +1,71 @@
+/* variables, mixins etc */ //
+@import "shared";
+
+.panel_content{
+	p{
+		font-family: AvenirRoman;
+		font-weight: normal;
+		letter-spacing: -0.6px;
+		line-height: 19px;
+		margin-top: 2px;	
+		&:first-child{
+			font-family: AvenirBlack;
+			margin-top: 2px;
+		}
+		img{
+			margin-top: 7px;
+			margin-left: 2px;
+			height: 66px;
+			width: 105px;
+		}
+	}
+	.image_motto{
+		font-family: AvenirRoman;
+		letter-spacing: -0.65px;
+		line-height: 18.9px;
+		margin: 5px auto;
+		padding: 0 10px 0 1px;
+	}
+}
+.right_block{
+	border: solid 1px #000;
+	border-radius: 3px;
+	opacity: 0.25;
+}
+.right_block, 
+.right_panel{
+	border-radius: 3px;
+	right: 9px;
+	width: 136px;
+}
+.right_panel
+.panel_content{
+    color: #FFF;
+	font-size: 13.5px;
+	padding: 42px 14px;
+}
+.right_block{
+	background-color: #19174C;
+	@include rcH(226);
+	opacity: 0.9;
+}
+#right_block_promotions,
+#right_promotion{
+	top: 65px;
+}
+#right_block_live_support,
+#right_live_support{
+	top: 246px	
+}
+#right_promotion
+.subheader{
+	background: url(../images/right_promo.png) no-repeat 10px 12px;
+	background-size: 12.4%;
+}
+#right_live_support
+.subheader{
+	background: url(../images/right_live_chat.png) no-repeat 8px 11px;
+	background-size: 17%;
+	letter-spacing: -0.45px;
+	padding-left: 29px;
+}

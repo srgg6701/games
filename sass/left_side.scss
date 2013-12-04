@@ -1,0 +1,74 @@
+/* variables, mixins etc */ //
+@import "shared";
+
+#left_top_box,
+.left_bottom_box,
+#left_bottom_palette{
+	left: 10px;
+	width: 178.61538px;
+}
+.left_bottom_box{
+	background-repeat: no-repeat !important;
+	@include box-sizing(border-box);
+	background-position: 11px 28px !important;
+	//background-size: 24px 16px !important;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #FFF;
+	height: 51px;
+	font-family: AvenirBlack;
+	font-size: 13.84615px;
+	font-weight: bold;
+	letter-spacing: -0.9px;
+	line-height: 23.07692px;
+	padding: 3px 13px 0 15px;
+	&>div{
+		color:#FFF;
+		font-family: AvenirMedium;
+		@include rcFontSize(16);
+		font-style: italic;
+		font-weight: 100;
+		@include rcL(54);
+		@include rcLetterSpacing(-0.18);
+		@include rcT(33);
+		width: 128px;
+		&>div{
+			@include rcFontSize(17);
+			font-style: normal;
+			font-weight: bold;
+			@include rcLetterSpacing(-1.9);
+			position: absolute;
+			right: 0;
+			top: 1px;
+		}
+	}
+}
+#left_bottom_box_1{
+	background: url(../images/copa.png);
+	background-position: 10px 16px !important;
+	background-size: 21px;
+	font-family: Amaranth;
+	font-style: italic;
+	font-size: 18px;
+	letter-spacing: -0.26923px;
+	padding-top: 12.30769px;
+	padding-left: 38.46154px;
+	padding-right: 0;
+	top: 405px;
+}
+#left_bottom_box_2{
+	background: url(../images/flag_germany.png);
+	top: 454.5px;
+}
+#left_bottom_box_3{
+	background:url(../images/flag_italy.png);
+	top: 505px;
+}
+#left_bottom_box_4{
+	background:url(../images/flag_gb.png);
+	top:555.5px;
+}
+#left_bottom_box_5{
+	background:url(../images/flag_greece.png);
+	top:606px;
+}		

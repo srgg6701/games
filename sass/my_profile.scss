@@ -1,0 +1,119 @@
+/* variables, mixins etc */ //
+@import "shared";
+
+#my_profile_form{
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+	background: url(../images/bg_my_profile_form_vertical.jpg) repeat-x 0 0px;
+	@include border-radius(4px);
+	//display: none;
+	height: 500px;
+	width: 600px;
+	z-index: 6;
+	*{
+		@include box-sizing(border-box);
+		font-family: Amaranth;
+		font-style: italic;
+		position: static;
+	}
+
+	td{
+		color: white;
+	}
+	.close{
+		border-top: solid 1px #666;
+		position: absolute;
+		right: -27px;
+		top:20px;
+		&:hover{
+			@include opacity(0.8);
+		}
+	}
+	input{
+		&[type="text"],
+		&[type="password"]{
+			height: 35px;
+			width: 100%;
+		}
+	}
+			
+	h4{
+		color: #FFD000;
+		display: inline-block;
+		font-size: 24px;
+		font-weight: bold;
+			
+	}
+	table{
+		background: url(../images/bg_my_profile_form_overlight.jpg) no-repeat 0 60px;
+		height: 100%;
+		td{
+			padding: 10px;
+			width: 50%;
+		}
+		thead{
+			background: url(../images/bg_my_profile_header.jpg) no-repeat;
+			line-height: 58px;
+			td{
+				text-align: center;
+			}
+			div{
+				&#pyct_my_profile{
+					background: url(../images/user_gold.png) no-repeat;
+					height: 22px;
+					display: inline-block;
+					margin-right: 10px;
+					margin-bottom: -4px;
+					width: 18px;
+				}
+			}
+		}
+		tfoot{
+			td{	
+				height: 86px;
+				padding-top: 10px;
+				text-align: center;
+				vertical-align: top;
+			}
+		}
+	}
+	#gender{
+		td{
+			div{
+				display: inline-block;
+				float:left;
+			}
+			&:first-child{
+				div{
+					margin-right: 14px;
+				}
+			}
+			&:last-child{
+				div{
+					float:right;
+					margin-left: 15px;
+					&:first-child{
+						float:left;
+						margin-left: 0;
+					}
+					input[type="text"]{
+						width: 51px;
+					}
+				}
+			}
+		}
+	}
+	#btn_change_password{
+
+	}
+	#btn_save_changes{
+		background: url(../images/bg_button_gradient_blue.png) repeat-x;
+		border: solid 1px #333;
+		border-radius: 4px;
+		color: #FFF;
+		font-size: 18px;
+		font-weight: bold;
+		height: 45px;
+		width: 180px;
+		@include text-shadow (0 0 10px rgba(255, 255, 255, 0.7));
+	}
+}
