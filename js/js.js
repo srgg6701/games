@@ -1,7 +1,39 @@
 // JavaScript Document
+var Game={
+	wrapperContainer:null,
+	shade_id:'global_shade',
+	myProfile:{
+		data:{
+		},
+		form:{
+			window_id:'#my_profile_form',
+		},
+		pass:{
+		}
+	},
+	arrangeWindow:function(obj_name,func){
+		console.dir(Game.wrapperContainer);
+		console.dir($(this.myProfile[obj_name].window_id));
+		return ($(Game.wrapperContainer)[func]()-$(this.myProfile[obj_name].window_id)[func]()) /2 + 'px';
+	},
+	showMyProfile:function(){
+		var profileForm=$(this.myProfile.form.window_id);
+		$(this.wrapperContainer)
+			.prepend('<div id="'+this.shade_id+'" class="shade cover"></div>')
+			.append(profileForm);	
+		$(profileForm).css({
+			top: Game.arrangeWindow('form','outerHeight'),
+			left: Game.arrangeWindow('form','outerWidth')
+		}).fadeIn(300);
+	},
+	hideMyProfile:function(){
+		$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
+		$(this.myProfile.form.window_id).fadeOut(300);
+	}
+};
 $(function(){  
 	var d=document;
-	var gameContainer=d.getElementById('wrapper');	
+	Game.wrapperContainer=d.getElementById('wrapper');	
 	// определяет реальное соотношение между максимальным и текущим размером окна, напр. 813/1024. При этом расчёт производится на основании соотношений сторон экрана.
 	// Если оно более 1024/768 (параметры фоновой картинки для блока),
 	// его высота устанавливается в 100% и измеряется реальная ширина,
@@ -23,7 +55,7 @@ $(function(){
 		Scale=1/scale*scaleRatio;
 		
 		if(scale!==1) {
-			$(gameContainer).css({
+			$(Game.wrapperContainer).css({
 				transform:'scale('+Scale+','+Scale+')',
 				marginLeft:function(){
 					return (d.body.offsetWidth-1024*Scale)/2+'px';
@@ -31,10 +63,10 @@ $(function(){
 			});
 		}
 		if(navigator.userAgent.indexOf('MSIE')!==-1){
-			var xLeft=(d.body.offsetWidth-gameContainer.offsetWidth)/2;
-			gameContainer.style.marginLeft=xLeft+'px';
+			var xLeft=(d.body.offsetWidth-Game.wrapperContainer.offsetWidth)/2;
+			Game.wrapperContainer.style.marginLeft=xLeft+'px';
 			var hDiff=d.body.offsetHeight-768;
-			if(hDiff) gameContainer.style.top=hDiff/2+'px';
+			if(hDiff) Game.wrapperContainer.style.top=hDiff/2+'px';
 		} 
 	}
 	setScreenParams();
@@ -94,26 +126,44 @@ $(function(){
 			//console.groupEnd();
 		}
 	};
-	// set target menu and show it
-	$('['+menus.pointer+']').mouseenter(function(){
-		// str 90
-		//console.log('%cstr 90: pointer.%cmouseenter %s','font-weight:bold','color:blue','pointer ACTIVE');
-		menus.pointer_active=true;
-		menus.showMenu(true,this); 
-	}).mouseleave(function(){ // get target menu and hide it
-		// str 94
-		//console.log('%cstr 94: pointer.%cmouseleave %s','font-weight:bold','color:orange','pointer actve FALSE');
-		menus.pointer_active=false;
-		menus.hideMenu();
-	});
-	// set menu mark as active
-	$(menus.menu_container_class) // .menu_container
-		.mouseenter(function(){
-			// str 101
-			//console.log('%cstr 101','font-weight:bold');
-			//console.log('menu_active_container_id = %c'+menus.menu_active_container_id,'color:violet');
-			menus.menu_active_container_id=this.id;
-	});
+	
+	/* Events */
+	//	First level menus ------------------------------------------
+		// set target menu and show it
+		$('['+menus.pointer+']').mouseenter(function(){
+			// str 90
+			//console.log('%cstr 90: pointer.%cmouseenter %s','font-weight:bold','color:blue','pointer ACTIVE');
+			menus.pointer_active=true;
+			menus.showMenu(true,this); 
+		}).mouseleave(function(){ // get target menu and hide it
+			// str 94
+			//console.log('%cstr 94: pointer.%cmouseleave %s','font-weight:bold','color:orange','pointer actve FALSE');
+			menus.pointer_active=false;
+			menus.hideMenu();
+		});
+		// set menu mark as active
+		$(menus.menu_container_class) // .menu_container
+			.mouseenter(function(){
+				// str 101
+				//console.log('%cstr 101','font-weight:bold');
+				//console.log('menu_active_container_id = %c'+menus.menu_active_container_id,'color:violet');
+				menus.menu_active_container_id=this.id;
+		});
+		
+		// Show My Profile window
+		$('#menu_my_profile').click( function(){
+			manageMyProfile(true);
+		});
+		// Cancel window by esc key pressing
+		$('.close').click(function(){
+			Game.hideMyProfile();
+		});
+		$(document).keyup(function(e) {
+			manageMyProfile(false,e);
+		});
+
+	
+	//	Submenus ---------------------------------------------------
 	// hide submenu
 	// when mouse leave menu in drops its mark as active; however, remember 
 	// that we can simultaneously enter to the menu on next/previous level.
@@ -147,14 +197,19 @@ $(function(){
 		$(menus.menu_wrapper_class,this).hide();
 		$('menu',this).hide(200);
 	});
-	// scroll
+	// scroll submenu
+	// first scroll arrow
 	$('div'+menus.menu_wrapper_class+' >div:first-child').click(function(){
 		scrollMenuItems(this,'up');
 	});
+	// second scroll arrow
 	$('div'+menus.menu_wrapper_class+' >div:last-child').click(function(){
 		scrollMenuItems(this,'down');
 	});
 });
+
+/*	Functions */
+
 function scrollMenuItems(obj,direction){
 	var itemsBlock=$(obj)[(direction=='up')? 'next':'prev']('div');
 	var menu = $('>menu',itemsBlock);
@@ -177,4 +232,12 @@ function scrollMenuItems(obj,direction){
 	//console.log('scrollLimit: %c'+scrollLimit,'color:violet');
 	//console.log('margin-top: %c'+topMargin,'color:green');
 	//console.groupEnd();
+}
+function manageMyProfile(show,e){
+	if(show){
+		Game.showMyProfile();	
+	}else{
+		if($('#'+Game.shade_id).length&&e.keyCode == 27)
+			Game.hideMyProfile();	
+	}
 }

@@ -60,7 +60,7 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
         <div class="user_name" data-container_id="user_menu_container">Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
         	<div class="menu_container" id="user_menu_container">
                 <menu id="user_profile_menu" data-slow-children="all">
-                    <li><div></div><a href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
+                    <li><div></div><a id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
                     <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
                         <menu class="short" id="cashier_submenu">
                             <li><a href="#">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
@@ -412,5 +412,77 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 	        <div class="bottom_menu_item"  id="bottom_menu_item_chat">Live Chat</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_logout">Logout</div>
 </div>
+<!-- My Profile Area 600x500 -->
+<div id="my_profile_form">
+  <div class="close"></div>
+    <form name="form1" method="post" action="">
+	<table width="100%" cellpadding="10">
+      <thead>
+      	<tr>
+      		<td colspan="2"><h4><div id="pyct_my_profile"></div>My Profile</h4></td>
+        </tr>
+     </thead>
+      <tr>
+        <td>
+        	<input name="username" id="username" type="text" value="username">
+        </td>
+        <td>
+        	<input name="email" id="email" type="text" value="email">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="password" id="password" type="text" value="password">
+        </td>
+        <td><button id="btn_change_password" class="btn">Change password</button></td>
+      </tr>
+      <tr id="gender">
+        <td>
+        	<div>Gender:</div>
+            <div><input name="gender" type="radio" value="male">Male</div>
+            <div><input name="gender" type="radio" value="female">Female</div>
+        </td>
+        <td>
+        	<div>Birthday:</div>
+            <div><input name="day" id="day" type="text" value="day"></div>
+            <div><input name="month" id="month" type="text" value="month"></div>
+            <div><input name="year" id="year" type="text" value="year"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="address" id="address" type="text" value="address">
+        </td>
+        <td>
+        	<input name="zip_code" id="zip_code" type="text" value="zip_code">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="city" id="city" type="text" value="city">
+        </td>
+        <td>
+        	<input name="country" id="country" type="text" value="country">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="mobile_phone" id="mobile_phone" type="text" value="mobile phone">
+        </td>
+        <td>
+        	<input name="home_phone" id="home_phone" type="text" value="home phone (optional)">
+        </td>
+      </tr>
+      <tfoot>
+      	<tr>
+      		<td colspan="2">
+            	<button id="btn_save_changes" class="btn">Save Changes</button>
+            </td>
+        </tr>
+     </tfoot>
+    </table>
+	</form>
+</div>
+
 </body>
 </html>

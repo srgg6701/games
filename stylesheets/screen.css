@@ -82,6 +82,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   cursor: default;
 }
 
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
+}
+
 /* line 9, ../sass/screen.scss */
 html, body {
   height: 100%;
@@ -210,6 +239,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 63, ../sass/shared.scss */
 .btn {
   cursor: default;
+}
+
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
 }
 
 /* line 4, ../sass/top_bar.scss */
@@ -615,6 +673,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   cursor: default;
 }
 
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
+}
+
 /* line 6, ../sass/left_side.scss */
 #left_top_box,
 .left_bottom_box,
@@ -781,6 +868,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 63, ../sass/shared.scss */
 .btn {
   cursor: default;
+}
+
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
 }
 
 /* line 7, ../sass/scene.scss */
@@ -1165,6 +1281,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   cursor: default;
 }
 
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
+}
+
 /* line 5, ../sass/right_side.scss */
 .panel_content p {
   font-family: AvenirRoman;
@@ -1521,6 +1666,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 63, ../sass/shared.scss */
 .btn {
   cursor: default;
+}
+
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
 }
 
 /*	#free{
@@ -1886,4 +2060,234 @@ menu .menu_wrapper > div > menu {
 .bottom_menu_item .menu_pointer:not(.special) {
   right: 10px;
   top: 22px;
+}
+
+/*  */
+/* variables, mixins etc */
+/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* inc clearfix */
+@font-face {
+  font-family: 'Amaranth';
+  src: url("../sources/fonts/Amaranth.ttf") format("truetype");
+}
+
+/* recalculate */
+/* common classes */
+/* line 63, ../sass/shared.scss */
+.btn {
+  cursor: default;
+}
+
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
+}
+
+/* line 4, ../sass/my_profile.scss */
+#my_profile_form {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  background: url(../images/bg_my_profile_form_vertical.jpg) repeat-x 0 0px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  height: 500px;
+  width: 600px;
+  z-index: 6;
+}
+/* line 12, ../sass/my_profile.scss */
+#my_profile_form * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Amaranth;
+  font-style: italic;
+  position: static;
+}
+/* line 19, ../sass/my_profile.scss */
+#my_profile_form td {
+  color: white;
+}
+/* line 22, ../sass/my_profile.scss */
+#my_profile_form .close {
+  border-top: solid 1px #666;
+  position: absolute;
+  right: -27px;
+  top: 20px;
+}
+/* line 27, ../sass/my_profile.scss */
+#my_profile_form .close:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+/* line 33, ../sass/my_profile.scss */
+#my_profile_form input[type="text"], #my_profile_form input[type="password"] {
+  height: 35px;
+  width: 100%;
+}
+/* line 39, ../sass/my_profile.scss */
+#my_profile_form h4 {
+  color: #FFD000;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+}
+/* line 46, ../sass/my_profile.scss */
+#my_profile_form table {
+  background: url(../images/bg_my_profile_form_overlight.jpg) no-repeat 0 60px;
+  height: 100%;
+}
+/* line 49, ../sass/my_profile.scss */
+#my_profile_form table td {
+  padding: 10px;
+  width: 50%;
+}
+/* line 53, ../sass/my_profile.scss */
+#my_profile_form table thead {
+  background: url(../images/bg_my_profile_header.jpg) no-repeat;
+  line-height: 58px;
+}
+/* line 56, ../sass/my_profile.scss */
+#my_profile_form table thead td {
+  text-align: center;
+}
+/* line 60, ../sass/my_profile.scss */
+#my_profile_form table thead div#pyct_my_profile {
+  background: url(../images/user_gold.png) no-repeat;
+  height: 22px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: -4px;
+  width: 18px;
+}
+/* line 71, ../sass/my_profile.scss */
+#my_profile_form table tfoot td {
+  height: 86px;
+  padding-top: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+/* line 81, ../sass/my_profile.scss */
+#my_profile_form #gender td div {
+  display: inline-block;
+  float: left;
+}
+/* line 86, ../sass/my_profile.scss */
+#my_profile_form #gender td:first-child div {
+  margin-right: 14px;
+}
+/* line 91, ../sass/my_profile.scss */
+#my_profile_form #gender td:last-child div {
+  float: right;
+  margin-left: 15px;
+}
+/* line 94, ../sass/my_profile.scss */
+#my_profile_form #gender td:last-child div:first-child {
+  float: left;
+  margin-left: 0;
+}
+/* line 98, ../sass/my_profile.scss */
+#my_profile_form #gender td:last-child div input[type="text"] {
+  width: 51px;
+}
+/* line 108, ../sass/my_profile.scss */
+#my_profile_form #btn_save_changes {
+  background: url(../images/bg_button_gradient_blue.png) repeat-x;
+  border: solid 1px #333;
+  border-radius: 4px;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: bold;
+  height: 45px;
+  width: 180px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }

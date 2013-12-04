@@ -76,6 +76,35 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   cursor: default;
 }
 
+/* line 66, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 75, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 81, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
+}
+
 /*	#free{
 		display: none;
 	}
