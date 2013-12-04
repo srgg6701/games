@@ -4,13 +4,19 @@ var Game={
 	user_container_id:'.user_profile',
 	myProfile:{
 		data:{
-			window_id:'#my_profile_data',
+			window_id:'#my_profile_data'
 		},
 		form:{
-			window_id:'#my_profile_form',
+			window_id:'#my_profile_form'
 		},
 		pass:{
-			window_id:'#my_profile_change_password_form',
+			window_id:'#my_profile_change_password_form'
+		},
+		login:{
+			window_id:'#my_profile_login'
+		},
+		demo:{
+			window_id:'#my_profile_open_demo_account'
 		}
 	},
 	appendUserBlock:function(block_name){

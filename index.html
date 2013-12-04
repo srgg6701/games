@@ -27,7 +27,9 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 <div id="test_inner_submenu" style="background:#FFFF99; display:none; padding: 10px; position:absolute;z-index:6;">
 	<a href="#" data-block="my_profile_data">Profile data</a> | 
 	<a href="#" data-block="my_profile_form">Profile data form</a> | 
-    <a href="#" data-block="my_profile_change_password_form">Change password form</a>
+    <a href="#" data-block="my_profile_change_password_form">Change password form</a> |
+	<a href="#" data-block="my_profile_login">Login</a> | 
+	<a href="#" data-block="my_profile_open_demo_account">Open a demo Account</a> 
 </div>
 	
   <div id="top_bar">
@@ -494,7 +496,7 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 	<div>
     	<h4><div class="pyct"></div>Change Password</h4>
     </div>
-    <section>
+    <section class="narrow">
         <form name="form1" method="post" action="">
             <input name="current_password" id="current_password" type="text" value="current password">
             <input name="new_password" id="new_password" type="text" value="new password">
@@ -510,7 +512,7 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 	<div>
     	<h4><div class="pyct my_profile"></div>My Profile</h4>
     </div>    
-    <section>
+    <section class="narrow">
     	<div class="column">
         	<p>username</p>
         	<p>email</p>
@@ -523,6 +525,39 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
         </div>
         <button type="button">Switch to Money Play</button>
     </section>
+  <div class="close"></div>
+</div>
+<!-- Login to your account -->
+<div id="my_profile_login" data-container="login" class="user_profile">
+	<div>
+    	<h4><div class="pyct"></div>Login to your Account</h4>
+    </div>
+    <section class="narrow">
+        <form name="form1" method="post" action="">
+            <input name="username_or_email" id="username_or_email" type="text" value="Username or Email Address">
+            <input name="password" id="password" type="text" value="Password">
+            <input name="remember_me" id="remember_me" type="checkbox" value=""> Remember me
+            <button type="submit">Play Now!</button>
+        </form>
+    </section>
+  <div class="close"></div>
+</div>
+<!-- Open a Demo Account -->
+<div id="my_profile_open_demo_account" data-container="demo" class="user_profile">
+	<div>
+    	<h4><div class="pyct"></div>Open a DEMO Account</h4>
+    </div>
+    <section class="narrow">
+        <form name="form1" method="post" action="">
+        	<input name="username" id="username" type="text" value="username">
+        	<input name="email" id="email" type="text" value="email address">
+            <input name="password" id="password" type="text" value="password">
+            <input name="retype_password" id="retype_password" type="text" value="re-type password">
+            	<input name="agreement" id="agreement" type="checkbox" value="">I have read and accepted the terms and conditions
+            <button type="submit">Register</button>
+        </form>
+    </section>
+  <div class="go_left"></div>
   <div class="close"></div>
 </div>
 </body>
