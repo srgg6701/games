@@ -1,0 +1,33 @@
+<a href="#" data-block="my_profile_data">Profile data</a> | 
+<a href="#" data-block="my_profile_form">Profile data form</a> | 
+<a href="#" data-block="my_profile_change_password_form">Change password form</a> |
+<a href="#" data-block="my_profile_login">Login</a> | 
+<a href="#" data-block="my_profile_open_demo_account">Open a demo Account</a> 
+<script>
+$(function(){
+	$('a[data-block]').click(function(){
+		manageUserBlocks(this);
+	});
+});
+function manageUserBlocks(obj){
+	// class 'user_profile'
+	$(Game.user_container_class).hide(100);
+	//my_profile_data, my_profile_form, my_profile_change_password_form:
+	//var tBlockId='#'+$(a).attr('data-block'); //
+	//data, pass, form:
+	//var entityName=$(tBlockId).attr('data-container');
+	/* 	my_profile_data, 
+		my_profile_form, 
+		my_profile_change_password_form,
+		my_profile_login,
+		my_profile_open_demo_account
+	*/
+	console.group('%cmanageUserBlocks()','font-weight:bold');
+		console.log('user container class: %c'+Game.user_container_class,'color:brown');
+		console.log('file_name: %c'+$(obj).attr('data-block'),'color:blue');
+	console.groupEnd();
+	
+	Game.appendUserBlock($(obj).attr('data-block'));
+	return false;
+}
+</script>
