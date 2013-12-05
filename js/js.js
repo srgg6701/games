@@ -1,60 +1,90 @@
+// our little Game Universe :) starts here.
 var Game={
+	// the frontier. 
+	// Outside it the outer hostile world lies.
+	// All we want to know and do existst only within the wrapperContainer 
+	// it will take an id "wrapper" further
 	wrapperContainer:null,
 	shade_id:'global_shade',
-	user_container_id:'.user_profile',
+	// user's blocks class name
+	user_container_class:'user_profile',
+	// user's blocks
 	myProfile:{
 		data:{
-			window_id:'#my_profile_data'
+			//window_id:'my_profile_data'
 		},
 		form:{
-			window_id:'#my_profile_form'
+			//window_id:'my_profile_form'
 		},
 		pass:{
-			window_id:'#my_profile_change_password_form'
+			//window_id:'my_profile_change_password_form'
 		},
 		login:{
-			window_id:'#my_profile_login'
+			//window_id:'my_profile_login'
 		},
 		demo:{
-			window_id:'#my_profile_open_demo_account'
+			//window_id:'my_profile_open_demo_account'
 		}
 	},
-	appendUserBlock:function(block_name){
-		var userBlock=$(this.myProfile[block_name].window_id);
+	// get the certain user's block, 
+	// append it to the main wrapper window and make it visible
+	appendUserBlock:function(entity_id){
+		console.group('%cmanageMyProfile()','font-weight:bold;');
+		$('.'+Game.user_container_class).remove();
+		//var entity_id=this.myProfile[loaded_entity_name].window_id;
+		var file_contents='contents/'+entity_id+'.html';
+		console.log('file_contents: %c'+file_contents,'color:blue;');
+		console.log('entity_id: %c'+entity_id,'color:goldenrod;');
+		console.log('class: %c'+Game.user_container_class,'font-weight:bold;');
+		var userBlock=$('<div/>',{
+			id:entity_id,
+			class:Game.user_container_class
+		});
 		$(this.wrapperContainer).append(userBlock);
-		$(userBlock).css({
-			top: Game.arrangeWindow(block_name,'outerHeight'),
-			left: Game.arrangeWindow(block_name,'outerWidth')
-		}).fadeIn(300);	
+		$(userBlock).load(file_contents,function(){
+			$('#'+entity_id).css({
+				top: Game.arrangeWindow(entity_id,'outerHeight'),
+				left: Game.arrangeWindow(entity_id,'outerWidth')
+			}).fadeIn(300);
+		});
+		
+		console.dir('userBlock: '+userBlock);
+		console.groupEnd();
 	},
-	arrangeWindow:function(obj_name,func){
+	// calculate actual positions (top and left) of the target user's block
+	arrangeWindow:function(entity_id,func){
 		//console.dir(Game.wrapperContainer);
 		//var currentId=Game.myProfile[obj_name].window_id;
 		//console.log('selector = '+currentId); 
 		//console.dir($(currentId));
 		//console.dir($(Game.myProfile[obj_name].window_id));
-		return ($(Game.wrapperContainer)[func]()-$(Game.myProfile[obj_name].window_id)[func]()) /2 + 'px';
+		//return ($(Game.wrapperContainer)[func]()-$('#'+Game.myProfile[obj_name].window_id)[func]()) /2 + 'px';
+		return ($(Game.wrapperContainer)[func]()-$('#'+entity_id)[func]())/2+'px';
 	},
+	// the initial appearance of users' blocks
 	showMyProfile:function(){
-		
 		// in test mode: -------------------------------
 		$('#test_inner_submenu').fadeIn(500);
 		// end test mode: -------------------------------
 		
-		//var profileForm=$(this.myProfile.form.window_id);
 		$(this.wrapperContainer).prepend('<div id="'+this.shade_id+'" class="shade cover"></div>');	
 		// show current user block
-		this.appendUserBlock('form');
+		console.log('%cmanageMyProfile()','background-color:orange, padding:4px 6px;')
+		this.appendUserBlock('my_profile_form');
 	},
 	hideMyProfile:function(){
 		$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
-		$(this.user_container_id+':visible').fadeOut(300);
+		$('.'+this.user_container_class+':visible').fadeOut(300);
 		// in test mode: -------------------------------
 		$('#test_inner_submenu').fadeOut(500);
 		// end test mode: ------------------------------
 	}
 };
+// do it!
 $(function(){  
+
+	$('#test_inner_submenu').load('test_menu.html');
+
 	var d=document;
 	Game.wrapperContainer=d.getElementById('wrapper');	
 	// определяет реальное соотношение между максимальным и текущим размером окна, напр. 813/1024. При этом расчёт производится на основании соотношений сторон экрана.
@@ -98,7 +128,7 @@ $(function(){
 	} 
 	/**
 	 * How it works.
-	 	see dd_menu.xlsx
+	 	see dd_menu.xlsx, amigo!
 	 */
 	var menus={
 		dur:100,
@@ -185,7 +215,6 @@ $(function(){
 			manageMyProfile(false,e);
 		});
 
-	
 	//	Submenus ---------------------------------------------------
 	// hide submenu
 	// when mouse leave menu in drops its mark as active; however, remember 
@@ -229,20 +258,10 @@ $(function(){
 	$('div'+menus.menu_wrapper_class+' >div:last-child').click(function(){
 		scrollMenuItems(this,'down');
 	});
-	
-	// in test mode: -------------------------------
-	$('#test_inner_submenu a').click(function(){
-		$(Game.user_container_id).hide(100);
-		//my_profile_data, my_profile_form, my_profile_change_password_form:
-		var tBlockId='#'+$(this).attr('data-block'); //
-		//data, pass, form:
-		var entityName=$(tBlockId).attr('data-container');
-		Game.appendUserBlock(entityName);
-	}); //----------------------------------------------
 });
 
-/*	Functions */
 
+/*	Functions */
 function scrollMenuItems(obj,direction){
 	var itemsBlock=$(obj)[(direction=='up')? 'next':'prev']('div');
 	var menu = $('>menu',itemsBlock);
@@ -266,7 +285,9 @@ function scrollMenuItems(obj,direction){
 	//console.log('margin-top: %c'+topMargin,'color:green');
 	//console.groupEnd();
 }
+
 function manageMyProfile(show,e){
+	console.log('%cmanageMyProfile()','background-color:lightyellow, padding:4px 6px;')
 	if(show){
 		Game.showMyProfile();	
 	}else{
