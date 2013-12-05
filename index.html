@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Las Vegas</title>
+<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/fonts_common.css">
+<script>
+var font_table=(navigator.platform.indexOf('Win')!=-1)? 'windows':'common';
+
+<!-- ******************************* -->
+font_table='common';
+<!-- ******************************* -->
+
+document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/fonts_'+font_table+'.css">');
+</script>
+<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/screen.css">
+<!--[if IE]>
+	<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/ie.css">
+<![endif]-->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/js.js"></script>
+<script src="js/debug.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    
+    <div id="test_inner_submenu"></div>
+	
+  <div id="top_bar">
+    </div>
+        
+        <div id="current_time">
+          <b>17:06</b> GMT - Friday 07 Sept, 2013
+  </div>
+    	
+        <div id="logo">Brand<span>.com</span></div>
+        
+            <div id="total">
+            	Total Winings
+            </div>
+
+	<div id="hell_trinity"></div>
+    
+	<div id="hell666_1" class="h666">
+    	<span>999</span>
+    	<span>999</span>
+    </div>
+
+	<div id="hell666_2" class="h666">
+    	<span>999</span>
+    	<span>999</span>
+    </div>
+
+	<div id="hell666_3" class="h666">
+    	<span>999</span>
+    	<span>999</span>
+    </div>
+    
+    <div id="welcome_back">
+    	<div class="silver"></div>
+    	Welcome back, 
+        <div class="user_name" data-container_id="user_menu_container">Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
+        	<div class="menu_container" id="user_menu_container">
+                <menu id="user_profile_menu" data-slow-children="all">
+                    <li><div></div><a id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
+                    <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
+                        <menu class="short" id="cashier_submenu">
+                            <li><a href="#">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
+                            <li><a href="#">Withdraw Money</a></li>
+                        </menu>
+                    </li>
+                    <li><div></div><a href="#">Logout</a></li>
+                </menu>
+            </div>
+        </div>
+  </div>
+	
+        	<div id="free"></div>
+        	<div id="take_it">Take it, it's Yours!</div>
+            <div id="seven"></div>
+            <div id="get_it_now">Get it now!</div>
+            <div id="no_deposit_required">No deposit required</div>
+  			
+            <div class="left_bottom_box" id="left_bottom_box_1">Resent Winners
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_2">Slot Machine
+            	<div>Nikki S
+                	<div>500 &euro;</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_3">Bingo
+            	<div>Green G
+                	<div>500 &euro;</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_4">Scratch to win
+            	<div>Whatever M
+                	<div>500 &euro;</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_5">Rotate it
+            	<div>Some Big Name
+                	<div>500 &euro;</div>
+                </div>
+            </div>
+            
+            <!-- Pointers -->
+            <div class="pointer_left top" id="left"></div>
+            <div class="pointer_left middle" id="left"></div>
+            <div class="pointer_left bottom" id="left"></div>
+            <div class="pointer_right top" id="left"></div>
+            <div class="pointer_right middle" id="left"></div>
+            <div class="pointer_right bottom" id="left"></div>
+            
+            <!--Main scene-->
+        
+            <div id="bingo_header_1">
+            	<div>
+                    <div> </div><div>Instant Games<div>Instant Games</div><div>Instant Games</div></div><div> </div>
+                </div>
+            </div>
+
+        	<div class="scene_bingo top left" id="scene_bingo_top_1"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo top center_left" id="scene_bingo_top_2"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+        	<div class="scene_bingo top center_right" id="scene_bingo_top_3"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo top right" id="scene_bingo_top_4"></div>						
+            	<div><div class="btn">Las Vegas Party</div></div>
+        
+            <div id="bingo_header_2">
+            	<div>
+                    <div> </div><div>Scratch Games<div>Scratch Games</div><div>Scratch Games</div></div><div> </div>
+                </div>
+            </div>
+        
+            <div class="scene_bingo middle left" id="scene_bingo_middle_1"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo middle center_left" id="scene_bingo_middle_2"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+        	<div class="scene_bingo middle center_right" id="scene_bingo_middle_3"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo middle right" id="scene_bingo_middle_4"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+
+            <div id="bingo_header_3">
+            	<div>
+                    <div> </div><div>Slots Machine<div>Slots Machine</div><div>Slots Machine</div></div><div> </div>
+                </div>
+            </div>
+        
+        	<div class="scene_bingo bottom left" id="scene_bingo_bottom_1"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo bottom center_left" id="scene_bingo_bottom_2"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+        	<div class="scene_bingo bottom center_right" id="scene_bingo_bottom_3"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo bottom right" id="scene_bingo_bottom_4"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+
+        <div class="right_block" id="right_block_promotions"></div>
+        	
+            <div class="right_panel" id="right_promotion">
+                <div class="panel_content">
+                    <p>
+                    	<b>100% Welcome Bonus</b>
+                    </p>
+                    <p>
+                        You measure your-
+                        self by the people
+                        who measure themselves.
+                    </p>
+                </div>
+                <div class="small_header">
+                    <div class="subsrtrate">&nbsp;</div>
+                    <div class="subheader">Promotions</div>
+                  </div>
+            </div>       
+        
+        <div class="right_block" id="right_block_live_support"></div>
+    
+            <div class="right_panel" id="right_live_support">
+                <div class="panel_content">
+                    <p>
+                    	<img class="block" src="images/girl.jpg" width="105" height="66" />
+                    </p>
+                    <p class="image_motto">
+                      You measure the people.
+                    </p>
+				</div>
+            	<div class="small_header">
+                    <div class="subsrtrate">&nbsp;</div>
+                	<div class="subheader">Live Support</div>
+                </div>
+            </div>       
+        
+  		<!-- background -->
+        <div id="bottom_top_left"></div>
+    	<!-- background -->
+        <div id="bottom_menu_left_side"></div>
+    	
+        	<div id="my_balance">My <b>Balance</b>
+            </div>
+            
+                <div id="currency_sum">
+                	3.520 &euro;
+                </div>
+            	
+        <div id="bleaks_top"></div>
+
+        <div id="bleaks_bottom"></div>
+
+        <!-- background -->
+        <div id="bottom_menu_right_side">
+        	<div id="make_a_deposite">
+            	Make a Deposit
+            </div>
+        </div>
+			
+	        <div class="bottom_menu_item"  id="bottom_menu_item_profile">Profile</div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_cashier" data-container_id="bottom_menu_container_cashier">Cashier
+                <div class="menu_container" id="bottom_menu_container_cashier">
+                    <menu>
+                    	<li class="header"><div></div>Cashier</li>
+                        <li>
+                        	<a href="#">Deposit Money</a>
+                        </li>
+                        <li>
+                        	<a href="#">Withdraw Money</a>	
+                        </li>
+            		</menu>
+                </div>
+            </div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_games" data-container_id="bottom_menu_container_games">Games
+                <div class="menu_container" id="bottom_menu_container_games">
+                    <menu class="parent">
+                    	<li class="header"><div></div>Games</li>
+                        <li>
+                        	<a href="#">Instant Games</a>
+                            <div id="bm_instant_games" class="menu_pointer"></div>
+                            <div class="menu_wrapper">
+								<div>
+                                	<div class="menu_pointer special"></div>
+                                </div>
+                                <div class="submenu_container">
+                                	<menu id="instant_games_submenu">
+                                    <li>
+                                        <a href="#">Las Vegas Party</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cool Farmer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bingo Slot Machine</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Whatever Game</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Game to Win</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Win A Game Now</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mr. Poker</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Meet the Dealer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Las Vegas Party</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cool Farmer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bingo Slot Machine</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Whatever Game</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Game to Win</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Win A Game Now</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mr. Poker</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Meet the Dealer</a>
+                                    </li>
+                                </menu>
+                                </div>
+                                <div>
+                                	<div class="menu_pointer special"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                        	<a href="#">Scratch Games</a>	
+                            <div id="bm_scratch_games" class="menu_pointer"></div>
+                            <menu id="scratch_games_submenu" class="short">
+                                <li>
+                                	<a href="#">Las Vegas Party</a>
+                                </li>
+                                <li>
+                                	<a href="#">Cool Farmer</a>
+                                </li>
+                                <li>
+                                	<a href="#">Bingo Slot Machine</a>
+                                </li>
+                                <li>
+                                	<a href="#">Whatever Game</a>
+                                </li>
+                                <li>
+                                	<a href="#">Game to Win</a>
+                                </li>
+                                <li>
+                                	<a href="#">Win A Game Now</a>
+                                </li>
+                                <li>
+                                	<a href="#">Mr. Poker</a>
+                                </li>
+                                <li>
+                                	<a href="#">Meet the Dealer</a>
+                                </li>
+                                <li>
+                                	<a href="#">Las Vegas Party</a>
+                                </li>
+                                <li>
+                                	<a href="#">Cool Farmer</a>
+                                </li>
+                                <li>
+                                	<a href="#">Bingo Slot Machine</a>
+                                </li>
+                                <li>
+                                	<a href="#">Whatever Game</a>
+                                </li>
+                                <li>
+                                	<a href="#">Game to Win</a>
+                                </li>
+                                <li>
+                                	<a href="#">Win A Game Now</a>
+                                </li>
+                                <li>
+                                	<a href="#">Mr. Poker</a>
+                                </li>
+                                <li>
+                                	<a href="#">Meet the Dealer</a>
+                                </li>
+                            </menu>
+                        </li>
+                        <li>
+                        	<a href="#">Slots Machine</a>
+                            <div id="bm_slots_machine" class="menu_pointer"></div>
+                            <menu id="slots_machine_submenu" class="short">
+                                <li>
+                                	<a href="#">Las Vegas Party</a>
+                                </li>
+                                <li>
+                                	<a href="#">Cool Farmer</a>
+                                </li>
+                                <li>
+                                	<a href="#">Bingo Slot Machine</a>
+                                </li>
+                                <li>
+                                	<a href="#">Whatever Game</a>
+                                </li>
+                                <li>
+                                	<a href="#">Game to Win</a>
+                                </li>
+                                <li>
+                                	<a href="#">Win A Game Now</a>
+                                </li>
+                                <li>
+                                	<a href="#">Mr. Poker</a>
+                                </li>
+                                <li>
+                                	<a href="#">Meet the Dealer</a>
+                                </li>
+                                <li>
+                                	<a href="#">Las Vegas Party</a>
+                                </li>
+                                <li>
+                                	<a href="#">Cool Farmer</a>
+                                </li>
+                                <li>
+                                	<a href="#">Bingo Slot Machine</a>
+                                </li>
+                                <li>
+                                	<a href="#">Whatever Game</a>
+                                </li>
+                                <li>
+                                	<a href="#">Game to Win</a>
+                                </li>
+                                <li>
+                                	<a href="#">Win A Game Now</a>
+                                </li>
+                                <li>
+                                	<a href="#">Mr. Poker</a>
+                                </li>
+                                <li>
+                                	<a href="#">Meet the Dealer</a>
+                                </li>
+                            </menu>
+                        </li>
+                    </menu>
+                </div>
+            </div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_chat">Live Chat</div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_logout">Logout</div>
+</div>
+
+<!-- My Profile Area 600x500 -->
+<!--<div id="my_profile_form" data-container="form" class="user_profile">
+    <form name="form1" method="post" action="">
+	<table width="100%" cellpadding="10">
+      <thead>
+      	<tr>
+      		<td colspan="2"><h4><div class="pyct my_profile"></div>My Profile</h4></td>
+        </tr>
+     </thead>
+      <tr>
+        <td>
+        	<input name="username" id="username" type="text" value="username">
+        </td>
+        <td>
+        	<input name="email" id="email" type="text" value="email">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="password" id="password" type="text" value="password">
+        </td>
+        <td><button id="btn_change_password" class="btn">Change password</button></td>
+      </tr>
+      <tr id="gender">
+        <td>
+        	<div>Gender:</div>
+            <div><input name="gender" type="radio" value="male">Male</div>
+            <div><input name="gender" type="radio" value="female">Female</div>
+        </td>
+        <td>
+        	<div>Birthday:</div>
+            <div><input name="day" id="day" type="text" value="day"></div>
+            <div><input name="month" id="month" type="text" value="month"></div>
+            <div><input name="year" id="year" type="text" value="year"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="address" id="address" type="text" value="address">
+        </td>
+        <td>
+        	<input name="zip_code" id="zip_code" type="text" value="zip_code">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="city" id="city" type="text" value="city">
+        </td>
+        <td>
+        	<input name="country" id="country" type="text" value="country">
+        </td>
+      </tr>
+      <tr>
+        <td>
+        	<input name="mobile_phone" id="mobile_phone" type="text" value="mobile phone">
+        </td>
+        <td>
+        	<input name="home_phone" id="home_phone" type="text" value="home phone (optional)">
+        </td>
+      </tr>
+      <tfoot>
+      	<tr>
+      		<td colspan="2">
+            	<button type="submit" id="btn_save_changes" class="btn">Save Changes</button>
+            </td>
+        </tr>
+     </tfoot>
+    </table>
+	</form>
+  <div class="close"></div>
+</div>-->
+<!-- Change password area 430x343 -->
+<!--<div id="my_profile_change_password_form" data-container="pass" class="user_profile">
+	<div>
+    	<h4><div class="pyct"></div>Change Password</h4>
+    </div>
+    <section class="narrow">
+        <form name="form1" method="post" action="">
+            <input name="current_password" id="current_password" type="text" value="current password">
+            <input name="new_password" id="new_password" type="text" value="new password">
+            <input name="retype_password" id="retype_password" type="text" value="retype new password">
+            <button type="submit">Change Password</button>
+        </form>
+    </section>
+  <div class="go_left"></div>
+  <div class="close"></div>
+</div>-->
+
+<!-- User data area 430x343 -->
+<!--<div id="my_profile_data" class="user_profile" data-container="data">
+	<div>
+    	<h4><div class="pyct my_profile"></div>My Profile</h4>
+    </div>    
+    <section class="narrow">
+    	<div class="column">
+        	<p>username</p>
+        	<p>email</p>
+        	<p>currency</p>
+        </div>    	
+        <div class="column">
+        	<p>Jhon Doe</p>
+        	<p>jhon_doe@gmail.com</p>
+        	<p>EUR</p>
+        </div>
+        <button type="button">Switch to Money Play</button>
+    </section>
+  <div class="close"></div>
+</div>-->
+
+<!-- Login to your account -->
+<!--<div id="my_profile_login" data-container="login" class="user_profile"></div>-->
+
+<!-- Open a Demo Account -->
+<!--<div id="my_profile_open_demo_account" data-container="demo" class="user_profile">
+	<div>
+    	<h4><div class="pyct"></div>Open a DEMO Account</h4>
+    </div>
+    <section class="narrow">
+        <form name="form1" method="post" action="">
+        	<input name="username" id="username" type="text" value="username">
+        	<input name="email" id="email" type="text" value="email address">
+            <input name="password" id="password" type="text" value="password">
+            <input name="retype_password" id="retype_password" type="text" value="re-type password">
+            	<input name="agreement" id="agreement" type="checkbox" value="">I have read and accepted the terms and conditions
+            <button type="submit">Register</button>
+        </form>
+    </section>
+  <div class="go_left"></div>
+  <div class="close"></div>
+</div>-->
+
+</body>
+</html>
