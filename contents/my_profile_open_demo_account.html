@@ -1,15 +1,37 @@
 	<div>
     	<h4><div class="pyct"></div>Open a DEMO Account</h4>
     </div>
-    <section class="narrow">
-        <form name="form1" method="post" action="">
-        	<input name="username" id="username" type="text" value="username">
-        	<input name="email" id="email" type="text" value="email address">
-            <input name="password" id="password" type="text" value="password">
-            <input name="retype_password" id="retype_password" type="text" value="re-type password">
-            	<input name="agreement" id="agreement" type="checkbox" value="">I have read and accepted the terms and conditions
-            <button type="submit">Register</button>
-        </form>
+    <form name="form1" method="post" action="index.html">
+    <section data-order="first" class="narrow bg_overlight">
+        	<span data-load="input|username|username"></span>
+        	<span data-load="input|email|email address"></span>
+            <span data-load="input|password|password"></span>
+            <span data-load="input|retype_password|re-type password"></span>
+            <span data-load="input|agreement|I have read and accepted the terms and conditions"></span>
+            <button type="submit" class="btn_yellow">REGISTER</button>
     </section>
-  <div class="go_left"></div>
-  <div class="close"></div>
+    <section data-order="last">
+    	<div class="left_support bg_overlight">
+            <div class="small_header">
+                <div class="subsrtrate">
+                    <div class="subheader">Live Support</div>
+                </div>
+            </div>
+        	<div class="support_bottom">
+                  <img class="block left" src="images/girl.jpg" width="105" height="66">
+                  You measure the people.
+            </div>
+        </div>
+        <div class="bg_overlight" id="right_7euros">
+        	<div class="img left"></div>
+            <div class="right">
+            	<p>Want to get 7 EUR FREE?</p>
+                <button class="btn_blue">Open a REAL MONEY Account</button>
+                <p>No deposit required</p>
+            </div>
+            <div class="absolute pyct"></div>
+        </div>
+    </section>
+    </form>
+<div class="go_left" onClick="Game.goLeft();"></div>
+<div class="close" onClick="Game.hideMyProfile();"></div>  

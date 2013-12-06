@@ -18,7 +18,9 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 	<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/ie.css">
 <![endif]-->
 <script src="js/jquery-1.9.1.js"></script>
+<script src="js/objects.js"></script>
 <script src="js/js.js"></script>
+<script src="js/zoom.js"></script>
 <script src="js/debug.js"></script>
 </head>
 <body>
@@ -34,7 +36,8 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
   </div>
     	
         <div id="logo">Brand<span>.com</span></div>
-        
+            
+<div data-level="game">
             <div id="total">
             	Total Winings
             </div>
@@ -55,18 +58,19 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
     	<span>999</span>
     	<span>999</span>
     </div>
-    
-    <div id="welcome_back">
+
+    	
+        <div id="welcome_back">
     	<div class="silver"></div>
     	Welcome back, 
         <div class="user_name" data-container_id="user_menu_container">Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
         	<div class="menu_container" id="user_menu_container">
                 <menu id="user_profile_menu" data-slow-children="all">
-                    <li><div></div><a id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
+                    <li><div></div><a data-level-default="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
                     <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
                         <menu class="short" id="cashier_submenu">
-                            <li><a href="#">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
-                            <li><a href="#">Withdraw Money</a></li>
+                            <li><a href="#" data-level-go="deposit">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
+                            <li><a href="#" data-level-go="withdrawal">Withdraw Money</a></li>
                         </menu>
                     </li>
                     <li><div></div><a href="#">Logout</a></li>
@@ -74,7 +78,7 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
             </div>
         </div>
   </div>
-	
+    
         	<div id="free"></div>
         	<div id="take_it">Take it, it's Yours!</div>
             <div id="seven"></div>
@@ -103,7 +107,7 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
                 	<div>500 &euro;</div>
                 </div>
             </div>
-            
+ 
             <!-- Pointers -->
             <div class="pointer_left top" id="left"></div>
             <div class="pointer_left middle" id="left"></div>
@@ -193,11 +197,17 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
                     <div class="subsrtrate">&nbsp;</div>
                 	<div class="subheader">Live Support</div>
                 </div>
-            </div>       
+            </div>     
+                    
+</div>           
+
+<div data-level="money">
+
+</div>
+ 
         
-  		<!-- background -->
         <div id="bottom_top_left"></div>
-    	<!-- background -->
+
         <div id="bottom_menu_left_side"></div>
     	
         	<div id="my_balance">My <b>Balance</b>
@@ -211,23 +221,22 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 
         <div id="bleaks_bottom"></div>
 
-        <!-- background -->
         <div id="bottom_menu_right_side">
         	<div id="make_a_deposite">
             	Make a Deposit
             </div>
         </div>
 			
-	        <div class="bottom_menu_item"  id="bottom_menu_item_profile">Profile</div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_profile" data-level-default="profile">Profile</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_cashier" data-container_id="bottom_menu_container_cashier">Cashier
                 <div class="menu_container" id="bottom_menu_container_cashier">
                     <menu>
                     	<li class="header"><div></div>Cashier</li>
                         <li>
-                        	<a href="#">Deposit Money</a>
+                        	<a href="#" data-level-go="deposit">Deposit Money</a>
                         </li>
                         <li>
-                        	<a href="#">Withdraw Money</a>	
+                        	<a href="#" data-level-go="withdrawal">Withdraw Money</a>	
                         </li>
             		</menu>
                 </div>
@@ -414,137 +423,5 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 	        <div class="bottom_menu_item"  id="bottom_menu_item_chat">Live Chat</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_logout">Logout</div>
 </div>
-
-<!-- My Profile Area 600x500 -->
-<!--<div id="my_profile_form" data-container="form" class="user_profile">
-    <form name="form1" method="post" action="">
-	<table width="100%" cellpadding="10">
-      <thead>
-      	<tr>
-      		<td colspan="2"><h4><div class="pyct my_profile"></div>My Profile</h4></td>
-        </tr>
-     </thead>
-      <tr>
-        <td>
-        	<input name="username" id="username" type="text" value="username">
-        </td>
-        <td>
-        	<input name="email" id="email" type="text" value="email">
-        </td>
-      </tr>
-      <tr>
-        <td>
-        	<input name="password" id="password" type="text" value="password">
-        </td>
-        <td><button id="btn_change_password" class="btn">Change password</button></td>
-      </tr>
-      <tr id="gender">
-        <td>
-        	<div>Gender:</div>
-            <div><input name="gender" type="radio" value="male">Male</div>
-            <div><input name="gender" type="radio" value="female">Female</div>
-        </td>
-        <td>
-        	<div>Birthday:</div>
-            <div><input name="day" id="day" type="text" value="day"></div>
-            <div><input name="month" id="month" type="text" value="month"></div>
-            <div><input name="year" id="year" type="text" value="year"></div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-        	<input name="address" id="address" type="text" value="address">
-        </td>
-        <td>
-        	<input name="zip_code" id="zip_code" type="text" value="zip_code">
-        </td>
-      </tr>
-      <tr>
-        <td>
-        	<input name="city" id="city" type="text" value="city">
-        </td>
-        <td>
-        	<input name="country" id="country" type="text" value="country">
-        </td>
-      </tr>
-      <tr>
-        <td>
-        	<input name="mobile_phone" id="mobile_phone" type="text" value="mobile phone">
-        </td>
-        <td>
-        	<input name="home_phone" id="home_phone" type="text" value="home phone (optional)">
-        </td>
-      </tr>
-      <tfoot>
-      	<tr>
-      		<td colspan="2">
-            	<button type="submit" id="btn_save_changes" class="btn">Save Changes</button>
-            </td>
-        </tr>
-     </tfoot>
-    </table>
-	</form>
-  <div class="close"></div>
-</div>-->
-<!-- Change password area 430x343 -->
-<!--<div id="my_profile_change_password_form" data-container="pass" class="user_profile">
-	<div>
-    	<h4><div class="pyct"></div>Change Password</h4>
-    </div>
-    <section class="narrow">
-        <form name="form1" method="post" action="">
-            <input name="current_password" id="current_password" type="text" value="current password">
-            <input name="new_password" id="new_password" type="text" value="new password">
-            <input name="retype_password" id="retype_password" type="text" value="retype new password">
-            <button type="submit">Change Password</button>
-        </form>
-    </section>
-  <div class="go_left"></div>
-  <div class="close"></div>
-</div>-->
-
-<!-- User data area 430x343 -->
-<!--<div id="my_profile_data" class="user_profile" data-container="data">
-	<div>
-    	<h4><div class="pyct my_profile"></div>My Profile</h4>
-    </div>    
-    <section class="narrow">
-    	<div class="column">
-        	<p>username</p>
-        	<p>email</p>
-        	<p>currency</p>
-        </div>    	
-        <div class="column">
-        	<p>Jhon Doe</p>
-        	<p>jhon_doe@gmail.com</p>
-        	<p>EUR</p>
-        </div>
-        <button type="button">Switch to Money Play</button>
-    </section>
-  <div class="close"></div>
-</div>-->
-
-<!-- Login to your account -->
-<!--<div id="my_profile_login" data-container="login" class="user_profile"></div>-->
-
-<!-- Open a Demo Account -->
-<!--<div id="my_profile_open_demo_account" data-container="demo" class="user_profile">
-	<div>
-    	<h4><div class="pyct"></div>Open a DEMO Account</h4>
-    </div>
-    <section class="narrow">
-        <form name="form1" method="post" action="">
-        	<input name="username" id="username" type="text" value="username">
-        	<input name="email" id="email" type="text" value="email address">
-            <input name="password" id="password" type="text" value="password">
-            <input name="retype_password" id="retype_password" type="text" value="re-type password">
-            	<input name="agreement" id="agreement" type="checkbox" value="">I have read and accepted the terms and conditions
-            <button type="submit">Register</button>
-        </form>
-    </section>
-  <div class="go_left"></div>
-  <div class="close"></div>
-</div>-->
-
 </body>
 </html>

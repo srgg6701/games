@@ -1,0 +1,34 @@
+<section class="menu">
+	<menu>
+    	<li data-block="withdraw_bank">BANK ACCOUNT</li>
+    	<li data-block="withdraw_visa">VISA</li>
+    	<li data-block="withdraw_skrill">Skrill</li>
+    	<li data-block="withdraw_neteller">NETELLER</li>
+    </menu>
+</section>
+<section class="content">
+    <h1>Withdrawal</h1>
+    <form method="post">
+        <h2 class="pay_way"></h2>
+        <br/>
+        <button type="submit">WITHDRAWAL</button>
+    </form>
+</section>
+<script>
+$(function(){
+	$('[data-block]').click(function(){
+		$('.pay_way').text($(this).text());
+		manageWithdraw(this);
+	});
+});
+function manageWithdraw(obj){
+	// class 'user_profile'
+	$(Game.user_container_class).hide(100);
+	/*console.group('%cmanageUserBlocks()','font-weight:bold');
+		console.log('file_name: %c'+$(obj).attr('data-block'),'color:blue');
+	console.groupEnd();*/
+	// see data-block above as links attribute
+	Game.appendUserMoneyBlock($(obj).attr('data-block'));
+	return false;
+}
+</script>

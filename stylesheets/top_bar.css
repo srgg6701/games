@@ -72,22 +72,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* recalculate */
 /* common classes */
-/* line 63, ../sass/shared.scss */
+/* line 72, ../sass/shared.scss */
+.absolute {
+  position: absolute !important;
+}
+
+/* line 75, ../sass/shared.scss */
 .btn {
   cursor: default;
 }
 
-/* line 66, ../sass/shared.scss */
-.cover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
+/* line 78, ../sass/shared.scss */
+.clear {
+  display: block;
+}
+/* line 63, ../sass/shared.scss */
+.clear:after {
+  clear: both !important;
+  content: " " !important;
+  display: block;
 }
 
-/* line 75, ../sass/shared.scss */
+/* line 81, ../sass/shared.scss */
 .close {
   background: url("../images/close_white.png") no-repeat 9px 10px black;
   -webkit-border-radius: 0 4px 4px 0;
@@ -99,11 +105,46 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 26px;
 }
 
-/* line 81, ../sass/shared.scss */
+/* line 87, ../sass/shared.scss */
+.color-white {
+  color: white;
+}
+
+/* line 90, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* line 99, ../sass/shared.scss */
+.half_wide {
+  width: 50% !important;
+}
+
+/* line 102, ../sass/shared.scss */
+.left {
+  float: left !important;
+}
+
+/* line 105, ../sass/shared.scss */
+.right {
+  float: right !important;
+}
+
+/* line 108, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
+}
+
+/* line 113, ../sass/shared.scss */
+br, hr {
+  clear: both;
 }
 
 /* line 4, ../sass/top_bar.scss */

@@ -1,3 +1,4 @@
+/* variables, mixins etc */
 /* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -144,4 +145,105 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 113, ../sass/shared.scss */
 br, hr {
   clear: both;
+}
+
+/* line 5, ../sass/levels.scss */
+[data-level="money"] * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+/* line 9, ../sass/levels.scss */
+[data-level="money"] > section {
+  margin-top: 50px;
+}
+/* line 11, ../sass/levels.scss */
+[data-level="money"] > section.menu {
+  background-color: #1b1562;
+  background-size: 100% 60px;
+  float: left;
+  height: 824px;
+  padding: 10px;
+  width: 200px;
+}
+/* line 18, ../sass/levels.scss */
+[data-level="money"] > section.menu menu {
+  background: url(../images/bg_my_profile_form_vertical.jpg) repeat-x;
+  box-shadow: none;
+  color: white;
+  font-weight: bold;
+}
+/* line 23, ../sass/levels.scss */
+[data-level="money"] > section.menu menu li {
+  cursor: default;
+  height: 56px;
+  line-height: 56px;
+  opacity: 0.7;
+  padding: 5px 10px;
+}
+/* line 29, ../sass/levels.scss */
+[data-level="money"] > section.menu menu li:hover {
+  opacity: 1;
+}
+/* line 35, ../sass/levels.scss */
+[data-level="money"] > section.content {
+  float: right;
+  padding: 72px 210px 26px 26px;
+  width: 824px;
+}
+/* line 39, ../sass/levels.scss */
+[data-level="money"] > section.content > h1 {
+  background: url(../images/bg_bottom_panel_right.png) repeat-x;
+  background-size: 100% 60px;
+  color: white;
+  font-family: Amaranth;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 26px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+/* line 57, ../sass/levels.scss */
+[data-level="money"] > section.content .pay_way {
+  font-weight: bold;
+  padding: 10px 0;
+}
+/* line 61, ../sass/levels.scss */
+[data-level="money"] > section.content [type="submit"] {
+  clear: both;
+  display: block;
+  margin: 20px auto;
+  visibility: hidden;
+}
+/* line 66, ../sass/levels.scss */
+[data-level="money"] > section.content [type="submit"]:before {
+  content: " ";
+  display: block;
+}
+/* line 71, ../sass/levels.scss */
+[data-level="money"] > section.content .left {
+  margin: 10px auto;
+}
+/* line 73, ../sass/levels.scss */
+[data-level="money"] > section.content .left.text {
+  clear: left;
+  margin-right: 10px;
+  width: 130px;
+}
+/* line 80, ../sass/levels.scss */
+[data-level="money"] > section.content input[type="text"],
+[data-level="money"] > section.content input[type="password"] {
+  margin-right: 4px;
+}
+
+/* line 86, ../sass/levels.scss */
+#voucher_value2 {
+  width: 60px;
 }
