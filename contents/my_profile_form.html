@@ -1,68 +1,54 @@
     <form name="form1" method="post" action="">
-	<table width="100%" cellpadding="10">
+	<table class="bg_overlight" width="100%" cellpadding="10">
       <thead>
       	<tr>
       		<td colspan="2"><h4><div class="pyct my_profile"></div>My Profile</h4></td>
         </tr>
      </thead>
       <tr>
-        <td>
-        	<input name="username" id="username" type="text" value="username">
+        <td><span data-load="input|username|username"></span>
         </td>
-        <td>
-        	<input name="email" id="email" type="text" value="email">
+        <td><span data-load="input|email|email"></span>
         </td>
       </tr>
       <tr>
-        <td>
-        	<input name="password" id="password" type="text" value="password">
+        <td><span data-load="input|password|password"></span>
         </td>
         <td><button id="btn_change_password" class="btn">Change password</button></td>
       </tr>
-      <tr id="gender">
+      <tr>
         <td>
-        	<div>Gender:</div>
-            <div><input name="gender" type="radio" value="male">Male</div>
-            <div><input name="gender" type="radio" value="female">Female</div>
+        	<span data-load="person|gender"></span>
         </td>
         <td>
-        	<div>Birthday:</div>
-            <div><input name="day" id="day" type="text" value="day"></div>
-            <div><input name="month" id="month" type="text" value="month"></div>
-            <div><input name="year" id="year" type="text" value="year"></div>
+        	<span data-load="person|birthday"></span>
         </td>
       </tr>
       <tr>
-        <td>
-        	<input name="address" id="address" type="text" value="address">
+        <td><span data-load="input|address|address"></span>
         </td>
-        <td>
-        	<input name="zip_code" id="zip_code" type="text" value="zip_code">
+        <td><span data-load="input|zip_code|zip_code"></span>
         </td>
       </tr>
       <tr>
-        <td>
-        	<input name="city" id="city" type="text" value="city">
+        <td><span data-load="input|city|city"></span>
         </td>
-        <td>
-        	<input name="country" id="country" type="text" value="country">
+        <td><span data-load="input|country|country"></span>
         </td>
       </tr>
       <tr>
-        <td>
-        	<input name="mobile_phone" id="mobile_phone" type="text" value="mobile phone">
+        <td><span data-load="input|mobile_phone|mobile_phone"></span>
         </td>
-        <td>
-        	<input name="home_phone" id="home_phone" type="text" value="home phone (optional)">
+        <td><span data-load="input|home_phone|home phone (optional)"></span>
         </td>
       </tr>
       <tfoot>
       	<tr>
       		<td colspan="2">
-            	<button type="submit" id="btn_save_changes" class="btn">Save Changes</button>
+            	<button type="submit" id="btn_save_changes" class="btn btn_blue">Save Changes</button>
             </td>
         </tr>
      </tfoot>
     </table>
 	</form>
-  <div class="close"></div>
+<div class="close" onClick="return Game.hideMyProfile();"></div>
