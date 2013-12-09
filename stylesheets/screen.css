@@ -634,29 +634,33 @@ br, hr {
 #welcome_back div:first-child.silver {
   background-position-x: 2px !important;
 }
+/* line 64, ../sass/screen.scss */
+#welcome_back p {
+  font-weight: 100;
+}
 
-/* line 65, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .user_name {
   font-weight: bold;
 }
-/* line 67, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .user_name img {
   margin: 6px auto 0px 7px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .small_header {
   color: white;
   font-size: 100%;
   width: 100%;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .small_header:after {
   content: "";
 }
 
-/* line 78, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 .small_header
 div.subheader {
   font-family: Amaranth;
@@ -667,7 +671,7 @@ div.subheader {
   padding: 11px 4px 8px 27px;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .subsrtrate {
   background-color: #01040B;
   opacity: 0.45;
@@ -1603,13 +1607,13 @@ br, hr {
 }
 
 /* bottom */
-/* line 104, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 #my_balance,
 #currency_sum {
   line-height: 35px;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 #my_balance {
   bottom: 7px;
   font-family: AvenirRoman;
@@ -1618,12 +1622,12 @@ br, hr {
   letter-spacing: 0.6px;
   margin-left: 12px;
 }
-/* line 114, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 #my_balance b {
   font-family: AvenirBlack;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 #currency_sum {
   background-color: #0F0E32;
   border-bottom: solid 1px #999;
@@ -1644,7 +1648,7 @@ br, hr {
   width: 90px;
 }
 
-/* line 142, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 #bleaks_top {
   background: url(../images/bleaks.png) no-repeat;
   opacity: 0.4;
@@ -1656,7 +1660,7 @@ br, hr {
   width: 70px;
 }
 
-/* line 150, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #bleaks_bottom {
   background: url(../images/bleaks.png) no-repeat;
   opacity: 0.4;
@@ -1668,7 +1672,7 @@ br, hr {
   width: 220px;
 }
 
-/* line 158, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 #bottom_top_left {
   background: url(../images/half_round_2.png) no-repeat;
   background-size: contain;
@@ -1679,13 +1683,13 @@ br, hr {
   z-index: 1;
 }
 
-/* line 168, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 #bottom_menu_left_side,
 #bottom_menu_right_side {
   bottom: 1px;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 #bottom_menu_left_side {
   background: url(../images/bg_bottom_panel_left.png) repeat-x;
   height: 48px;
@@ -1693,7 +1697,7 @@ br, hr {
   z-index: 0;
 }
 
-/* line 178, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 #bottom_menu_right_side {
   background: url(../images/bg_bottom_panel_right.png);
   border-top: solid 1px #5A4AF0;
@@ -1704,7 +1708,7 @@ br, hr {
   text-align: right;
 }
 
-/* line 188, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 #make_a_deposite {
   background: url(../images/make_a_deposite.png) no-repeat;
   -webkit-border-radius: 5px;
@@ -1730,7 +1734,7 @@ br, hr {
   position: absolute;
 }
 
-/* line 208, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 .bottom_menu_item {
   background: url(../images/bottom_pyctos.png) no-repeat;
   background-size: 360px 32px;
@@ -1746,21 +1750,21 @@ br, hr {
   line-height: 21.53846px;
 }
 
-/* line 222, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 #bottom_menu_item_profile {
   background-position-x: 7px;
   padding-left: 34px;
   right: 370px;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 #bottom_menu_item_cashier {
   background-position-x: -74px;
   padding-left: 28px;
   right: 285.84615px;
 }
 
-/* line 232, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 #bottom_menu_item_games {
   border-bottom: solid 1px #999;
   -webkit-border-radius: 20px;
@@ -1778,7 +1782,7 @@ br, hr {
   width: 51.53846px;
 }
 
-/* line 244, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 #bottom_menu_item_chat {
   background-position-x: -243px;
   letter-spacing: -0.38462px;
@@ -1786,7 +1790,7 @@ br, hr {
   right: 91.61538px;
 }
 
-/* line 250, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 #bottom_menu_item_logout {
   background-position-x: -333px;
   letter-spacing: -0.69px;
@@ -1986,7 +1990,7 @@ br, hr {
 .bottom_menu_item .menu_container {
   bottom: 16px;
   padding-bottom: 16px;
-  right: 8px;
+  right: -5px;
 }
 /* line 52, ../sass/menus.scss */
 .bottom_menu_item .menu_container menu li {
@@ -2007,7 +2011,7 @@ br, hr {
 #user_menu_container {
   left: -24px;
   padding-top: 10px;
-  top: 12px;
+  top: 25px;
 }
 
 /* line 74, ../sass/menus.scss */
@@ -2919,7 +2923,7 @@ br, hr {
   z-index: 6;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 [data-level="game"] {
   height: 0;
   position: static;
@@ -3175,4 +3179,27 @@ br, hr {
 /* line 86, ../sass/levels.scss */
 #voucher_value2 {
   width: 60px;
+}
+
+/* line 89, ../sass/levels.scss */
+#card_details_upd {
+  width: 340px;
+}
+/* line 91, ../sass/levels.scss */
+#card_details_upd form {
+  background: white;
+  padding: 14px;
+}
+/* line 95, ../sass/levels.scss */
+#card_details_upd form input[type="text"] {
+  height: 36px;
+}
+/* line 99, ../sass/levels.scss */
+#card_details_upd form p {
+  line-height: 20px;
+  text-align: center;
+}
+/* line 103, ../sass/levels.scss */
+#card_details_upd form button[type="submit"] {
+  margin: auto !important;
 }

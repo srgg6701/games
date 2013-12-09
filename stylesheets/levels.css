@@ -247,3 +247,26 @@ br, hr {
 #voucher_value2 {
   width: 60px;
 }
+
+/* line 89, ../sass/levels.scss */
+#card_details_upd {
+  width: 340px;
+}
+/* line 91, ../sass/levels.scss */
+#card_details_upd form {
+  background: white;
+  padding: 14px;
+}
+/* line 95, ../sass/levels.scss */
+#card_details_upd form input[type="text"] {
+  height: 36px;
+}
+/* line 99, ../sass/levels.scss */
+#card_details_upd form p {
+  line-height: 20px;
+  text-align: center;
+}
+/* line 103, ../sass/levels.scss */
+#card_details_upd form button[type="submit"] {
+  margin: auto !important;
+}
