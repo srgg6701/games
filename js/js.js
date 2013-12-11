@@ -24,30 +24,6 @@ $(function(){
 });
 
 /*	Functions */
-function scrollMenuItems(obj,direction){
-	var itemsBlock=$(obj)[(direction=='up')? 'next':'prev']('div');
-	var menu = $('>menu',itemsBlock);
-	var topMargin=parseFloat($(menu).css('margin-top'));
-	var menuHeight=parseFloat($(menu).height());
-	var singleItemHeight=menuHeight/$('li',menu).size();
-	var scrollLimit=parseFloat($(itemsBlock).innerHeight()-menuHeight);
-	console.group('%cscrollMenuItems','font-weight:bold');
-	if(direction=='up') { // 640-590=50 //scrollLimit 
-		// -313.313 : -301.312555px : margin-top: -315.31256103515625 
-		// 0 + 14	>		-301
-		if(topMargin-singleItemHeight/4>scrollLimit)  
-			$(menu).css('margin-top',topMargin-singleItemHeight/3+'px');
-	}else if(direction=='down'){
-		if(topMargin<-(singleItemHeight/3)) // 43
-			$(menu).css('margin-top',topMargin+singleItemHeight/3+'px');
-	}
-	/*  console.log('menu height: '+menuHeight);
-        console.log('singleItemHeight: '+singleItemHeight);
-        console.log('scrollLimit: %c'+scrollLimit,'color:violet');
-        console.log('margin-top: %c'+topMargin,'color:green');
-        console.groupEnd(); */
-}
-
 function manageMyProfile(show,e){
 	//console.log('%cmanageMyProfile()','background-color:yellow; padding:4px 6px;')
 	if(show){
@@ -92,7 +68,7 @@ function openWindow(block_name) { // money_client_card_holder
 }
 /**
  * Comment
- */
+ 
 function closeWindow(block_name) {
     
-}
+}*/

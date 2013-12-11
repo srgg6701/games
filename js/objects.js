@@ -230,6 +230,8 @@ var Game={
 	}
 };
 var menus={
+    activeMenuId:'',
+    touchable:false,
     submenus:{
         instant_games_submenu:{
             '#1':'Las Vegas Party',
@@ -290,6 +292,7 @@ var menus={
 	// the initializer to show menu
 	pointer:'data-container_id',
 	pointer_active:false,
+    parent_menu_class:'parent',
 	// container id that has a menu
 	// we get it when mouse enters in the pointer
 	menu_container_id: false,
@@ -297,8 +300,85 @@ var menus={
 	// but here we get it when mouse enters in the <menu> wrapper
 	menu_active_container_id:false,
 	// top menu container
-	menu_container_class:'.menu_container',
-	// this block appears if the submenu aims the scroll
+	menu_container_class:'menu_container',
+    // if less than 9 itmes
+    menu_short_class:'short',
+    // class name for submenu container
+    submenu_container_class:'submenu_container',
+    //
+    submenu_containers:{},
+    // all about scrolling
+    scroll:{
+        //
+        eventInit:null,
+        // offset
+        offset:0,
+        // opposite pointer
+        oppositePointer:null,
+        // parent for pointer
+        pointer_parent_class:{
+            up:'scroll up',
+            up_title:'No more items above',
+            opacity_class_up:'opacity08',
+            down:'scroll down',
+            down_title:'No more items bellow',
+            opacity_class_down:'opacity08'
+        },
+        activeObjx:{
+            scrollLimit:        {},
+            menuTopMargin:      {},
+            singleItemHeight:   {},
+            menuHeight:         {},
+            menu:               {},
+            pointerParentBox:   {}
+        },
+        getPointerOrder:function(direction,reverse){
+            var cDir = (reverse)? 'down':'up';
+            return (direction==cDir)? 'next':'prev';
+        },
+        // calculate and store all menu objects tied with scrolling
+        setObjects: function(submenuContainer,direction) { // jQuery (not JS!) object
+            //console.dir(submenuContainer);
+            var submenu_container_id = $(submenuContainer).attr('id');
+            menus.scroll.oppositePointer=$(submenuContainer)[menus.scroll.getPointerOrder(direction)]();
+            if(!menus.submenu_containers[submenu_container_id]){
+                menus.submenu_containers[submenu_container_id]=submenuContainer;
+                // (sub)menu object
+                var submenu = $('>menu',submenuContainer);
+                // (sub)menu height
+                var menuHeight=parseFloat($(submenu).height());
+                // set data
+                // (sub)menu object
+                menus.scroll.activeObjx.menu[submenu_container_id]
+                    = submenu;
+                // (sub)menu height
+                menus.scroll.activeObjx.menuHeight[submenu_container_id]
+                    = parseFloat($(submenu).height());
+                // single (sub)menu inner item (li) height
+                menus.scroll.activeObjx.singleItemHeight[submenu_container_id]
+                    = menuHeight/$('li',submenu).size();
+                // scrollLimit
+                menus.scroll.activeObjx.scrollLimit[submenu_container_id]
+                    = parseFloat($(submenuContainer).innerHeight()-menuHeight);
+                // don't set pointerParentBox yet!
+            }
+            //
+            menus.scroll.activeObjx.menuTopMargin[submenu_container_id]
+                = parseFloat($(menus.scroll.activeObjx.menu[submenu_container_id]).css('margin-top'));
+            //console.log('menus.scroll.activeObjx.menuTopMargin[submenu_container_id] = %c'+menus.scroll.activeObjx.menuTopMargin[submenu_container_id],'background-color:lightskyblue');
+            /*  console.dir(submenuContainer);
+                console.dir(menus.submenu_containers[submenu_container_id]); */
+        },
+        // class for the pointer for scrolling (up/down)
+        pointer_class:'menu_pointer',
+        pointer_opacity_class:'opacity02',
+        tPos:{
+            startPos:0,
+            endPos:0,
+            startTime:0
+        }
+    },
+    // this block appears if the submenu aims the scroll
 	menu_wrapper_class:'menu_wrapper',
 	showMenu:function(dur,menu_manager){
 		//console.group('%cshowMenu()','font-weight:bold');
@@ -310,8 +390,8 @@ var menus={
             console.groupEnd(); */
 	},
 	hideMenu:function(){
-		//console.group('%chideMenu()','font-weight:bold');
-		//console.log('before Timeout:\nlast_container_id = %c'+menus.menu_container_id,'color:blue');
+		/*  console.group('%chideMenu()','font-weight:bold');
+            console.log('before Timeout:\nlast_container_id = %c'+menus.menu_container_id,'color:blue'); */
 		var last_container_id=menus.menu_container_id;
 		var last_pointer_state=menus.pointer_active;
 		setTimeout( function(){

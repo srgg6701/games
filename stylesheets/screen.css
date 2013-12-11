@@ -136,18 +136,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -336,18 +390,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -813,18 +921,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -1051,18 +1213,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -1503,18 +1719,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -1766,20 +2036,16 @@ br, hr {
 
 /* line 235, ../sass/screen.scss */
 #bottom_menu_item_games {
-  border-bottom: solid 1px #999;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
+  /*border-bottom: solid 1px #999;
+  @include border-radius(20px);
   bottom: 9.23077px;
-  box-shadow: 0 3px 10px #140D30 inset !important;
-  background-position-x: -157px;
+  box-shadow: 0 3px 10px #140D30 inset !important;	
+  background-position-x: -157px;	
   height: 23.07692px;
   letter-spacing: -0.46154px;
-  right: 181.69231px;
+  width: 51.53846px; */
+  right: 194px;
   padding-left: 33.07692px;
-  width: 51.53846px;
 }
 
 /* line 247, ../sass/screen.scss */
@@ -1931,18 +2197,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -2446,18 +2766,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -3064,18 +3438,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
