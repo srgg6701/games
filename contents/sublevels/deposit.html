@@ -12,7 +12,7 @@
 </section>
 <section class="content">
     <h1>Deposit</h1>
-	<form method="post">
+	<form method="post" class="frm_content">
         <h2 class="pay_way"></h2>
         <br/>
         <button type="submit">DEPOSIT</button>
@@ -26,14 +26,14 @@ $(function(){
 	});
 });
 function manageDeposite(obj){
-	
 	// class 'user_profile'
 	$(Game.user_container_class).hide(100);
-	console.group('%cmanageUserBlocks()','font-weight:bold');
+	/*console.group('%cmanageDeposite()','font-weight:bold');
 		console.log('file_name: %c'+$(obj).attr('data-block'),'color:blue');
-	console.groupEnd();
+	console.groupEnd();*/
 	// see data-block above as links attribute
 	Game.appendUserMoneyBlock($(obj).attr('data-block'));
+	Levels.setCorrection($('[data-level="money"]'));
 	return false;
 }
 </script>

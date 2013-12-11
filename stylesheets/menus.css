@@ -130,18 +130,72 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 105, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 108, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 111, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 114, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 117, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 120, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 123, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 126, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 129, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 132, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 135, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 113, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
@@ -189,7 +243,7 @@ br, hr {
 .bottom_menu_item .menu_container {
   bottom: 16px;
   padding-bottom: 16px;
-  right: 8px;
+  right: -5px;
 }
 /* line 52, ../sass/menus.scss */
 .bottom_menu_item .menu_container menu li {
@@ -210,7 +264,7 @@ br, hr {
 #user_menu_container {
   left: -24px;
   padding-top: 10px;
-  top: 12px;
+  top: 25px;
 }
 
 /* line 74, ../sass/menus.scss */

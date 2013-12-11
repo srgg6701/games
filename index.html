@@ -24,6 +24,9 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 <script src="js/debug.js"></script>
 </head>
 <body>
+<!--
+<div style="padding:40px;background:yellow; position:fixed; top0; left:0;width:300px;height:300px;z-index:7" id="test_me"><div style="background:blue; padding:10px; width:40%; height:40%;">test</div></div>
+-->
 <div id="wrapper">
     
     <div id="test_inner_submenu"></div>
@@ -62,8 +65,10 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
     	
         <div id="welcome_back">
     	<div class="silver"></div>
-    	Welcome back, 
-        <div class="user_name" data-container_id="user_menu_container">Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
+    	 
+        <div class="user_name" data-container_id="user_menu_container">
+        	<p>Welcome back,</p>
+        Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
         	<div class="menu_container" id="user_menu_container">
                 <menu id="user_profile_menu" data-slow-children="all">
                     <li><div></div><a data-level-default="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
@@ -248,173 +253,19 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
                         <li>
                         	<a href="#">Instant Games</a>
                             <div id="bm_instant_games" class="menu_pointer"></div>
-                            <div class="menu_wrapper">
-								<div>
-                                	<div class="menu_pointer special"></div>
-                                </div>
-                                <div class="submenu_container">
-                                	<menu id="instant_games_submenu">
-                                    <li>
-                                        <a href="#">Las Vegas Party</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cool Farmer</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bingo Slot Machine</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Whatever Game</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Game to Win</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Win A Game Now</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Mr. Poker</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Meet the Dealer</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Las Vegas Party</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cool Farmer</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bingo Slot Machine</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Whatever Game</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Game to Win</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Win A Game Now</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Mr. Poker</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Meet the Dealer</a>
-                                    </li>
-                                </menu>
-                                </div>
-                                <div>
-                                	<div class="menu_pointer special"></div>
-                                </div>
-                            </div>
+                            <menu id="instant_games_submenu">
+                            </menu>
                         </li>
                         <li>
                         	<a href="#">Scratch Games</a>	
                             <div id="bm_scratch_games" class="menu_pointer"></div>
-                            <menu id="scratch_games_submenu" class="short">
-                                <li>
-                                	<a href="#">Las Vegas Party</a>
-                                </li>
-                                <li>
-                                	<a href="#">Cool Farmer</a>
-                                </li>
-                                <li>
-                                	<a href="#">Bingo Slot Machine</a>
-                                </li>
-                                <li>
-                                	<a href="#">Whatever Game</a>
-                                </li>
-                                <li>
-                                	<a href="#">Game to Win</a>
-                                </li>
-                                <li>
-                                	<a href="#">Win A Game Now</a>
-                                </li>
-                                <li>
-                                	<a href="#">Mr. Poker</a>
-                                </li>
-                                <li>
-                                	<a href="#">Meet the Dealer</a>
-                                </li>
-                                <li>
-                                	<a href="#">Las Vegas Party</a>
-                                </li>
-                                <li>
-                                	<a href="#">Cool Farmer</a>
-                                </li>
-                                <li>
-                                	<a href="#">Bingo Slot Machine</a>
-                                </li>
-                                <li>
-                                	<a href="#">Whatever Game</a>
-                                </li>
-                                <li>
-                                	<a href="#">Game to Win</a>
-                                </li>
-                                <li>
-                                	<a href="#">Win A Game Now</a>
-                                </li>
-                                <li>
-                                	<a href="#">Mr. Poker</a>
-                                </li>
-                                <li>
-                                	<a href="#">Meet the Dealer</a>
-                                </li>
+                            <menu id="scratch_games_submenu">
                             </menu>
                         </li>
                         <li>
                         	<a href="#">Slots Machine</a>
                             <div id="bm_slots_machine" class="menu_pointer"></div>
-                            <menu id="slots_machine_submenu" class="short">
-                                <li>
-                                	<a href="#">Las Vegas Party</a>
-                                </li>
-                                <li>
-                                	<a href="#">Cool Farmer</a>
-                                </li>
-                                <li>
-                                	<a href="#">Bingo Slot Machine</a>
-                                </li>
-                                <li>
-                                	<a href="#">Whatever Game</a>
-                                </li>
-                                <li>
-                                	<a href="#">Game to Win</a>
-                                </li>
-                                <li>
-                                	<a href="#">Win A Game Now</a>
-                                </li>
-                                <li>
-                                	<a href="#">Mr. Poker</a>
-                                </li>
-                                <li>
-                                	<a href="#">Meet the Dealer</a>
-                                </li>
-                                <li>
-                                	<a href="#">Las Vegas Party</a>
-                                </li>
-                                <li>
-                                	<a href="#">Cool Farmer</a>
-                                </li>
-                                <li>
-                                	<a href="#">Bingo Slot Machine</a>
-                                </li>
-                                <li>
-                                	<a href="#">Whatever Game</a>
-                                </li>
-                                <li>
-                                	<a href="#">Game to Win</a>
-                                </li>
-                                <li>
-                                	<a href="#">Win A Game Now</a>
-                                </li>
-                                <li>
-                                	<a href="#">Mr. Poker</a>
-                                </li>
-                                <li>
-                                	<a href="#">Meet the Dealer</a>
-                                </li>
+                            <menu id="slots_machine_submenu">
                             </menu>
                         </li>
                     </menu>
@@ -423,5 +274,9 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 	        <div class="bottom_menu_item"  id="bottom_menu_item_chat">Live Chat</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_logout">Logout</div>
 </div>
+<script src="js/menus.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<!--<script type="application/javascript" src="js/iscroll-lite.js?v4"></script>-->
 </body>
 </html>
