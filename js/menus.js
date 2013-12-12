@@ -103,24 +103,24 @@ $(function(){
             var menuPointerBox = $('<div/>',{
                 class: menus.scroll.pointer_parent_class.up,
                 click:function(){ //console.log('clicked up!');
-                    callScrollMenuItems(this,'up');
+                    callScrollMenuItems(this,'down');
                 }
             }).html(pntr);
             // bottom
             var menuPointerBoxBottom = $('<div/>',{
-                class: menus.scroll.pointer_parent_class.down + ' ' + 
-                        menus.scroll.pointer_parent_class.opacity_class_down, //'opacity08'
-                title: menus.scroll.pointer_parent_class.down_title,
+                class: menus.scroll.pointer_parent_class.down, 
+                       //+ ' ' + menus.scroll.pointer_parent_class.opacity_class_down, //'opacity08'
+                //title: menus.scroll.pointer_parent_class.down_title,
                 click:function(){ //console.log('clicked down!');
                     /*  'this' is the pointer here because this function
                         will be called later by clicking this POINTER    */
-                    callScrollMenuItems(this,'down'); 
+                    callScrollMenuItems(this,'up'); 
                 }
             }).html(pntr);
             // make the bottom pointer transparent
             $('.'+menus.scroll.pointer_class, // .menu_pointer
                     menuPointerBoxBottom)   // in .scroll down opacity08
-                .addClass(menus.scroll.pointer_opacity_class); //'opacity02'
+                //.addClass(menus.scroll.pointer_opacity_class); //'opacity02'
             menus.activeMenuId = this.id+'_wrapper';
             // add inner sumbmenu wrapper
             var scId = this.id+'_wrapper';
@@ -236,10 +236,10 @@ function scrollMenuItems(submenuContainer,direction,pointerBox){
         doScroll(direction,submenu_container_id);//,singleItemHeight,menuTopMargin,menu,par
     }else{ // set pointer box passive
         $(menus.scroll.activeObjx.pointerParentBox[submenu_container_id])
-            .addClass(menus.scroll.pointer_parent_class['opacity_class_'+direction]) // opacity08
-                .attr('title',menus.scroll.pointer_parent_class[direction+'_title']); // No more items from down
+            //.addClass(menus.scroll.pointer_parent_class['opacity_class_'+direction]) // opacity08
+                //.attr('title',menus.scroll.pointer_parent_class[direction+'_title']); // No more items from down
         // set the pointer passive:
-        managePointerClass('addClass',submenu_container_id,pointerBox);
+        //managePointerClass('addClass',submenu_container_id,pointerBox);
     } 
 }
 
@@ -316,21 +316,24 @@ function doScroll(direction,submenu_container_id){
     }else if(submenuTopMargin>0)
         $(tSubmenu).animate({'margin-top':0},300);
     
-    // remove opacity class and title from pointer box
-    $(menus.scroll.oppositePointer)
-            .removeClass(menus.scroll.pointer_parent_class['opacity_class_'+opacity_direction])
-                .removeAttr('title');
-    /*console.groupCollapsed('%cSet pointer box active:','font-weight:bold');
-        console.log('%cPointer box:','font-weight:bold');
-        console.dir(menus.scroll.activeObjx.pointerParentBox[submenu_container_id]);
-        console.log('Remove className: %c'+menus.scroll.pointer_parent_class['opacity_class_'+opacity_direction],'font-weight:bold');        
-    console.groupEnd();*/
-    managePointerClass('removeClass',submenu_container_id/*,direction*/);
-    //console.groupEnd();
+    /*var manage_pointers = false;
+    if (manage_pointers) {
+        // remove opacity class and title from pointer box
+        $(menus.scroll.oppositePointer)
+                .removeClass(menus.scroll.pointer_parent_class['opacity_class_'+opacity_direction])
+                    .removeAttr('title');
+        console.groupCollapsed('%cSet pointer box active:','font-weight:bold');
+            console.log('%cPointer box:','font-weight:bold');
+            console.dir(menus.scroll.activeObjx.pointerParentBox[submenu_container_id]);
+            console.log('Remove className: %c'+menus.scroll.pointer_parent_class['opacity_class_'+opacity_direction],'font-weight:bold');        
+        console.groupEnd();
+        managePointerClass('removeClass',submenu_container_id);
+        //console.groupEnd();
+    }*/
 }
 
-function managePointerClass(func,submenu_container_id,currentPointerBox){
-    /*console.group('%cmanagePointerClass()','font-weight:bold');
+/*function managePointerClass(func,submenu_container_id,currentPointerBox){
+    console.group('%cmanagePointerClass()','font-weight:bold');
         console.log('func: %c'+func,'color:red');
         //console.log('order: %c'+order,'color:navy');
         console.log('submenu_container_id = %c'+submenu_container_id,'color:orange');
@@ -341,8 +344,8 @@ function managePointerClass(func,submenu_container_id,currentPointerBox){
             console.dir($(menus.scroll.oppositePointer));
         console.log('%cpointer (next/prev)$(menus.submenu_containers[submenu_container_id])[order] for submenu container:','font-weight:bold');
             console.dir($('>div',$(menus.scroll.oppositePointer)));
-    console.groupEnd();*/
+    console.groupEnd();
     var pointerBox = (currentPointerBox)? 
             currentPointerBox : $(menus.scroll.oppositePointer);
     $('>div',pointerBox)[func](menus.scroll.pointer_opacity_class);
-}
+}*/

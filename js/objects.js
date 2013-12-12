@@ -318,11 +318,11 @@ var menus={
         // parent for pointer
         pointer_parent_class:{
             up:'scroll up',
-            up_title:'No more items above',
-            opacity_class_up:'opacity08',
+            //up_title:'No more items above',
+            //opacity_class_up:'opacity08',
             down:'scroll down',
-            down_title:'No more items bellow',
-            opacity_class_down:'opacity08'
+            //down_title:'No more items bellow',
+            //opacity_class_down:'opacity08'
         },
         activeObjx:{
             scrollLimit:        {},
@@ -333,14 +333,14 @@ var menus={
             pointerParentBox:   {}
         },
         getPointerOrder:function(direction,reverse){
-            var cDir = (reverse)? 'down':'up';
+            var cDir = (reverse)? 'up':'down';
             return (direction==cDir)? 'next':'prev';
         },
         // calculate and store all menu objects tied with scrolling
         setObjects: function(submenuContainer,direction) { // jQuery (not JS!) object
             //console.dir(submenuContainer);
             var submenu_container_id = $(submenuContainer).attr('id');
-            menus.scroll.oppositePointer=$(submenuContainer)[menus.scroll.getPointerOrder(direction)]();
+            //menus.scroll.oppositePointer=$(submenuContainer)[menus.scroll.getPointerOrder(direction)]();
             if(!menus.submenu_containers[submenu_container_id]){
                 menus.submenu_containers[submenu_container_id]=submenuContainer;
                 // (sub)menu object
@@ -371,7 +371,7 @@ var menus={
         },
         // class for the pointer for scrolling (up/down)
         pointer_class:'menu_pointer',
-        pointer_opacity_class:'opacity02',
+        //pointer_opacity_class:'opacity02',
         tPos:{
             startPos:0,
             endPos:0,
