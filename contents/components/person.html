@@ -1,19 +1,25 @@
-<div id="gender" class="inline">
+<div id="gender" class="inline clear all-font-normal">
 	<div>Gender:</div>
     <div>
-        <input name="gender" type="radio" value="male">Male
+        <label class="radio" onClick="manageRadios(this);">
+        	<input name="gender" id="radio_male" type="radio" value="male">Male
+        </label>
     </div>
     <div>
-        <input name="gender" type="radio" value="female">Female
+        <label class="radio" onClick="manageRadios(this);">
+        	<input name="gender" id="radio_female" type="radio" value="female">Female
+        </label>
     </div>
 </div>
-<div id="birthday" class="inline">
+<div id="birthday" class="inline clear all-font-normal">
     <div>Birthday:</div>
     <div>
-    	<input name="day" id="day" type="text" value="day">
+    	<input name="year" id="year" type="text" value="year">
     </div>
     <div>
     	<input name="month" id="month" type="text" value="month">
     </div>
-    <div><input name="year" id="year" type="text" value="year"></div>
+    <div>
+    	<input name="day" id="day" type="text" value="day">
+    </div>
 </div>

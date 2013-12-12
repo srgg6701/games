@@ -24,18 +24,18 @@ $(function(){
 });
 
 /*	Functions */
-function manageMyProfile(show,e){
-	//console.log('%cmanageMyProfile()','background-color:yellow; padding:4px 6px;')
-	if(show){
-		Game.showMyProfile();
-	}else{
-		if($('#'+Game.shade_id).length&&e.keyCode == 27){
-			//console.log('esc was pushed');
-			Game.hideMyProfile();	
-		}
-	}
+function manageRadios(lbl){
+	//
+	$(lbl).on('click',function(){
+		console.log('label is clicked');
+		var checkedRadioClass='checked';
+		var radio = $('input:radio',this);
+		console.dir(radio);
+		$('input:radio[name="'+$(radio).attr('name')+'"]')
+			.parent('label').removeClass(checkedRadioClass);
+		$(this).addClass(checkedRadioClass);
+	});
 }
-
 /**
  * switch levels
  */
@@ -53,6 +53,17 @@ function manageLevels(level,sublevel) {
     }
     Levels.setBgImage(bgImg);
     //console.log('switch the level '+level);
+}
+function manageMyProfile(show,e){
+	//console.log('%cmanageMyProfile()','background-color:yellow; padding:4px 6px;')
+	if(show){
+		Game.showMyProfile();
+	}else{
+		if($('#'+Game.shade_id).length&&e.keyCode == 27){
+			//console.log('esc was pushed');
+			Game.hideMyProfile();	
+		}
+	}
 }
 /**
  * Open block
