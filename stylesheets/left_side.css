@@ -72,28 +72,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* recalculate */
 /* common classes */
-/* line 72, ../sass/shared.scss */
+/* line 73, ../sass/shared.scss */
 .absolute {
   position: absolute !important;
 }
 
-/* line 75, ../sass/shared.scss */
+/* line 76, ../sass/shared.scss */
 .btn {
   cursor: default;
 }
 
-/* line 78, ../sass/shared.scss */
+/* line 79, ../sass/shared.scss */
 .clear {
   display: block;
 }
-/* line 63, ../sass/shared.scss */
+/* line 64, ../sass/shared.scss */
 .clear:after {
   clear: both !important;
   content: " " !important;
   display: block;
 }
 
-/* line 81, ../sass/shared.scss */
+/* line 82, ../sass/shared.scss */
 .close {
   background: url("../images/close_white.png") no-repeat 9px 10px black;
   -webkit-border-radius: 0 4px 4px 0;
@@ -105,12 +105,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 26px;
 }
 
-/* line 87, ../sass/shared.scss */
+/* line 88, ../sass/shared.scss */
 .color-white {
   color: white;
 }
 
-/* line 90, ../sass/shared.scss */
+/* line 91, ../sass/shared.scss */
 .cover {
   position: absolute;
   top: 0;
@@ -120,83 +120,93 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 5;
 }
 
-/* line 99, ../sass/shared.scss */
+/* for all child elements */
+/* line 101, ../sass/shared.scss */
+.all-font-normal {
+  font-style: normal !important;
+}
+/* line 103, ../sass/shared.scss */
+.all-font-normal * {
+  font-style: normal !important;
+}
+
+/* line 107, ../sass/shared.scss */
 .half_wide {
   width: 50% !important;
 }
 
-/* line 102, ../sass/shared.scss */
+/* line 110, ../sass/shared.scss */
 .left {
   float: left !important;
 }
 
-/* line 105, ../sass/shared.scss */
+/* line 113, ../sass/shared.scss */
 .opacity01 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
   opacity: 0.1;
 }
 
-/* line 108, ../sass/shared.scss */
+/* line 116, ../sass/shared.scss */
 .opacity02 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2;
 }
 
-/* line 111, ../sass/shared.scss */
+/* line 119, ../sass/shared.scss */
 .opacity03 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
 
-/* line 114, ../sass/shared.scss */
+/* line 122, ../sass/shared.scss */
 .opacity04 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
 
-/* line 117, ../sass/shared.scss */
+/* line 125, ../sass/shared.scss */
 .opacity05 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
 
-/* line 120, ../sass/shared.scss */
+/* line 128, ../sass/shared.scss */
 .opacity06 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
 
-/* line 123, ../sass/shared.scss */
+/* line 131, ../sass/shared.scss */
 .opacity07 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
 }
 
-/* line 126, ../sass/shared.scss */
+/* line 134, ../sass/shared.scss */
 .opacity08 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 
-/* line 129, ../sass/shared.scss */
+/* line 137, ../sass/shared.scss */
 .opacity09 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
   opacity: 0.9;
 }
 
-/* line 132, ../sass/shared.scss */
+/* line 140, ../sass/shared.scss */
 .right {
   float: right !important;
 }
 
-/* line 135, ../sass/shared.scss */
+/* line 143, ../sass/shared.scss */
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4;
 }
 
-/* line 140, ../sass/shared.scss */
+/* line 148, ../sass/shared.scss */
 br, hr {
   clear: both;
 }
