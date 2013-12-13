@@ -2397,7 +2397,9 @@ br, hr {
 /* line 82, ../sass/menus.scss */
 menu {
   background-color: #0c173a;
-  box-shadow: 0px 4px 81px 0 rgba(0, 0, 0, 0.83);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.83) 0px 4px 81px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.83) 0px 4px 81px 0;
+  box-shadow: rgba(0, 0, 0, 0.83) 0px 4px 81px 0;
   border: solid 1px #000;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -2405,7 +2407,7 @@ menu {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 88, ../sass/menus.scss */
+/* line 89, ../sass/menus.scss */
 menu * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2417,20 +2419,20 @@ menu * {
   -ms-user-select: none;
   user-select: none;
 }
-/* line 98, ../sass/menus.scss */
+/* line 99, ../sass/menus.scss */
 menu:not(.top_user_menu) li {
   background-color: #1b154f;
 }
-/* line 100, ../sass/menus.scss */
+/* line 101, ../sass/menus.scss */
 menu:not(.top_user_menu) li:not(.header) {
   opacity: 0.975 "";
 }
-/* line 103, ../sass/menus.scss */
+/* line 104, ../sass/menus.scss */
 menu:not(.top_user_menu) li:not(.header):hover {
   background-color: #121033;
   opacity: 1;
 }
-/* line 110, ../sass/menus.scss */
+/* line 111, ../sass/menus.scss */
 menu li {
   border-top: solid 1px #29325F;
   font-size: 12.7px;
@@ -2438,11 +2440,11 @@ menu li {
   list-style: none;
   position: relative;
 }
-/* line 116, ../sass/menus.scss */
+/* line 117, ../sass/menus.scss */
 menu li:not(:last-child) {
   border-bottom: solid 1px #000;
 }
-/* line 119, ../sass/menus.scss */
+/* line 120, ../sass/menus.scss */
 menu li a {
   color: white;
   font-family: AvenirMedium;
@@ -2452,7 +2454,7 @@ menu li a {
   text-shadow: white 0 0 20px;
   white-space: nowrap;
 }
-/* line 128, ../sass/menus.scss */
+/* line 129, ../sass/menus.scss */
 menu li menu {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) -5px 0px 21px 3px;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) -5px 0px 21px 3px;
@@ -2583,26 +2585,32 @@ menu .menu_wrapper > div > menu {
 .scroll {
   position: relative;
 }
+/* line 216, ../sass/menus.scss */
+.scroll.up {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 1px 1px;
+}
 
-/* line 218, ../sass/menus.scss */
+/* line 221, ../sass/menus.scss */
 .submenu_container {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=97);
   opacity: 0.97;
 }
 
-/* line 222, ../sass/menus.scss */
+/* line 225, ../sass/menus.scss */
 #user_profile_menu {
   opacity: 0.97 "";
 }
-/* line 225, ../sass/menus.scss */
+/* line 228, ../sass/menus.scss */
 #user_profile_menu li {
   opacity: 1 !important;
 }
-/* line 229, ../sass/menus.scss */
+/* line 232, ../sass/menus.scss */
 #user_profile_menu > li {
   height: 42px;
 }
-/* line 231, ../sass/menus.scss */
+/* line 234, ../sass/menus.scss */
 #user_profile_menu > li div:first-child {
   background: url(../images/bottom_pyctos.png) no-repeat 9px 5px !important;
   background-size: 392px 33px !important;
@@ -2613,73 +2621,73 @@ menu .menu_wrapper > div > menu {
   position: absolute;
   width: 42px !important;
 }
-/* line 242, ../sass/menus.scss */
+/* line 245, ../sass/menus.scss */
 #user_profile_menu > li:nth-child(2) > div:first-child {
   background-position-x: -77px !important;
 }
-/* line 247, ../sass/menus.scss */
+/* line 250, ../sass/menus.scss */
 #user_profile_menu > li:nth-child(3) > div:first-child {
   background-position-x: -354px !important;
 }
-/* line 251, ../sass/menus.scss */
+/* line 254, ../sass/menus.scss */
 #user_profile_menu > li:first-child {
   height: 45px;
   padding-top: 5px;
 }
-/* line 255, ../sass/menus.scss */
+/* line 258, ../sass/menus.scss */
 #user_profile_menu > li:last-child {
   height: 47px;
   top: 1px !important;
 }
-/* line 258, ../sass/menus.scss */
+/* line 261, ../sass/menus.scss */
 #user_profile_menu > li:last-child div {
   background-position-y: -4px !important;
 }
-/* line 259, ../sass/menus.scss */
+/* line 262, ../sass/menus.scss */
 #user_profile_menu > li:last-child a {
   line-height: 40px;
 }
-/* line 261, ../sass/menus.scss */
+/* line 264, ../sass/menus.scss */
 #user_profile_menu > li > a {
   padding-left: 43px;
   padding-right: 23px;
 }
 
-/* line 270, ../sass/menus.scss */
+/* line 273, ../sass/menus.scss */
 #bottom_menu_container_cashier li.header > div {
   background-position: 0 0;
 }
 
-/* line 279, ../sass/menus.scss */
+/* line 282, ../sass/menus.scss */
 #bottom_menu_container_games li.header > div {
   background-position: -28px 0;
 }
 
-/* line 285, ../sass/menus.scss */
+/* line 288, ../sass/menus.scss */
 #cashier_submenu {
   top: -5px;
 }
-/* line 287, ../sass/menus.scss */
+/* line 290, ../sass/menus.scss */
 #cashier_submenu li {
   padding-left: 14px;
   padding-right: 14px;
 }
-/* line 290, ../sass/menus.scss */
+/* line 293, ../sass/menus.scss */
 #cashier_submenu li:first-child {
   height: 45px;
   line-height: 45px;
 }
-/* line 294, ../sass/menus.scss */
+/* line 297, ../sass/menus.scss */
 #cashier_submenu li:last-child {
   height: 39px;
   line-height: 36px;
 }
-/* line 297, ../sass/menus.scss */
+/* line 300, ../sass/menus.scss */
 #cashier_submenu li:last-child a {
   line-height: 36px;
 }
 
-/* line 301, ../sass/menus.scss */
+/* line 304, ../sass/menus.scss */
 .owner {
   background-color: #0c173a;
   height: 10px;
@@ -2691,31 +2699,33 @@ menu .menu_wrapper > div > menu {
   width: 10px;
 }
 
-/* line 307, ../sass/menus.scss */
+/* line 310, ../sass/menus.scss */
 #user_profile_menu_pointer_top {
   right: 23px;
   top: -6px;
 }
 
-/* line 311, ../sass/menus.scss */
+/* line 314, ../sass/menus.scss */
 #user_profile_menu_pointer_submenu {
-  box-shadow: -1px 1px 0 0px #000;
+  -webkit-box-shadow: rgba(0, 0, 0, 0) -1px 1px 0 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0) -1px 1px 0 0px;
+  box-shadow: rgba(0, 0, 0, 0) -1px 1px 0 0px;
   left: -3px;
   top: 24px;
 }
 
-/* line 316, ../sass/menus.scss */
+/* line 320, ../sass/menus.scss */
 #user_profile_menu_pointer_cashier {
   right: 9px;
   top: 18px;
 }
 
-/* line 320, ../sass/menus.scss */
+/* line 324, ../sass/menus.scss */
 .menu_pointer {
   border-right: solid 3px #FFF;
   border-top: solid 3px #FFF;
 }
-/* line 323, ../sass/menus.scss */
+/* line 327, ../sass/menus.scss */
 .menu_pointer:not(.special) {
   height: 8px;
   -webkit-transform: rotate(45deg);
@@ -2725,7 +2735,7 @@ menu .menu_wrapper > div > menu {
   transform: rotate(45deg);
   width: 8px;
 }
-/* line 326, ../sass/menus.scss */
+/* line 330, ../sass/menus.scss */
 .bottom_menu_item .menu_pointer:not(.special) {
   right: 10px;
   top: 22px;
