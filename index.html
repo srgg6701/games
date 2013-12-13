@@ -67,10 +67,10 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
         	<p>Welcome back,</p>
         Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
         	<div class="menu_container" id="user_menu_container">
-                <menu id="user_profile_menu" data-slow-children="all">
+                <menu id="user_profile_menu" class="top_user_menu" data-slow-children="all">
                     <li><div></div><a data-level-default="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
                     <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
-                        <menu class="short" id="cashier_submenu">
+                        <menu class="short top_user_menu" id="cashier_submenu">
                             <li><a href="#" data-level-go="deposit">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
                             <li><a href="#" data-level-go="withdrawal">Withdraw Money</a></li>
                         </menu>
