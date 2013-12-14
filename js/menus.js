@@ -231,7 +231,7 @@ function scrollMenuItems(submenuContainer,direction,pointerBox){
     // check conditions (is there space to scroll?): 
     if( ( direction=='up'   && ( (submenuTopMargin - submenuSingleItemHeight / 4) > submenuScrollLimit ) )
             ||  
-        ( direction=='down' && ( submenuTopMargin < -(submenuSingleItemHeight / 3) ) )
+        ( direction=='down' && ( submenuTopMargin < -(submenuSingleItemHeight / 4) ) )
       ) {   
         doScroll(direction,submenu_container_id);//,singleItemHeight,menuTopMargin,menu,par
     }else{ // set pointer box passive
