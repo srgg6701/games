@@ -36,6 +36,15 @@ function manageRadios(lbl){
 		$(this).addClass(checkedRadioClass);
 	});
 }
+/*
+ * Handle "remember me" checkbox
+ */
+function manage_remember(chBox){
+	if(chBox.checked==true)
+		$(chBox).parent().addClass('checked');
+	else
+		$(chBox).parent().removeClass('checked');
+}
 /**
  * switch levels
  */

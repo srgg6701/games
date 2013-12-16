@@ -96,7 +96,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 82, ../sass/shared.scss */
 .close {
-  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  background: url("../images/close_white.png") no-repeat 8px 8px black;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   -ms-border-radius: 0 4px 4px 0;
@@ -293,7 +293,7 @@ br, hr {
   font-weight: bold;
   letter-spacing: 0.5px;
   padding-bottom: 4px;
-  text-shadow: #222 1.5px 1.5px 0, #222 -1.5px -1.5px 0, #222 -2px 0px 0;
+  text-shadow: #222222 1.5px 1.5px 0, #222222 -1.5px -1.5px 0, #222222 -2px 0 0;
   top: -8px;
   white-space: nowrap;
 }

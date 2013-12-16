@@ -1,24 +1,29 @@
 	<div>
-    	<h4><div class="pyct"></div>Login to your Account</h4>
+        <div class="overlight"> </div>
+        <h4>
+            <div class="pyct"></div>Login to your Account
+        </h4>
     </div>
     <section data-order="first" class="narrow bg_overlight">
         <form name="form1" method="post" action="">
-        	<span data-load="input|username_or_email|Username or Email Address"></span><!--
-            <input name="username_or_email" id="username_or_email" type="text" value="Username or Email Address">-->
-            <span data-load="input|password|Password"></span><!--
-            <input name="password" id="password" type="text" value="Password">-->
+        	<span data-load="input|username_or_email|Username or Email Address"></span>
+            <span data-load="input|password|password"></span>
+            <label onClick="manage_remember(document.getElementById('remember_me'));"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
+            <span>Remember me</span>
             
-            <input name="remember_me" id="remember_me" type="checkbox" value=""> Remember me
-            <button type="submit" class="btn_yellow">Play Now!</button>
+            <button type="submit" class="btn_yellow">PLAY NOW!</button>
+            <a href="javascript:void(0);">Forgot password or username?</a>
         </form>
     </section>
     <section data-order="last" align="center">
-    	<h4 class="clear">New Player?</h4>
+    	<h4 class="clear second">New Player?</h4>
         <button class="btn_blue left">
         	<div class="pyct"></div>
-            Open a Account DEMO</button> 
+            Open a Account DEMO
+        </button> 
         <button class="btn_blue right">
         	<div class="pyct"></div>
-            Open a Account REAL MONEY</button>
+            Open a Account REAL MONEY
+        </button>
     </section>
 <div class="close" onClick="Game.hideMyProfile();"></div>

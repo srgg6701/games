@@ -94,7 +94,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 82, ../sass/shared.scss */
 .close {
-  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  background: url("../images/close_white.png") no-repeat 8px 8px black;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   -ms-border-radius: 0 4px 4px 0;
@@ -308,7 +308,7 @@ menu:not(.top_user_menu) li {
 }
 /* line 101, ../sass/menus.scss */
 menu:not(.top_user_menu) li:not(.header) {
-  opacity: 0.975 "";
+  opacity: 0.975 ;
 }
 /* line 104, ../sass/menus.scss */
 menu:not(.top_user_menu) li:not(.header):hover {
@@ -353,7 +353,7 @@ menu li menu.short {
 menu li menu li {
   height: 42px;
   line-height: 42px;
-  opacity: 0.96 "";
+  opacity: 0.96 ;
 }
 /* line 143, ../sass/menus.scss */
 menu li.header {
@@ -483,7 +483,7 @@ menu .menu_wrapper > div > menu {
 
 /* line 225, ../sass/menus.scss */
 #user_profile_menu {
-  opacity: 0.97 "";
+  opacity: 0.97 ;
 }
 /* line 228, ../sass/menus.scss */
 #user_profile_menu li {

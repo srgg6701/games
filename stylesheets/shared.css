@@ -94,7 +94,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 82, ../sass/shared.scss */
 .close {
-  background: url("../images/close_white.png") no-repeat 9px 10px black;
+  background: url("../images/close_white.png") no-repeat 8px 8px black;
   -webkit-border-radius: 0 4px 4px 0;
   -moz-border-radius: 0 4px 4px 0;
   -ms-border-radius: 0 4px 4px 0;
