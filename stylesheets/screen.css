@@ -2090,15 +2090,16 @@ br, hr {
   @include border-radius(20px);
   bottom: 9.23077px;
   box-shadow: 0 3px 10px #140D30 inset !important;	
-  background-position-x: -157px;	
+  
   height: 23.07692px;
   letter-spacing: -0.46154px;
   width: 51.53846px; */
+  background-position-x: -156px;
   right: 194px;
   padding-left: 33.07692px;
 }
 
-/* line 247, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 #bottom_menu_item_chat {
   background-position-x: -243px;
   letter-spacing: -0.38462px;
@@ -2106,7 +2107,7 @@ br, hr {
   right: 91.61538px;
 }
 
-/* line 253, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 #bottom_menu_item_logout {
   background-position-x: -333px;
   letter-spacing: -0.69px;
@@ -4124,7 +4125,7 @@ label.ellipse + span a:hover {
   z-index: 6;
 }
 
-/* line 264, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 [data-level="game"] {
   height: 0;
   position: static;
