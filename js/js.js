@@ -39,7 +39,7 @@ function manageRadios(lbl){
 /*
  * Handle "remember me" checkbox
  */
-function manage_remember(chBox){
+function manageLabel(chBox){
 	if(chBox.checked==true)
 		$(chBox).parent().addClass('checked');
 	else

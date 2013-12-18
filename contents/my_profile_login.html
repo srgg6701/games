@@ -8,11 +8,12 @@
         <form name="form1" method="post" action="">
         	<span data-load="input|username_or_email|Username or Email Address"></span>
             <span data-load="input|password|password"></span>
-            <label onClick="manage_remember(document.getElementById('remember_me'));"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
-            <span>Remember me</span>
-            
+            <div class="remember_me clear">    
+                <label class="ellipse" onClick="manageLabel(document.getElementById('remember_me'));"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
+                <span id="remember_me_text">Remember me</span>
+            </div>
             <button type="submit" class="btn_yellow">PLAY NOW!</button>
-            <a href="javascript:void(0);">Forgot password or username?</a>
+            <a class="link-question" href="javascript:void(0);">Forgot password or username?</a>
         </form>
     </section>
     <section data-order="last" align="center">
@@ -26,4 +27,5 @@
             Open a Account REAL MONEY
         </button>
     </section>
+<div class="bg_overlight_bottom"></div>
 <div class="close" onClick="Game.hideMyProfile();"></div>

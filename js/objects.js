@@ -89,27 +89,31 @@ var Game={
                         // for example: load contents/components/input.html #mobile_phone
                         $(element).load(commonPath+data2load[0]+'.html '+element_jid, 
                             function(){
-                                if(data2load[2]){
-                                    switch($(element_jid).attr('type')){
-                                        case 'submit':
-                                        case 'text':
-                                        case 'password':
-                                        case 'email':
-                                        case 'number':
-                                        case 'search':
-                                        case 'tel':
-                                            $(element_jid).val(data2load[2]);
-                                        break;
-                                        case 'checkbox':
-                                        case 'radio':
-                                            $(element_jid).after(data2load[2]);
-                                        break;
-                                        // not in use yet:
-                                        case 'button':
-                                            $(element_jid).append(data2load[2]);
-                                        break;
-                                    }
-                                }
+								var elementType = $(element_jid).attr('type');
+                                if( data2load[2] && (elementType ||$(element_jid)[0].tagName.toLowerCase()=='label') ){
+								switch(elementType){
+									case 'submit':
+									case 'text':
+									case 'password':
+									case 'email':
+									case 'number':
+									case 'search':
+									case 'tel':
+										$(element_jid).val(data2load[2]);
+									break;
+									case 'checkbox':
+									case 'radio':
+										
+									break;
+									// not in use yet:
+									case 'button':
+										$(element_jid).append(data2load[2]);
+									break;
+									default:
+										// checkbox, radio, label
+										$(element_jid).after(data2load[2]);
+								}
+							}
                         });
                     });
                 }
