@@ -2955,10 +2955,11 @@ br, hr {
   clear: both;
 }
 
-/* line 36, ../sass/my_profile.scss */
+/* line 66, ../sass/my_profile.scss */
 .user_profile {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
   background: url(../images/account_bg_from_bottom.png) repeat-x 0 100%;
+  background-size: 100% 100%;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -2976,33 +2977,33 @@ br, hr {
   content: " " !important;
   display: block;
 }
-/* line 45, ../sass/my_profile.scss */
+/* line 75, ../sass/my_profile.scss */
 .user_profile * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: static;
 }
-/* line 48, ../sass/my_profile.scss */
+/* line 78, ../sass/my_profile.scss */
 .user_profile *:not(.skip_common) {
   font-family: Amaranth;
   font-style: italic;
 }
-/* line 53, ../sass/my_profile.scss */
+/* line 83, ../sass/my_profile.scss */
 .user_profile a {
   color: white;
   font-style: normal;
 }
-/* line 57, ../sass/my_profile.scss */
+/* line 87, ../sass/my_profile.scss */
 .user_profile button {
   display: block;
 }
-/* line 60, ../sass/my_profile.scss */
+/* line 90, ../sass/my_profile.scss */
 .user_profile table.bg_overlight {
   background-position-y: 59px;
   border: none;
 }
-/* line 64, ../sass/my_profile.scss */
+/* line 94, ../sass/my_profile.scss */
 .user_profile .btn_blue {
   background: url(../images/bg_button_gradient_blue.png) repeat-x;
   border: solid 1px #333;
@@ -3017,7 +3018,7 @@ br, hr {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   width: 180px;
 }
-/* line 74, ../sass/my_profile.scss */
+/* line 104, ../sass/my_profile.scss */
 .user_profile .btn_yellow {
   background: url(../images/switch_to.png) repeat-x -45px 0px;
   background-size: 360px 44px;
@@ -3035,7 +3036,7 @@ br, hr {
   margin: auto;
   width: 260px;
 }
-/* line 87, ../sass/my_profile.scss */
+/* line 117, ../sass/my_profile.scss */
 .user_profile .flag {
   background: url(../images/check_fields.png) no-repeat;
   background-position-x: 0px;
@@ -3045,34 +3046,34 @@ br, hr {
   top: 6px;
   width: 20px;
 }
-/* line 95, ../sass/my_profile.scss */
+/* line 125, ../sass/my_profile.scss */
 .user_profile .flag.ok {
   background-position-y: 0px;
 }
-/* line 98, ../sass/my_profile.scss */
+/* line 128, ../sass/my_profile.scss */
 .user_profile .flag.delete {
   background-position-y: -26px;
 }
-/* line 102, ../sass/my_profile.scss */
+/* line 132, ../sass/my_profile.scss */
 .user_profile .font-common {
   font-size: 13px;
   font-style: normal;
 }
-/* line 105, ../sass/my_profile.scss */
+/* line 135, ../sass/my_profile.scss */
 .user_profile .font-common * {
   font-size: inherit;
   font-style: inherit;
 }
-/* line 110, ../sass/my_profile.scss */
+/* line 140, ../sass/my_profile.scss */
 .user_profile .left_support {
   float: left;
   width: 242px;
 }
-/* line 113, ../sass/my_profile.scss */
+/* line 143, ../sass/my_profile.scss */
 .user_profile .left_support img.left {
   margin-right: 8px;
 }
-/* line 117, ../sass/my_profile.scss */
+/* line 147, ../sass/my_profile.scss */
 .user_profile .overlight {
   box-shadow: 0 0px 68px 10px rgba(255, 255, 255, 0.25);
   height: 4px;
@@ -3081,18 +3082,18 @@ br, hr {
   left: 15%;
   right: 15%;
 }
-/* line 125, ../sass/my_profile.scss */
+/* line 155, ../sass/my_profile.scss */
 .user_profile .remember_me {
   font-family: AvenirOblique;
   font-size: 13px;
 }
-/* line 129, ../sass/my_profile.scss */
+/* line 159, ../sass/my_profile.scss */
 .user_profile .support_bottom {
   font-family: AvenirLight;
   font-size: 13px;
   font-style: normal;
 }
-/* line 135, ../sass/my_profile.scss */
+/* line 165, ../sass/my_profile.scss */
 .user_profile > div:first-child {
   overflow: hidden;
   border-bottom: solid 1px #0b051a;
@@ -3101,7 +3102,7 @@ br, hr {
   right: 0;
   text-align: center;
 }
-/* line 147, ../sass/my_profile.scss */
+/* line 177, ../sass/my_profile.scss */
 .user_profile input[type="text"], .user_profile input[type="password"] {
   background: url(../images/account_input_bg.png) repeat-x;
   border-radius: 4px;
@@ -3113,7 +3114,7 @@ br, hr {
   padding: 0 8px;
   width: 100%;
 }
-/* line 159, ../sass/my_profile.scss */
+/* line 189, ../sass/my_profile.scss */
 .user_profile label.radio {
   background: url(../images/radios.png) no-repeat;
   background-position-x: 2px;
@@ -3123,7 +3124,7 @@ br, hr {
   margin-right: 10px;
   padding: 0 0 0 6px;
 }
-/* line 167, ../sass/my_profile.scss */
+/* line 197, ../sass/my_profile.scss */
 .user_profile label.radio input[type="radio"] {
   height: 14px;
   -webkit-user-select: none;
@@ -3132,11 +3133,11 @@ br, hr {
   visibility: hidden;
   width: 14px;
 }
-/* line 173, ../sass/my_profile.scss */
+/* line 203, ../sass/my_profile.scss */
 .user_profile label.radio:not(.checked) {
   background-position-y: -37px;
 }
-/* line 177, ../sass/my_profile.scss */
+/* line 207, ../sass/my_profile.scss */
 .user_profile section {
   display: block;
   padding: 10px;
@@ -3147,57 +3148,57 @@ br, hr {
   content: " " !important;
   display: block;
 }
-/* line 180, ../sass/my_profile.scss */
+/* line 210, ../sass/my_profile.scss */
 .user_profile section.narrow {
   padding: 30px 86px 24px;
 }
-/* line 183, ../sass/my_profile.scss */
+/* line 213, ../sass/my_profile.scss */
 .user_profile section .column {
   float: left;
   width: 50%;
 }
-/* line 188, ../sass/my_profile.scss */
+/* line 218, ../sass/my_profile.scss */
 .user_profile thead {
   border-bottom: solid 1px #0b051a;
 }
-/* line 191, ../sass/my_profile.scss */
+/* line 221, ../sass/my_profile.scss */
 .user_profile td {
   padding: 0 10px;
   position: relative;
 }
-/* line 197, ../sass/my_profile.scss */
+/* line 227, ../sass/my_profile.scss */
 .user_profile tr.padding-top-bottom-null td {
   padding-bottom: 0;
   padding-top: 0;
 }
-/* line 204, ../sass/my_profile.scss */
+/* line 234, ../sass/my_profile.scss */
 .user_profile tr td:first-child .flag {
   right: 20px;
 }
-/* line 209, ../sass/my_profile.scss */
+/* line 239, ../sass/my_profile.scss */
 .user_profile tr td:last-child .flag {
   right: 38px;
 }
-/* line 217, ../sass/my_profile.scss */
+/* line 247, ../sass/my_profile.scss */
 .user_profile tbody tr.first td {
   padding-top: 20px;
 }
-/* line 222, ../sass/my_profile.scss */
+/* line 252, ../sass/my_profile.scss */
 .user_profile .close, .user_profile .go_left {
   border-top: solid 1px #666;
   position: absolute;
 }
-/* line 225, ../sass/my_profile.scss */
+/* line 255, ../sass/my_profile.scss */
 .user_profile .close:hover, .user_profile .go_left:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 229, ../sass/my_profile.scss */
+/* line 259, ../sass/my_profile.scss */
 .user_profile .close {
   right: -27px;
   top: 20px;
 }
-/* line 233, ../sass/my_profile.scss */
+/* line 263, ../sass/my_profile.scss */
 .user_profile .go_left {
   background: url("../images/pointer_go_left.png") no-repeat black;
   -webkit-border-radius: 4px 0 0 4px;
@@ -3209,7 +3210,7 @@ br, hr {
   left: -29px;
   width: 29px;
 }
-/* line 240, ../sass/my_profile.scss */
+/* line 270, ../sass/my_profile.scss */
 .user_profile h4 {
   color: #FFD000;
   font-size: 24px;
@@ -3220,17 +3221,17 @@ br, hr {
   text-align: center;
   text-shadow: black 1px 1px 0, black -1px -1px 0, black 1px -1px 0, black -1px 1px 0;
 }
-/* line 241, ../sass/my_profile.scss */
+/* line 271, ../sass/my_profile.scss */
 .user_profile h4:not(.second) {
   background: #241C57;
   border-bottom: solid 1px rgba(0, 0, 0, 0.25);
 }
-/* line 253, ../sass/my_profile.scss */
+/* line 283, ../sass/my_profile.scss */
 .user_profile h4 .pyct {
   height: 22px;
   display: inline-block;
 }
-/* line 256, ../sass/my_profile.scss */
+/* line 286, ../sass/my_profile.scss */
 .user_profile h4 .pyct.my_profile {
   background: url(../images/user_gold.png) no-repeat;
   margin-right: 10px;
@@ -3238,14 +3239,14 @@ br, hr {
   width: 18px;
 }
 
-/* line 267, ../sass/my_profile.scss */
+/* line 297, ../sass/my_profile.scss */
 .absolute_float {
   left: 0;
   position: absolute !important;
   right: 0;
 }
 
-/* line 272, ../sass/my_profile.scss */
+/* line 302, ../sass/my_profile.scss */
 .bg_overlight {
   background: url(../images/bg_my_profile_form_overlight.png) no-repeat;
   background-position-x: 50%;
@@ -3253,24 +3254,31 @@ br, hr {
   margin-top: 60px;
 }
 
-/* line 278, ../sass/my_profile.scss */
+/* line 308, ../sass/my_profile.scss */
 .bg_overlight_bottom {
   background: url(../images/account_bottom_overlight.png) no-repeat bottom center;
   background-size: 451.7333333333333px 17.64705882352941px;
   background-position-y: 98%;
 }
-/* line 284, ../sass/my_profile.scss */
+/* line 314, ../sass/my_profile.scss */
 .bg_overlight_bottom:not(.skip_height) {
   height: 33px;
 }
 
-/* line 288, ../sass/my_profile.scss */
+/* line 318, ../sass/my_profile.scss */
+.section-first-bottom {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.5) 8px 14px 20px 0;
+}
+
+/* line 323, ../sass/my_profile.scss */
 .inner_auto_container {
   display: inline-block;
   margin: auto;
 }
 
-/* line 292, ../sass/my_profile.scss */
+/* line 327, ../sass/my_profile.scss */
 .link-question {
   display: inline-block;
   clear: left;
@@ -3281,13 +3289,60 @@ br, hr {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
-/* line 300, ../sass/my_profile.scss */
+/* line 335, ../sass/my_profile.scss */
 .link-question:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 306, ../sass/my_profile.scss */
+/*	Don't remove blocks from bellow to inside!	*/
+/* line 342, ../sass/my_profile.scss */
+#a_terms-and-conditions {
+  /* TODO: find and use AvenirMediumOblique! */
+  font-family: AvenirMediumOblique, AvenirOblique;
+}
+/* line 344, ../sass/my_profile.scss */
+#a_terms-and-conditions:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 349, ../sass/my_profile.scss */
+#gender,
+#birthday {
+  height: 45px;
+  line-height: 34px;
+}
+
+/* line 354, ../sass/my_profile.scss */
+#gender div {
+  float: left;
+  margin-right: 14px;
+}
+
+/* line 360, ../sass/my_profile.scss */
+#birthday div {
+  float: right;
+  margin-left: 15px;
+}
+/* line 363, ../sass/my_profile.scss */
+#birthday div:first-child {
+  float: left;
+  margin-left: 0;
+  padding-top: 4px;
+}
+/* line 368, ../sass/my_profile.scss */
+#birthday div:last-child {
+  margin-left: 0;
+}
+/* line 371, ../sass/my_profile.scss */
+#birthday div input[type="text"] {
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 51px;
+}
+
+/* line 380, ../sass/my_profile.scss */
 label.ellipse {
   background-color: white;
   border-radius: 2px;
@@ -3298,30 +3353,38 @@ label.ellipse {
   margin-top: 5px;
   width: 12px;
 }
-/* line 315, ../sass/my_profile.scss */
+/* line 389, ../sass/my_profile.scss */
 label.ellipse.checked {
   background-color: #000;
   border: solid;
 }
-/* line 319, ../sass/my_profile.scss */
+/* line 393, ../sass/my_profile.scss */
 label.ellipse input[type="checkbox"] {
   margin: 0;
   visibility: hidden;
 }
-/* line 323, ../sass/my_profile.scss */
+/* line 397, ../sass/my_profile.scss */
 label.ellipse + span {
+  color: #a895c0;
   display: inline-block;
   float: left;
   font-family: AvenirOblique;
   font-size: 13px;
-  margin: 4px auto auto 7px;
+  margin: 6px auto auto 7px;
+}
+/* line 404, ../sass/my_profile.scss */
+label.ellipse + span a {
+  color: #cab4e5;
+}
+/* line 406, ../sass/my_profile.scss */
+label.ellipse + span a:hover {
+  color: white;
 }
 
 /* blocks themselwes*/
-/* line 334, ../sass/my_profile.scss */
+/* line 416, ../sass/my_profile.scss */
 #my_profile_form {
-  /*
-  background:url(../sources/substrates/Account/my_Profile_form.gif);
+  /*background:url(../sources/substrates/Account/my_Profile_form.gif);
   background-position: -43px -30px;
   border-bottom: solid 1px red;
   *{
@@ -3330,53 +3393,53 @@ label.ellipse + span {
   height: 500px;
   width: 600px;
 }
-/* line 345, ../sass/my_profile.scss */
+/* line 427, ../sass/my_profile.scss */
 #my_profile_form table {
   margin-top: 0;
   height: 100%;
 }
-/* line 347, ../sass/my_profile.scss */
+/* line 429, ../sass/my_profile.scss */
 #my_profile_form table .bg_overlight {
   background-position-y: 60px;
 }
-/* line 352, ../sass/my_profile.scss */
+/* line 434, ../sass/my_profile.scss */
 #my_profile_form table td {
   width: 50%;
 }
-/* line 357, ../sass/my_profile.scss */
+/* line 439, ../sass/my_profile.scss */
 #my_profile_form table tr td:first-child {
   padding-left: 30px;
 }
-/* line 360, ../sass/my_profile.scss */
+/* line 442, ../sass/my_profile.scss */
 #my_profile_form table tr td:last-child {
   padding-right: 30px;
 }
-/* line 366, ../sass/my_profile.scss */
+/* line 448, ../sass/my_profile.scss */
 #my_profile_form table thead td {
   overflow: hidden;
   padding: 0 !important;
 }
-/* line 372, ../sass/my_profile.scss */
+/* line 454, ../sass/my_profile.scss */
 #my_profile_form table tfoot td {
   height: 86px;
   text-align: center;
   vertical-align: top;
 }
-/* line 376, ../sass/my_profile.scss */
+/* line 458, ../sass/my_profile.scss */
 #my_profile_form table tfoot td .btn_blue {
   margin: 12px auto;
 }
-/* line 382, ../sass/my_profile.scss */
+/* line 464, ../sass/my_profile.scss */
 #my_profile_form tr {
   border: none;
 }
-/* line 385, ../sass/my_profile.scss */
+/* line 467, ../sass/my_profile.scss */
 #my_profile_form tr.separator_top_under_header td {
   background-color: #3e2a94;
   height: 2px;
   padding: 0;
 }
-/* line 392, ../sass/my_profile.scss */
+/* line 474, ../sass/my_profile.scss */
 #my_profile_form .btn_yellow {
   background-size: 360px 38px;
   font-size: 14px;
@@ -3386,30 +3449,30 @@ label.ellipse + span {
   margin-top: -18px;
   width: 162px;
 }
-/* line 402, ../sass/my_profile.scss */
+/* line 484, ../sass/my_profile.scss */
 #my_profile_form td.bg_overlight_bottom {
   padding-bottom: 38px;
 }
 
-/* line 407, ../sass/my_profile.scss */
+/* line 489, ../sass/my_profile.scss */
 #btn_save_changes {
   height: 45px;
   margin: 9px auto auto !important;
 }
 
-/* line 414, ../sass/my_profile.scss */
+/* line 496, ../sass/my_profile.scss */
 #my_profile_change_password_form,
 #my_profile_data {
   height: 343px;
   width: 430px;
 }
-/* line 418, ../sass/my_profile.scss */
+/* line 500, ../sass/my_profile.scss */
 #my_profile_change_password_form > div:first-child,
 #my_profile_data > div:first-child {
   text-align: center;
 }
 
-/* line 425, ../sass/my_profile.scss */
+/* line 507, ../sass/my_profile.scss */
 #my_profile_login {
   /*background:url(../sources/substrates/Account/login.gif);
   //background-position: -43px -31px;
@@ -3421,27 +3484,28 @@ label.ellipse + span {
   width: 490px;
   /* Let it stay here, within #my_profile_login! */
 }
-/* line 436, ../sass/my_profile.scss */
+/* line 518, ../sass/my_profile.scss */
 #my_profile_login form {
   text-align: center;
 }
-/* line 438, ../sass/my_profile.scss */
+/* line 520, ../sass/my_profile.scss */
 #my_profile_login section[data-order="first"] {
   height: 262px;
   padding-top: 23px;
 }
-/* line 442, ../sass/my_profile.scss */
+/* line 524, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] {
   background: url(../images/account_bg_from_bottom.png) repeat-x 0 100%;
+  background-size: 100% 100%;
   height: 182px;
   border-top: solid 2px rgba(255, 255, 255, 0.2);
 }
-/* line 446, ../sass/my_profile.scss */
+/* line 528, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] h4 {
   height: 56px;
   line-height: 35px;
 }
-/* line 450, ../sass/my_profile.scss */
+/* line 532, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] button {
   background-size: 180px 76px;
   height: 76px;
@@ -3452,25 +3516,25 @@ label.ellipse + span {
   padding-top: 6px;
   position: relative;
 }
-/* line 459, ../sass/my_profile.scss */
+/* line 541, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] button.left {
   margin-left: 42px;
 }
-/* line 461, ../sass/my_profile.scss */
+/* line 543, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] button.left .pyct {
   background-position-x: 0px;
   background-position-y: -2px;
 }
-/* line 466, ../sass/my_profile.scss */
+/* line 548, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] button.right {
   margin-right: 12px;
 }
-/* line 468, ../sass/my_profile.scss */
+/* line 550, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] button.right .pyct {
   background-position-x: -106px;
   background-position-y: -102px;
 }
-/* line 473, ../sass/my_profile.scss */
+/* line 555, ../sass/my_profile.scss */
 #my_profile_login section[data-order="last"] button .pyct {
   background: url(../images/coins_big.png);
   height: 100px;
@@ -3479,13 +3543,13 @@ label.ellipse + span {
   top: -10px;
   width: 100px;
 }
-/* line 484, ../sass/my_profile.scss */
+/* line 566, ../sass/my_profile.scss */
 #my_profile_login .narrow {
   padding-left: 114px;
   padding-right: 114px;
   text-align: center;
 }
-/* line 18, ../sass/my_profile.scss */
+/* line 23, ../sass/my_profile.scss */
 #my_profile_login .narrow button.btn_yellow {
   float: left;
   font-size: 17px;
@@ -3494,114 +3558,117 @@ label.ellipse + span {
   margin-top: 14px;
   width: 100%;
 }
-/* line 487, ../sass/my_profile.scss */
+/* line 569, ../sass/my_profile.scss */
 #my_profile_login .bg_overlight_bottom {
   margin-top: -31px;
 }
-/* line 490, ../sass/my_profile.scss */
+/* line 572, ../sass/my_profile.scss */
 #my_profile_login .remember_me {
   margin-top: -5px;
 }
-/* line 494, ../sass/my_profile.scss */
+/* line 576, ../sass/my_profile.scss */
 #my_profile_login #username_or_email {
   margin-top: 5px;
   margin-bottom: 14px;
 }
-/* line 498, ../sass/my_profile.scss */
+/* line 580, ../sass/my_profile.scss */
 #my_profile_login #remember_me_text {
   font-family: inherit;
   font-weight: bold;
   letter-spacing: -0.8px;
 }
 
-/* line 505, ../sass/my_profile.scss */
+/* line 587, ../sass/my_profile.scss */
 #my_profile_open_demo_account {
+  background-position-y: -151px;
   /*background:url(../sources/substrates/Account/open_a_demo_account.gif);
   background-position: -42px -31px;
   border-bottom: solid 1px red;
   *{
   	opacity: 0.9;
   }*/
-  background-position-y: -133px;
   height: 620px;
   width: 600px;
+  /*.link-question{
+  	font-style: italic;
+  }*/
 }
-/* line 519, ../sass/my_profile.scss */
+/* line 601, ../sass/my_profile.scss */
 #my_profile_open_demo_account .bg_overlight_bottom.middle {
   bottom: 150px;
   position: absolute;
   width: 100%;
 }
-/* line 525, ../sass/my_profile.scss */
+/* line 607, ../sass/my_profile.scss */
 #my_profile_open_demo_account .go_left {
   top: 34%;
 }
-/* line 528, ../sass/my_profile.scss */
+/* line 610, ../sass/my_profile.scss */
 #my_profile_open_demo_account section {
   position: relative;
 }
-/* line 530, ../sass/my_profile.scss */
+/* line 612, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="first"] {
   height: 410px;
   margin-bottom: 24px;
+  /*span.skip_common{
+  	color:#b1b1b1;
+  }*/
 }
-/* line 533, ../sass/my_profile.scss */
+/* line 615, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="first"] a {
   font-style: italic;
 }
-/* line 537, ../sass/my_profile.scss */
+/* line 619, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="first"] input[type="text"],
 #my_profile_open_demo_account section[data-order="first"] input[type="password"] {
   width: 260px;
 }
-/* line 540, ../sass/my_profile.scss */
-#my_profile_open_demo_account section[data-order="first"] span.skip_common {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
-}
-/* line 544, ../sass/my_profile.scss */
+/* line 626, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="last"] {
   height: 130px;
   padding: 0;
 }
-/* line 547, ../sass/my_profile.scss */
+/* line 629, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="last"] .bg_overlight {
+  height: 128px;
   margin: auto;
 }
-/* line 550, ../sass/my_profile.scss */
+/* line 633, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="last"] .left_support {
   background: url(../images/account_bg_from_bottom.png) repeat-x 0 100%;
+  background-size: 100% 100%;
 }
-/* line 553, ../sass/my_profile.scss */
+/* line 636, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="last"] .subheader {
   background: url(../images/right_live_chat.png) no-repeat 7px 10px;
   background-size: 17px 18px;
   letter-spacing: inherit;
   padding: 10px 0 0 28px;
 }
-/* line 559, ../sass/my_profile.scss */
+/* line 46, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="last"] .support_bottom {
   padding: 14px;
   padding-top: 16px;
 }
-/* line 562, ../sass/my_profile.scss */
+/* line 49, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="last"] .support_bottom p {
   line-height: 18px;
   margin-right: -2px;
   margin-top: -2px;
 }
-/* line 570, ../sass/my_profile.scss */
+/* line 57, ../sass/my_profile.scss */
 #my_profile_open_demo_account section[data-order="last"] img.block.left {
   margin-right: 10px;
   margin-top: -2px;
 }
-/* line 578, ../sass/my_profile.scss */
+/* line 642, ../sass/my_profile.scss */
 #my_profile_open_demo_account .narrow {
   padding-left: 150px;
   padding-right: 150px;
   text-align: center;
 }
-/* line 18, ../sass/my_profile.scss */
+/* line 23, ../sass/my_profile.scss */
 #my_profile_open_demo_account .narrow button.btn_yellow {
   float: left;
   font-size: 17px;
@@ -3610,24 +3677,25 @@ label.ellipse + span {
   margin-top: 50px;
   width: 100%;
 }
-/* line 579, ../sass/my_profile.scss */
+/* line 643, ../sass/my_profile.scss */
 #my_profile_open_demo_account .inner_auto_container {
   font-family: AvenirMedium;
   font-size: 13px;
   margin-top: 5px;
 }
-/* line 585, ../sass/my_profile.scss */
+/* line 652, ../sass/my_profile.scss */
 #my_profile_open_demo_account a.skip_common {
   margin: 19px auto;
 }
 
-/* line 591, ../sass/my_profile.scss */
+/* line 658, ../sass/my_profile.scss */
 #right_7euros {
   background: url(../images/account_bg_from_bottom.png) repeat-x 0 100%;
+  background-size: 100% 100%;
   float: right;
   width: 334px;
 }
-/* line 596, ../sass/my_profile.scss */
+/* line 663, ../sass/my_profile.scss */
 #right_7euros .absolute.pyct {
   background: url(../images/free.png) no-repeat;
   height: 58px;
@@ -3635,7 +3703,7 @@ label.ellipse + span {
   top: 0;
   right: 0;
 }
-/* line 604, ../sass/my_profile.scss */
+/* line 671, ../sass/my_profile.scss */
 #right_7euros .left {
   background: url("../images/7euros.png");
   background-size: 103px 88px;
@@ -3644,11 +3712,11 @@ label.ellipse + span {
   margin-top: 22px;
   width: 103px;
 }
-/* line 612, ../sass/my_profile.scss */
+/* line 679, ../sass/my_profile.scss */
 #right_7euros .right {
   margin-right: 30px;
 }
-/* line 615, ../sass/my_profile.scss */
+/* line 682, ../sass/my_profile.scss */
 #right_7euros .right p:first-child {
   font-family: AvenirMedium;
   font-size: 13px;
@@ -3657,7 +3725,7 @@ label.ellipse + span {
   line-height: 50px;
   padding-top: 8px;
 }
-/* line 623, ../sass/my_profile.scss */
+/* line 690, ../sass/my_profile.scss */
 #right_7euros .right p:last-child {
   font-family: AvenirOblique;
   font-size: 13px;
@@ -3665,12 +3733,12 @@ label.ellipse + span {
   line-height: 40px;
   margin-top: -5px;
 }
-/* line 632, ../sass/my_profile.scss */
+/* line 699, ../sass/my_profile.scss */
 #right_7euros button, #right_7euros p {
   text-align: center;
   width: 180px;
 }
-/* line 636, ../sass/my_profile.scss */
+/* line 703, ../sass/my_profile.scss */
 #right_7euros button {
   font-size: 12px;
   font-style: normal;
@@ -3678,10 +3746,11 @@ label.ellipse + span {
   margin-top: -2px;
 }
 
-/* line 644, ../sass/my_profile.scss */
+/* line 711, ../sass/my_profile.scss */
 #my_profile_real_money_account {
-  /*background:url(../sources/substrates/Account/open_a_real_money_account_step1.gif);
-  background-position: -42px -33px;
+  background-position-y: -146px;
+  /*background:url(../sources/substrates/Account/open_a_real_money_account_step2.png);
+  //background-position: -42px -33px;
   //border-bottom: solid 1px red;
   *{
   	opacity: 0.9;
@@ -3689,40 +3758,47 @@ label.ellipse + span {
   height: 670px;
   width: 600px;
 }
-/* line 656, ../sass/my_profile.scss */
+/* line 726, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps {
+  border-bottom: solid 2px rgba(0, 0, 0, 0.3);
   height: 36px;
   position: absolute;
   width: 100%;
 }
-/* line 662, ../sass/my_profile.scss */
+/* line 732, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps * {
   font-style: normal;
-  font-weight: bolder;
   text-align: left;
 }
-/* line 667, ../sass/my_profile.scss */
+/* line 735, ../sass/my_profile.scss */
+#my_profile_real_money_account #steps * [id^="step"] {
+  font-weight: bolder;
+}
+/* line 739, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps div {
   height: 35px;
 }
-/* line 670, ../sass/my_profile.scss */
+/* line 742, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div {
+  border-top: solid 1px #000;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.7);
   position: absolute;
 }
-/* line 674, ../sass/my_profile.scss */
+/* line 748, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div div {
   float: left;
   font-family: Amaranth;
   font-size: 14px;
   line-height: 34px;
 }
-/* line 680, ../sass/my_profile.scss */
+/* line 754, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div:first-child {
   background: url(../images/fish_left.png) no-repeat;
   left: 0;
   width: 303px;
+  z-index: 1;
 }
-/* line 686, ../sass/my_profile.scss */
+/* line 759, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div:first-child #step1 {
   background-position: -28px 0px;
   background-size: 100px 37px;
@@ -3730,112 +3806,212 @@ label.ellipse + span {
   padding-left: 10px;
   width: 49px;
 }
-/* line 693, ../sass/my_profile.scss */
+/* line 766, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div:first-child #your_info {
   letter-spacing: -0.3px;
   padding-left: 27px;
   width: 235px;
 }
-/* line 702, ../sass/my_profile.scss */
+/* line 774, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div:last-child {
   background: url(../images/fish_right.png) no-repeat;
   right: 0;
   width: 315px;
 }
-/* line 709, ../sass/my_profile.scss */
+/* line 781, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div:last-child #step2 {
   letter-spacing: -0.2px;
   padding-left: 22px;
   width: 61px;
 }
-/* line 715, ../sass/my_profile.scss */
+/* line 787, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div:last-child #complete_info {
   letter-spacing: -0.5px;
   padding-left: 29px;
   width: 253px;
 }
-/* line 724, ../sass/my_profile.scss */
+/* line 796, ../sass/my_profile.scss */
 #my_profile_real_money_account #steps > div #step1,
 #my_profile_real_money_account #steps > div #step2 {
   color: black;
 }
-/* line 730, ../sass/my_profile.scss */
+/* line 802, ../sass/my_profile.scss */
 #my_profile_real_money_account section {
   color: white;
 }
-/* line 732, ../sass/my_profile.scss */
+/* line 804, ../sass/my_profile.scss */
 #my_profile_real_money_account section[data-order="first"] {
   height: 460px;
   margin-top: 0;
   padding-top: 40px;
 }
-/* line 736, ../sass/my_profile.scss */
-#my_profile_real_money_account section[data-order="first"] .btn_yellow {
-  margin-bottom: 15px;
-  margin-top: 24px;
+/* line 809, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
 }
-/* line 741, ../sass/my_profile.scss */
+/* line 813, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] .bg_overlight {
+  margin-top: 15px;
+}
+/* line 816, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] #call-support {
+  height: 78px;
+  font-style: normal;
+  left: 205px;
+  position: absolute;
+  top: 65px;
+  width: 198px;
+}
+/* line 823, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] #call-support .btn_blue {
+  font-size: 13px;
+  font-style: inherit;
+  line-height: 31px;
+  margin: 10px auto 0;
+  height: 34px;
+  width: 124px;
+}
+/* line 831, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] #call-support p {
+  background: url(../images/call_support.png) no-repeat;
+  font-size: 13px;
+  font-style: inherit;
+  height: 33px;
+  line-height: 33px;
+  margin-left: 4px;
+  margin-top: 3px;
+  padding-left: 33px;
+  text-align: left;
+}
+/* line 841, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] #call-support p #support_phone_number {
+  font-size: 15px;
+  font-style: inherit;
+  letter-spacing: 0.8px;
+}
+/* line 848, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] .left_support {
+  background: url(../images/account_bg_from_bottom.png) repeat-x 0 100%;
+  background-size: 100% 100%;
+  text-align: left;
+  width: 403px;
+}
+/* line 853, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] .subheader {
+  background: url(../images/right_live_chat.png) no-repeat 7px 10px;
+  background-size: 17px 18px;
+  letter-spacing: inherit;
+  padding: 10px 0 0 28px;
+  letter-spacing: -0.6px;
+  padding-top: 8px;
+}
+/* line 46, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] .support_bottom {
+  padding: 14px;
+  padding-top: 16px;
+}
+/* line 49, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] .support_bottom p {
+  line-height: 18px;
+  margin-right: -2px;
+  margin-top: -2px;
+}
+/* line 57, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] img.block.left {
+  margin-right: 10px;
+  margin-top: -2px;
+}
+/* line 859, ../sass/my_profile.scss */
+#my_profile_real_money_account section[data-order="last"] p {
+  max-width: 220px;
+}
+/* line 863, ../sass/my_profile.scss */
 #my_profile_real_money_account section div.narrow {
   margin: auto;
   width: 260px;
 }
-/* line 746, ../sass/my_profile.scss */
+/* line 868, ../sass/my_profile.scss */
 #my_profile_real_money_account div.inline {
   display: inline-block;
 }
-/* line 749, ../sass/my_profile.scss */
+/* line 871, ../sass/my_profile.scss */
 #my_profile_real_money_account .absolute_float {
   margin-top: -20px;
 }
-/* line 752, ../sass/my_profile.scss */
+/* line 874, ../sass/my_profile.scss */
+#my_profile_real_money_account .bg_overlight_bottom {
+  margin-top: -17px;
+}
+/* line 877, ../sass/my_profile.scss */
+#my_profile_real_money_account .btn_yellow {
+  margin-bottom: 15px;
+  margin-top: 24px;
+}
+/* line 883, ../sass/my_profile.scss */
+#my_profile_real_money_account .btn_yellow.step2 {
+  width: 302px;
+}
+/* line 887, ../sass/my_profile.scss */
+#my_profile_real_money_account .color-white {
+  text-shadow: 0 0 10px;
+}
+/* line 891, ../sass/my_profile.scss */
+#my_profile_real_money_account #birthday,
+#my_profile_real_money_account #gender {
+  margin-bottom: 7px;
+}
+/* line 896, ../sass/my_profile.scss */
+#my_profile_real_money_account #birthday > div:first-child {
+  padding: 0;
+  padding-right: 13px;
+}
+/* line 902, ../sass/my_profile.scss */
+#my_profile_real_money_account #gender {
+  margin-left: -6px;
+}
+/* line 905, ../sass/my_profile.scss */
+#my_profile_real_money_account .go_left {
+  margin-top: 40%;
+}
+/* line 908, ../sass/my_profile.scss */
+#my_profile_real_money_account .half_wide {
+  margin-bottom: 14px;
+  padding-top: 33px;
+}
+/* line 911, ../sass/my_profile.scss */
+#my_profile_real_money_account .half_wide.left {
+  padding-left: 19px;
+  padding-right: 9px;
+}
+/* line 915, ../sass/my_profile.scss */
+#my_profile_real_money_account .half_wide.right {
+  padding-left: 9px;
+  padding-right: 19px;
+}
+/* line 920, ../sass/my_profile.scss */
+#my_profile_real_money_account .step_passive {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+/* line 923, ../sass/my_profile.scss */
 #my_profile_real_money_account .verysign {
-  background: url(../images/verysign.png);
-  height: 139px;
-  width: 187px;
+  border: none;
+  background: url(../images/verysign.png) 0px -2px;
+  height: 131px;
+  width: 190px;
+  background-size: 188px 137px;
+  margin-right: -6px;
 }
 
 /* / blocks */
-/* line 761, ../sass/my_profile.scss */
-#gender,
-#birthday {
-  height: 45px;
-  line-height: 34px;
-}
-
-/* line 767, ../sass/my_profile.scss */
-#gender div {
-  float: left;
-  margin-right: 14px;
-}
-
-/* line 776, ../sass/my_profile.scss */
-#birthday div {
-  float: right;
-  margin-left: 15px;
-}
-/* line 779, ../sass/my_profile.scss */
-#birthday div:first-child {
-  float: left;
-  margin-left: 0;
-  padding-top: 4px;
-}
-/* line 784, ../sass/my_profile.scss */
-#birthday div:last-child {
-  margin-left: 0;
-}
-/* line 787, ../sass/my_profile.scss */
-#birthday div input[type="text"] {
-  margin-bottom: 0;
-  margin-top: 0;
-  width: 51px;
-}
-
-/* line 796, ../sass/my_profile.scss */
+/* line 936, ../sass/my_profile.scss */
 #tr-first .flag {
   margin-top: 25px;
 }
 
-/* line 801, ../sass/my_profile.scss */
+/* line 941, ../sass/my_profile.scss */
 #tr-second .flag {
   margin-top: 5px;
 }
@@ -3844,26 +4020,26 @@ label.ellipse + span {
 #tr-fhird{
 	// gender, birthday
 }*/
-/* line 810, ../sass/my_profile.scss */
+/* line 950, ../sass/my_profile.scss */
 #tr-fourth .flag {
   margin-top: 8px;
 }
-/* line 813, ../sass/my_profile.scss */
+/* line 953, ../sass/my_profile.scss */
 #tr-fourth td {
   padding-top: 5px;
 }
 
-/* line 818, ../sass/my_profile.scss */
+/* line 958, ../sass/my_profile.scss */
 #tr-fifth .flag {
   margin-top: 4px;
 }
 
-/* line 823, ../sass/my_profile.scss */
+/* line 963, ../sass/my_profile.scss */
 #tr-sixth .flag {
   margin-top: 2px;
 }
 
-/* line 832, ../sass/my_profile.scss */
+/* line 972, ../sass/my_profile.scss */
 #my_profile_change_password_form {
   /*background:url(../sources/substrates/Account/change_password.gif);
   background-position: -43px -33px;
@@ -3876,28 +4052,28 @@ label.ellipse + span {
   	//margin-bottom: 20px;
   }*/
 }
-/* line 841, ../sass/my_profile.scss */
+/* line 981, ../sass/my_profile.scss */
 #my_profile_change_password_form h4 div:first-child {
   background: url(../images/lock_gold.png) no-repeat;
   margin-right: 10px;
   margin-bottom: -4px;
   width: 18px;
 }
-/* line 847, ../sass/my_profile.scss */
+/* line 987, ../sass/my_profile.scss */
 #my_profile_change_password_form .go_left {
   top: 140px;
 }
-/* line 854, ../sass/my_profile.scss */
+/* line 994, ../sass/my_profile.scss */
 #my_profile_change_password_form button {
   margin-top: 28px;
   width: 212px;
 }
-/* line 861, ../sass/my_profile.scss */
+/* line 1001, ../sass/my_profile.scss */
 #my_profile_change_password_form .bg_overlight_bottom {
   margin-top: -27px;
 }
 
-/* line 865, ../sass/my_profile.scss */
+/* line 1005, ../sass/my_profile.scss */
 #my_profile_data {
   /*background:url(../sources/substrates/Account/my_Profile.gif);
   background-position: -43px -33px;
@@ -3906,23 +4082,23 @@ label.ellipse + span {
   	opacity: 0.9;
   }*/
 }
-/* line 875, ../sass/my_profile.scss */
+/* line 1015, ../sass/my_profile.scss */
 #my_profile_data div p {
   margin: 38px auto;
   font-size: 14px;
   font-style: normal;
 }
-/* line 881, ../sass/my_profile.scss */
+/* line 1021, ../sass/my_profile.scss */
 #my_profile_data .column {
   margin-right: 4px;
   padding-left: 10px;
   width: auto;
 }
-/* line 886, ../sass/my_profile.scss */
+/* line 1026, ../sass/my_profile.scss */
 #my_profile_data .column p:first-child {
   margin-top: 13px;
 }
-/* line 891, ../sass/my_profile.scss */
+/* line 1031, ../sass/my_profile.scss */
 #my_profile_data button {
   background-position-x: 0;
   background-size: 358px 44px;
@@ -3933,13 +4109,13 @@ label.ellipse + span {
   padding-left: 69px;
   width: 252px;
 }
-/* line 901, ../sass/my_profile.scss */
+/* line 1041, ../sass/my_profile.scss */
 #my_profile_data .bg_overlight_bottom {
-  margin-top: -20px;
+  margin-top: -26px;
 }
 
 /* for tests */
-/* line 907, ../sass/my_profile.scss */
+/* line 1047, ../sass/my_profile.scss */
 #test_inner_submenu {
   background: #FFFF99;
   display: none;

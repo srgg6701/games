@@ -90,7 +90,8 @@ var Game={
                         $(element).load(commonPath+data2load[0]+'.html '+element_jid, 
                             function(){
 								var elementType = $(element_jid).attr('type');
-                                if( data2load[2] && (elementType ||$(element_jid)[0].tagName.toLowerCase()=='label') ){
+                                // only if the 3th param exists (that means it is a single (not compound) element)
+								if( data2load[2] && (elementType ||$(element_jid)[0].tagName.toLowerCase()=='label') ){
 								switch(elementType){
 									case 'submit':
 									case 'text':
@@ -129,9 +130,20 @@ var Game={
 				// load the my_profile_real_money_account1 or my_profile_real_money_account2 content
 				$('#account_real_money_inner_content').load('contents/'+incomingEntityId+'.html', function(){
 					handleBlocks();
-					var btn_text=(incomingEntityId=='my_profile_real_money_account1')? 
-						'NEXT' : 'REGISTER NOW!';
-					$('#btn_real_money_account').text(btn_text);
+					var btn_text;
+					// step1
+					if(incomingEntityId=='my_profile_real_money_account1'){
+						btn_text='NEXT';
+						btn_class='step1';
+					}else{ // step2
+						btn_text='REGISTER NOW!';
+						btn_class='step2';
+						$('#steps >div:first-child').addClass('step_passive');
+						$('#steps >div:last-child').removeClass('step_passive');
+						console.dir($('#steps >div:first-child'),$('#steps >div:last-child'));
+					}
+					$('#btn_real_money_account')
+						.text(btn_text).addClass(btn_class);
 				});
 			}else
 				handleBlocks();
