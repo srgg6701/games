@@ -331,21 +331,3 @@ function doScroll(direction,submenu_container_id){
         //console.groupEnd();
     }*/
 }
-
-/*function managePointerClass(func,submenu_container_id,currentPointerBox){
-    console.group('%cmanagePointerClass()','font-weight:bold');
-        console.log('func: %c'+func,'color:red');
-        //console.log('order: %c'+order,'color:navy');
-        console.log('submenu_container_id = %c'+submenu_container_id,'color:orange');
-        console.log('className to remove: %c'+menus.scroll.pointer_opacity_class,'color:brown');
-        console.log('%csubmenu container:','font-weight:bold');
-            console.dir($(menus.submenu_containers[submenu_container_id]));
-        console.log('%csubmenu container block (should be a pointer box):','font-weight:bold');
-            console.dir($(menus.scroll.oppositePointer));
-        console.log('%cpointer (next/prev)$(menus.submenu_containers[submenu_container_id])[order] for submenu container:','font-weight:bold');
-            console.dir($('>div',$(menus.scroll.oppositePointer)));
-    console.groupEnd();
-    var pointerBox = (currentPointerBox)? 
-            currentPointerBox : $(menus.scroll.oppositePointer);
-    $('>div',pointerBox)[func](menus.scroll.pointer_opacity_class);
-}*/

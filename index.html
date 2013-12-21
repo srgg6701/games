@@ -10,12 +10,11 @@ var font_table=(navigator.platform.indexOf('Win')!=-1)? 'windows':'common';
 <!-- ******************************* -->
 font_table='common';
 <!-- ******************************* -->
-
 document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/fonts_'+font_table+'.css">');
 </script>
-<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/screen.css">
+<link id="css_screen_common" media="screen" rel="stylesheet" type="text/css" href="stylesheets/screen.css">
 <!--[if IE]>
-	<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="stylesheets/ie.css">
+	<link id="css_screen_id" media="screen" rel="stylesheet" type="text/css" href="stylesheets/ie.css">
 <![endif]-->
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/objects.js"></script>
@@ -69,6 +68,11 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
         Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
         	<div class="menu_container" id="user_menu_container">
                 <menu id="user_profile_menu" class="top_user_menu" data-slow-children="all">
+                    <!--    By clicking this menu the User Profile container fits 
+                            by an appropriate screen. Its id is defined in the 
+                            test_menu.html / a[data-block] element. This attribute
+                            passes as an argument to the objects.js / Scene.appendUserBlock(entity_id) 
+                            -->
                     <li><div></div><a data-level-default="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
                     <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
                         <menu class="short top_user_menu" id="cashier_submenu">
@@ -230,16 +234,21 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
             </div>
         </div>
 			
+        <!-- Bottom menu -->
 	        <div class="bottom_menu_item"  id="bottom_menu_item_profile" data-level-default="profile">Profile</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_cashier" data-container_id="bottom_menu_container_cashier">Cashier
                 <div class="menu_container" id="bottom_menu_container_cashier">
+
+<!--	Menu to load Cashier section.
+		Clicking by it calls js.js / manageLevels()
+-->
                     <menu>
                     	<li class="header"><div></div>Cashier</li>
                         <li>
-                        	<a href="#" data-level-go="deposit">Deposit Money</a>
+                        	<a href="javascript:void(0);" data-level-go="deposit">Deposit Money</a>
                         </li>
                         <li>
-                        	<a href="#" data-level-go="withdrawal">Withdraw Money</a>	
+                        	<a href="javascript:void(0);" data-level-go="withdrawal">Withdraw Money</a>	
                         </li>
             		</menu>
                 </div>

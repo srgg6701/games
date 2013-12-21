@@ -14,22 +14,3 @@
         <button type="submit">WITHDRAWAL</button>
     </form>
 </section>
-<script>
-$(function(){
-	$('[data-block]').click(function(){
-		$('.pay_way').text($(this).text());
-		manageWithdraw(this);
-	});
-});
-function manageWithdraw(obj){
-	// class 'user_profile'
-	$(Game.user_container_class).hide(100);
-	/*console.group('%cmanageWithdraw()','font-weight:bold');
-		console.log('file_name: %c'+$(obj).attr('data-block'),'color:blue');
-	console.groupEnd();*/
-	// see data-block above as links attribute
-	Game.appendUserMoneyBlock($(obj).attr('data-block'));
-	Levels.setCorrection($('[data-level="money"]'));
-	return false;
-}
-</script>

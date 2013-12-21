@@ -5,18 +5,19 @@
         </h4>
     </div>
     <section data-order="first" class="narrow bg_overlight">
-        <form name="form1" method="post" action="">
-        	<span data-load="input|username_or_email|Username or Email Address"></span>
+        <form name="user-form" id="user-form"  method="post" action="">
+            <!-- Username or Email Address  -->
+        	<span data-load="input|username_or_email|( Demo : Money )"></span>
             <span data-load="input|password|password"></span>
             <div class="remember_me clear">    
-                <label class="ellipse" onClick="manageLabel(document.getElementById('remember_me'));"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
+                <label data-box="remember_me" class="ellipse"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
                 <span id="remember_me_text">Remember me</span>
             </div>
-            <button type="submit" class="btn_yellow">PLAY NOW!</button>
+            <button type="button" id="btn_play_now" class="btn_yellow">PLAY NOW!</button>
             <a class="link-question" href="javascript:void(0);">Forgot password or username?</a>
         </form>
     </section>
-    <section data-order="last" align="center">
+    <section data-order="last">
     	<h4 class="clear second">New Player?</h4>
         <button class="btn_blue left">
         	<div class="pyct"></div>
@@ -28,4 +29,42 @@
         </button>
     </section>
 <div class="bg_overlight_bottom"></div>
-<div class="close" onClick="Game.hideMyProfile();"></div>
+<div class="close"></div>
+<var></var>
+<script>
+    $('#btn_play_now').on('click', function(){        
+        var Users = JSON.parse(window.localStorage.getItem('User'));
+        if(!Users)
+            console.log('No users');
+        else{
+            console.dir(Users);
+            var input_user_name_or_email = $('#username_or_email').val();
+            //
+            if(!Users[input_user_name_or_email]){
+                var userEmail = null;
+                for(var username in Users){
+                    if(Users[username]['email']==input_user_name_or_email){
+                        console.log('User exists! His email is '+input_user_name_or_email);
+                        userEmail = input_user_name_or_email;
+                        break;
+                    }
+                }
+                if(!userEmail){
+                    alert('User not found...');
+                    console.log('User not found...');
+                }
+            }
+        }/*$('var').eq(0).load('models/user.html', function(){            
+            console.dir(userData);
+        });*/
+    })
+    $('.btn_blue').on('click',function(){
+        if($(this).hasClass('left')){
+            //console.log('Open a Account DEMO');
+            Scene.appendUserBlock('my_profile_open_demo_account');
+        }else if($(this).hasClass('right')){
+            //console.log('Open a Account DEMO');
+            Scene.appendUserBlock('my_profile_real_money_account1');
+        }
+    })
+</script>
