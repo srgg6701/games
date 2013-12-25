@@ -32,13 +32,42 @@ var Levels = {
     }
 };
 var Scene={
+    container_id:'wrapper',
+    //
 	shade_id:'global_shade',
 	// user's blocks class name
 	user_container_class:'user_profile',
+    user_container_id_default:'my_profile_login',
     // loaded User Profile screen
     active_screen:{
-        inputs:{
-            passwords:{}
+        //user_form:null,
+        Form:{
+            name:'user-form',
+            pass_diff:false,
+            retype_password_id:'retype_password',
+            messages:{
+                pass_are_diff:'The passwords are different'
+            }
+        },/**
+         * Handle invisible due to design purposes checkbox
+         */
+        checkInvisibleBox: function(chbox) { // label[data-box]
+            $(chbox).parent('label')[(chbox.checked==true)? 'addClass':'removeClass']('checked');      
+        },
+        /*
+         *
+         */
+        manageRadios: function (lbl){
+            //
+            $(lbl).on('click',function(){
+                console.log('label is clicked');
+                var checkedRadioClass='checked';
+                var radio = $('input:radio',this);
+                console.dir(radio);
+                $('input:radio[name="'+$(radio).attr('name')+'"]')
+                    .parent('label').removeClass(checkedRadioClass);
+                $(this).addClass(checkedRadioClass);
+            });
         }
     },
 	// get the certain user's block, 
@@ -71,18 +100,25 @@ var Scene={
         /*  console.log('file_contents: %c'+file_contents,'color:blue;');
 			console.log('entity_id: %c'+entity_id,'color:goldenrod;');
 			console.log('class: %c'+Scene.user_container_class,'font-weight:bold;');*/
-        var userBlock=null;
+        var userBlock=null,Labels;
 		// create a block for the loaded file 
 		if(!(userBlock=document.getElementById(entity_id))){
+            //console.log('!userBlock, build it now!')
             var userBlock=$('<div/>',{
                 id:entity_id,
                 class:Scene.user_container_class
             });
         }   
-		// append the block to the wrapper
+        // append the block to the wrapper
+        this.obscureWindow();
 		$('#'+Scene.shade_id).before(userBlock);
+        //console.log('%cshade block: ', 'background-color:#333; color:white'); console.dir($('#'+Scene.shade_id));
 		// load the file from /contents/ dir
-		$(userBlock).load(file_contents,function(){
+		$(userBlock).load(file_contents,function(){ 
+            //console.log('userBlock is loaded. file_contents: '+file_contents);
+            //console.groupCollapsed('%cuserBlock:', 'color:blue');console.log($(userBlock).html());console.groupEnd();
+            // drop passwords diff mark
+            Scene.active_screen.Form.pass_diff=false;                    
 			// Be ready to load all contents!
 			var commonPath='contents/components/';			
 			// go through elements which must load elements from templates
@@ -100,6 +136,7 @@ var Scene={
                     <input type="text" id="password" name="password" required="required" />
                 */
                 if(data_load){ // if we didn't get it, we don't need any subtemplates
+                    //
                     $('['+data_load+']').each( function(index, element) {
                         //console.log('element: '); console.dir(element);
                         /*  get file_name to load a certain element's content, 
@@ -113,44 +150,42 @@ var Scene={
                         // for example: load contents/components/input.html #mobile_phone
                         $(element).load(commonPath+data2load[0]+'.html '+element_jid, 
                             function(){
-                                var Elem = $(element_jid);
-								var elementType = $(Elem).attr('type');
+                                var Elem = $(element_jid); //console.dir(Elem);
+                                var elementType = $(Elem).attr('type');
                                 // only if the 3th param exists (that means it is a single (not compound) element)
-								if( data2load[2] && (elementType ||$(Elem)[0].tagName.toLowerCase()=='label') ){
-								switch(elementType){
-									case 'submit':
-									case 'text':
-									case 'password':
-									case 'email':
-									case 'number':
-									case 'search':
-									case 'tel':
-										$(Elem).val(data2load[2]);
-									break;
-									case 'checkbox':
-									case 'radio':
-										
-									break;
-									// not in use yet:
-									case 'button':
-										$(Elem).append(data2load[2]);
-									break;
-									default:
-										// checkbox, radio, label
-										$(Elem).after(data2load[2]);
-								}
-                                /*  Save *password* inputs objects within the Scene.
-                                    It allows to check their coincidence later.
-                                    See js.js / user-form.onsubmit check
-                                */
-                                if(element_jid.indexOf("password")!=-1){
-                                    Scene.active_screen.inputs.passwords[element_jid]=Elem;
-                                    /*  console.log('added input:');
-                                        console.dir(Scene[element_jid]);    */
-                                }
-							}
+								if( data2load[2] && 
+                                    ( elementType || 
+                                    /*  Warning! The label may not have data2load[2],
+                                        so after that condition it checks again
+                                    */
+                                      $(Elem)[0].tagName.toLowerCase()=='label' 
+                                    ) 
+                                  ){
+                                    switch(elementType){
+                                        case 'submit':
+                                        case 'text':
+                                        case 'password':
+                                        case 'email':
+                                        case 'number':
+                                        case 'search':
+                                        case 'tel':
+                                            $(Elem).val(data2load[2]);
+                                        break;
+                                        case 'checkbox':
+                                        case 'radio':
+
+                                        break;
+                                        // not in use yet:
+                                        case 'button':
+                                            $(Elem).append(data2load[2]);
+                                        break;
+                                        default:
+                                            // checkbox, radio, label
+                                            $(Elem).after(data2load[2]);
+                                    }                           
+                                }                                   
                         });
-                    });
+                    });                    
                 }
 			};
 			/*  Warning!
@@ -181,40 +216,6 @@ var Scene={
 				});
 			}else
 				handleBlocks();
-            /**
-            *  Validate form before sending data
-            *  check passwords coincidence 
-            */
-            $('#user-form').on('submit',function(){
-                // only if there is an input for re-typing password
-                var i=0,pss=[];
-                for(var inputId in Scene.active_screen.inputs.passwords){
-                    pss[i]=Scene.active_screen.inputs.passwords[inputId];
-                    // [0]pass1, [1]pass2, [2]pass3
-                    i++;
-                }
-                var psswrds = pss.reverse(); 
-                // [0]pss3, [1]pss2, [2]pss1
-                if(psswrds.length>1){   
-                    console.dir(psswrds);
-                    // remember: the array has been reversed!
-                    var pass1=psswrds[psswrds.length-1][0], // [2] - last index 
-                        pass2=psswrds[psswrds.length-2][0]; // [1] - before last
-                    console.dir(pass1); console.dir(pass2);
-                    var pass1Val = pass1.value,pass2Val = pass2.value;
-                    if(pass1Val&&pass2Val&&(pass1Val!=pass2Val)){
-                        pass2.setCustomValidity("The passwords' values are different");
-                        return false;
-                    }/**/		       
-                }
-                
-                else {
-                    console.dir(psswrds);
-                }
-
-                return false;
-            });
-            
             // Scene.active_screen=entity_id;            
 			// assign styles for the loaded content
 			$('#'+entity_id).css({
@@ -224,26 +225,6 @@ var Scene={
                 /*  because if we need a correction (see arrangeWindow())
                     it may cause of its fail.   */
 			}).fadeIn(300);
-            //
-            $('.go_left').on('click',function(){
-                console.log('go left is clicked!');
-            });
-            // close screen
-            $('.close').on('click',function(){
-                Scene.hideMyProfile();
-            });
-            $('label[data-box]').on('click',function(event){
-                if(event.target.id) {
-                    //console.dir('target.id: '+event.target.id);                    
-                    var chBox = document.getElementById(event.target.id);
-                    // switch checkbox state:
-                    $(chBox).parent()[(chBox.checked==true)? 'addClass':'removeClass']('checked');
-                }
-            });
-            // send or cancel data transfer
-            $('form#user-form').on('submit',function(){
-                
-            });
 		});
 		//console.dir('userBlock: '+userBlock);
 		//console.groupEnd();
@@ -322,36 +303,55 @@ var Scene={
 		console.groupEnd();*/		
 		return currentOffset+'px';
 	},
-    //
+    // cover the page with shadow
     obscureWindow:function(){
-        $(Levels.wrapperContainer)
-            .prepend('<div id="'+this.shade_id+'" class="shade cover"></div>');	
+        //console.log('obscureWindow');
+        if(!document.getElementById(this.shade_id))
+            $(Levels.wrapperContainer)
+                .prepend('<div id="'+this.shade_id+'" class="shade cover"></div>');
+        //console.dir($('#'+this.shade_id));
+    },
+    // remove shade from page
+    removeShading:function(){
+        $('#'+this.shade_id).remove();
     },
 	// the initial appearance of users' blocks
-	showMyProfile:function(){
+	showUserProfile:function(account_type){
+		// show current user block
+		//console.log('%cshowUserProfile()','background-color:orange; padding:4px 6px;')
 		// in test mode: -------------------------------
 		$('#test_inner_submenu').fadeIn(500);
 		// end test mode: -------------------------------
-        // add shadow
-        this.obscureWindow();
-        // show current user block
-		//console.log('%cshowMyProfile()','background-color:orange; padding:4px 6px;')
-		this.appendUserBlock('my_profile_login');
-		return false;
+        // build screen
+        this.appendUserBlock(this.user_container_id_default);
 	},
+    // Enter into account. All the user's data currently is stored in the User object
+    enterAccount:function(){ // Demo or Money
+        //console.log('Account type: '+account_type);
+        // remove screen
+        $('#'+this.user_container_id_default).remove();
+        // wash shadow away
+        this.removeShading();
+    },
 	hideMyProfile:function(){
+        if(window.opener) {
+            if(confirm("Do you really wish to leave The Game?"))
+                window.self.close();
+        }else
+            $('.'+this.user_container_class+':visible').fadeOut(300);        
 		//console.log('hideMyProfile()');
-		$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
+		/*$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
 		$('.'+this.user_container_class+':visible').fadeOut(300);
 		// in test mode: -------------------------------
 		$('#test_inner_submenu').fadeOut(500);
 		// end test mode: ------------------------------
-		return false;
+		return false;*/
 	},
 	goLeft:function(){
 	
 	}
 };
+var User = null;
 var menus={
     activeMenuId:'',
     touchable:false,

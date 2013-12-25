@@ -1,0 +1,13 @@
+/* 
+    Created on : Dec 19, 2013, 5:18:34 PM
+    Author     : Srgg
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/test\.scss}line{font-family:\000035}}
+blockquote {
+  border: solid 2px #01040B;
+  padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/test\.scss}line{font-family:\000038}}
+  blockquote div {
+    background-color: lightgoldenrodyellow;
+    font-size: 18px;
+    padding: 20px; }

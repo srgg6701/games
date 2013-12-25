@@ -1,0 +1,41 @@
+html,body{
+	/*  
+	max-height: 100%;
+	height:100%;*/
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+body{
+	position:static;
+}
+*{
+	box-sizing:border-box;
+}
+button{
+	display: block;
+	background-color: #FFCC6F;
+	border: solid 4px #E9750A;
+	border-radius: 12px;
+	box-shadow: 0 -20px 46px #857B33 inset;
+	color: #AC0C0C;
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 20px 80px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-left: -137.5px;
+}
+button:hover{
+	opacity: 0.8;
+}
+#button_place{
+    background: lavender;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}

@@ -1,29 +1,79 @@
 // do it!
 $(function(){  
+    // load authorization form by default
+    //
     // load teporary menu
     // TODO: remove on production
 	$('#test_inner_submenu').load('test_menu.html');
-	
-    /* Events */	
-     
+    
+    /* Events */	 
     /**
      * Show My Profile window
 	 * How it works.
 	 	see dd_menu.xlsx
 	 */	
-    $('[data-level-default]').click( function(){
+    $('[data-level-default]').on('click',function(){
         manageLevels('game');
         manageMyProfile(true);
         return false;	
     });
-    /*
-    $('#'+Scene.active_screen).on(event_type,element_id,function(event){
-        console.group('%cCalled elements:', 'font-weight:bold');
-            console.log('event_type = '+event_type);
-            console.log('event_id = '+event_id);
-            console.dir(event.target);
-        console.groupEnd();
-    });*/
+    // actions by default:
+    // show wrapper
+    document.getElementById(Scene.container_id).style.display='block';
+    // show user login form
+    $('div[data-level-default]').trigger('click'); 
+    
+    /* check passwords' coincedence before sending form's data */
+    $('body')
+        .on('submit', '#'+Scene.active_screen.Form.name, function(){
+        //console.dir(event.target);
+        if(Scene.active_screen.Form.pass_diff) return false;
+        // handle screens:
+        var activeScreen;
+        if(activeScreen=checkActiveScreen('my_profile_open_demo_account')){
+            makeConnection('controllers/user');
+            registerUser('demo');
+        }else if(activeScreen=checkActiveScreen('my_profile_login')){
+            makeConnection('controllers/user');
+            loginUser();
+        }
+        // we don't want the page being reloaded yet
+        return false;
+    })  //
+        .on('blur','#'+Scene.active_screen.Form.retype_password_id, function(event){
+            var pass2 = event.target; console.log('%cblur', 'color:brown;');console.dir(pass2); 
+            var pass1Val=getPass1Value(pass2); //console.log('pass1Val = '+pass1Val);
+            var pass2Val=pass2.value;
+            if(pass1Val&&pass2Val&&(pass1Val!=pass2Val)){
+                Scene.active_screen.Form.pass_diff = true; //console.log('Scene.active_screen.Form.pass_diff');
+                pass2.setCustomValidity(Scene.active_screen.Form.messages.pass_are_diff);
+            }else{ 
+                pass2.setCustomValidity("");     
+                Scene.active_screen.Form.pass_diff = false;
+            }
+    })  //
+        .on('keypress','#'+Scene.active_screen.Form.retype_password_id, function(event){
+            console.log('%ckeypress', 'color:brown;');console.dir(event.target); 
+            if(Scene.active_screen.Form.pass_diff){
+                event.target.setCustomValidity("");
+                //console.dir(event.target);
+            }
+    })  
+    /* Manage inner pyctos*/
+        //
+        .on('click','.go_left',function(){
+            console.log('go left is clicked!');
+    })
+        // close screen
+        .on('click','.close',function(){
+            Scene.hideMyProfile();
+    })
+        // reach hidden checkbox trough his label:
+        .on('click','label[data-box]',function(event){
+                console.log('%cclick', 'color:brown;');console.dir(event.target);
+                Scene.active_screen.checkInvisibleBox(event.target);
+    });
+
     // Switch to the Deposit/Withdrawal windows
     $('[data-level-go]').click(function(){
         manageLevels('money',$(this).attr('data-level-go'));
@@ -34,17 +84,20 @@ $(function(){
     });
 });
 /*	Functions */
-function manageRadios(lbl){
-	//
-	$(lbl).on('click',function(){
-		console.log('label is clicked');
-		var checkedRadioClass='checked';
-		var radio = $('input:radio',this);
-		console.dir(radio);
-		$('input:radio[name="'+$(radio).attr('name')+'"]')
-			.parent('label').removeClass(checkedRadioClass);
-		$(this).addClass(checkedRadioClass);
-	});
+/**
+ * Comment
+ */
+function checkActiveScreen(screen_id) {
+    return document.getElementById(screen_id);
+}
+/**
+ * Get the first password field value
+ */
+function getPass1Value(input) {
+    var Form = $(input).parents('form').eq(0); //console.dir(Form);
+    var input_val = $('#password', Form).val()||$('#new_password', Form).val();
+    //console.log('input_val = '+input_val);
+    return input_val;
 }
 /**
  * switch levels
@@ -76,12 +129,12 @@ function manageLevels(level,sublevel) {
     //console.log('switch the level '+level);
 }
 /*
- *
+ *  Load appropriate user profile screen
  */
 function manageMyProfile(show,e){
 	//console.log('%cmanageMyProfile()','background-color:yellow; padding:4px 6px;')
 	if(show){
-		Scene.showMyProfile();
+		Scene.showUserProfile();
 	}else{
 		if($('#'+Scene.shade_id).length&&e.keyCode == 27){
 			//console.log('esc was pushed');
@@ -102,17 +155,11 @@ function openWindow(block_name) { // money_client_card_holder
     return false;
 }
 /**
- * Validate field inputs on blur event
-*/ 
-/*
-function validateInput(input) {
-    console.log(input.value);
-    console.dir(input);
-}*/
-/**
- * Validate password fields
+ * Make a dynamic connection to the certain js-file
  */
-/*function validatePass(passInputs) {
-    console.dir(passInputs);
-    return false;
-}*/
+function makeConnection(path) {
+    var new_connection =$('<script/>',{
+       src:path+'.js' 
+    }); // console.dir(new_connection);
+    $('head').append(new_connection);
+}

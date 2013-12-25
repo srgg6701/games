@@ -1,6 +1,12 @@
-window.onload=function(){
+/*  ACHTUNG!!!
+    Leave it as jQuery calling (DON'T use window.onload!), otherwize it will 
+    destroy the order of JS-handlers mounted by default. 
+    In particulary - the loading of the User Login form which MUST be appeared 
+    immediately after the page is being loaded!   
+ */
+$(function(){ 
 	var d=document;
-	Levels.wrapperContainer=d.getElementById('wrapper');	
+	Levels.wrapperContainer=d.getElementById(Scene.container_id);	
 	// определяет реальное соотношение между максимальным и текущим размером окна, напр. 813/1024. При этом расчёт производится на основании соотношений сторон экрана.
 	// Если оно более 1024/768 (параметры фоновой картинки для блока),
 	// его высота устанавливается в 100% и измеряется реальная ширина,
@@ -39,5 +45,5 @@ window.onload=function(){
 	setScreenParams();
 	window.onresize=function(){
 		if(screen.width>=800) setScreenParams();
-	} 
-}
+	}   
+});
