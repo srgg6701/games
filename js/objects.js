@@ -289,15 +289,15 @@ var Scene={
         $('#'+this.shade_id).remove();
     },
 	// the initial appearance of users' blocks
-	showUserProfile:function(){
+	/*showUserProfile:function(){
 		// show current user block
 		//console.log('%cshowUserProfile()','background-color:orange; padding:4px 6px;')
 		// in test mode: -------------------------------
-		$('#test_inner_submenu').fadeIn(500);
+		//$('#test_inner_submenu').fadeIn(500);
 		// end test mode: -------------------------------
         // build screen
         this.appendUserBlock(this.user_container_id_default);
-	},
+	},*/
     // Enter into account. All the user's data currently is stored in the User object
     enterAccount:function(){ // 'demo' or 'money'
         console.log('screen_id = '+this.active_screen.screen_id);
@@ -305,14 +305,15 @@ var Scene={
         $('#'+this.active_screen.screen_id).remove();
         // wash shadow away
         this.removeShading();
+        $('#test_inner_submenu').fadeIn('400');
     },
+    // 
 	hideMyProfile:function(){
         if(window.opener) {
             if(confirm("Do you really wish to leave The Game?"))
                 window.self.close();
-        }else
-            $('.'+this.user_container_class+':visible').fadeOut(300);        
-		//console.log('hideMyProfile()');
+        }else $('.'+this.user_container_class+':visible').fadeOut(300);
+        //console.log('hideMyProfile()');
 		/*$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
 		$('.'+this.user_container_class+':visible').fadeOut(300);
 		// in test mode: -------------------------------
@@ -320,6 +321,7 @@ var Scene={
 		// end test mode: ------------------------------
 		return false;*/
 	},
+    // 
 	goLeft:function(){
 	
 	}

@@ -4,25 +4,26 @@ $(function(){
     //
     // load teporary menu
     // TODO: remove on production
-    $('#test_inner_submenu').css('opacity',0.4);
+    //$('#test_inner_submenu').css('opacity',0.4);
 	$('#test_inner_submenu').load('test_menu.html');
     
-    /* Events */	 
-    /**
-     * Show My Profile window
-	 * How it works.
-	 	see dd_menu.xlsx
-	 */	
-    $('[data-level-default]').on('click',function(){
-        manageLevels('game');
-        manageMyProfile(true);
-        return false;	
-    });
     // actions by default:
     // show wrapper
     document.getElementById(Scene.container_id).style.display='block';
     // show user login form
-    $('div[data-level-default]').trigger('click'); 
+    manageLevels('game');
+    Scene.appendUserBlock(Scene.user_container_id_default);
+    //Scene.showUserProfile();
+    
+    /* Events */	 
+    /**
+     * Show My Profile data
+	 * How it works.
+	 	see dd_menu.xlsx
+	 */	
+    $('[data-level-default]').on('click',function(){
+        Scene.appendUserBlock('my_profile_data');
+    });
     
     /* check passwords' coincedence before sending form's data */
     $('body')
@@ -97,7 +98,9 @@ $(function(){
     });
     // esc
     $(document).keyup(function(e) {
-        manageMyProfile(false,e);
+        if($('#'+Scene.shade_id).length&&e.keyCode == 27)
+			Scene.hideMyProfile();	
+        //manageMyProfile(false,e);
     });
 });
 /*	Functions */
@@ -144,20 +147,6 @@ function manageLevels(level,sublevel) {
     }
     Levels.setBgImage(bgImg);
     //console.log('switch the level '+level);
-}
-/*
- *  Load appropriate user profile screen
- */
-function manageMyProfile(show,e){
-	//console.log('%cmanageMyProfile()','background-color:yellow; padding:4px 6px;')
-	if(show){
-		Scene.showUserProfile();
-	}else{
-		if($('#'+Scene.shade_id).length&&e.keyCode == 27){
-			//console.log('esc was pushed');
-			Scene.hideMyProfile();	
-		}
-	}
 }
 /**
  * Open block

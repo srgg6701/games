@@ -20,7 +20,7 @@
         <td><span data-load="input|password|password"></span>
         	<div class="flag"></div>
         </td>
-        <td><button id="btn_change_password" class="btn_yellow">Change password</button></td>
+        <td><button type="submit" onClick="return changePassword();" id="btn_change_password" class="btn_yellow">Change password</button></td>
       </tr>
       <tr class="padding-top-bottom-null font-common" id="tr-third">
         <td>
@@ -57,7 +57,7 @@
       <tfoot>
       	<tr>
       		<td colspan="2" class="bg_overlight_bottom skip_height">
-            	<button type="submit" id="btn_save_changes" class="btn btn_blue">Save Changes</button>
+            	<button onClick="saveProfileChanges();" type="submit" id="btn_save_changes" class="btn btn_blue">Save Changes</button>
             </td>
         </tr>
      </tfoot>
