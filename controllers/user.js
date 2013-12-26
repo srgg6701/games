@@ -173,7 +173,12 @@ function loginUser() {
     $.getScript("models/users.js", function(){
         var localUserData = getUserFormValues(['username_or_email','password']);
         console.dir(localUserData);
-        datasetsUsers = JSON.parse(getUsers()); //console.dir(datasetsUsers);        
+        var usersList,datasetsUsers;
+        //first, get all current users if they exist
+        if(usersList=getUsers())
+            datasetsUsers=JSON.parse(usersList);
+        else return showErrorMess('You are not registered.');
+        //-------------------------------------------
         var error_mess=false;
         var user_login = false;
         if(!datasetsUsers[localUserData['username_or_email']]){
@@ -192,7 +197,7 @@ function loginUser() {
           ) error_mess = "Your password is wrong";
         // something went wrong
         if(error_mess)
-            showErrorMess(error_mess);
+            return showErrorMess(error_mess);
         else{
             // store user data and show his account - 'demo' or 'money'
             User.mainData=fillMainUserData(localUserData); // 'username' field is skipped inside
