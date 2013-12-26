@@ -14,13 +14,13 @@ $(function(){
 });
 function manageUserBlocks(obj){
 	// class 'user_profile'
-	$(Game.user_container_class).hide(100);
+	$(Scene.user_container_class).hide(100);
 	/*console.group('%cmanageUserBlocks()','font-weight:bold');
-		console.log('user container class: %c'+Game.user_container_class,'color:brown');
+		console.log('user container class: %c'+Scene.user_container_class,'color:brown');
 		console.log('file_name: %c'+$(obj).attr('data-block'),'color:blue');
 	console.groupEnd();*/
 	// see data-block above as links attribute
-	Game.appendUserBlock($(obj).attr('data-block'));
+	Scene.appendUserBlock($(obj).attr('data-block'));
 	return false;
 }
 </script>

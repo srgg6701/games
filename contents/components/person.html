@@ -1,25 +1,25 @@
 <div id="gender" class="inline clear all-font-normal">
 	<div>Gender:</div>
     <div>
-        <label class="radio"><!-- onClick="Scene.active_screen.manageRadios(this);"-->
-        	<input name="gender" id="radio_male" type="radio" value="male">Male
+        <label class="radio">
+        	<input tabindex="0" name="gender" id="radio_male" type="radio" value="male" required>Male
         </label>
     </div>
     <div>
-        <label class="radio"><!-- onClick="Scene.active_screen.manageRadios(this);"-->
-        	<input name="gender" id="radio_female" type="radio" value="female">Female
+        <label class="radio">
+        	<input tabindex="1" name="gender" id="radio_female" type="radio" value="female" required>Female
         </label>
     </div>
 </div>
 <div id="birthday" class="inline clear all-font-normal">
     <div>Birthday:</div>
     <div>
-    	<input name="year" id="year" type="text" value="year">
+    	<input tabindex="4" name="year" id="year" type="text" value="year" required />
     </div>
     <div>
-    	<input name="month" id="month" type="text" value="month">
+    	<input tabindex="3" name="month" id="month" type="text" value="month" required />
     </div>
     <div>
-    	<input name="day" id="day" type="text" value="day">
+    	<input tabindex="2" name="day" id="day" type="text" value="day" required />
     </div>
 </div>

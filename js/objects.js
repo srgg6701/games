@@ -40,6 +40,7 @@ var Scene={
     user_container_id_default:'my_profile_login',
     // loaded User Profile screen
     active_screen:{
+        screen_id:false,
         //user_form:null,
         Form:{
             name:'user-form',
@@ -53,22 +54,7 @@ var Scene={
          */
         checkInvisibleBox: function(chbox) { // label[data-box]
             $(chbox).parent('label')[(chbox.checked==true)? 'addClass':'removeClass']('checked');      
-        },
-        /*
-         *
-         */
-        manageRadios: function (lbl){
-            //
-            $(lbl).on('click',function(){
-                console.log('label is clicked');
-                var checkedRadioClass='checked';
-                var radio = $('input:radio',this);
-                console.dir(radio);
-                $('input:radio[name="'+$(radio).attr('name')+'"]')
-                    .parent('label').removeClass(checkedRadioClass);
-                $(this).addClass(checkedRadioClass);
-            });
-        }
+        },        
     },
 	// get the certain user's block, 
 	// append it to the main wrapper window and make it visible
@@ -88,11 +74,11 @@ var Scene={
         */
         if(data_load_name!==false)
             var data_load = (data_load_name) ? data_load_name:'data-load';
-        
-		if(entity_id.indexOf('my_profile_real_money_account')!=-1){
+        var real_money_account = 'my_profile_real_money_account';
+		if(entity_id.indexOf(real_money_account)!=-1){
 			// because this is a container for both my_profile_real_money_account1 and my_profile_real_money_account2
 			var incomingEntityId=entity_id;
-			entity_id='my_profile_real_money_account';
+			entity_id=real_money_account;
 		} //console.group('%cmanageMyProfile()','font-weight:bold;');		
 		$('.'+Scene.user_container_class).remove();
 		// see files in the dir /contents/
@@ -108,16 +94,18 @@ var Scene={
                 id:entity_id,
                 class:Scene.user_container_class
             });
-        }   
+        }
+        // store id of active screen. Need to be identified while enter account
+        this.active_screen.screen_id=entity_id; console.log('screen_id = '+this.active_screen.screen_id);
         // append the block to the wrapper
         this.obscureWindow();
 		$('#'+Scene.shade_id).before(userBlock);
         //console.log('%cshade block: ', 'background-color:#333; color:white'); console.dir($('#'+Scene.shade_id));
 		// load the file from /contents/ dir
 		$(userBlock).load(file_contents,function(){ 
-            //console.log('userBlock is loaded. file_contents: '+file_contents);
-            //console.groupCollapsed('%cuserBlock:', 'color:blue');console.log($(userBlock).html());console.groupEnd();
-            // drop passwords diff mark
+            /*  console.log('userBlock is loaded. file_contents: '+file_contents);
+                console.groupCollapsed('%cuserBlock:', 'color:blue');console.log($(userBlock).html());console.groupEnd();
+                drop passwords diff mark */
             Scene.active_screen.Form.pass_diff=false;                    
 			// Be ready to load all contents!
 			var commonPath='contents/components/';			
@@ -194,14 +182,14 @@ var Scene={
                         for both steps 1 and 2
 					*   my_profile_real_money_account1.html - step 1 content
 					*   my_profile_real_money_account2.html - step 2 content */
-			if(entity_id=='my_profile_real_money_account'){
+			if(entity_id==real_money_account){
 				//console.log('file to load: contents/'+incomingEntityId+'.html');
 				// load the my_profile_real_money_account1 or my_profile_real_money_account2 content
 				$('#account_real_money_inner_content').load('contents/'+incomingEntityId+'.html', function(){
 					handleBlocks();
 					var btn_text;
 					// step1
-					if(incomingEntityId=='my_profile_real_money_account1'){
+					if(incomingEntityId==real_money_account+'1'){
 						btn_text='NEXT';
 						btn_class='step1';
 					}else{ // step2
@@ -250,21 +238,6 @@ var Scene={
                 var component_id = $(element).attr('data-load');
                 //console.dir('150: component_id = '+component_id,element);  
                 $(element).load('contents/components/money.html #section_'+component_id);
-            });
-            $(this).on('click','label.radio',function(event){
-                console.dir(event.currentTarget);
-                
-                // remove manageRadios() function!
-                
-                /*$(lbl).on('click',function(){
-                    console.log('label is clicked');
-                    var checkedRadioClass='checked';
-                    var radio = $('input:radio',this);
-                    console.dir(radio);
-                    $('input:radio[name="'+$(radio).attr('name')+'"]')
-                        .parent('label').removeClass(checkedRadioClass);
-                    $(this).addClass(checkedRadioClass);
-                });*/
             });
         });
         $('section.content [type="submit"]').css('visibility','visible').show();
@@ -316,7 +289,7 @@ var Scene={
         $('#'+this.shade_id).remove();
     },
 	// the initial appearance of users' blocks
-	showUserProfile:function(account_type){
+	showUserProfile:function(){
 		// show current user block
 		//console.log('%cshowUserProfile()','background-color:orange; padding:4px 6px;')
 		// in test mode: -------------------------------
@@ -326,10 +299,10 @@ var Scene={
         this.appendUserBlock(this.user_container_id_default);
 	},
     // Enter into account. All the user's data currently is stored in the User object
-    enterAccount:function(){ // Demo or Money
-        //console.log('Account type: '+account_type);
+    enterAccount:function(){ // 'demo' or 'money'
+        console.log('screen_id = '+this.active_screen.screen_id);
         // remove screen
-        $('#'+this.user_container_id_default).remove();
+        $('#'+this.active_screen.screen_id).remove();
         // wash shadow away
         this.removeShading();
     },
@@ -351,7 +324,26 @@ var Scene={
 	
 	}
 };
-var User = null;
+var User = {
+    account_type:false,
+    mainData:{
+        username:       null,
+        email:          null,
+        password:       null
+    },
+    xtraData:{
+        gender:         null,
+        day:            null,
+        month:          null,
+        year:           null,
+        address:        null,
+        zip_code:       null,
+        city:           null,
+        country:        null,
+        mobile_phone:   null,
+        home_phone:     null
+    }
+};
 var menus={
     activeMenuId:'',
     touchable:false,

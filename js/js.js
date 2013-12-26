@@ -4,6 +4,7 @@ $(function(){
     //
     // load teporary menu
     // TODO: remove on production
+    $('#test_inner_submenu').css('opacity',0.4);
 	$('#test_inner_submenu').load('test_menu.html');
     
     /* Events */	 
@@ -29,19 +30,25 @@ $(function(){
         //console.dir(event.target);
         if(Scene.active_screen.Form.pass_diff) return false;
         // handle screens:
-        var activeScreen;
-        if(activeScreen=checkActiveScreen('my_profile_open_demo_account')){
-            makeConnection('controllers/user');
-            registerUser('demo');
-        }else if(activeScreen=checkActiveScreen('my_profile_login')){
-            makeConnection('controllers/user');
-            loginUser();
-        }
-        // we don't want the page being reloaded yet
+        makeConnection('controllers/user'); console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);
+        switch(Scene.active_screen.screen_id){
+            case 'my_profile_open_demo_account':
+                registerUser('demo');
+                break;
+            case 'my_profile_real_money_account':
+                registerUser('money');
+                break;
+            case 'my_profile_login':
+                loginUser();
+                break;
+        }   
+        
+        // remove it ONLY on REAL production stage!
         return false;
+        
     })  //
         .on('blur','#'+Scene.active_screen.Form.retype_password_id, function(event){
-            var pass2 = event.target; console.log('%cblur', 'color:brown;');console.dir(pass2); 
+            var pass2 = event.target; //console.log('%cblur', 'color:brown;');console.dir(pass2); 
             var pass1Val=getPass1Value(pass2); //console.log('pass1Val = '+pass1Val);
             var pass2Val=pass2.value;
             if(pass1Val&&pass2Val&&(pass1Val!=pass2Val)){
@@ -53,7 +60,7 @@ $(function(){
             }
     })  //
         .on('keypress','#'+Scene.active_screen.Form.retype_password_id, function(event){
-            console.log('%ckeypress', 'color:brown;');console.dir(event.target); 
+            //console.log('%ckeypress', 'color:brown;');console.dir(event.target); 
             if(Scene.active_screen.Form.pass_diff){
                 event.target.setCustomValidity("");
                 //console.dir(event.target);
@@ -70,8 +77,18 @@ $(function(){
     })
         // reach hidden checkbox trough his label:
         .on('click','label[data-box]',function(event){
-                console.log('%cclick', 'color:brown;');console.dir(event.target);
+                //console.log('%cclick', 'color:brown;');console.dir(event.target);
                 Scene.active_screen.checkInvisibleBox(event.target);
+    })
+        // click gender radios
+        .on('click','label.radio',function(event){
+            var checkedRadioClass='checked';
+            var radio = $('input:radio',event.currentTarget);
+            //console.log('currentTarget: '); console.dir(event.currentTarget);
+            //console.log('radio: '); console.dir(radio);
+            $('input:radio[name="'+$(radio).attr('name')+'"]')
+                .parent('label').removeClass(checkedRadioClass);
+            $(event.currentTarget).addClass(checkedRadioClass);
     });
 
     // Switch to the Deposit/Withdrawal windows
@@ -87,9 +104,9 @@ $(function(){
 /**
  * Comment
  */
-function checkActiveScreen(screen_id) {
+/*function checkActiveScreen(screen_id) {
     return document.getElementById(screen_id);
-}
+}*/
 /**
  * Get the first password field value
  */
