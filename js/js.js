@@ -13,7 +13,6 @@ $(function(){
     // show user login form
     manageLevels('game');
     Scene.appendUserBlock(Scene.user_container_id_default);
-    //Scene.showUserProfile();
     
     /* Events */	 
     /**
@@ -71,6 +70,7 @@ $(function(){
         //
         .on('click','.go_left',function(){
             console.log('go left is clicked!');
+            switch_to_prev_screen();
     })
         // close screen
         .on('click','.close',function(){
@@ -103,69 +103,3 @@ $(function(){
         //manageMyProfile(false,e);
     });
 });
-/*	Functions */
-/**
- * Comment
- */
-/*function checkActiveScreen(screen_id) {
-    return document.getElementById(screen_id);
-}*/
-/**
- * Get the first password field value
- */
-function getPass1Value(input) {
-    var Form = $(input).parents('form').eq(0); //console.dir(Form);
-    var input_val = $('#password', Form).val()||$('#new_password', Form).val();
-    //console.log('input_val = '+input_val);
-    return input_val;
-}
-/**
- * switch levels
- */
-function manageLevels(level,sublevel) {
-    $('[data-level]').hide(); //console.log('manageLevels: '+level+', '+sublevel);
-    var tLevel = $('[data-level="'+level+'"]');
-    $(tLevel).fadeIn(200);
-    var bgImg;
-    if(level=='game') bgImg = true;
-    else{
-        $('[data-level="money"]').html(' ');
-        $(tLevel).load('contents/sublevels/'+sublevel+'.html',function(){
-            //console.log('load: contents/sublevels/'+sublevel+'.html');
-            $('[data-block]').click(function(){
-                $('.pay_way').text($(this).text());
-                $(Scene.user_container_class).hide(100);
-                /*console.group('%cmanageWithdraw()','font-weight:bold');
-                    console.log('file_name: %c'+$(obj).attr('data-block'),'color:blue');
-                console.groupEnd();*/
-                // see data-block above as links attribute
-                Scene.appendUserMoneyBlock($(this).attr('data-block'));
-                Levels.setCorrection($('[data-level="money"]'));
-            });
-        });
-        bgImg = false;
-    }
-    Levels.setBgImage(bgImg);
-    //console.log('switch the level '+level);
-}
-/**
- * Open block
- */
-function openWindow(block_name) { // money_client_card_holder
-    console.log('openWindow');
-    Scene.obscureWindow(); // set shadow
-    /*  correct window position - calculate it with correction by the given left 
-        menu panel width */
-    Levels.correction_param=true;
-    Scene.appendUserBlock(block_name,false);
-    return false;
-}
-/**
- * Make a dynamic connection to the certain js-file
- */
-function makeConnection(path) {
-    var new_connection =$('<script/>',{
-       src:path+'.js' 
-    }); // console.dir(new_connection);
-    $('head').append(new_connection);
-}

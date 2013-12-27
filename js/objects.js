@@ -48,6 +48,23 @@ var Scene={
             retype_password_id:'retype_password',
             messages:{
                 pass_are_diff:'The passwords are different'
+            },
+            setElementContent:function(Elem, data2load){
+                var ddv = 'data-default_value';
+                $(Elem).val(data2load)
+                        .one('focus', function(){ //console.log('on focus');
+                    $(this).attr(ddv,this.value);
+                }).on('blur', function(){ //console.log('on blur');
+                    if(!$(this).val())
+                        $(this).val($(this).attr(ddv));
+                }).on('click keyup',
+                    function(){
+                        if(this.id.indexOf("password")!=-1){
+                            $(this).attr('type',
+                                (this.value==$(this).attr(ddv)||!this.value)? 
+                                    'text':'password');
+                        }
+                });
             }
         },/**
          * Handle invisible due to design purposes checkbox
@@ -96,7 +113,7 @@ var Scene={
             });
         }
         // store id of active screen. Need to be identified while enter account
-        this.active_screen.screen_id=entity_id; console.log('screen_id = '+this.active_screen.screen_id);
+        this.active_screen.screen_id=entity_id; //console.log('screen_id = '+this.active_screen.screen_id);
         // append the block to the wrapper
         this.obscureWindow();
 		$('#'+Scene.shade_id).before(userBlock);
@@ -124,6 +141,7 @@ var Scene={
                     <input type="text" id="password" name="password" required="required" />
                 */
                 if(data_load){ // if we didn't get it, we don't need any subtemplates
+                     //var ddv = 'data-default_value';
                     //
                     $('['+data_load+']').each( function(index, element) {
                         //console.log('element: '); console.dir(element);
@@ -157,18 +175,16 @@ var Scene={
                                         case 'number':
                                         case 'search':
                                         case 'tel':
-                                            $(Elem).val(data2load[2]);
+                                            Scene.active_screen.Form.setElementContent(Elem, data2load[2]);                                            
                                         break;
+                                        /*
                                         case 'checkbox':
                                         case 'radio':
-
-                                        break;
-                                        // not in use yet:
+                                            break;  */
                                         case 'button':
                                             $(Elem).append(data2load[2]);
                                         break;
-                                        default:
-                                            // checkbox, radio, label
+                                        default: // checkbox, radio, label
                                             $(Elem).after(data2load[2]);
                                     }                           
                                 }                                   
@@ -212,7 +228,7 @@ var Scene={
                 top: Scene.arrangeWindow(entity_id,'outerHeight')
                 /*  because if we need a correction (see arrangeWindow())
                     it may cause of its fail.   */
-			}).fadeIn(300);
+			}).fadeIn(300);              
 		});
 		//console.dir('userBlock: '+userBlock);
 		//console.groupEnd();
@@ -288,23 +304,18 @@ var Scene={
     removeShading:function(){
         $('#'+this.shade_id).remove();
     },
-	// the initial appearance of users' blocks
-	/*showUserProfile:function(){
-		// show current user block
-		//console.log('%cshowUserProfile()','background-color:orange; padding:4px 6px;')
-		// in test mode: -------------------------------
-		//$('#test_inner_submenu').fadeIn(500);
-		// end test mode: -------------------------------
-        // build screen
-        this.appendUserBlock(this.user_container_id_default);
-	},*/
-    // Enter into account. All the user's data currently is stored in the User object
-    enterAccount:function(){ // 'demo' or 'money'
+	// Enter into account. All the user's data currently is stored in the User object
+    enterAccount:function(account_type){ // 'demo' or 'money'
         console.log('screen_id = '+this.active_screen.screen_id);
+        if(account_type) User.account_type=account_type;
         // remove screen
         $('#'+this.active_screen.screen_id).remove();
         // wash shadow away
-        this.removeShading();
+        this.removeShading(); console.log('account type: '+User.account_type);
+        // arrange User Account depending of its type
+        $('#btn_bottom_switcher').addClass(User.account_type);
+        $('#user-coin').addClass((User.account_type=='demo')? 'silver':'gold');
+        // TODO: remove on production:
         $('#test_inner_submenu').fadeIn('400');
     },
     // 

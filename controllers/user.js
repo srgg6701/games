@@ -1,42 +1,4 @@
 /**
- * return false
- */
-function showErrorMess(error_text) {
-    alert(error_text);
-    return false;
-}
-/**
- * Get User form values
- */
-function getUserFormValues(inputsNames) {
-    var localUserData = []; console.dir(inputsNames);
-    for(var i = 0, j = inputsNames.length; i<j; i++){
-        console.log('inputsNames[i] = '+inputsNames[i]+', current localUserData: ');
-        localUserData[inputsNames[i]]=(inputsNames[i]=='gender')? 
-            $('[name="gender"]:checked').val() : document.getElementById(inputsNames[i]).value;
-        console.dir(localUserData[inputsNames[i]]);
-    }
-    return localUserData;
-}
-/**
- * Get fields names for data (mainData, xtraData) from the User object 
- */
-function getUserParamsNames(paramsTypeName) {
-    var user_param_names = [];
-    var i = 0;
-    for(var field in User[paramsTypeName]){
-        user_param_names[i] = field;
-        i++;
-    }
-    return user_param_names;
-}
-/**
- * Comment
- */
-function getRealMoneyRegStages() {
-    return [$('#money_step1').size(),$('#money_step2').size()];
-}
-/**
  * Add new user
  * @usersData argument - function gets this only if there are users exist in DB already
  * then it adds new one setting it as unique by assigning an username
@@ -126,45 +88,35 @@ function fillMainUserData(localUserData) {
     return userMainData;
 }
 /**
- * Register new user: check if username and email are available, add user to DB
+ * Get User form values
  */
-function registerUser(account_type) {  console.log('registerUser, account_type: '+account_type);    
-    $.getScript("models/users.js", function(){
-        //console.log(localUserData);
-        var real_money1, real_money2;
-        if(account_type=="money"){
-            var rmrStages = getRealMoneyRegStages();
-            real_money1=rmrStages[0];
-            real_money2=rmrStages[1];
-        }
-        // get incoming form values
-        var userDataType = (real_money2)? 'xtraData':'mainData'
-        var localUserData = getUserFormValues(getUserParamsNames(userDataType));
-        // if NOT Real Money Step 2
-        if(!real_money2){
-            /*  if some users exist, check assigning data availability
-                otherwise skip this step and just add new user  */
-            if(datasetsUsers=getUsers()){    
-                // users exist, check if pointed data is available
-                var usersList = JSON.parse(datasetsUsers);
-                //console.log('usersList:'); console.dir(usersList);
-                var cancel_register = false;
-                if(usersList[localUserData['username']])
-                    return showErrorMess('Username name is taken!');
-                else{
-                    for(var existing_username in usersList){
-                        //console.log(usersList[existing_username]['email']+' : '+localUserData['email']);
-                        if(usersList[existing_username]['email']==localUserData['email'])
-                            return showErrorMess('Email is taken!');
-                    }
-                }
-            }
-        }
-        // register new user        
-        addUser(localUserData,account_type,usersList) // true or false
-        if(!real_money1) Scene.enterAccount();
-        else Scene.appendUserBlock('my_profile_real_money_account2');
-    });
+function getUserFormValues(inputsNames) {
+    var localUserData = []; console.dir(inputsNames);
+    for(var i = 0, j = inputsNames.length; i<j; i++){
+        console.log('inputsNames[i] = '+inputsNames[i]+', current localUserData: ');
+        localUserData[inputsNames[i]]=(inputsNames[i]=='gender')? 
+            $('[name="gender"]:checked').val() : document.getElementById(inputsNames[i]).value;
+        console.dir(localUserData[inputsNames[i]]);
+    }
+    return localUserData;
+}
+/**
+ * Get fields names for data (mainData, xtraData) from the User object 
+ */
+function getUserParamsNames(paramsTypeName) {
+    var user_param_names = [];
+    var i = 0;
+    for(var field in User[paramsTypeName]){
+        user_param_names[i] = field;
+        i++;
+    }
+    return user_param_names;
+}
+/**
+ * Comment
+ */
+function getRealMoneyRegStages() {
+    return [$('#money_step1').size(),$('#money_step2').size()];
 }
 /**
  * Let user login
@@ -208,7 +160,48 @@ function loginUser() {
                 for(var field in User.xtraData) 
                     User.xtraData[field]=datasetsUsers[user_login][field]||'';
             }
-            Scene.enterAccount(); 
+            Scene.enterAccount(datasetsUsers[user_login]['account_type']); 
         }
+    });
+}
+/**
+ * Register new user: check if username and email are available, add user to DB
+ */
+function registerUser(account_type) {  console.log('registerUser, account_type: '+account_type);    
+    $.getScript("models/users.js", function(){
+        //console.log(localUserData);
+        var real_money1, real_money2;
+        if(account_type=="money"){
+            var rmrStages = getRealMoneyRegStages();
+            real_money1=rmrStages[0];
+            real_money2=rmrStages[1];
+        }
+        // get incoming form values
+        var userDataType = (real_money2)? 'xtraData':'mainData'
+        var localUserData = getUserFormValues(getUserParamsNames(userDataType));
+        // if NOT Real Money Step 2
+        if(!real_money2){
+            /*  if some users exist, check assigning data availability
+                otherwise skip this step and just add new user  */
+            if(datasetsUsers=getUsers()){    
+                // users exist, check if pointed data is available
+                var usersList = JSON.parse(datasetsUsers);
+                //console.log('usersList:'); console.dir(usersList);
+                var cancel_register = false;
+                if(usersList[localUserData['username']])
+                    return showErrorMess('Username name is taken!');
+                else{
+                    for(var existing_username in usersList){
+                        //console.log(usersList[existing_username]['email']+' : '+localUserData['email']);
+                        if(usersList[existing_username]['email']==localUserData['email'])
+                            return showErrorMess('Email is taken!');
+                    }
+                }
+            }
+        }
+        // register new user        
+        addUser(localUserData,account_type,usersList) // true or false
+        if(!real_money1) Scene.enterAccount(); // User.account_type is already set in addUser()
+        else Scene.appendUserBlock('my_profile_real_money_account2');
     });
 }
