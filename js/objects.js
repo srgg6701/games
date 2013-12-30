@@ -44,26 +44,129 @@ var Scene={
         //user_form:null,
         Form:{
             name:'user-form',
+            default_data:'data-default_value',
             pass_diff:false,
-            retype_password_id:'retype_password',
-            messages:{
-                pass_are_diff:'The passwords are different'
+            mess_diff:"Please fill out this field",
+            address:{
+                name:'address',
+                message:'Your address'                        
             },
-            setElementContent:function(Elem, data2load){
-                var ddv = 'data-default_value';
-                $(Elem).val(data2load)
-                        .one('focus', function(){ //console.log('on focus');
-                    $(this).attr(ddv,this.value);
-                }).on('blur', function(){ //console.log('on blur');
-                    if(!$(this).val())
-                        $(this).val($(this).attr(ddv));
+            agreement:{
+                name:'terms_and_conditions',
+                message:'Please check the box to continue'                        
+            },
+            birthday:{
+                name:'birthday',
+                message:'Please select a full Birthday date'
+            },
+            city:{
+                name:'city',
+                message:'Your city'
+            },
+            country:{
+                name:'country',
+                message:'Your country'
+            },
+            day:{
+                name:'day',
+                message:'Day of your birth'
+            },
+            first_name:{
+                name:'first_name',
+                message:'Your first name'
+            },
+            gender:{
+                name:'gender',
+                message:'Please select a Gender'
+            },
+            home_phone:{
+                name:'home_phone',
+                message:'Your home phone (optional)'
+            },
+            last_name:{
+                name:'last_name',
+                message:'Your last name'
+            },
+            mobile_phone:{
+                name:'mobile_phone',
+                message:'Your mobile phone'
+            },
+            month:{
+                name:'month',
+                message:'Month of your birth'
+            },
+            password:{
+                name:'password',
+                message:'Your password'
+            },
+            //inputs names
+            retype_password:{
+                name:'retype_password',
+                message:'The passwords are different',
+                hint:'Re-type password'
+            },
+            username_or_email:{
+                name:'username_or_email',
+                message:'Your username or your email'
+            },
+            username:{
+                name:'username',
+                message:'Your username'
+            },
+            year:{
+                name:'year',
+                message:'Year of your birth'
+            },
+            zip_code:{
+                name:'zip_code',
+                message:'Your zip code'
+            },
+            setElementContent:function(Elem, inputValue){
+                var parentForm = this;
+                var ddv = this.default_data;
+                //var ddvDefault=inputValue;
+                var mss = this.mess_diff;
+                console.log('inputValue = '+inputValue+', Elem[0]: '); 
+                console.dir(Elem[0]);
+                //'data-default_value';
+                $(Elem).attr(ddv, inputValue)// for js.js
+                    .val(inputValue)
+                    .on('blur', function(){ //console.log('on blur');
+                    if(!$(this).val()){
+                        console.log('this[0], Elem: '); console.dir(Elem); console.dir(Elem);
+                        if(Elem[0].required)
+                            $(Elem).val(inputValue);
+                    }
                 }).on('click keyup',
                     function(){
                         if(this.id.indexOf("password")!=-1){
                             $(this).attr('type',
-                                (this.value==$(this).attr(ddv)||!this.value)? 
+                                (this.value==inputValue||!this.value)? 
                                     'text':'password');
+                        }else if(this.required&&this.value){
+                            this.title = "";
                         }
+
+                }).on('mouseover', function(){
+                    if(!this.value){ 
+                        this.title = (parentForm[this.id].hint)? 
+                            parentForm[this.id].hint : parentForm[this.id].message; 
+                    }else this.title = "";
+                }).parents('#user-form').on('submit', function(event){
+                    //var Form = this;
+                    console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', inputValue = '+inputValue);
+                    if(Elem[0].value==inputValue){ 
+                        Elem[0].value="";
+                        if(Elem[0].required){
+                            Elem[0].setCustomValidity(mss);
+                            console.log('%cCancel submitting','background-color:yellow');
+                            console.dir(Elem[0]);
+                            //Elem[0].title=parentForm[Elem[0].id].message;
+                            //console.dir(Form);
+                            //event.preventDefault();
+                            return false;
+                        }
+                    }
                 });
             }
         },/**
