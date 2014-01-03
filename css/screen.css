@@ -3841,3 +3841,47 @@ br, hr {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003103}}
     #card_details_upd form button[type="submit"] {
       margin: auto !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/lists\.scss}line{font-family:\000031}}
+.select {
+  display: none;
+  left: 3px;
+  padding-top: 4px;
+  position: absolute;
+  top: 32px;
+  z-index: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/lists\.scss}line{font-family:\000038}}
+  .select:hover {
+    display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/lists\.scss}line{font-family:\0000311}}
+  .select > div {
+    background-color: #FFF;
+    border: solid 1px #ccc;
+    box-shadow: 2px 2px 10px 1px #000;
+    margin-left: 4px;
+    max-height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/lists\.scss}line{font-family:\0000319}}
+    .select > div > div {
+      background-color: #fff;
+      color: #333;
+      float: none !important;
+      height: 28px !important;
+      line-height: 28px;
+      margin-left: 4px !important;
+      padding: 2px 20px 2px 4px;
+      text-align: left;
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/lists\.scss}line{font-family:\0000329}}
+      .select > div > div:hover {
+        background-color: #eee;
+        cursor: default; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/lists\.scss}line{font-family:\0000333}}
+      .select > div > div:first-child {
+        margin-top: -4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/lists\.scss}line{font-family:\0000341}}
+#birthday div[data-type] {
+  display: inline-block;
+  position: relative; }

@@ -84,14 +84,14 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
                             test_menu.html / a[data-block] element. This attribute
                             passes as an argument to the objects.js / Scene.appendUserBlock(entity_id) 
                             -->
-                    <li><div></div><a data-level-default="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
+                    <li><div></div><a data-screen="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
                     <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
                         <menu class="short top_user_menu" id="cashier_submenu">
                             <li><a href="#" data-level-go="deposit">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
                             <li><a href="#" data-level-go="withdrawal">Withdraw Money</a></li>
                         </menu>
                     </li>
-                    <li><div></div><a href="#">Logout</a></li>
+                    <li><div></div><a href="#" data-screen="logout">Logout</a></li>
                 </menu>
             </div>
         </div>
@@ -248,7 +248,7 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
         </div>
 			
         <!-- Bottom menu -->
-	        <div class="bottom_menu_item"  id="bottom_menu_item_profile" data-level-default="profile">Profile</div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_profile" data-screen="profile">Profile</div>
 	        <div class="bottom_menu_item"  id="bottom_menu_item_cashier" data-container_id="bottom_menu_container_cashier">Cashier
                 <div class="menu_container" id="bottom_menu_container_cashier">
 
@@ -291,8 +291,8 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
                     </menu>
                 </div>
             </div>
-	        <div class="bottom_menu_item"  id="bottom_menu_item_chat">Live Chat</div>
-	        <div class="bottom_menu_item"  id="bottom_menu_item_logout">Logout</div>
+	        <div class="bottom_menu_item" id="bottom_menu_item_chat">Live Chat</div>
+	        <div class="bottom_menu_item" id="bottom_menu_item_logout" data-screen="logout">Logout</div>
 </div>
 <script src="js/menus.js"></script>
 </body>

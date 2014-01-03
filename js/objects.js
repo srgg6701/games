@@ -1,4 +1,9 @@
 // our little Scene Universe :) starts here.
+var constMess = {
+    gender:'Please select a Gender',
+    date_mess:'Please select a full Birthday date'
+};
+
 var Levels = {
     // the frontier. 
 	// Outside it the outer hostile world lies.
@@ -43,17 +48,19 @@ var Scene={
         screen_id:false,
         //user_form:null,
         Form:{
+            //date_mess:'Please select a full Birthday date',
+            //gender_mess:'Please select a Gender',
             name:'user-form',
             default_data:'data-default_value',
             pass_diff:false,
             mess_diff:"Please fill out this field",
             address:{
                 name:'address',
-                message:'Your address'                        
+                hint:'Your address'
             },
             agreement:{
                 name:'terms_and_conditions',
-                message:'Please check the box to continue'                        
+                message:'Please check the box to continue'
             },
             birthday:{
                 name:'birthday',
@@ -61,43 +68,53 @@ var Scene={
             },
             city:{
                 name:'city',
-                message:'Your city'
+                hint:'Your city'
             },
             country:{
                 name:'country',
-                message:'Your country'
+                hint:'Your country'
             },
             day:{
                 name:'day',
-                message:'Day of your birth'
+                hint:'Day of your birth',
+                message:constMess.date_mess
+            },
+            email:{
+                name:'email',
+                hint:'Your email'
             },
             first_name:{
                 name:'first_name',
-                message:'Your first name'
-            },
-            gender:{
-                name:'gender',
-                message:'Please select a Gender'
+                hint:'Your first name'
             },
             home_phone:{
                 name:'home_phone',
-                message:'Your home phone (optional)'
+                hint:'Your home phone (optional)'
             },
             last_name:{
                 name:'last_name',
-                message:'Your last name'
+                hint:'Your last name'
             },
             mobile_phone:{
                 name:'mobile_phone',
-                message:'Your mobile phone'
+                hint:'Your mobile phone'
             },
             month:{
                 name:'month',
-                message:'Month of your birth'
+                hint:'Month of your birth',
+                message:constMess.date_mess //this.date_mess
             },
             password:{
                 name:'password',
-                message:'Your password'
+                hint:'Your password'
+            },
+            radio_male:{
+                name:'radio_male',
+                message: constMess.gender
+            },
+            radio_female:{
+                name:'radio_female',
+                message: constMess.gender
             },
             //inputs names
             retype_password:{
@@ -107,74 +124,126 @@ var Scene={
             },
             username_or_email:{
                 name:'username_or_email',
-                message:'Your username or your email'
+                hint:'Your username or your email'
             },
             username:{
                 name:'username',
-                message:'Your username'
+                hint:'Your username'
             },
             year:{
                 name:'year',
-                message:'Year of your birth'
+                hint:'Year of your birth',
+                message:constMess.date_mess
             },
             zip_code:{
                 name:'zip_code',
-                message:'Your zip code'
+                hint:'Your zip code'
             },
             setElementContent:function(Elem, inputValue){
                 var parentForm = this;
                 var ddv = this.default_data;
-                //var ddvDefault=inputValue;
-                var mss = this.mess_diff;
-                console.log('inputValue = '+inputValue+', Elem[0]: '); 
-                console.dir(Elem[0]);
-                //'data-default_value';
+                //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
+                //console.dir(Elem[0]);
                 $(Elem).attr(ddv, inputValue)// for js.js
                     .val(inputValue)
-                    .on('blur', function(){ //console.log('on blur');
-                    if(!$(this).val()){
-                        console.log('this[0], Elem: '); console.dir(Elem); console.dir(Elem);
-                        if(Elem[0].required)
-                            $(Elem).val(inputValue);
-                    }
-                }).on('click keyup',
+                    .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+inputValue);
+                        // assign pseudo-placeholder
+                        if(this.required){
+                            if(!this.value) this.value=inputValue;
+                            //
+                            if(this.name==parentForm.retype_password.name){
+                                var Form = $(this).parents('#user-form');
+                                var pass1Val=$('#password', Form).val()||$('#new_password', Form).val();
+                                var pass2Val=this.value;
+                                if(pass1Val&&pass2Val&&(pass1Val!=pass2Val)){
+                                    parentForm.pass_diff = true; //console.log('parentForm.pass_diff');
+                                    this.setCustomValidity(parentForm.retype_password.message);
+                                }else{
+                                    parentForm.pass_diff = false;
+                                    this.setCustomValidity("");
+                                }
+                            }else{
+                                this.setCustomValidity("");
+                            }
+                        }
+                }) .on('invalid', function(){
+                    if(this.message)
+                        this.currentTarget.setCustomValidity(this.message);
+                }) .on('click keyup',                    
                     function(){
                         if(this.id.indexOf("password")!=-1){
                             $(this).attr('type',
                                 (this.value==inputValue||!this.value)? 
                                     'text':'password');
+                                    
+                            if(this.name='retype_password')
+                                if(parentForm.pass_diff)
+                                    this.setCustomValidity("");//console.dir(event.currentTarget);
+                    
+                                    
                         }else if(this.required&&this.value){
                             this.title = "";
                         }
-
-                }).on('mouseover', function(){
-                    if(!this.value){ 
-                        this.title = (parentForm[this.id].hint)? 
-                            parentForm[this.id].hint : parentForm[this.id].message; 
-                    }else this.title = "";
-                }).parents('#user-form').on('submit', function(event){
-                    //var Form = this;
-                    console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', inputValue = '+inputValue);
-                    if(Elem[0].value==inputValue){ 
-                        Elem[0].value="";
-                        if(Elem[0].required){
-                            Elem[0].setCustomValidity(mss);
-                            console.log('%cCancel submitting','background-color:yellow');
-                            console.dir(Elem[0]);
-                            //Elem[0].title=parentForm[Elem[0].id].message;
-                            //console.dir(Form);
-                            //event.preventDefault();
-                            return false;
-                        }
-                    }
+                }).on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
+                    parentForm.fieldsHandlers.mouseOver(this,parentForm);
+                }).parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', inputValue = '+inputValue);
+                    return parentForm.fieldsHandlers.submitForm(Elem[0],inputValue);                    
                 });
-            }
-        },/**
-         * Handle invisible due to design purposes checkbox
-         */
-        checkInvisibleBox: function(chbox) { // label[data-box]
-            $(chbox).parent('label')[(chbox.checked==true)? 'addClass':'removeClass']('checked');      
-        },        
+            },
+            fieldsHandlers:{
+                mouseOver:function(obj,parentForm){ //console.log('mouseOver')
+                    if(!obj.value){ 
+                            if(parentForm[obj.id]){ //console.log('obj.id = '+obj.id); //console.dir(parentForm);
+                                obj.title = (parentForm[obj.id].hint)? 
+                                    parentForm[obj.id].hint : parentForm[obj.id].message; 
+                            }
+                        }else obj.title = "";
+                },
+                submitForm:function(element,defaultValue){
+                    if(element.value==defaultValue
+                       && element.type!='checkbox' 
+                       && element.type!='radio'
+                      ){ console.log('The default element value is detected...');
+                        element.value="";
+                        if(element.required){
+                            element.setCustomValidity(Scene.active_screen.Form.mess_diff);
+                            return false;
+                        }else return true;
+                    } return true;
+                }
+            },
+            /*
+            * set custom validaty message to the deeply included element 
+            * (which is being extracted from template)
+            */
+            attachCustomValidaty:function(element){
+                var sceneElem,parentForm=this;
+                var defaultValue = element.value;
+                if(element.required){ //console.log('required: '); console.dir(element);
+                    if(sceneElem=Scene.active_screen.Form[element.id]){
+                        console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
+                        $(element).on('blur',function(){
+                            if(!this.value) this.value=defaultValue;
+                            element.setCustomValidity(""); console.log('drop custom validity');
+                        }).on('invalid',function(){ console.log('invalid, set custom validity: '+sceneElem.message);   
+                            element.setCustomValidity(sceneElem.message); 
+                        }).on('click keyup',function(){
+                            if(this.value) this.title = "";
+                        }).on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
+                            parentForm.fieldsHandlers.mouseOver(this,parentForm);
+                        }).parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', inputValue = '+inputValue);
+                            return parentForm.fieldsHandlers.submitForm(element,defaultValue);                    
+                        });                                                  
+                    }
+                }
+            },        
+            /**
+             * Handle invisible due to design purposes checkbox
+             */
+            checkInvisibleBox: function(chbox) { // label[data-box]
+                $(chbox).parent('label')[(chbox.checked==true)? 'addClass':'removeClass']('checked');      
+            } 
+        }      
     },
 	// get the certain user's block, 
 	// append it to the main wrapper window and make it visible
@@ -290,8 +359,20 @@ var Scene={
                                         default: // checkbox, radio, label
                                             $(Elem).after(data2load[2]);
                                     }                           
+                                }else{                                    
+                                    $(':checkbox',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidaty(element)});
+                                    $(':radio',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidaty(element)});
+                                    // load the script to handle dd/month/YYYY cells
+                                    if(element_jid=='#birthday'){
+                                        //console.log('%cbirthday', 'color:green');                                        
+                                        $.getScript('js/birthday_handler.js');
+                                        for(var i =0, dts=['day','month','year'];i<dts.length;i++){
+                                            var element = $('#'+dts[i],Elem)[0];
+                                            Scene.active_screen.Form.attachCustomValidaty(element);
+                                        }
+                                    }
                                 }                                   
-                        });
+                        });                        
                     });                    
                 }
 			};
@@ -408,13 +489,12 @@ var Scene={
         $('#'+this.shade_id).remove();
     },
 	// Enter into account. All the user's data currently is stored in the User object
-    enterAccount:function(account_type){ // 'demo' or 'money'
-        console.log('screen_id = '+this.active_screen.screen_id);
-        if(account_type) User.account_type=account_type;
+    enterAccount:function(){ // account_type: 'demo' or 'money'
+        //console.log('screen_id = '+this.active_screen.screen_id+', account_type = '+User.account_type);
         // remove screen
         $('#'+this.active_screen.screen_id).remove();
         // wash shadow away
-        this.removeShading(); console.log('account type: '+User.account_type);
+        this.removeShading(); //console.log('account type: '+User.account_type);
         // arrange User Account depending of its type
         $('#btn_bottom_switcher').addClass(User.account_type);
         $('#user-coin').addClass((User.account_type=='demo')? 'silver':'gold');
@@ -422,22 +502,23 @@ var Scene={
         $('#test_inner_submenu').fadeIn('400');
     },
     // 
-	hideMyProfile:function(){
-        if(window.opener) {
+	closeUserScreen:function(){
+        if(Scene.active_screen.screen_id=='my_profile_login'){
             if(confirm("Do you really wish to leave The Game?"))
                 window.self.close();
-        }else $('.'+this.user_container_class+':visible').fadeOut(300);
-        //console.log('hideMyProfile()');
+        }else{
+            $('.'+this.user_container_class+':visible').fadeOut(300);
+            var shade = $('#'+this.shade_id);
+            if($(shade).is(':visible'))
+                $(shade).fadeOut(300,this.remove);
+        }
+        //console.log('closeUserScreen()');
 		/*$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
 		$('.'+this.user_container_class+':visible').fadeOut(300);
 		// in test mode: -------------------------------
 		$('#test_inner_submenu').fadeOut(500);
 		// end test mode: ------------------------------
 		return false;*/
-	},
-    // 
-	goLeft:function(){
-	
 	}
 };
 var User = {
@@ -458,6 +539,13 @@ var User = {
         country:        null,
         mobile_phone:   null,
         home_phone:     null
+    },
+    emptyData:function(){
+        this.account_type=false;
+        for(var field_name in this.mainData)
+            this.mainData[field_name]=null;
+        for(var field_name in this.xtraData)
+            this.xtraData[field_name]=null;
     }
 };
 var menus={

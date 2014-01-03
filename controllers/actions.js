@@ -36,15 +36,6 @@ function switchToPlay(){
     return false;
 }
 /**
- * Get the first password field value
- */
-function getPass1Value(input) {
-    var Form = $(input).parents('form').eq(0); //console.dir(Form);
-    var input_val = $('#password', Form).val()||$('#new_password', Form).val();
-    //console.log('input_val = '+input_val);
-    return input_val;
-}
-/**
  * switch levels
  */
 function manageLevels(level,sublevel) {

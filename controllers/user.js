@@ -9,7 +9,7 @@ function addUser(localUserData, account_type, usersData) {
         var rmrStages = getRealMoneyRegStages();
         real_money1=rmrStages[0];
         real_money2=rmrStages[1];
-        console.log('real_money1 = '+real_money1+', real_money2 = '+real_money2);
+        //console.log('real_money1 = '+real_money1+', real_money2 = '+real_money2);
     }
     var username;
     // if Demo account or Money, step 1
@@ -20,12 +20,12 @@ function addUser(localUserData, account_type, usersData) {
         username = User.mainData.username = localUserData['username']; 
         // create new User container for saving in DB later
         // common data, for all types of account:
-        usersData[username]=fillMainUserData(localUserData);
+        usersData[username]=setUserData(localUserData,'mainData');
         usersData[username].account_type=User.account_type=account_type;
-        if(real_money1){ // test
+        /*-if(real_money1){ // test
             console.log('real_money, step1. usersData:');
             console.dir(usersData[username]);
-        }
+        }*/
     // for 'money' type only
     }else{
         // extract userdata from User object stored there on previous step
@@ -49,8 +49,8 @@ function addUser(localUserData, account_type, usersData) {
         User.account_type=usersData[username]['account_type']=account_type;
         // store new User xtra data within buffer to save it in DB later 
         for(var xtra_field in User.xtraData){ 
-            console.log('xtra_field: '+xtra_field+', username: '+User.mainData.username+', localUserData[xtra_field]: '+localUserData[xtra_field]+'\nUser, usersData, localUserData:');
-            console.dir(User); console.dir(usersData); console.dir(localUserData);           
+            //console.log('xtra_field: '+xtra_field+', username: '+User.mainData.username+', localUserData[xtra_field]: '+localUserData[xtra_field]+'\nUser, usersData, localUserData:');
+            //console.dir(User); console.dir(usersData); console.dir(localUserData);           
             // ...and fill User object xtra data
             User.xtraData[xtra_field]=usersData[username][xtra_field]=localUserData[xtra_field]||"";
         }        
@@ -68,35 +68,41 @@ function addUser(localUserData, account_type, usersData) {
             for(var userdata in datasetsUsers[username])
                 mess+="\n"+userdata+": "+datasetsUsers[username][userdata];
             alert(mess);
-            console.log('Added user data:');
-            console.dir(datasetsUsers[username]);
+            //console.log('Added user data:');
+            //console.dir(datasetsUsers[username]);
         }   //alert('addUser'); return false;
     }
 }
 /**
  * Fill User.mainData object
  */
-function fillMainUserData(localUserData) {
-    var userMainData = {};
-    //
-    for(var main_field in User.mainData){
-        if(main_field!='username'){
-            // User.mainData.email = usersData
-            User.mainData[main_field]=userMainData[main_field]=localUserData[main_field];
-        }
+function setUserData(localUserData,data_name,username) {
+    switch (data_name) {
+        case 'account_type':
+            User[data_name]=localUserData[data_name];
+            break;
+        case 'username':
+            User['mainData'][data_name]=username;
+            break;
+        default:
+            for(var field_name in User[data_name]){ // get fields names from User object
+                if(field_name!='username'){ // User.mainData.email = usersData
+                    User[data_name][field_name]=localUserData[field_name];
+                }                
+            }
     }
-    return userMainData;
+    return true;
 }
 /**
  * Get User form values
  */
 function getUserFormValues(inputsNames) {
-    var localUserData = []; console.dir(inputsNames);
+    var localUserData = []; //console.dir(inputsNames);
     for(var i = 0, j = inputsNames.length; i<j; i++){
-        console.log('inputsNames[i] = '+inputsNames[i]+', current localUserData: ');
+        //console.log('inputsNames[i] = '+inputsNames[i]+', current localUserData: ');
         localUserData[inputsNames[i]]=(inputsNames[i]=='gender')? 
             $('[name="gender"]:checked').val() : document.getElementById(inputsNames[i]).value;
-        console.dir(localUserData[inputsNames[i]]);
+        //console.dir(localUserData[inputsNames[i]]);
     }
     return localUserData;
 }
@@ -124,7 +130,7 @@ function getRealMoneyRegStages() {
 function loginUser() {
     $.getScript("models/users.js", function(){
         var localUserData = getUserFormValues(['username_or_email','password']);
-        console.dir(localUserData);
+        //console.dir(localUserData);
         var usersList,datasetsUsers;
         //first, get all current users if they exist
         if(usersList=getUsers())
@@ -133,7 +139,7 @@ function loginUser() {
         //-------------------------------------------
         var error_mess=false;
         var user_login = false;
-        if(!datasetsUsers[localUserData['username_or_email']]){
+        if(!datasetsUsers[localUserData['username_or_email']]){ // no certain username, find out email!
             error_mess = "Your username or e-mail is wrong";// no username, check email
             for(var username in datasetsUsers){
                 if(datasetsUsers[username]['email']==localUserData['username_or_email']){
@@ -151,23 +157,29 @@ function loginUser() {
         if(error_mess)
             return showErrorMess(error_mess);
         else{
-            // store user data and show his account - 'demo' or 'money'
-            User.mainData=fillMainUserData(localUserData); // 'username' field is skipped inside
-            User.mainData.username = user_login;
-            //
-            if(datasetsUsers[user_login]['account_type']=='money'){
-                // store logged user data as object
-                for(var field in User.xtraData) 
-                    User.xtraData[field]=datasetsUsers[user_login][field]||'';
-            }
-            Scene.enterAccount(datasetsUsers[user_login]['account_type']); 
+            var extractedUserData = datasetsUsers[user_login];
+            // store user data as User Object
+            setUserData(extractedUserData,'mainData'); 
+            setUserData(extractedUserData,'xtraData');
+            setUserData(extractedUserData,'account_type');
+            setUserData(extractedUserData,'username',user_login); //console.dir(User);
+            // show user's account
+            Scene.enterAccount();
         }
     });
 }
 /**
+ * Logout user
+ */
+function logoutUser() {
+    User.emptyData(); // clear User object
+    // and show user login form
+    Scene.appendUserBlock(Scene.user_container_id_default);
+}
+/**
  * Register new user: check if username and email are available, add user to DB
  */
-function registerUser(account_type) {  console.log('registerUser, account_type: '+account_type);    
+function registerUser(account_type) {  //console.log('registerUser, account_type: '+account_type);    
     $.getScript("models/users.js", function(){
         //console.log(localUserData);
         var real_money1, real_money2;

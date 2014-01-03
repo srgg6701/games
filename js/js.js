@@ -5,7 +5,7 @@ $(function(){
     // load teporary menu
     // TODO: remove on production
     //$('#test_inner_submenu').css('opacity',0.4);
-	$('#test_inner_submenu').load('test_menu.html');
+	//$('#test_inner_submenu').load('test_menu.html');
     
     // actions by default:
     // show wrapper
@@ -15,32 +15,26 @@ $(function(){
     Scene.appendUserBlock(Scene.user_container_id_default);
     // The form in the active screen
     var screenForm = Scene.active_screen.Form,
-        targetInput,
         customValMess;
     /* Events */	 
     /**
      * Show My Profile data
-	 * How it works.
-	 	see dd_menu.xlsx
 	 */	
-    $('[data-level-default]').on('click',function(){
-        Scene.appendUserBlock('my_profile_data');
-    });
-    
+    $('[data-screen]').on('click',function(){
+        var data_screen = $(this).attr('data-screen');
+        if(data_screen=='profile')
+            Scene.appendUserBlock((User.account_type=='demo')? 'my_profile_data':'my_profile_form');
+        else if(data_screen=='logout')
+            logoutUser();
+    });    
     /* check passwords' coincedence before sending form's data */
     $('body')
-        .on('submit', '#'+screenForm.name, function(event){
-        console.log('%csubmit form','color:blue');
-        /*$('input', event.currentTarget).each(function(){
-            console.log('current input: '); console.dir(this);
-            if( this.getAttribute(screenForm.default_data)
-                && !this.required
-              ) this.value="";
-        });*/
-        //console.dir(event.currentTarget);
+        .on('submit', '#'+screenForm.name, function(){
+        //console.log('%csubmit form','color:blue');
+        //
         if(screenForm.pass_diff) return false;
         // handle screens:
-        makeConnection('controllers/user'); console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);
+        makeConnection('controllers/user'); //console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);
         switch(Scene.active_screen.screen_id){
             case 'my_profile_open_demo_account':
                 registerUser('demo');
@@ -53,62 +47,20 @@ $(function(){
                 break;
         }           
         // remove it ONLY on REAL production stage!
-        return false;
-        
-    })  // set custom validation messge
-        .on('invalid','input', function(event){
-            console.log('invalid: '); console.dir(event.currentTarget);
-            if(screenForm[event.currentTarget.name]){
-                customValMess=screenForm[event.currentTarget.name].message;
-                event.currentTarget.setCustomValidity(customValMess);
-            }
-    })  //
-        .on('blur', 'input', function(event){
-            var targetInput = event.currentTarget;
-            console.log('blur: '); console.dir(targetInput);
-            if(targetInput.name==screenForm.retype_password.name){
-                var pass1Val=getPass1Value(targetInput); //console.log('pass1Val = '+pass1Val);
-                var pass2Val=targetInput.value;
-                if(pass1Val&&pass2Val&&(pass1Val!=pass2Val)){
-                    screenForm.pass_diff = true; //console.log('screenForm.pass_diff');
-                    customValMess=screenForm.retype_password.message;
-                }else{
-                    customValMess="";
-                    screenForm.pass_diff = false;
-                }
-            }else{
-                customValMess="";
-            }
-            if(targetInput.value==targetInput.getAttribute(screenForm.default_data)){
-                console.log('default attribute is fired');
-                if(!screenForm[targetInput.name])
-                    customValMess=screenForm.mess_diff;
-                else customValMess=screenForm[targetInput.name].message;
-            }
-            targetInput.setCustomValidity(customValMess);
-    })  //
-        .on('keypress','input', function(event){
-            switch(event.currentTarget.name){
-                case screenForm.retype_password:
-                    //console.log('%ckeypress', 'color:brown;');console.dir(event.currentTarget); 
-                    if(screenForm.pass_diff){
-                        event.currentTarget.setCustomValidity("");//console.dir(event.currentTarget);
-                    }
-                break;
-            }
-    })  /* Manage inner pyctos*/
-        //
-        .on('click','.go_left',function(){
-            console.log('go left is clicked!');
+        return false;  
+    })  
+        /* Manage inner pyctos*/
+        // if we click pointer to the left
+        .on('click','.go_left',function(){ // console.log('go left is clicked!');
             switch_to_prev_screen();
     })  // close screen
         .on('click','.close',function(){
-            Scene.hideMyProfile();
+            Scene.closeUserScreen();
     })  // reach hidden checkbox trough his label:
         .on('click','label[data-box]',function(event){
                 //console.log('%cclick', 'color:brown;');console.dir(event.currentTarget);
                 // currentTarget is label, target is checkbox
-                Scene.active_screen.checkInvisibleBox(event.target); // 
+                Scene.active_screen.Form.checkInvisibleBox(event.target); // 
     })  // click gender radios
         .on('click','label.radio',function(event){
             var checkedRadioClass='checked';
@@ -119,7 +71,6 @@ $(function(){
                 .parent('label').removeClass(checkedRadioClass);
             $(event.currentTarget).addClass(checkedRadioClass);
     });
-
     // Switch to the Deposit/Withdrawal windows
     $('[data-level-go]').click(function(){
         manageLevels('money',$(this).attr('data-level-go'));
@@ -127,7 +78,6 @@ $(function(){
     // esc
     $(document).keyup(function(e) {
         if($('#'+Scene.shade_id).length&&e.keyCode == 27)
-			Scene.hideMyProfile();	
-        //manageMyProfile(false,e);
+			Scene.closeUserScreen();
     });
 });
