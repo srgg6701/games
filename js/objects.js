@@ -3,7 +3,7 @@ var constMess = {
     gender:'Please select a Gender',
     date_mess:'Please select a full Birthday date'
 };
-
+//
 var Levels = {
     // the frontier. 
 	// Outside it the outer hostile world lies.
@@ -106,7 +106,8 @@ var Scene={
             },
             password:{
                 name:'password',
-                hint:'Your password'
+                message:"The password should have at least 5 characters",
+                hint:'Your password'                
             },
             radio_male:{
                 name:'radio_male',
@@ -137,19 +138,21 @@ var Scene={
             },
             zip_code:{
                 name:'zip_code',
+                //message:"The zip code should have at least 5 characters",
                 hint:'Your zip code'
             },
-            setElementContent:function(Elem, inputValue){
-                var parentForm = this;
+            setElementContent:function(Elem, defaultValue){
+                var parentForm = this; //console.dir(Elem);
+                var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
                 var ddv = this.default_data;
                 //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
                 //console.dir(Elem[0]);
-                $(Elem).attr(ddv, inputValue)// for js.js
-                    .val(inputValue)
-                    .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+inputValue);
+                $(Elem).attr(ddv, defaultValue)// for js.js
+                    .val(defaultValue)
+                    .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
                         // assign pseudo-placeholder
                         if(this.required){
-                            if(!this.value) this.value=inputValue;
+                            if(!this.value) this.value=defaultValue;
                             //
                             if(this.name==parentForm.retype_password.name){
                                 var Form = $(this).parents('#user-form');
@@ -166,30 +169,41 @@ var Scene={
                                 this.setCustomValidity("");
                             }
                         }
-                }) .on('invalid', function(){
-                    if(this.message)
-                        this.currentTarget.setCustomValidity(this.message);
-                }) .on('click keyup',                    
+                }) 
+                  .on('invalid', function(){ //console.log('parentFormElement: ');console.dir(parentFormElement);
+                    if(parentFormElement.message){
+                        console.log('this invalid: ');console.dir(this);
+                        this.setCustomValidity(parentFormElement.message);
+                    }
+                }) 
+                  .on('click keyup',                    
                     function(){
                         if(this.id.indexOf("password")!=-1){
                             $(this).attr('type',
-                                (this.value==inputValue||!this.value)? 
-                                    'text':'password');
-                                    
+                                (this.value==defaultValue||!this.value)? 
+                                    'text':'password');                                    
                             if(this.name='retype_password')
                                 if(parentForm.pass_diff)
                                     this.setCustomValidity("");//console.dir(event.currentTarget);
-                    
-                                    
+
                         }else if(this.required&&this.value){
                             this.title = "";
                         }
-                }).on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
+                })
+                  .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
                     parentForm.fieldsHandlers.mouseOver(this,parentForm);
-                }).parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', inputValue = '+inputValue);
-                    return parentForm.fieldsHandlers.submitForm(Elem[0],inputValue);                    
+                })
+                  .parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', defaultValue = '+defaultValue);
+                    return parentForm.fieldsHandlers.submitForm(Elem[0],defaultValue);                    
+                })
+                  .on('keypress', function(event){ 
+                    // TODO: make clear if it really thinks that function gets the FORM, not its element?!
+                    parentForm.dropElementDefaultValue(event.target, defaultValue);
                 });
             },
+            /*
+             * handle fields 
+             */
             fieldsHandlers:{
                 mouseOver:function(obj,parentForm){ //console.log('mouseOver')
                     if(!obj.value){ 
@@ -216,23 +230,34 @@ var Scene={
             * set custom validaty message to the deeply included element 
             * (which is being extracted from template)
             */
-            attachCustomValidaty:function(element){
+            attachCustomValidaty:function(element){ 
                 var sceneElem,parentForm=this;
                 var defaultValue = element.value;
                 if(element.required){ //console.log('required: '); console.dir(element);
                     if(sceneElem=Scene.active_screen.Form[element.id]){
-                        console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
-                        $(element).on('blur',function(){
+                        //console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
+                        $(element).on('blur',function(){ //console.log('blur, element: '); console.dir(element);
                             if(!this.value) this.value=defaultValue;
-                            element.setCustomValidity(""); console.log('drop custom validity');
-                        }).on('invalid',function(){ console.log('invalid, set custom validity: '+sceneElem.message);   
+                            /*  as the element may be a radiobutton, make sure to drop
+                                custom validity from ALL ones having such a name    */
+                            $("[name='"+this.name+"']").each(function(){ //console.log(this);                                                              
+                                this.setCustomValidity(""); //console.log('drop custom validity');
+                            });
+                        })
+                          .on('invalid',function(){ //console.log('invalid, set custom validity: '+sceneElem.message);   
                             element.setCustomValidity(sceneElem.message); 
-                        }).on('click keyup',function(){
+                        })
+                          .on('click keyup',function(){
                             if(this.value) this.title = "";
-                        }).on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
+                        })
+                          .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
                             parentForm.fieldsHandlers.mouseOver(this,parentForm);
-                        }).parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', inputValue = '+inputValue);
+                        })
+                          .parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', defaultValue = '+defaultValue);
                             return parentForm.fieldsHandlers.submitForm(element,defaultValue);                    
+                        })
+                          .on('keypress', function(){
+                            parentForm.dropElementDefaultValue(this, defaultValue);
                         });                                                  
                     }
                 }
@@ -242,6 +267,20 @@ var Scene={
              */
             checkInvisibleBox: function(chbox) { // label[data-box]
                 $(chbox).parent('label')[(chbox.checked==true)? 'addClass':'removeClass']('checked');      
+            },
+            /*  clear the field (non-check/radio box) on key press 
+                if there is a pseudoplaceholder text    */
+            dropElementDefaultValue:function(obj,defaultValue){
+                //console.log('pressed, defaultValue = '+defaultValue); console.dir(obj);
+                if( obj.value==defaultValue
+                    && ( obj.type=="text"       || 
+                         obj.type=="password"   ||
+                         obj.type=='email'      ||
+                         obj.type=='number'     ||
+                         obj.type=='search'     ||
+                         obj.type=='tel'        
+                       )
+                  ) obj.value = "";
             } 
         }      
     },
@@ -498,19 +537,27 @@ var Scene={
         // arrange User Account depending of its type
         $('#btn_bottom_switcher').addClass(User.account_type);
         $('#user-coin').addClass((User.account_type=='demo')? 'silver':'gold');
+        User.logged=true;
         // TODO: remove on production:
         $('#test_inner_submenu').fadeIn('400');
     },
     // 
 	closeUserScreen:function(){
-        if(Scene.active_screen.screen_id=='my_profile_login'){
+        if(this.active_screen.screen_id==this.user_container_id_default){//'my_profile_login'
             if(confirm("Do you really wish to leave The Game?"))
                 window.self.close();
-        }else{
+        }else{ //console.dir(User);
+            // hide user screen:
             $('.'+this.user_container_class+':visible').fadeOut(300);
             var shade = $('#'+this.shade_id);
-            if($(shade).is(':visible'))
-                $(shade).fadeOut(300,this.remove);
+            // if User is already logged in, just drop the shadow
+            if(User.logged){
+                // remove shade
+                if($(shade).is(':visible'))
+                    $(shade).fadeOut(300,this.remove);
+            }else{ // ...otherwise - show him the authorization form
+                this.appendUserBlock(this.user_container_id_default);
+            }
         }
         //console.log('closeUserScreen()');
 		/*$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
@@ -522,6 +569,7 @@ var Scene={
 	}
 };
 var User = {
+    logged:false,
     account_type:false,
     mainData:{
         username:       null,
@@ -733,4 +781,3 @@ var menus={
 		//console.groupEnd();
 	}
 };
-

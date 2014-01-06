@@ -1,7 +1,7 @@
 $(function(){
 	var inputs=$('#birthday input');
 	$(inputs).on('click', function(){
-		console.log('affected on input');//focus
+		//console.log('affected on input');//focus
 		this.disabled=true;
 		$(inputs).next().css('display','none');
 		$(this).blur().next('.select').css({
@@ -33,8 +33,9 @@ function setDateValue(obj){
 }
 // generate years
 function addBirthdayContent(yContainer){
-	var years='';		
-	for(var year=1900, y=new Date(), cY=parseInt(y.getFullYear())-18; 
+	var years='';
+    // TODO: make clear the age of the adulthood
+	for(var year=1900, y=new Date(), cY=parseInt(y.getFullYear())-18; // if user is adult only
 			year<=cY; 
 			year++){
 		years=$('<div/>',{
