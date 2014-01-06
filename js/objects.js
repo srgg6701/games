@@ -535,7 +535,9 @@ var Scene={
         // wash shadow away
         this.removeShading(); //console.log('account type: '+User.account_type);
         // arrange User Account depending of its type
-        $('#btn_bottom_switcher').addClass(User.account_type);
+        $('#btn_bottom_switcher')
+                .addClass(User.account_type)
+                .text((User.account_type=='demo')? "Switch to Money Player":"Make a deposit");
         $('#user-coin').addClass((User.account_type=='demo')? 'silver':'gold');
         User.logged=true;
         // TODO: remove on production:

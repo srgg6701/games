@@ -1784,12 +1784,6 @@ br, hr {
   padding-right: 17px;
   padding-left: 48px;
   position: absolute; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/screen\.scss}line{font-family:\00003205}}
-  #btn_bottom_switcher.demo:after {
-    content: "Switch to Money Player"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/screen\.scss}line{font-family:\00003210}}
-  #btn_bottom_switcher.money:after {
-    content: "Make a deposit"; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/screen\.scss}line{font-family:\00003215}}
 .bottom_menu_item {
