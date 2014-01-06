@@ -172,7 +172,7 @@ var Scene={
                 }) 
                   .on('invalid', function(){ //console.log('parentFormElement: ');console.dir(parentFormElement);
                     if(parentFormElement.message){
-                        console.log('this invalid: ');console.dir(this);
+                        //console.log('this invalid: ');console.dir(this);
                         this.setCustomValidity(parentFormElement.message);
                     }
                 }) 
