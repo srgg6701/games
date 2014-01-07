@@ -352,8 +352,6 @@ var Scene={
                     <input type="text" id="password" name="password" required="required" />
                 */
                 if(data_load){ // if we didn't get it, we don't need any subtemplates
-                     //var ddv = 'data-default_value';
-                    //
                     $('['+data_load+']').each( function(index, element) {
                         //console.log('element: '); console.dir(element);
                         /*  get file_name to load a certain element's content, 
@@ -386,7 +384,15 @@ var Scene={
                                         case 'number':
                                         case 'search':
                                         case 'tel':
-                                            Scene.active_screen.Form.setElementContent(Elem, data2load[2]);                                            
+                                            Scene.active_screen.Form.setElementContent(Elem, data2load[2]); 
+                                            // add the block for *flag*
+                                            var d_flag;
+                                            if(d_flag=$(this).attr('data-flag')) {
+                                                var dFlag = $('<div/>',{
+                                                    class:"flag "+d_flag
+                                                });
+                                                $(Elem).after(dFlag);
+                                            }
                                         break;
                                         /*
                                         case 'checkbox':
@@ -411,7 +417,7 @@ var Scene={
                                         }
                                     }
                                 }                                   
-                        });                        
+                        });
                     });                    
                 }
 			};

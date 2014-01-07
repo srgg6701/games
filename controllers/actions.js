@@ -5,6 +5,10 @@ function changePassword(){
     Scene.enterAccount();
     return false;
 }
+/* switch to another screen*/
+function goAnotherScreen(screen_id){
+	Scene.appendUserBlock(screen_id);
+} 
 /**
  * TODO: Btw, where is the screen to see results of changes?
  */
@@ -88,7 +92,13 @@ function openWindow(block_name) { // money_client_card_holder
 /**
  * returnы false
  */
-function showErrorMess(error_text) {
-    alert(error_text);
+function showErrorMess(data_type,error_text) {
+    var divFlag = $('.flag.'+data_type);
+    console.log('data-flag = %c'+data_type, 'color:orange'); //console.dir(divFlag);
+    $(divFlag).addClass('delete');
+    console.log('%c'+error_text,'color:red');
+    $(divFlag).prev().on('focus', function(){
+        $(divFlag).removeClass('delete');
+    })
     return false;
 }

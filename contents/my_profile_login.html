@@ -7,8 +7,8 @@
     <section data-order="first" class="narrow bg_overlight">
         <form name="user-form" id="user-form"  method="post" action="">
             <!-- Username or Email Address  -->
-        	<span data-load="input|username_or_email|username_or_email"></span>
-            <span data-load="input|password|password"></span>
+        	<span data-flag="user" data-load="input|username_or_email|username_or_email"></span>
+            <span data-flag="password" data-load="input|password|password"></span>
             <div class="remember_me clear">    
                 <label data-box="remember_me" class="ellipse"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
                 <span id="remember_me_text">Remember me</span>
@@ -19,25 +19,14 @@
     </section>
     <section data-order="last">
     	<h4 class="clear second">New Player?</h4>
-        <button class="btn_blue left">
+        <button class="btn_blue left" onClick="goAnotherScreen('my_profile_open_demo_account');">
         	<div class="pyct"></div>
             Open a Account DEMO
         </button> 
-        <button class="btn_blue right">
+        <button class="btn_blue right" onClick="goAnotherScreen('my_profile_real_money_account1');">
         	<div class="pyct"></div>
             Open a Account REAL MONEY
         </button>
     </section>
 <div class="bg_overlight_bottom"></div>
 <div class="close"></div>
-<script>
-    $('.btn_blue').on('click',function(){
-        if($(this).hasClass('left')){
-            //console.log('Open a Account DEMO');
-            Scene.appendUserBlock('my_profile_open_demo_account');
-        }else if($(this).hasClass('right')){
-            //console.log('Open a Account DEMO');
-            Scene.appendUserBlock('my_profile_real_money_account1');
-        }
-    });
-</script>

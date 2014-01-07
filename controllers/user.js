@@ -61,7 +61,7 @@ function addUser(localUserData, account_type, usersData) {
         // check if user was added:
         var datasetsUsers = JSON.parse(getUsers());
         if(!datasetsUsers[username]){
-            return showErrorMess('You are NOT registered.\nSomething went wrong...');
+            return showErrorMess('user','You are NOT registered.\nSomething went wrong...');
             //console.log('%cError: %cuser not added...','color:red','font-weight:bold');
         }else{
             var mess = "You are registered!\nYour data:\nusername: "+username;
@@ -131,11 +131,11 @@ function loginUser() {
     $.getScript("models/users.js", function(){
         var localUserData = getUserFormValues(['username_or_email','password']);
         //console.dir(localUserData);
-        var usersList,datasetsUsers;
+        var usersList,datasetsUsers,data_flag = 'user';
         //first, get all current users if they exist
         if(usersList=getUsers())
             datasetsUsers=JSON.parse(usersList);
-        else return showErrorMess('You are not registered.');
+        else return showErrorMess('user','You are not registered.');
         //-------------------------------------------
         var error_mess=false;
         var user_login = false;
@@ -152,10 +152,13 @@ function loginUser() {
         // username or useremail is found, then check password
         if(!error_mess // this means that we got a real user login  
            && datasetsUsers[user_login]['password']!=localUserData['password']
-          ) error_mess = "Your password is wrong";
+          ) {
+            error_mess = "Your password is wrong";
+            data_flag  = 'password';
+        }
         // something went wrong
         if(error_mess)
-            return showErrorMess(error_mess);
+            return showErrorMess(data_flag,error_mess);
         else{
             var extractedUserData = datasetsUsers[user_login];
             // store user data as User Object
@@ -201,12 +204,12 @@ function registerUser(account_type) {  //console.log('registerUser, account_type
                 //console.log('usersList:'); console.dir(usersList);
                 var cancel_register = false;
                 if(usersList[localUserData['username']])
-                    return showErrorMess('Username name is taken!');
+                    return showErrorMess('user','Username name is taken!');
                 else{
                     for(var existing_username in usersList){
                         //console.log(usersList[existing_username]['email']+' : '+localUserData['email']);
                         if(usersList[existing_username]['email']==localUserData['email'])
-                            return showErrorMess('Email is taken!');
+                            return showErrorMess('email','Email is taken!');
                     }
                 }
             }
