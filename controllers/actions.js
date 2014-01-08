@@ -89,16 +89,3 @@ function openWindow(block_name) { // money_client_card_holder
     Scene.appendUserBlock(block_name,false);
     return false;
 }
-/**
- * returnы false
- */
-function showErrorMess(data_type,error_text) {
-    var divFlag = $('.flag.'+data_type);
-    console.log('data-flag = %c'+data_type, 'color:orange'); //console.dir(divFlag);
-    $(divFlag).addClass('delete');
-    console.log('%c'+error_text,'color:red');
-    $(divFlag).prev().on('focus', function(){
-        $(divFlag).removeClass('delete');
-    })
-    return false;
-}

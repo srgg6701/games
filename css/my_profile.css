@@ -740,10 +740,7 @@ label.ellipse {
   	opacity: 0.9;
   }*/
   height: 620px;
-  width: 600px;
-  /*.link-question{
-  	font-style: italic;
-  }*/ }
+  width: 600px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003619}}
   #my_profile_open_demo_account .bg_overlight_bottom.middle {
     bottom: 150px;
@@ -815,9 +812,12 @@ label.ellipse {
       font-size: 17px;
       font-weight: bold;
       height: 46px;
-      margin-top: 50px;
-      width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003665}}
+      margin-top: 10px;
+      width: 260px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003666}}
+    #my_profile_open_demo_account .narrow .btn_yellow {
+      float: none !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003668}}
   #my_profile_open_demo_account .inner_auto_container {
     font-family: AvenirMedium;
     font-size: 13px;

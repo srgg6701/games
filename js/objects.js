@@ -1,5 +1,14 @@
 // our little Scene Universe :) starts here.
 var constMess = {
+    alwsymb:'\nYou can use: ',
+    alwsymblsms:{
+        phone:'10 numbers from 0 to 9 and spaces',
+        password:'from 6 to 20 symbols like letters, numbers from 0 to 9 and !@#$%^&*',
+        zip:'5 numbers from 0 to 9',
+        letters_only:'letters only',
+        letters_only2_30:'from 2 to 30 letters',
+        letters_and_numbers6_20:'from 6 to 20 symbols like letters and numbers from 0 to 9'
+    },
     gender:'Please select a Gender',
     date_mess:'Please select a full Birthday date'
 };
@@ -46,17 +55,15 @@ var Scene={
     // loaded User Profile screen
     active_screen:{
         screen_id:false,
-        //user_form:null,
         Form:{
-            //date_mess:'Please select a full Birthday date',
-            //gender_mess:'Please select a Gender',
             name:'user-form',
             default_data:'data-default_value',
             pass_diff:false,
             mess_diff:"Please fill out this field",
             address:{
                 name:'address',
-                hint:'Your address'
+                hint:'Your address.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20
             },
             agreement:{
                 name:'terms_and_conditions',
@@ -68,11 +75,13 @@ var Scene={
             },
             city:{
                 name:'city',
-                hint:'Your city'
+                hint:'Your city.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
             },
             country:{
                 name:'country',
-                hint:'Your country'
+                hint:'Your country.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
             },
             day:{
                 name:'day',
@@ -85,19 +94,23 @@ var Scene={
             },
             first_name:{
                 name:'first_name',
-                hint:'Your first name'
+                hint:'Your first name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
             },
             home_phone:{
                 name:'home_phone',
-                hint:'Your home phone (optional)'
+                hint:'Your home phone (optional).'+constMess.alwsymb+constMess.alwsymblsms.phone,
+                message:constMess.alwsymb+constMess.alwsymblsms.phone
             },
             last_name:{
                 name:'last_name',
-                hint:'Your last name'
+                hint:'Your last name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
             },
             mobile_phone:{
                 name:'mobile_phone',
-                hint:'Your mobile phone'
+                hint:'Your mobile phone.'+constMess.alwsymb+constMess.alwsymblsms.phone,
+                message:constMess.alwsymb+constMess.alwsymblsms.phone
             },
             month:{
                 name:'month',
@@ -106,8 +119,8 @@ var Scene={
             },
             password:{
                 name:'password',
-                message:"The password should have at least 5 characters",
-                hint:'Your password'                
+                hint:'Your password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
+                message:constMess.alwsymb+constMess.alwsymblsms.password
             },
             radio_male:{
                 name:'radio_male',
@@ -129,7 +142,8 @@ var Scene={
             },
             username:{
                 name:'username',
-                hint:'Your username'
+                hint:'Your username.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20
             },
             year:{
                 name:'year',
@@ -138,12 +152,13 @@ var Scene={
             },
             zip_code:{
                 name:'zip_code',
-                //message:"The zip code should have at least 5 characters",
-                hint:'Your zip code'
+                hint:'Your zip code.'+constMess.alwsymb+constMess.alwsymblsms.zip,
+                message:constMess.alwsymb+constMess.alwsymblsms.zip
             },
             setElementContent:function(Elem, defaultValue){
-                var parentForm = this; //console.dir(Elem);
+                var parentForm = this; //console.log('Elem start'); console.dir(Elem);
                 var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
+                //Elem[0].onchange=function(){console.log('%cchanged','color:orange')};
                 var ddv = this.default_data;
                 //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
                 //console.dir(Elem[0]);
@@ -152,7 +167,7 @@ var Scene={
                     .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
                         // assign pseudo-placeholder
                         if(this.required){
-                            if(!this.value) this.value=defaultValue;
+                            parentForm.handleValue(this,defaultValue);
                             //
                             if(this.name==parentForm.retype_password.name){
                                 var Form = $(this).parents('#user-form');
@@ -169,15 +184,15 @@ var Scene={
                                 this.setCustomValidity("");
                             }
                         }
-                }) 
+                })
                   .on('invalid', function(){ //console.log('parentFormElement: ');console.dir(parentFormElement);
                     if(parentFormElement.message){
                         //console.log('this invalid: ');console.dir(this);
                         this.setCustomValidity(parentFormElement.message);
-                    }
+                    }   
                 }) 
                   .on('click keyup',                    
-                    function(){
+                    function(event){
                         if(this.id.indexOf("password")!=-1){
                             $(this).attr('type',
                                 (this.value==defaultValue||!this.value)? 
@@ -186,9 +201,9 @@ var Scene={
                                 if(parentForm.pass_diff)
                                     this.setCustomValidity("");//console.dir(event.currentTarget);
 
-                        }else if(this.required&&this.value){
-                            this.title = "";
                         }
+                        if(this.required&&event.type=='keyup')
+                            setValidityIcon(event.target);                                                       
                 })
                   .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
                     parentForm.fieldsHandlers.mouseOver(this,parentForm);
@@ -197,9 +212,9 @@ var Scene={
                     return parentForm.fieldsHandlers.submitForm(Elem[0],defaultValue);                    
                 })
                   .on('keypress', function(event){ 
-                    // TODO: make clear if it really thinks that function gets the FORM, not its element?!
+                    // if the field has a default value then remove it
                     parentForm.dropElementDefaultValue(event.target, defaultValue);
-                });
+                }); //console.log('Elem finish'); console.dir(Elem);
             },
             /*
              * handle fields 
@@ -226,6 +241,13 @@ var Scene={
                     } return true;
                 }
             },
+            /**
+             * set default value, OK icon...
+             * */
+            handleValue:function(obj,defaultValue){ //console.log('handleValue, obj.value: '+obj.value+', defaultValue = '+defaultValue);
+                if(!obj.value) obj.value=defaultValue;
+                //else if(obj.validity.valid==true) setValidityIcon(obj,defaultValue,true);
+            },
             /*
             * set custom validaty message to the deeply included element 
             * (which is being extracted from template)
@@ -237,7 +259,7 @@ var Scene={
                     if(sceneElem=Scene.active_screen.Form[element.id]){
                         //console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
                         $(element).on('blur',function(){ //console.log('blur, element: '); console.dir(element);
-                            if(!this.value) this.value=defaultValue;
+                            parentForm.handleValue(this,defaultValue);
                             /*  as the element may be a radiobutton, make sure to drop
                                 custom validity from ALL ones having such a name    */
                             $("[name='"+this.name+"']").each(function(){ //console.log(this);                                                              
@@ -246,9 +268,10 @@ var Scene={
                         })
                           .on('invalid',function(){ //console.log('invalid, set custom validity: '+sceneElem.message);   
                             element.setCustomValidity(sceneElem.message); 
+                            //setValidityIcon(this,defaultValue);
                         })
-                          .on('click keyup',function(){
-                            if(this.value) this.title = "";
+                          .on('keyup',function(){
+                            if(this.value) setValidityIcon(this)
                         })
                           .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
                             parentForm.fieldsHandlers.mouseOver(this,parentForm);
@@ -366,7 +389,10 @@ var Scene={
                         $(element).load(commonPath+data2load[0]+'.html '+element_jid, 
                             function(){
                                 var Elem = $(element_jid); //console.dir(Elem);
-                                var elementType = $(Elem).attr('type');
+                                var elementType = $(Elem).attr('type');                             
+                                //console.log('entity_id = '+entity_id+', data2load[1] = '+data2load[1]);
+                                if(entity_id=="my_profile_login"&&data2load[1]=="password") 
+                                    $(Elem).removeAttr('pattern');
                                 // only if the 3th param exists (that means it is a single (not compound) element)
 								if( data2load[2] && 
                                     ( elementType || 
