@@ -6,9 +6,12 @@
     </div>
     <section data-order="first" class="narrow bg_overlight">
         <form name="user-form" id="user-form"  method="post" action="">
-            <!-- Username or Email Address  -->
-        	<span data-flag="user" data-load="input|username_or_email|username_or_email"></span>
-            <span data-flag="password" data-load="input|password|password"></span>
+            <!-- Username or Email Address  
+            	 data-flag="user"
+                 data-flag="password"
+            -->
+        	<span data-warning="user" data-load="input|username_or_email|username_or_email"></span>
+            <span data-warning="password" data-load="input|password|password"></span>
             <div class="remember_me clear">    
                 <label data-box="remember_me" class="ellipse"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
                 <span id="remember_me_text">Remember me</span>

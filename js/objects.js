@@ -155,9 +155,28 @@ var Scene={
                 hint:'Your zip code.'+constMess.alwsymb+constMess.alwsymblsms.zip,
                 message:constMess.alwsymb+constMess.alwsymblsms.zip
             },
+            setElementPattern:function(input){ // HTML-element, not jQuery obj
+                var parentForm = this; //console.log('input start'); console.dir(input);
+                /*  the special case happens when a non-required element comes.
+                    It demands to move its attribute *pattern* from the element
+                    itself to its object here. Later we will extract it onkeyup.
+                */
+                var ptrn = input.getAttribute('pattern');
+                if(!input.required&&ptrn){
+                    var parentFormElement = parentForm[input.id];
+                    parentFormElement['pattern']=ptrn;
+                    input.removeAttribute('pattern');
+                }
+            },
+            /*
+             *  NOTICE: Elem here is a jQuery object (i.e. HTML-element is Elem[0]) 
+             */
             setElementContent:function(Elem, defaultValue){
                 var parentForm = this; //console.log('Elem start'); console.dir(Elem);
                 var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
+                /*  move pattern from element to its object (store) it it has not 
+                    a *required* attribute but has a *pattern* attribute */
+                this.setElementPattern(Elem[0]);
                 //Elem[0].onchange=function(){console.log('%cchanged','color:orange')};
                 var ddv = this.default_data;
                 //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
@@ -166,12 +185,13 @@ var Scene={
                     .val(defaultValue)
                     .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
                         // assign pseudo-placeholder
-                        if(this.required){
+                        //if(this.required){
                             parentForm.handleValue(this,defaultValue);
                             //
                             if(this.name==parentForm.retype_password.name){
-                                var Form = $(this).parents('#user-form');
-                                var pass1Val=$('#password', Form).val()||$('#new_password', Form).val();
+                                var HTMLform = $(this).parents('#'+parentForm.name);
+                                var pass1Val=$('#'+parentForm.password.name, HTMLform).val()
+                                             || $('#'+parentForm.retype_password.name, HTMLform).val();
                                 var pass2Val=this.value;
                                 if(pass1Val&&pass2Val&&(pass1Val!=pass2Val)){
                                     parentForm.pass_diff = true; //console.log('parentForm.pass_diff');
@@ -183,16 +203,17 @@ var Scene={
                             }else{
                                 this.setCustomValidity("");
                             }
-                        }
+                        //}
                 })
                   .on('invalid', function(){ //console.log('parentFormElement: ');console.dir(parentFormElement);
                     if(parentFormElement.message){
+                        parentForm.setCustomValidityIfRequired(this,defaultValue,parentFormElement.message);
                         //console.log('this invalid: ');console.dir(this);
-                        this.setCustomValidity(parentFormElement.message);
+                        //this.setCustomValidity(parentFormElement.message);
                     }   
                 }) 
-                  .on('click keyup',                    
-                    function(event){
+                  .on('click keyup input',                    
+                    function(event){ //console.log('Elem id: '+this.id);
                         if(this.id.indexOf("password")!=-1){
                             $(this).attr('type',
                                 (this.value==defaultValue||!this.value)? 
@@ -200,11 +221,10 @@ var Scene={
                             if(this.name='retype_password')
                                 if(parentForm.pass_diff)
                                     this.setCustomValidity("");//console.dir(event.currentTarget);
-
                         }
-                        if(this.required&&event.type=='keyup')
-                            setValidityIcon(event.target);                                                       
-                })
+                        if(event.type!='click')
+                            setValidityIcon(event.target,defaultValue);
+                }) 
                   .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
                     parentForm.fieldsHandlers.mouseOver(this,parentForm);
                 })
@@ -232,12 +252,12 @@ var Scene={
                     if(element.value==defaultValue
                        && element.type!='checkbox' 
                        && element.type!='radio'
-                      ){ console.log('The default element value is detected...');
+                      ){ //console.log('The default element value is detected...');
                         element.value="";
-                        if(element.required){
+                        //if(element.required){
                             element.setCustomValidity(Scene.active_screen.Form.mess_diff);
                             return false;
-                        }else return true;
+                        //}else return true;
                     } return true;
                 }
             },
@@ -245,17 +265,47 @@ var Scene={
              * set default value, OK icon...
              * */
             handleValue:function(obj,defaultValue){ //console.log('handleValue, obj.value: '+obj.value+', defaultValue = '+defaultValue);
-                if(!obj.value) obj.value=defaultValue;
-                //else if(obj.validity.valid==true) setValidityIcon(obj,defaultValue,true);
+                /* if the field has no value, set value by default and rremove flags
+                */
+                if(!$(obj).val()) $(obj).val(defaultValue);
+                
+                if($(obj).val()==defaultValue){ console.log('defaultValue: '+defaultValue);
+                    // remove flags                    
+                    var nxt = $(obj).next('.flag');                    
+                    // handle flag
+                    if($(nxt).size()) removeFlag(nxt);
+                    /*  remove pattern from non-required element. But it is stored
+                        within its object in this Form anyway and we can extract it
+                        later anytime */
+                    if(!$(obj).attr('required')) $(obj).removeAttr('pattern');
+                }else console.log('obj.value: '+$(obj).val()+', defaultValue: '+defaultValue);
+                /*
+                if( !$(obj).attr('required')
+                    && $(obj).val()==defaultValue // note that we have set it above, if it was empty
+                  ) $(obj).removeAttr('pattern');*/
+            },
+            /* set custom validity message if only is element has required attribute 
+             */
+            setCustomValidityIfRequired:function(element,defaultValue,message){ //console.log('setCustomValidityIfRequired');
+                if( !element.required 
+                    && (!element.value||element.value==defaultValue)
+                  ) { //console.log('drop validity'); console.dir(element);
+                    message = "";
+                }
+                element.setCustomValidity(message);                
             },
             /*
             * set custom validaty message to the deeply included element 
             * (which is being extracted from template)
+            * NOTE: element here is HTML-object unlike of setElementContent()
             */
             attachCustomValidaty:function(element){ 
                 var sceneElem,parentForm=this;
+                /*  move pattern from element to its object (store) it it has not 
+                    a *required* attribute but has a *pattern* attribute */
+                this.setElementPattern(element);
                 var defaultValue = element.value;
-                if(element.required){ //console.log('required: '); console.dir(element);
+                //if(element.required){ //console.log('required: '); console.dir(element);
                     if(sceneElem=Scene.active_screen.Form[element.id]){
                         //console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
                         $(element).on('blur',function(){ //console.log('blur, element: '); console.dir(element);
@@ -267,11 +317,12 @@ var Scene={
                             });
                         })
                           .on('invalid',function(){ //console.log('invalid, set custom validity: '+sceneElem.message);   
-                            element.setCustomValidity(sceneElem.message); 
-                            //setValidityIcon(this,defaultValue);
+                            parentForm.setCustomValidityIfRequired(element,defaultValue,sceneElem.message);
+                              //if(this.required||(this.value&&this.value!=defaultValue))
+                              //element.setCustomValidity(sceneElem.message);
                         })
-                          .on('keyup',function(){
-                            if(this.value) setValidityIcon(this)
+                          .on('keyup input',function(){
+                            if(this.value) setValidityIcon(this,defaultValue);
                         })
                           .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
                             parentForm.fieldsHandlers.mouseOver(this,parentForm);
@@ -283,7 +334,7 @@ var Scene={
                             parentForm.dropElementDefaultValue(this, defaultValue);
                         });                                                  
                     }
-                }
+                //}
             },        
             /**
              * Handle invisible due to design purposes checkbox

@@ -1,0 +1,18 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/system\.scss}line{font-family:\000031}}
+.sys_warning {
+  background-color: #E6E6FA;
+  border-radius: 2px;
+  box-shadow: 0 0 6px #FFF;
+  color: #F00;
+  cursor: default;
+  font-style: normal !important;
+  font-size: 12px;
+  font-family: AvenirMedium !important;
+  margin-left: 10px;
+  padding: 6px;
+  position: absolute;
+  left: 100%;
+  text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/system\.scss}line{font-family:\0000315}}
+  .sys_warning#formWarning {
+    width: 120px; }

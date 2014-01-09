@@ -1,8 +1,9 @@
 /**
  * Change it, Dude!
  */
-function changePassword(){
-    Scene.enterAccount();
+function changePassword(form){
+    form.submit();
+    //Scene.enterAccount();
     return false;
 }
 /* switch to another screen*/
@@ -12,8 +13,9 @@ function goAnotherScreen(screen_id){
 /**
  * TODO: Btw, where is the screen to see results of changes?
  */
-function saveProfileChanges(){
-    Scene.enterAccount();
+function saveProfileChanges(form){
+    form.submit();
+    //Scene.enterAccount();
     return false;
 }
 /**
