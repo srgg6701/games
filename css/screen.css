@@ -3311,48 +3311,50 @@ label.ellipse {
           background-size: 100px 37px;
           letter-spacing: -0.2px;
           padding-left: 10px;
+          white-space: nowrap;
           width: 49px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003796}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003797}}
         #my_profile_real_money_account #steps > div:first-child #your_info {
           letter-spacing: -0.3px;
           padding-left: 27px;
           width: 235px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003804}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003805}}
       #my_profile_real_money_account #steps > div:last-child {
         background: url(../images/fish_right.png) no-repeat;
         right: 0;
         width: 315px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003811}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003809}}
         #my_profile_real_money_account #steps > div:last-child #step2 {
           letter-spacing: -0.2px;
           padding-left: 22px;
+          white-space: nowrap;
           width: 61px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003817}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003815}}
         #my_profile_real_money_account #steps > div:last-child #complete_info {
           letter-spacing: -0.5px;
           padding-left: 29px;
           width: 253px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003826}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003823}}
       #my_profile_real_money_account #steps > div #step1,
       #my_profile_real_money_account #steps > div #step2 {
         color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003832}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003829}}
   #my_profile_real_money_account section {
     color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003834}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003831}}
     #my_profile_real_money_account section[data-order="first"] {
       height: 436px;
       margin-top: 0;
       padding-top: 40px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003839}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003836}}
     #my_profile_real_money_account section[data-order="last"] {
       padding-left: 0;
       padding-right: 0;
       position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003843}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003840}}
       #my_profile_real_money_account section[data-order="last"] .bg_overlight {
         margin-top: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003846}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003843}}
       #my_profile_real_money_account section[data-order="last"] #call-support {
         height: 78px;
         font-style: normal;
@@ -3360,7 +3362,7 @@ label.ellipse {
         position: absolute;
         top: 65px;
         width: 198px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003853}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003850}}
         #my_profile_real_money_account section[data-order="last"] #call-support .btn_blue {
           font-size: 13px;
           font-style: inherit;
@@ -3368,7 +3370,7 @@ label.ellipse {
           margin: 10px auto 0;
           height: 34px;
           width: 124px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003861}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003858}}
         #my_profile_real_money_account section[data-order="last"] #call-support p {
           background: url(../images/call_support.png) no-repeat;
           font-size: 13px;
@@ -3379,18 +3381,18 @@ label.ellipse {
           margin-top: 3px;
           padding-left: 33px;
           text-align: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003871}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003868}}
           #my_profile_real_money_account section[data-order="last"] #call-support p #support_phone_number {
             font-size: 15px;
             font-style: inherit;
             letter-spacing: 0.8px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003878}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003875}}
       #my_profile_real_money_account section[data-order="last"] .left_support {
         background: url(../images/account_bg_from_bottom.png) repeat-x 0 100%;
         background-size: 100% 100%;
         text-align: left;
         width: 403px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003883}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003880}}
       #my_profile_real_money_account section[data-order="last"] .subheader {
         background: url(../images/right_live_chat.png) no-repeat 7px 10px;
         background-size: 17px 18px;
@@ -3411,62 +3413,62 @@ label.ellipse {
       #my_profile_real_money_account section[data-order="last"] img.block.left {
         margin-right: 10px;
         margin-top: -2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003889}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003886}}
       #my_profile_real_money_account section[data-order="last"] p {
         max-width: 220px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003893}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003890}}
     #my_profile_real_money_account section div.narrow {
       margin: auto;
       width: 260px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003898}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003895}}
   #my_profile_real_money_account div.inline {
     display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003901}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003898}}
   #my_profile_real_money_account .absolute_float {
     margin-top: -20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003904}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003901}}
   #my_profile_real_money_account .bg_overlight_bottom {
     margin-top: -17px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003907}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003904}}
   #my_profile_real_money_account .btn_yellow {
     margin-bottom: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003912}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003909}}
     #my_profile_real_money_account .btn_yellow.step2 {
       width: 302px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003916}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003913}}
   #my_profile_real_money_account .color-white {
     text-shadow: 0 0 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003920}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003917}}
   #my_profile_real_money_account #birthday,
   #my_profile_real_money_account #gender {
     margin-bottom: 7px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003925}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003922}}
   #my_profile_real_money_account #birthday > div:first-child {
     padding: 0;
     padding-right: 13px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003931}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003928}}
   #my_profile_real_money_account #gender {
     margin-left: -6px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003934}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003931}}
   #my_profile_real_money_account .go_left {
     margin-top: 40%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003937}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003934}}
   #my_profile_real_money_account .half_wide {
     margin-bottom: 14px;
     padding-top: 33px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003940}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003937}}
     #my_profile_real_money_account .half_wide.left {
       padding-left: 19px;
       padding-right: 9px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003944}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003941}}
     #my_profile_real_money_account .half_wide.right {
       padding-left: 9px;
       padding-right: 19px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003949}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003946}}
   #my_profile_real_money_account .step_passive {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
     opacity: 0.3; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003952}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003949}}
   #my_profile_real_money_account .verysign {
     border: none;
     background: url(../images/verysign.png) 0px -2px;
@@ -3476,15 +3478,15 @@ label.ellipse {
     margin-right: -6px; }
 
 /* / blocks */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003966}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003963}}
 #tr-fourth td {
   padding-top: 5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003971}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003968}}
 #tr-fifth .flag {
   margin-top: 1px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003983}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003980}}
 #my_profile_change_password_form {
   /*background:url(../sources/substrates/Account/change_password.gif);
   background-position: -43px -33px;
@@ -3492,24 +3494,24 @@ label.ellipse {
   *{
   	opacity: 0.9;
   }*/ }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003992}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003989}}
   #my_profile_change_password_form h4 div:first-child {
     background: url(../images/lock_gold.png) no-repeat;
     margin-right: 10px;
     margin-bottom: -4px;
     width: 18px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003998}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003995}}
   #my_profile_change_password_form .go_left {
     top: 140px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031001}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003998}}
   #my_profile_change_password_form button {
     margin-top: 28px;
     width: 212px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031008}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031005}}
   #my_profile_change_password_form .bg_overlight_bottom {
     margin-top: -27px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031012}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031009}}
 #my_profile_data {
   /*background:url(../sources/substrates/Account/my_Profile.gif);
   background-position: -43px -33px;
@@ -3517,20 +3519,20 @@ label.ellipse {
   *{
   	opacity: 0.9;
   }*/ }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031022}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031019}}
   #my_profile_data div p {
     margin: 38px auto;
     font-size: 14px;
     font-style: normal; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031028}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031025}}
   #my_profile_data .column {
     margin-right: 4px;
     padding-left: 10px;
     width: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031030}}
     #my_profile_data .column p:first-child {
       margin-top: 13px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031035}}
   #my_profile_data button {
     background-position-x: -1px;
     background-size: 340px 44px;
@@ -3541,12 +3543,12 @@ label.ellipse {
     margin-top: 11px;
     padding-left: 47px;
     width: 252px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031049}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031046}}
   #my_profile_data .bg_overlight_bottom {
     margin-top: -26px; }
 
 /* for tests */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031055}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\000031052}}
 #test_inner_submenu {
   background: #FFFF99;
   display: none;
