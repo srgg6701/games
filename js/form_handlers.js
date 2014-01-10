@@ -1,3 +1,13 @@
+$(function(){
+    /*var inputEvents = ['click','select','keypress'];
+	for(var i in inputEvents){
+		console.log('event: '+inputEvents[i]);
+		myInput.addEventListener(inputEvents[i],function(){
+			setCaretPositionToZero();
+			return false;
+		});
+	}*/
+});
 /**
  * Comment
  */
@@ -16,6 +26,50 @@ function removeDoubleSpaces(input){
 	}
     return true;
 }
+// imitate a placeholder's behavior
+function handlePlaceHolder(Event,defaultValue){
+	//console.log('handlePlaceHolder('+Event.type+','+defaultValue+')');	
+    var input       = Event.target;
+    var eventName   = Event.type,
+        inputValue  = input.value;
+    // skip checkboxes and radios    
+    if( input.type=="text"       || 
+        input.type=="password"   ||
+        input.type=='email'      ||
+        input.type=='number'     ||
+        input.type=='search'     ||
+        input.type=='tel'        
+      ){
+        var setPlaceholderStyle = function(){
+            input.value=defaultValue; 
+            $(input).removeClass('real_text'); //console.log('remove real_text class');
+        };
+        if(eventName=='keyup'){
+            if(inputValue=='') 
+                setPlaceholderStyle();
+            else if (Event.keyCode!=39&&input.value!=defaultValue) 
+                $(input).addClass('real_text');
+        }        
+        if(eventName=='keypress'&&inputValue==defaultValue) //console.log('keypress, value = %c'+inputValue, 'color:violet');
+            input.value = '';
+        // ------------------------------------------------------------
+        if(eventName=='blur'){
+            // return value by default if there is nothing except spaces
+            var re = new RegExp(/^[\s]{1,}$/g); 
+            if (inputValue==''||re.test(inputValue)) 
+                setPlaceholderStyle();
+        }else if(input.value==defaultValue){
+            //if(eventName=='selectstart') return false;
+            if(input.createTextRange) { //console.log('%ccreateTextRange', 'color:blue');
+                var range = input.createTextRange();
+                range.move('character',0);
+            }else{                
+                input.setSelectionRange(0,0);  
+                input.focus();              
+            }
+        }
+    }
+}
 /*
  * Set invalid icon
  * @return boolean
@@ -29,7 +83,12 @@ function setValidityIcon(input,defaultValue) {
         //console.log('%cinput','text-decoration:underline'); 
         //console.dir(input);/**/
     if($(dNext).hasClass('flag')) { //console.log('validity: %c'+input.validity.valid, 'color:brown');
-        //console.log('flag is set');
+        // handle flags:
+        var switchFlags = function(titleText){
+            if($(input).val()!=defaultValue)
+                (titleText)? $(dNext).addClass('delete').attr('title',titleText)
+                           : $(dNext).addClass('ok')    .removeAttr('title');            
+        }; //console.log('flag is set');        
         // set default flag
         removeFlag(dNext);
         var objInForm = Scene.active_screen.Form[input.id];
@@ -38,41 +97,34 @@ function setValidityIcon(input,defaultValue) {
         if( input.id==Scene.active_screen.Form.retype_password.name
             && $(input).val()!=$('#password').val()
           ){    //console.log('re-type_password.value = '+input.value+', password.value = '+$('#password').val());
-            $(dNext).addClass('delete').attr('title',fieldMess);
+            switchFlags(fieldMess);
             return false;
         }        
         var title,pMisMatch,vStat=input.validity;
-        //var exclProp = 'customError';
-        for(var pr in vStat){
-            //console.log(pr+' : '+vStat[pr]);
-            //if(pr=='valid') console.log('%c'+vStat[pr], 'background-color:violet');
+        for(var pr in vStat){ //console.log(pr+' : '+vStat[pr]); //if(pr=='valid') console.log('%c'+vStat[pr], 'background-color:violet');
             if( ( pr!='valid' && pr!='customError' && vStat[pr]==true )
                   || ( pr=='patternMismatch'&&!$(input).attr('required') )
-              ){
-                //console.log('WITHIN CONDITION'); console.log('req? - '+$(input).attr('required'));
+              ){ //console.log('WITHIN CONDITION'); console.log('req? - '+$(input).attr('required'));
                 if(!$(input).attr('required')){ //console.log('%c! required', 'color:blue');
                     // remove pattern
                     if(!$(input).val()||$(input).val()==defaultValue){
                         $(input).removeAttr('pattern'); //console.log('remove pattern');
                     }else{ // set pattern
                         $(input).attr('pattern', objInForm.pattern); 
-                        pMisMatch=input.validity.patternMismatch;
-                        console.log('patternMismatch: '+input.validity.patternMismatch);
+                        pMisMatch=input.validity.patternMismatch; //console.log('patternMismatch: '+input.validity.patternMismatch);
                     }   //console.log('objInForm.pattern = '+objInForm.pattern); console.dir(input);                    
                 }
                                        
                 if(input.required||pMisMatch){
                     if(!(title=fieldMess))
                         title="Please, fill out this field in the correct format";
-                    $(dNext).addClass('delete').attr('title',title); //console.log('input.title = '+fieldMess);
-                    //console.log('inputect validity (Error): '+input.checkValidity()); console.dir(input.validity); //console.groupEnd();
+                    switchFlags(title); //console.log('inputect validity (Error): '+input.checkValidity()); console.dir(input.validity); //console.groupEnd();
                     return false;
                 }
             } //console.log(pr+': '+vStat[pr]);
         }
-        if(!input.required) input.setCustomValidity("");
-        //console.log('inputect validity (OK): '+input.checkValidity()); console.dir(input.validity); //console.groupEnd();
-        $(dNext).addClass('ok').removeAttr('title');
+        if(!input.required) input.setCustomValidity(""); //console.log('inputect validity (OK): '+input.checkValidity()); console.dir(input.validity); //console.groupEnd();
+        switchFlags();
         return true;
     }
 }
