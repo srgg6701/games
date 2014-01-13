@@ -192,6 +192,21 @@ br, hr {
 [data-level="money"] > section {
   margin-top: 50px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000311}}
+  [data-level="money"] > section h4 {
+    background: #151127;
+    border-top: solid 1px #58546F;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 48px;
+    color: #FFF;
+    font-family: Amaranth;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 46px;
+    padding: 1px 12px;
+    text-shadow: 28px -19px 50px rgba(255, 255, 255, 0.75); }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000326}}
   [data-level="money"] > section.menu {
     background-color: #1b1562;
     background-size: 100% 60px;
@@ -199,28 +214,65 @@ br, hr {
     height: 720px;
     padding: 10px;
     width: 200px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000333}}
     [data-level="money"] > section.menu menu {
-      background: url(../images/bg_my_profile_form_vertical.jpg) repeat-x;
+      background: url(../images/bg_money_section_right_menu.jpg);
       box-shadow: none;
       color: white;
       font-weight: bold; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000338}}
       [data-level="money"] > section.menu menu li {
+        background-color: transparent;
         cursor: default;
         height: 56px;
-        line-height: 56px;
-        opacity: 0.7;
+        line-height: 57.5px;
         padding: 5px 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000344}}
+        [data-level="money"] > section.menu menu li[data-block$="_visa"] > div {
+          background-position-y: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000345}}
+        [data-level="money"] > section.menu menu li[data-block$="_visas"] > div {
+          background-position-y: -48px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000346}}
+        [data-level="money"] > section.menu menu li[data-block$="_skrill"] > div {
+          background-position-y: -105px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000347}}
+        [data-level="money"] > section.menu menu li[data-block$="_neteller"] > div {
+          background-position-y: -163px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000348}}
+        [data-level="money"] > section.menu menu li[data-block$="_entropay"] > div {
+          background-position-y: -220px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000349}}
+        [data-level="money"] > section.menu menu li[data-block$="_ukash"] > div {
+          background-position-y: -278px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000350}}
+        [data-level="money"] > section.menu menu li[data-block$="_paysafecard"] > div {
+          background-position-y: -335px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000351}}
+        [data-level="money"] > section.menu menu li[data-block$="_all_cards"] > div {
+          background-position-y: -393px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000352}}
+        [data-level="money"] > section.menu menu li[data-block$="_bank"] > div {
+          background-position-y: -453px;
+          background-position-x: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000354}}
         [data-level="money"] > section.menu menu li:hover {
-          opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000335}}
+          background: url(../images/switch_to.png) #3f395c no-repeat;
+          background-size: 360px 54px;
+          background-position: -350px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000359}}
+        [data-level="money"] > section.menu menu li div {
+          background: url(../images/money_payment_ways.png);
+          background-position-x: 17px;
+          background-repeat: no-repeat;
+          font-size: 0;
+          height: 56px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000369}}
   [data-level="money"] > section.content {
     float: right;
     padding: 72px 210px 26px 26px;
     width: 824px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000373}}
     [data-level="money"] > section.content > h1 {
       background: url(../images/bg_bottom_panel_right.png) repeat-x;
       background-size: 100% 60px;
@@ -237,51 +289,83 @@ br, hr {
       right: 0;
       left: 0;
       width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000391}}
     [data-level="money"] > section.content .pay_way {
       font-weight: bold;
       padding: 10px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000395}}
     [data-level="money"] > section.content [type="submit"] {
       clear: both;
       display: block;
       margin: 20px auto;
       visibility: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003100}}
       [data-level="money"] > section.content [type="submit"]:before {
         content: " ";
         display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003105}}
     [data-level="money"] > section.content .left {
       margin: 10px auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003107}}
       [data-level="money"] > section.content .left.text {
         clear: left;
         margin-right: 10px;
         width: 130px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003114}}
     [data-level="money"] > section.content input[type="text"],
     [data-level="money"] > section.content input[type="password"] {
       margin-right: 4px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003121}}
 #voucher_value2 {
   width: 60px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003124}}
 #card_details_upd {
+  position: relative;
   width: 340px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003127}}
+  #card_details_upd h4 {
+    color: #FFF;
+    font-size: 18px;
+    height: 48px;
+    letter-spacing: -0.7px;
+    line-height: 48px;
+    padding-left: 13px;
+    text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003138}}
   #card_details_upd form {
     background: white;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     padding: 14px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000395}}
-    #card_details_upd form input[type="text"] {
-      height: 36px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003149}}
+    #card_details_upd form input[type="text"], #card_details_upd form input[type="password"], #card_details_upd form input[type="tel"], #card_details_upd form input[type="email"], #card_details_upd form input[type="number"], #card_details_upd form input[type="search"] {
+      background-image: none;
+      border: solid 1px #CCC;
+      font-family: AvenirMedium;
+      height: 38px;
+      margin-bottom: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003157}}
     #card_details_upd form p {
-      line-height: 20px;
+      color: #0B051A;
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 19px;
+      margin-top: 15px;
       text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003164}}
+      #card_details_upd form p .normal {
+        font-family: AvenirOblique;
+        font-style: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/levels\.scss}line{font-family:\00003169}}
     #card_details_upd form button[type="submit"] {
-      margin: auto !important; }
+      border: solid 1px #CCC;
+      border-radius: 6px;
+      background: url(../images/make_a_deposite.png);
+      background-size: 260px 47px;
+      background-position: -40px;
+      font-size: 16px;
+      font-weight: bold;
+      margin: auto auto 7px auto !important;
+      padding: 12px 62px; }
