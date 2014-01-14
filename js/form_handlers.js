@@ -27,48 +27,26 @@ function removeDoubleSpaces(input){
     return true;
 }
 // imitate a placeholder's behavior
-function handlePlaceHolder(Event,defaultValue){
-	//console.log('handlePlaceHolder('+Event.type+','+defaultValue+')');	
-    var input       = Event.target;
-    var eventName   = Event.type,
-        inputValue  = input.value;
-    // skip checkboxes and radios    
-    if( input.type=="text"       || 
-        input.type=="password"   ||
-        input.type=='email'      ||
-        input.type=='number'     ||
-        input.type=='search'     ||
-        input.type=='tel'        
-      ){
-        var setPlaceholderStyle = function(){
-            input.value=defaultValue; 
-            $(input).removeClass('real_text'); //console.log('remove real_text class');
-        };
-        if(eventName=='keyup'){
-            if(inputValue=='') 
-                setPlaceholderStyle();
-            else if (Event.keyCode!=39&&input.value!=defaultValue) 
-                $(input).addClass('real_text');
-        }        
-        if(eventName=='keypress'&&inputValue==defaultValue) //console.log('keypress, value = %c'+inputValue, 'color:violet');
-            input.value = '';
-        // ------------------------------------------------------------
-        if(eventName=='blur'){
-            // return value by default if there is nothing except spaces
-            var re = new RegExp(/^[\s]{1,}$/g); 
-            if (inputValue==''||re.test(inputValue)) 
-                setPlaceholderStyle();
-        }else if(input.value==defaultValue){
-            //if(eventName=='selectstart') return false;
-            if(input.createTextRange) { //console.log('%ccreateTextRange', 'color:blue');
-                var range = input.createTextRange();
-                range.move('character',0);
-            }else{                
-                input.setSelectionRange(0,0);  
-                input.focus();              
-            }
-        }
-    }
+function handlePlaceHolder(Event,psholder){
+	var input,placeholder;
+	// the target is the pseudoplaceholder
+	if(psholder){ 
+		input = $(Event).next()[0]; // div - pseudoplaceholder 
+		placeholder = Event;
+		input.focus(); // this is srange, but this is necessary
+	}else{ // the target is the input itself
+		input = Event.target; // input itself
+		placeholder = $(input).prev()[0];
+		switch(Event.type){
+			case 'keypress':
+				$(placeholder).hide();
+				break;
+			case 'keyup': case 'blur':
+				if(!$(input).val())
+					$(placeholder).show();
+				break;
+		}
+	} //console.dir(placeholder); console.dir(input); 
 }
 /*
  * Set invalid icon

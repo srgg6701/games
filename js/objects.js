@@ -154,17 +154,39 @@ var Scene={
                 hint:'Your zip code.'+constMess.alwsymb+constMess.alwsymblsms.zip,
                 message:constMess.alwsymb+constMess.alwsymblsms.zip
             },
-            setElementPattern:function(input){ // HTML-element, not jQuery obj
+            // set pattern and pseudoplaceholder
+            /* Warning! We CANNOT extract the value of input within the function,
+               so we MUST pass it here */
+            handleElementChecking:function(input,defaultValue){ // HTML-element, not jQuery obj
                 var parentForm = this; //console.log('input start'); console.dir(input);
                 /*  the special case happens when a non-required element comes.
                     It demands to move its attribute *pattern* from the element
                     itself to its object here. Later we will extract it onkeyup.
-                */
+                */  //console.log('input.value = '+input.getAttribute('value')+', defaultValue = '+defaultValue);
+                    //console.dir(input);
                 var ptrn = input.getAttribute('pattern');
-                if(!input.required&&ptrn){
-                    var parentFormElement = parentForm[input.id];
-                    parentFormElement['pattern']=ptrn;
-                    input.removeAttribute('pattern');
+                // if is not required, just handle the element's pattern
+                if(!input.required){
+                    if(ptrn){
+                        var parentFormElement = parentForm[input.id];
+                        parentFormElement['pattern']=ptrn;
+                        input.removeAttribute('pattern');
+                    }
+                    return false;
+                }else{ // otherwise, add a pseudoplaceholder
+                    var pseudoPlaceholder = $('<div/>',{
+                            class:'placeholder'
+                        }).css('left',parseInt($(input).css('margin-left'))+9+'px'); //console.log('input.value after deleting: '+input.value);
+                    // add pseudoplaceholder to the block
+                    $(input).parent().prepend(pseudoPlaceholder);
+                    // assign actions onEvent to the pseudoplaceholder
+                    $(pseudoPlaceholder).on('click selectstart',function(event){
+                        handlePlaceHolder(this,true);
+                        $(this).next().trigger('click');
+                        if(event.type=='selectstart') 
+                            return false;
+                    }).html(defaultValue);
+                    return true;
                 }
             },
             /*
@@ -173,14 +195,15 @@ var Scene={
             setElementContent:function(Elem, defaultValue){
                 var parentForm = this; //console.log('Elem start'); console.dir(Elem);
                 var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
-                /*  move pattern from element to its object (store) it it has not 
-                    a *required* attribute but has a *pattern* attribute */
-                this.setElementPattern(Elem[0]);
+                /*  1. Move pattern from element to its object (store) if it has no 
+                    a *required* attribute but has a *pattern* attribute.
+                    2. Set pseudoplaceholder (if the field has an attribute *required*) */
+                if(!this.handleElementChecking(Elem[0],defaultValue)) // if didn't set pseudoplaceholder
+                    $(Elem).val(defaultValue);
                 //Elem[0].onchange=function(){console.log('%cchanged','color:orange')};
                 var ddv = this.default_data; //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
                 //console.dir(Elem[0]);
                 $(Elem).attr(ddv, defaultValue)// for js.js
-                    .val(defaultValue)
                     .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
                         parentForm.handleValue(this,defaultValue);
                         // 
@@ -219,7 +242,7 @@ var Scene={
                             setValidityIcon(event.target,defaultValue);
                         // onclick, onkeyup
                         if(event.type!='input') // imitate a placeholder's behavior
-                            handlePlaceHolder(event,defaultValue);
+                            handlePlaceHolder(event);
                 }) 
                   .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
                     parentForm.fieldsHandlers.mouseOver(this,parentForm);
@@ -227,9 +250,9 @@ var Scene={
                   .parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', defaultValue = '+defaultValue);
                     return parentForm.fieldsHandlers.submitForm(Elem[0],defaultValue);                    
                 })
-                  .on('keypress blur select selectstart', function(event){ 
+                  .on('keypress blur', function(event){ 
                     // imitate a placeholder's behavior
-                    handlePlaceHolder(event,defaultValue);
+                    handlePlaceHolder(event);
                 }); //console.log('Elem finish'); console.dir(Elem);
             },
             /*
@@ -261,7 +284,6 @@ var Scene={
             handleValue:function(obj,defaultValue){ //console.log('handleValue, obj.value: '+obj.value+', defaultValue = '+defaultValue);
                 /* if the field has no value, set value by default and rremove flags
                 */
-                if(!$(obj).val()) $(obj).val(defaultValue);
                 // if element has default value, handle flags and its pattern (for non-required only)
                 if($(obj).val()==defaultValue){ //console.log('defaultValue: '+defaultValue);
                     // remove flags                    
@@ -291,10 +313,13 @@ var Scene={
             */
             attachCustomValidity:function(element){ 
                 var sceneElem,parentForm=this;
-                /*  move pattern from element to its object (store) it it has not 
-                    a *required* attribute but has a *pattern* attribute */
-                this.setElementPattern(element);
-                var defaultValue = element.value;
+                var defaultValue = element.value;            
+                /*  1. Move pattern from element to its object (store) it it has not 
+                       a *required* attribute but has a *pattern* attribute 
+                    2. If the element has an attribute *required*, move its 
+                       value to the pseudoplaceholder text  */
+                if(this.handleElementChecking(element,defaultValue))
+                    element.value='';
                 if(sceneElem=Scene.active_screen.Form[element.id]){
                     //console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
                     $(element).on('blur',function(){ //console.log('blur, element: '); console.dir(element);
@@ -305,9 +330,9 @@ var Scene={
                             this.setCustomValidity(""); //console.log('drop custom validity');
                         });
                     })
-                      .on('click keypress keyup blur select selectstart', function(event){ 
+                      .on('blur click keypress keyup', function(event){ 
                           // imitate a placeholder's behaviorselectstart
-                          handlePlaceHolder(event,defaultValue);
+                          handlePlaceHolder(event);
                     })
                       .on('invalid',function(){ //console.log('invalid, set custom validity: '+sceneElem.message);   
                         parentForm.setCustomValidityIfRequired(element,defaultValue,sceneElem.message);
