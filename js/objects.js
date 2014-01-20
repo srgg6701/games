@@ -200,6 +200,9 @@ var Scene={
                     if(event.type=='selectstart') 
                         return false;
                 }).html(defaultValue);
+                    var inputs = $(input).parents('form').eq(0)
+                        .find('input:not(:checkbox):not(:radio):not(:hidden):not(:image):not(:reset):not(:submit)');
+                    if($(inputs).index(input)==0) input.focus();
                 }
                 return true;
             },
@@ -250,7 +253,7 @@ var Scene={
              */
             removeFlagOnDefaultValue:function(obj,defaultValue){ //console.log('removeFlagOnDefaultValue, obj.value: '+obj.value+', defaultValue = '+defaultValue);
                 /* if the field has no value, set value by default and rremove flags
-                */ console.log('removeFlagOnDefaultValue, value = '+$(obj).val());
+                */ //console.log('removeFlagOnDefaultValue, value = '+$(obj).val());
                 // if element has default value, remove flags
                 var nxt = $(obj).next('.flag');                    
                 if($(obj).val()==defaultValue||!$(obj).val()){ //console.log('defaultValue: '+defaultValue);
@@ -349,7 +352,7 @@ var Scene={
 			// Be ready to load all contents!
 			var commonPath='contents/components/';			
 			// go through elements which must load elements from templates
-			var handleBlocks=function(){ console.log('entity_id = '+entity_id);
+			var handleBlocks=function(){ //console.log('entity_id = '+entity_id);
                 /*  loading User Profile screen's elements.
                     For example:
                         <span data-load="input|username|username"></span>
