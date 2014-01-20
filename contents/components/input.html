@@ -1,42 +1,42 @@
 <!--éêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ-->
 <!-- location data -->
 address
-<input type="text" 	id="address" 			name="address" 			tabindex="7" 	pattern="[\-a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{2,60}" required />
+<input type="text" 	id="address" 			name="address" 			tabindex="7"  />
 city
-<input type="text" 	id="city" 				name="city" 			tabindex="9" 	pattern="[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"	required />
+<input type="text" 	id="city" 				name="city" 			tabindex="9"  />
 country
-<input type="text" 	id="country" 			name="country" 			tabindex="10" 	pattern="[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+"	required />
+<input type="text" 	id="country" 			name="country" 			tabindex="10" />
 zip_code
-<input type="text" 	id="zip_code" 			name="zip_code" 		tabindex="8"	pattern="[0-9]{5}"	required />
+<input type="text" 	id="zip_code" 			name="zip_code" 		tabindex="8"	pattern="[0-9]{5}" />
 
 <!-- contact data -->
 <!-- Email checks by the native HTML5 validator -->
 email
-<input type="email" id="email" 				name="email" required />
+<input type="text" id="email" 				name="email" />
 <!--10 numbers (from 0 to 9) and allow spaces (french people used to make 
 	a space every 2 numbers for phone numbers... in the backend, make it 
     appears without the spaces) -->
 home_phone
-<input type="tel" 	id="home_phone" 		name="home_phone" 	pattern="[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}"  onKeyUp="removeDoubleSpaces(this);"	tabindex="11"  />
+<input type="tel" 	id="home_phone" 		name="home_phone"  onKeyUp="removeDoubleSpaces(this);"	tabindex="11"  />
 mobile_phone
-<input type="tel" 	id="mobile_phone" 		name="mobile_phone" 	pattern="[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}"  onKeyUp="removeDoubleSpaces(this);"	tabindex="11" required />
+<input type="tel" 	id="mobile_phone" 		name="mobile_phone"  onKeyUp="removeDoubleSpaces(this);"	tabindex="11" />
 
 <!-- password fields 6-20-->
 password
-<input type="text" 	id="password" 			name="password" 		pattern="[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}" required />
+<input type="password" 	id="password" 			name="password" />
 current_password
-<input type="text" 	id="current_password"	name="current_password" pattern="[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}" required />
+<input type="password" 	id="current_password"	name="current_password" />
 new_password
-<input type="text" 	id="new_password"		name="new_password" 	pattern="[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}" required />
-<input type="text" 	id="retype_password" 	name="retype_password" 	pattern="[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}" required />
+<input type="password" 	id="new_password"		name="new_password" />
+<input type="password" 	id="retype_password" 	name="retype_password" />
 
 <!-- personal data group -->
 first_name
-<input type="text" 	id="first_name" 		name="first_name"		tabindex="5"	pattern="[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"  required />
+<input type="text" 	id="first_name" 		name="first_name"		tabindex="5" />
 last_name
-<input type="text" 	id="last_name" 			name="last_name"		tabindex="6"	pattern="[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"  required />
+<input type="text" 	id="last_name" 			name="last_name"		tabindex="6" />
 <!--only letters (from a to z) and numbers (from 0 to 9) 6-20-->
 username
-<input type="text" 	id="username" 			name="username" 		pattern="[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}" required />
+<input type="text" 	id="username" 			name="username" />
 username_or_email
-<input type="text" 	id="username_or_email" 	name="username_or_email" required />
+<input type="text" 	id="username_or_email" 	name="username_or_email" />

@@ -29,25 +29,42 @@ $(function(){
     });    
     /* check passwords' coincedence before sending form's data */
     $('body')
-        .on('submit', '#'+screenForm.name, function(){
-        //console.log('%csubmit form','color:blue');
-        //
-        if(screenForm.pass_diff) return false;
-        // handle screens:
-        makeConnection('controllers/user'); //console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);
-        switch(Scene.active_screen.screen_id){
-            case 'my_profile_open_demo_account':
-                registerUser('demo');
-                break;
-            case 'my_profile_real_money_account':
-                registerUser('money');
-                break;
-            case 'my_profile_login':
-                loginUser();
-                break;
-        }           
-        // remove it ONLY on REAL production stage!
-        return false;  
+        .on('submit', '#'+screenForm.name, function(event){
+        //if(event.type=='invalid'){
+            //alert('invalids: '+Scene.active_screen.Form.invalids);
+            //console.log(event.currentTarget);
+            /*var reg;*/
+            var invalid = false;
+            $('input',event.currentTarget).each(function(index,element){
+                //console.log('check valid: '+setValidityIcon(element,true));
+                if(!setValidityIcon(element,true)) {
+                    //console.log('invalid');
+                    invalid = true;
+                    return false; // just goes out of the loop, does not cancel submitting 
+               }
+            });
+            if(invalid) return false;
+            //event.preventDefault();
+        //}else{
+            //console.log('%csubmit form','color:blue');
+            //
+            if(screenForm.pass_diff) return false;
+            // handle screens:
+            makeConnection('controllers/user'); //console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);
+            switch(Scene.active_screen.screen_id){
+                case 'my_profile_open_demo_account':
+                    registerUser('demo');
+                    break;
+                case 'my_profile_real_money_account':
+                    registerUser('money');
+                    break;
+                case 'my_profile_login':
+                    loginUser();
+                    break;
+            }           
+            // remove it ONLY on REAL production stage!
+            return false;
+        //}
     })  
         /* Manage inner pyctos*/
         // if we click pointer to the left

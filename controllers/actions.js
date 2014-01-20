@@ -7,7 +7,7 @@ function changePassword(form){
     return false;
 }
 /* switch to another screen*/
-function goAnotherScreen(screen_id){
+function goAnotherScreen(screen_id){ //alert('goAnotherScreen(), screen_id = '+screen_id);
 	Scene.appendUserBlock(screen_id);
 } 
 /**

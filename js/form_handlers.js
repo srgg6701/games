@@ -1,18 +1,10 @@
-$(function(){
-    /*var inputEvents = ['click','select','keypress'];
-	for(var i in inputEvents){
-		console.log('event: '+inputEvents[i]);
-		myInput.addEventListener(inputEvents[i],function(){
-			setCaretPositionToZero();
-			return false;
-		});
-	}*/
-});
 /**
  * Comment
  */
 function removeFlag(flag) {
-    $(flag).removeClass('delete').removeClass('ok');
+    $(flag).removeClass('delete')
+           .removeClass('ok');
+    $('.'+Scene.active_screen.Form.warningFlagMess,flag).remove();
 }
 /*
  * some fields allow only one space in place, for example - tel
@@ -26,7 +18,9 @@ function removeDoubleSpaces(input){
 	}
     return true;
 }
-// imitate a placeholder's behavior
+/** 
+ * imitate a placeholder's behavior
+ */
 function handlePlaceHolder(Event,psholder){
 	var input,placeholder;
 	// the target is the pseudoplaceholder
@@ -48,63 +42,64 @@ function handlePlaceHolder(Event,psholder){
 		}
 	} //console.dir(placeholder); console.dir(input); 
 }
-/*
- * Set invalid icon
+/**
+ * Set validity icon
  * @return boolean
  */
-function setValidityIcon(input,defaultValue) {
-    var dNext =$(input).next(); 
-    //console.groupCollapsed('%csetValidityIcon','font-weight: bold');
-        //var nDate = new Date();
-        //var nTime = nDate.getHours()+' : '+nDate.getMinutes()+' : '+nDate.getSeconds();
-        //console.log('time: '+nTime);
-        //console.log('%cinput','text-decoration:underline'); 
-        //console.dir(input);/**/
+function setValidityIcon(Event,form) {
+    var input=(form)? Event:Event.target; //console.dir(input);
+    
+    if(!form&&!input.value) return false;
+    
+    var inputObj = Scene.active_screen.Form[input.id];
+    
+    if(!inputObj||!inputObj.pattern) return true;
+    
+    var reg = new RegExp(inputObj.pattern);
+    var inputValidity = reg.test(input.value);
+    //input.validity.valid; //
+    //console.log('inputValidity = '+inputValidity);
+    //Event.preventDefault(); // remove browser's invalidity message
+    var dNext = $(input).next(); //console.dir(dNext); 
+    var warningFlagMessName = Scene.active_screen.Form.warningFlagMess;
+    //var invalids = Scene.active_screen.Form.invalids;
+    var handleFlag = function(isValid){
+        //console.log('handleFlag');
+        var flagClassName;
+        $('div.'+warningFlagMessName,dNext).remove();
+        //if(input.value){
+            if(isValid) {
+                flagClassName='ok';
+                //console.log('valid');
+            }else{
+                //console.log('not valid');
+                var flagMessage = $('<div/>',{
+                    class:warningFlagMessName
+                }).html('<div>x</div>'+inputObj.message)
+                  .css({
+                      width: inputObj.message.length*4.2+30+'px'
+                  });
+                flagClassName='delete';
+                $(dNext).append(flagMessage);
+            }
+            $(dNext).addClass(flagClassName);
+        //}
+    };
     if($(dNext).hasClass('flag')) { //console.log('validity: %c'+input.validity.valid, 'color:brown');
+        //console.log('has flag');
         // handle flags:
-        var switchFlags = function(titleText){
-            if($(input).val()!=defaultValue)
-                (titleText)? $(dNext).addClass('delete').attr('title',titleText)
-                           : $(dNext).addClass('ok')    .removeAttr('title');            
-        }; //console.log('flag is set');        
-        // set default flag
         removeFlag(dNext);
-        var objInForm = Scene.active_screen.Form[input.id];
-        $(input).removeAttr('title');                 
-        var fieldMess = objInForm.message;
+        /*  if the current field is *re-type password* and the value
+            is not the same like the password value */
         if( input.id==Scene.active_screen.Form.retype_password.name
             && $(input).val()!=$('#password').val()
-          ){    //console.log('re-type_password.value = '+input.value+', password.value = '+$('#password').val());
-            switchFlags(fieldMess);
+          ){    
+            handleFlag();
             return false;
-        }        
-        var title,pMisMatch,vStat=input.validity;
-        for(var pr in vStat){ //console.log(pr+' : '+vStat[pr]); //if(pr=='valid') console.log('%c'+vStat[pr], 'background-color:violet');
-            if( ( pr!='valid' && pr!='customError' && vStat[pr]==true )
-                  || ( pr=='patternMismatch'&&!$(input).attr('required') )
-              ){ //console.log('WITHIN CONDITION'); console.log('req? - '+$(input).attr('required'));
-                if(!$(input).attr('required')){ //console.log('%c! required', 'color:blue');
-                    // remove pattern
-                    if(!$(input).val()||$(input).val()==defaultValue){
-                        $(input).removeAttr('pattern'); //console.log('remove pattern');
-                    }else{ // set pattern
-                        $(input).attr('pattern', objInForm.pattern); 
-                        pMisMatch=input.validity.patternMismatch; //console.log('patternMismatch: '+input.validity.patternMismatch);
-                    }   //console.log('objInForm.pattern = '+objInForm.pattern); console.dir(input);                    
-                }
-                                       
-                if(input.required||pMisMatch){
-                    if(!(title=fieldMess))
-                        title="Please, fill out this field in the correct format";
-                    switchFlags(title); //console.log('inputect validity (Error): '+input.checkValidity()); console.dir(input.validity); //console.groupEnd();
-                    return false;
-                }
-            } //console.log(pr+': '+vStat[pr]);
-        }
-        if(!input.required) input.setCustomValidity(""); //console.log('inputect validity (OK): '+input.checkValidity()); console.dir(input.validity); //console.groupEnd();
-        switchFlags();
-        return true;
-    }
+        }          
+        handleFlag(inputValidity);
+        return inputValidity;
+    }else console.log('%cno flag','color:red');
 }
 /**
  * returnы false

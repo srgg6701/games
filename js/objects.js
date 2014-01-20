@@ -58,12 +58,14 @@ var Scene={
         Form:{
             name:'user-form',
             default_data:'data-default_value',
+            warningFlagMess:'warningFlagMess',
             pass_diff:false,
             mess_diff:"Please fill out this field",
             address:{
                 name:'address',
                 hint:'Your address.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
-                message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
+                pattern:"[\-a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{2,60}"
             },
             agreement:{
                 name:'terms_and_conditions',
@@ -76,12 +78,19 @@ var Scene={
             city:{
                 name:'city',
                 hint:'Your city.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"
             },
             country:{
                 name:'country',
                 hint:'Your country.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+"
+            },
+            current_password:{
+                name:'current_password',
+                hint:'Your current password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
+                message:constMess.alwsymb+constMess.alwsymblsms.password
             },
             day:{
                 name:'day',
@@ -90,37 +99,50 @@ var Scene={
             },
             email:{
                 name:'email',
-                hint:'Your email'
+                hint:'Your email',
+                message:'Input your email in appropriate format please',
+                pattern:"[0-9a-zA-Z]{4,20}@[0-9a-zA-Z]+[\.]{1}[a-zA-Z]{2,}"
             },
             first_name:{
                 name:'first_name',
                 hint:'Your first name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"
             },
             home_phone:{
                 name:'home_phone',
                 hint:'Your home phone (optional).'+constMess.alwsymb+constMess.alwsymblsms.phone,
-                message:constMess.alwsymb+constMess.alwsymblsms.phone
+                message:constMess.alwsymb+constMess.alwsymblsms.phone,
+                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}"
             },
             last_name:{
                 name:'last_name',
                 hint:'Your last name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"
             },
             mobile_phone:{
                 name:'mobile_phone',
                 hint:'Your mobile phone.'+constMess.alwsymb+constMess.alwsymblsms.phone,
-                message:constMess.alwsymb+constMess.alwsymblsms.phone
+                message:constMess.alwsymb+constMess.alwsymblsms.phone,
+                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}"
             },
             month:{
                 name:'month',
                 hint:'Month of your birth',
                 message:constMess.date_mess //this.date_mess
             },
+            new_password:{
+                name:'new_password',
+                hint:'Your new password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
+                message:constMess.alwsymb+constMess.alwsymblsms.password,
+                pattern:"[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
+            },
             password:{
                 name:'password',
                 hint:'Your password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
-                message:constMess.alwsymb+constMess.alwsymblsms.password
+                message:constMess.alwsymb+constMess.alwsymblsms.password,
+                pattern:"[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
             },
             radio_male:{
                 name:'radio_male',
@@ -133,7 +155,8 @@ var Scene={
             retype_password:{
                 name:'retype_password',
                 message:'The passwords are different',
-                hint:'Re-type password'
+                hint:'Re-type password',
+                pattern:"[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
             },
             username_or_email:{
                 name:'username_or_email',
@@ -142,7 +165,8 @@ var Scene={
             username:{
                 name:'username',
                 hint:'Your username.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
-                message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20
+                message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
+                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
             },
             year:{
                 name:'year',
@@ -154,26 +178,16 @@ var Scene={
                 hint:'Your zip code.'+constMess.alwsymb+constMess.alwsymblsms.zip,
                 message:constMess.alwsymb+constMess.alwsymblsms.zip
             },
-            // set pattern and pseudoplaceholder
-            /* Warning! We CANNOT extract the value of input within the function,
-               so we MUST pass it here */
-            handleElementChecking:function(input,defaultValue){ // HTML-element, not jQuery obj
-                var parentForm = this; //console.log('input start'); console.dir(input);
-                /*  the special case happens when a non-required element comes.
-                    It demands to move its attribute *pattern* from the element
-                    itself to its object here. Later we will extract it onkeyup.
-                */  //console.log('input.value = '+input.getAttribute('value')+', defaultValue = '+defaultValue);
-                    //console.dir(input);
-                var ptrn = input.getAttribute('pattern');
-                // if is not required, just handle the element's pattern
-                if(!input.required){
-                    if(ptrn){
-                        var parentFormElement = parentForm[input.id];
-                        parentFormElement['pattern']=ptrn;
-                        input.removeAttribute('pattern');
-                    }
-                    return false;
-                }else{ // otherwise, add a pseudoplaceholder
+            /** 
+             * set pseudoplaceholder
+             * Warning! We CANNOT extract the value of input within the function,
+             *  so we MUST pass it here 
+             */
+            setPseudoPlaceHolder:function(input,defaultValue){ // HTML-element, not jQuery obj
+                if( input.type=='text'          ||
+                    input.type == 'password'    ||
+                    input.type == 'email'       ||
+                    input.type == 'tel' ) {
                     var pseudoPlaceholder = $('<div/>',{
                             class:'placeholder'
                         }).css('left',parseInt($(input).css('margin-left'))+9+'px'); //console.log('input.value after deleting: '+input.value);
@@ -181,130 +195,72 @@ var Scene={
                     $(input).parent().prepend(pseudoPlaceholder);
                     // assign actions onEvent to the pseudoplaceholder
                     $(pseudoPlaceholder).on('click selectstart',function(event){
-                        handlePlaceHolder(this,true);
-                        $(this).next().trigger('click');
-                        if(event.type=='selectstart') 
-                            return false;
-                    }).html(defaultValue);
-                    return true;
+                    handlePlaceHolder(this,true);
+                    $(this).next().trigger('click');
+                    if(event.type=='selectstart') 
+                        return false;
+                }).html(defaultValue);
                 }
+                return true;
             },
             /*
              *  NOTICE: Elem here is a jQuery object (i.e. HTML-element is Elem[0]) 
              */
             setElementContent:function(Elem, defaultValue){
                 var parentForm = this; //console.log('Elem start'); console.dir(Elem);
-                var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
-                /*  1. Move pattern from element to its object (store) if it has no 
-                    a *required* attribute but has a *pattern* attribute.
-                    2. Set pseudoplaceholder (if the field has an attribute *required*) */
-                if(!this.handleElementChecking(Elem[0],defaultValue)) // if didn't set pseudoplaceholder
-                    $(Elem).val(defaultValue);
-                //Elem[0].onchange=function(){console.log('%cchanged','color:orange')};
+                //var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
+                /*  Set pseudoplaceholder */
+                this.setPseudoPlaceHolder(Elem[0],defaultValue);
+                //
                 var ddv = this.default_data; //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
                 //console.dir(Elem[0]);
                 $(Elem).attr(ddv, defaultValue)// for js.js
                     .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
-                        parentForm.handleValue(this,defaultValue);
+                        /*
+                        * remove validation flag
+                        */
+                        parentForm.removeFlagOnDefaultValue(this,defaultValue);
                         // 
                         if(this.name==parentForm.retype_password.name){
                             var HTMLform = $(this).parents('#'+parentForm.name);
                             var pass1Val=$('#'+parentForm.password.name, HTMLform).val()
                                          || $('#'+parentForm.retype_password.name, HTMLform).val();
                             var pass2Val=this.value;
-                            if(pass1Val&&pass2Val&&(pass1Val!=pass2Val)){
-                                parentForm.pass_diff = true; //console.log('parentForm.pass_diff');
-                                this.setCustomValidity(parentForm.retype_password.message);
-                            }else{
-                                parentForm.pass_diff = false;
-                                this.setCustomValidity("");
-                            }
-                        }else{
-                            this.setCustomValidity("");
+                            parentForm.pass_diff=(pass1Val&&pass2Val&&(pass1Val!=pass2Val))? 
+                                                    true:false;
                         }
                 })
-                  .on('invalid', function(){ //console.log('parentFormElement: ');console.dir(parentFormElement);
-                    if(parentFormElement.message)
-                        parentForm.setCustomValidityIfRequired(this,defaultValue,parentFormElement.message); //console.log('this invalid: ');console.dir(this);
-                }) 
                   .on('click keyup input',                    
                     function(event){ //console.log('Elem id: '+this.id);
-                        if(this.id.indexOf("password")!=-1){
-                            $(this).attr('type',
-                                (this.value==defaultValue||!this.value)? 
-                                    'text':'password');                                    
-                            if(this.name='retype_password')
-                                if(parentForm.pass_diff)
-                                    this.setCustomValidity("");//console.dir(event.currentTarget);
-                        }
                         // oninput
-                        if(event.type!='click')
-                            setValidityIcon(event.target,defaultValue);
+                        if(event.type!='click'){
+                            setValidityIcon(event);
+                        }
                         // onclick, onkeyup
                         if(event.type!='input') // imitate a placeholder's behavior
                             handlePlaceHolder(event);
-                }) 
-                  .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
-                    parentForm.fieldsHandlers.mouseOver(this,parentForm);
-                })
-                  .parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', defaultValue = '+defaultValue);
-                    return parentForm.fieldsHandlers.submitForm(Elem[0],defaultValue);                    
                 })
                   .on('keypress blur', function(event){ 
                     // imitate a placeholder's behavior
                     handlePlaceHolder(event);
                 }); //console.log('Elem finish'); console.dir(Elem);
             },
-            /*
-             * handle fields 
-             */
-            fieldsHandlers:{
-                mouseOver:function(obj,parentForm){ //console.log('mouseOver')
-                    if(!obj.value){ 
-                            if(parentForm[obj.id]){ //console.log('obj.id = '+obj.id); //console.dir(parentForm);
-                                obj.title = (parentForm[obj.id].hint)? 
-                                    parentForm[obj.id].hint : parentForm[obj.id].message; 
-                            }
-                        }else obj.title = "";
-                },
-                submitForm:function(element,defaultValue){
-                    if(element.value==defaultValue
-                       && element.type!='checkbox' 
-                       && element.type!='radio'
-                      ){ //console.log('The default element value is detected...');
-                        element.value="";
-                        element.setCustomValidity(Scene.active_screen.Form.mess_diff);
-                        return false;
-                    } return true;
-                }
-            },
             /**
-             * set default value, OK icon...
-             * */
-            handleValue:function(obj,defaultValue){ //console.log('handleValue, obj.value: '+obj.value+', defaultValue = '+defaultValue);
+             * remove validation flag
+             */
+            removeFlagOnDefaultValue:function(obj,defaultValue){ //console.log('removeFlagOnDefaultValue, obj.value: '+obj.value+', defaultValue = '+defaultValue);
                 /* if the field has no value, set value by default and rremove flags
-                */
-                // if element has default value, handle flags and its pattern (for non-required only)
-                if($(obj).val()==defaultValue){ //console.log('defaultValue: '+defaultValue);
+                */ console.log('removeFlagOnDefaultValue, value = '+$(obj).val());
+                // if element has default value, remove flags
+                var nxt = $(obj).next('.flag');                    
+                if($(obj).val()==defaultValue||!$(obj).val()){ //console.log('defaultValue: '+defaultValue);
                     // remove flags                    
-                    var nxt = $(obj).next('.flag');                    
                     // handle flag
                     if($(nxt).size()) removeFlag(nxt);
-                    /*  remove pattern from non-required element. But it is stored
-                        within its object in this Form anyway and we can extract it
-                        later anytime */
-                    if(!$(obj).attr('required')) $(obj).removeAttr('pattern');
-                }//else console.log('obj.value: '+$(obj).val()+', defaultValue: '+defaultValue);
-            },
-            /* set custom validity message if only is element has required attribute 
-             */
-            setCustomValidityIfRequired:function(element,defaultValue,message){ //console.log('setCustomValidityIfRequired');
-                if( !element.required 
-                    && (!element.value||element.value==defaultValue)
-                  ) { //console.log('drop validity'); console.dir(element);
-                    message = "";
                 }
-                element.setCustomValidity(message);                
+                /*if(!$(obj).val()){ 
+                    $('.'+Scene.active_screen.Form.warningFlagMess,nxt).remove();
+                }*/
             },
             /*
             * set custom validaty message to the deeply included element 
@@ -314,37 +270,19 @@ var Scene={
             attachCustomValidity:function(element){ 
                 var sceneElem,parentForm=this;
                 var defaultValue = element.value;            
-                /*  1. Move pattern from element to its object (store) it it has not 
-                       a *required* attribute but has a *pattern* attribute 
-                    2. If the element has an attribute *required*, move its 
-                       value to the pseudoplaceholder text  */
-                if(this.handleElementChecking(element,defaultValue))
+                if(this.setPseudoPlaceHolder(element,defaultValue))
                     element.value='';
                 if(sceneElem=Scene.active_screen.Form[element.id]){
                     //console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
                     $(element).on('blur',function(){ //console.log('blur, element: '); console.dir(element);
-                        parentForm.handleValue(this,defaultValue);
-                        /*  as the element may be a radiobutton, make sure to drop
-                            custom validity from ALL ones having such a name    */
-                        $("[name='"+this.name+"']").each(function(){ //console.log(this);                                                              
-                            this.setCustomValidity(""); //console.log('drop custom validity');
-                        });
+                       parentForm.removeFlagOnDefaultValue(this,defaultValue);
                     })
                       .on('blur click keypress keyup', function(event){ 
                           // imitate a placeholder's behaviorselectstart
                           handlePlaceHolder(event);
                     })
-                      .on('invalid',function(){ //console.log('invalid, set custom validity: '+sceneElem.message);   
-                        parentForm.setCustomValidityIfRequired(element,defaultValue,sceneElem.message);
-                    })
-                      .on('keyup input',function(){
-                        if(this.value) setValidityIcon(this,defaultValue);
-                    })
-                      .on('mouseover', function(){ //console.log('mouseover, this.value = '+this.value);
-                        parentForm.fieldsHandlers.mouseOver(this,parentForm);
-                    })
-                      .parents('#'+parentForm.name).on('submit', function(){ //console.log('Elem[0]: '); console.dir(Elem[0]); console.log('Elem[0].value = '+Elem[0].value+', defaultValue = '+defaultValue);
-                        return parentForm.fieldsHandlers.submitForm(element,defaultValue);                    
+                      .on('keyup input',function(event){
+                        setValidityIcon(event);
                     });                                                  
                 }
             },        
@@ -377,7 +315,8 @@ var Scene={
         var real_money_account = 'my_profile_real_money_account';
 		if(entity_id.indexOf(real_money_account)!=-1){
 			// because this is a container for both my_profile_real_money_account1 and my_profile_real_money_account2
-			var incomingEntityId=entity_id;
+			//alert('real_money_account: '+real_money_account);
+            var incomingEntityId=entity_id;
 			entity_id=real_money_account;
 		} //console.group('%cmanageMyProfile()','font-weight:bold;');		
 		$('.'+Scene.user_container_class).remove();
@@ -410,7 +349,7 @@ var Scene={
 			// Be ready to load all contents!
 			var commonPath='contents/components/';			
 			// go through elements which must load elements from templates
-			var handleBlocks=function(){
+			var handleBlocks=function(){ console.log('entity_id = '+entity_id);
                 /*  loading User Profile screen's elements.
                     For example:
                         <span data-load="input|username|username"></span>
@@ -419,9 +358,9 @@ var Scene={
                         etc... =>
                             
                     load content for every element with data-load attribute
-                    <input type="text" id="username" name="username" required="required" />
-                    <input type="text" id="email" name="email" required="required" />
-                    <input type="text" id="password" name="password" required="required" />
+                    <input type="text" id="username" name="username" />
+                    <input type="text" id="email" name="email" />
+                    <input type="text" id="password" name="password" />
                 */
                 if(data_load){ // if we didn't get it, we don't need any subtemplates
                     $('['+data_load+']').each( function(index, element) {
@@ -502,25 +441,25 @@ var Scene={
                         for both steps 1 and 2
 					*   my_profile_real_money_account1.html - step 1 content
 					*   my_profile_real_money_account2.html - step 2 content */
-			if(entity_id==real_money_account){
-				//console.log('file to load: contents/'+incomingEntityId+'.html');
+			if(entity_id==real_money_account){ //console.log('file to load: contents/'+incomingEntityId+'.html');
 				// load the my_profile_real_money_account1 or my_profile_real_money_account2 content
 				$('#account_real_money_inner_content').load('contents/'+incomingEntityId+'.html', function(){
 					handleBlocks();
-					var btn_text;
+					var btn_text,step_class;
 					// step1
 					if(incomingEntityId==real_money_account+'1'){
 						btn_text='NEXT';
-						btn_class='step1';
+						step_class='step1';
 					}else{ // step2
 						btn_text='REGISTER NOW!';
-						btn_class='step2';
+						step_class='step2';
 						$('#steps >div:first-child').addClass('step_passive');
 						$('#steps >div:last-child').removeClass('step_passive');
 						//console.dir($('#steps >div:first-child'),$('#steps >div:last-child'));
 					}
+                    $('.user_profile').addClass(step_class);
 					$('#btn_real_money_account')
-						.text(btn_text).addClass(btn_class);
+						.text(btn_text).addClass(step_class);
 				});
 			}else
 				handleBlocks();
