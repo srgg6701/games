@@ -65,7 +65,8 @@ var Scene={
                 name:'address',
                 hint:'Your address.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
-                pattern:"[\-a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{2,60}"
+                pattern:"^[\-a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
+                len:[2,60]
             },
             agreement:{
                 name:'terms_and_conditions',
@@ -79,7 +80,8 @@ var Scene={
                 name:'city',
                 hint:'Your city.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"
+                pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$",
+                len:[2,30]
             },
             country:{
                 name:'country',
@@ -107,25 +109,29 @@ var Scene={
                 name:'first_name',
                 hint:'Your first name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"
+                pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$",
+                len:[2,30]
             },
             home_phone:{
                 name:'home_phone',
                 hint:'Your home phone (optional).'+constMess.alwsymb+constMess.alwsymblsms.phone,
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
-                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}"
+                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}",
+                len:[20]
             },
             last_name:{
                 name:'last_name',
                 hint:'Your last name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]{2,30}"
+                pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$",
+                len:[2,30]
             },
             mobile_phone:{
                 name:'mobile_phone',
                 hint:'Your mobile phone.'+constMess.alwsymb+constMess.alwsymblsms.phone,
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
-                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}"
+                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}",
+                len:[20]
             },
             month:{
                 name:'month',
@@ -136,13 +142,15 @@ var Scene={
                 name:'new_password',
                 hint:'Your new password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
                 message:constMess.alwsymb+constMess.alwsymblsms.password,
-                pattern:"[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
+                pattern:"^[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
+                len:[6,20]
             },
             password:{
                 name:'password',
                 hint:'Your password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
                 message:constMess.alwsymb+constMess.alwsymblsms.password,
-                pattern:"[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
+                pattern:"^[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
+                len:[6,20]
             },
             radio_male:{
                 name:'radio_male',
@@ -156,7 +164,8 @@ var Scene={
                 name:'retype_password',
                 message:'The passwords are different',
                 hint:'Re-type password',
-                pattern:"[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
+                pattern:"^[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
+                len:[6,20]
             },
             username_or_email:{
                 name:'username_or_email',
@@ -166,7 +175,8 @@ var Scene={
                 name:'username',
                 hint:'Your username.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
-                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]{6,20}"
+                pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
+                len:[6,20]
             },
             year:{
                 name:'year',
@@ -176,7 +186,10 @@ var Scene={
             zip_code:{
                 name:'zip_code',
                 hint:'Your zip code.'+constMess.alwsymb+constMess.alwsymblsms.zip,
-                message:constMess.alwsymb+constMess.alwsymblsms.zip
+                message:constMess.alwsymb+constMess.alwsymblsms.zip,
+                pattern:"[0-9]",
+                len:[5],
+                optional:true
             },
             /** 
              * set pseudoplaceholder
@@ -218,11 +231,12 @@ var Scene={
                 var ddv = this.default_data; //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
                 //console.dir(Elem[0]);
                 $(Elem).attr(ddv, defaultValue)// for js.js
-                    .on('blur', function(){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
+                    .on('blur', function(event){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
                         /*
                         * remove validation flag
                         */
                         parentForm.removeFlagOnDefaultValue(this,defaultValue);
+                        setValidityIcon(event);
                         // 
                         if(this.name==parentForm.retype_password.name){
                             var HTMLform = $(this).parents('#'+parentForm.name);
@@ -261,9 +275,6 @@ var Scene={
                     // handle flag
                     if($(nxt).size()) removeFlag(nxt);
                 }
-                /*if(!$(obj).val()){ 
-                    $('.'+Scene.active_screen.Form.warningFlagMess,nxt).remove();
-                }*/
             },
             /*
             * set custom validaty message to the deeply included element 
@@ -277,8 +288,9 @@ var Scene={
                     element.value='';
                 if(sceneElem=Scene.active_screen.Form[element.id]){
                     //console.log('sceneElem is found..., element.id = '+element.id+', message should be '+sceneElem.message);
-                    $(element).on('blur',function(){ //console.log('blur, element: '); console.dir(element);
+                    $(element).on('blur',function(event){ //console.log('blur, element: '); console.dir(element);
                        parentForm.removeFlagOnDefaultValue(this,defaultValue);
+                       setValidityIcon(event);
                     })
                       .on('blur click keypress keyup', function(event){ 
                           // imitate a placeholder's behaviorselectstart
@@ -341,8 +353,7 @@ var Scene={
         this.active_screen.screen_id=entity_id; //console.log('screen_id = '+this.active_screen.screen_id);
         // append the block to the wrapper
         this.obscureWindow();
-		$('#'+Scene.shade_id).before(userBlock);
-        //console.log('%cshade block: ', 'background-color:#333; color:white'); console.dir($('#'+Scene.shade_id));
+		$('#'+Scene.shade_id).before(userBlock); //console.log('%cshade block: ', 'background-color:#333; color:white'); console.dir($('#'+Scene.shade_id));
 		// load the file from /contents/ dir
 		$(userBlock).load(file_contents,function(){ 
             /*  console.log('userBlock is loaded. file_contents: '+file_contents);
@@ -411,10 +422,6 @@ var Scene={
                                                 $(Elem).after(dFlag);
                                             }
                                         break;
-                                        /*
-                                        case 'checkbox':
-                                        case 'radio':
-                                            break;  */
                                         case 'button':
                                             $(Elem).append(data2load[2]);
                                         break;
@@ -544,7 +551,6 @@ var Scene={
         if(!document.getElementById(this.shade_id))
             $(Levels.wrapperContainer)
                 .prepend('<div id="'+this.shade_id+'" class="shade cover"></div>');
-        //console.dir($('#'+this.shade_id));
     },
     // remove shade from page
     removeShading:function(){
@@ -584,13 +590,6 @@ var Scene={
                 this.appendUserBlock(this.user_container_id_default);
             }
         }
-        //console.log('closeUserScreen()');
-		/*$('#'+this.shade_id).fadeOut(300,function (){$(this).remove()});
-		$('.'+this.user_container_class+':visible').fadeOut(300);
-		// in test mode: -------------------------------
-		$('#test_inner_submenu').fadeOut(500);
-		// end test mode: ------------------------------
-		return false;*/
 	}
 };
 var User = {
@@ -802,7 +801,6 @@ var menus={
 				//console.log('hide %cmenu_container_id','font-weight:bold,color:brown');
 				$(menus.menu_container_id).hide(menus.dur);
 			}
-		},300);
-		//console.groupEnd();
+		},300); //console.groupEnd();
 	}
 };

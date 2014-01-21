@@ -48,42 +48,77 @@ function handlePlaceHolder(Event,psholder){
  */
 function setValidityIcon(Event,form) {
     var input=(form)? Event:Event.target; //console.dir(input);
-    
-    if(!form&&!input.value) return false;
-    
-    var inputObj = Scene.active_screen.Form[input.id];
-    
-    if(!inputObj||!inputObj.pattern) return true;
-    
-    var reg = new RegExp(inputObj.pattern);
-    var inputValidity = reg.test(input.value);
-    //input.validity.valid; //
-    //console.log('inputValidity = '+inputValidity);
-    //Event.preventDefault(); // remove browser's invalidity message
+    //
     var dNext = $(input).next(); //console.dir(dNext); 
+    // get the Input object from the Form object
+    var inputObj = Scene.active_screen.Form[input.id];
+    /*  if the function was called not while the form submitting
+        and the input doesn't contain any value */
+    if(!form&&!input.value) {
+        removeFlag(dNext);
+        return (inputObj.optional)? true:false;
+    }
+    // if everything is totally optional, just return true
+    if( !inputObj || !inputObj.pattern ) return true;
+    /*  What to validate:
+        Event   validity    length
+        ------------------------------------
+        keyup   check       bigger than max
+        input   check       bigger than max
+        blur    check       bigger than max, less than min  */
+    var reg = new RegExp(inputObj.pattern);
+    /*  check characters' validiti for any cases 
+        (this doesn't include lenght's validity yet) */
+    var inputValidity = reg.test(input.value); //console.log('inputValidity = '+inputValidity+'\npattern = '+reg);
+    /*  if validation is passed and the appropriate event occured,
+        validate input's length    */
+    if(inputValidity && inputObj.len){
+        /*  Notice that if the input value is not required and doesn't contains 
+            any we already have finished this implementation (see above). 
+            So: - Input value is required OR it CONTAINS smove value    */
+        var minLength,maxLength;
+        if(inputObj.len[1]) { //console.log('len[1] = '+inputObj.len[1]);
+            minLength = inputObj.len[0];
+            maxLength = inputObj.len[1];
+        }else{  //console.log('no len[1]');
+            maxLength = minLength = inputObj.len[0];
+        }   //console.log('input.length = '+input.value.length+', minLength = '+minLength+', maxLength = '+maxLength);
+        // validate lengths
+        /*  the value's length is bigger than the allowed max allowed value
+            it is not allowed anyway */
+        if(input.value.length > maxLength) inputValidity = false;
+        // if user inputed amything, check it:
+        else if( input.value.length && input.value.length < minLength){ // too short length
+            if(Event.type=='blur'||form) inputValidity = false; // set flag next           
+            /*  if it happens not while form submitting AND not by the blur event - 
+                remove flag and finish execution... */
+            else{ 
+                removeFlag(dNext);
+                return true;
+            }
+        }
+    }
     var warningFlagMessName = Scene.active_screen.Form.warningFlagMess;
     //var invalids = Scene.active_screen.Form.invalids;
-    var handleFlag = function(isValid){
+    var handleFlag = function(validationResult){
         //console.log('handleFlag');
-        var flagClassName;
+        var flagClassName=false;
         $('div.'+warningFlagMessName,dNext).remove();
-        //if(input.value){
-            if(isValid) {
-                flagClassName='ok';
-                //console.log('valid');
-            }else{
-                //console.log('not valid');
-                var flagMessage = $('<div/>',{
-                    class:warningFlagMessName
-                }).html('<div>x</div>'+inputObj.message)
-                  .css({
-                      width: inputObj.message.length*4.2+30+'px'
-                  });
-                flagClassName='delete';
-                $(dNext).append(flagMessage);
-            }
-            $(dNext).addClass(flagClassName);
-        //}
+        //
+        if(validationResult) {
+            flagClassName='ok'; //console.log('valid');
+        }else if(inputObj.name!="email"||Event.type=='blur'){
+            //console.log('not valid');
+            var flagMessage = $('<div/>',{
+                class:warningFlagMessName
+            }).html('<div>x</div>'+inputObj.message)
+              .css({
+                  width: inputObj.message.length*4.2+30+'px'
+              });
+            flagClassName='delete';
+            $(dNext).append(flagMessage);
+        }
+        if(flagClassName) $(dNext).addClass(flagClassName);
     };
     if($(dNext).hasClass('flag')) { //console.log('validity: %c'+input.validity.valid, 'color:brown');
         //console.log('has flag');
@@ -99,7 +134,7 @@ function setValidityIcon(Event,form) {
         }          
         handleFlag(inputValidity);
         return inputValidity;
-    }else console.log('%cno flag','color:red');
+    }//else console.log('%cno flag','color:red');
 }
 /**
  * returnы false
