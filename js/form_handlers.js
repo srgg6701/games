@@ -32,7 +32,7 @@ function handlePlaceHolder(Event,psholder){
 		input = Event.target; // input itself
 		placeholder = $(input).prev()[0];
 		switch(Event.type){
-			case 'keypress':
+			case 'keypress': case 'input':
 				$(placeholder).hide();
 				break;
 			case 'keyup': case 'blur':
@@ -47,11 +47,42 @@ function handlePlaceHolder(Event,psholder){
  * @return boolean
  */
 function setValidityIcon(Event,form) {
-    var input=(form)? Event:Event.target; //console.dir(input);
+    var input=(form)? Event:Event.target;
+    //console.dir(input);
     //
     var dNext = $(input).next(); //console.dir(dNext); 
     // get the Input object from the Form object
     var inputObj = Scene.active_screen.Form[input.id];
+    var flagMessage;
+    var warningFlagMessName = Scene.active_screen.Form.warningFlagMess;
+    //    
+    var createInvalidityMess = function(){
+        flagMessage = $('<div/>',{
+            class:warningFlagMessName
+        }).html('<div>x</div>'+inputObj.message)
+          .css({
+              width: inputObj.message.length*4.2+30+'px'
+          });
+        $(dNext).append(flagMessage);
+    };
+    // checkboxes, radios
+    if(form && input.getAttribute('data-req')){
+        dNext=$(input).parent('label');
+        if(!$('[name="'+input.name+'"]:checked').size()) {
+            createInvalidityMess();
+            $(input).on('click', function(){
+                $(flagMessage).remove();
+            });
+            $(flagMessage).css('left','0');
+            setTimeout(function(){
+                $(flagMessage).fadeOut(3000,function(){
+                    $(flagMessage).remove();
+                });
+            },2000);
+            console.log('return false');
+            return false;
+        } 
+    }
     /*  if the function was called not while the form submitting
         and the input doesn't contain any value */
     if(!form&&!input.value) {
@@ -98,7 +129,6 @@ function setValidityIcon(Event,form) {
             }
         }
     }
-    var warningFlagMessName = Scene.active_screen.Form.warningFlagMess;
     //var invalids = Scene.active_screen.Form.invalids;
     var handleFlag = function(validationResult){
         //console.log('handleFlag');
@@ -109,14 +139,15 @@ function setValidityIcon(Event,form) {
             flagClassName='ok'; //console.log('valid');
         }else if(inputObj.name!="email"||Event.type=='blur'){
             //console.log('not valid');
-            var flagMessage = $('<div/>',{
+            /*var flagMessage = $('<div/>',{
                 class:warningFlagMessName
             }).html('<div>x</div>'+inputObj.message)
               .css({
                   width: inputObj.message.length*4.2+30+'px'
               });
+            $(dNext).append(flagMessage);*/
+            createInvalidityMess();
             flagClassName='delete';
-            $(dNext).append(flagMessage);
         }
         if(flagClassName) $(dNext).addClass(flagClassName);
     };
@@ -135,6 +166,7 @@ function setValidityIcon(Event,form) {
         handleFlag(inputValidity);
         return inputValidity;
     }//else console.log('%cno flag','color:red');
+    return true;
 }
 /**
  * returnы false
@@ -146,19 +178,13 @@ function showErrorMess(data_type,error_text) {
         $(divFlag).addClass('delete');
         dtType = 'data-flag';
     }else dtType = 'data-warning'; // is set for inputs on Login form, because thre are no containers for flags (no validity)
-    
-    var warning = $('<div/>',{
+    Scene.active_screen.Form.warning = $('<div/>',{
         id:'formWarning',
         class:'sys_warning',
         title:'Click to close'
     }).text(error_text);
     var inpContainer = $('['+dtType+'="'+data_type+'"]'); //console.dir(inpContainer);
-    $(inpContainer).prepend(warning);
-    $(warning).next().on('focus',function(){
-        $(warning).fadeOut(4000, function(){
-            $(this).remove();
-        });
-    });
-    $('#formWarning').on('click',function(){$(this).remove()});
+    $(inpContainer).prepend(Scene.active_screen.Form.warning);
+    $(Scene.active_screen.Form.warning).on('click',function(){$(this).remove()});
     return false;
 }

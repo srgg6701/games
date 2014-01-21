@@ -58,6 +58,7 @@ var Scene={
         Form:{
             name:'user-form',
             default_data:'data-default_value',
+            warning:null,
             warningFlagMess:'warningFlagMess',
             pass_diff:false,
             mess_diff:"Please fill out this field",
@@ -112,6 +113,10 @@ var Scene={
                 pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$",
                 len:[2,30]
             },
+            gender:{
+                name:'gender',
+                message: constMess.gender
+            },
             home_phone:{
                 name:'home_phone',
                 hint:'Your home phone (optional).'+constMess.alwsymb+constMess.alwsymblsms.phone,
@@ -151,14 +156,6 @@ var Scene={
                 message:constMess.alwsymb+constMess.alwsymblsms.password,
                 pattern:"^[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
                 len:[6,20]
-            },
-            radio_male:{
-                name:'radio_male',
-                message: constMess.gender
-            },
-            radio_female:{
-                name:'radio_female',
-                message: constMess.gender
             },
             retype_password:{
                 name:'retype_password',
@@ -208,11 +205,11 @@ var Scene={
                     $(input).parent().prepend(pseudoPlaceholder);
                     // assign actions onEvent to the pseudoplaceholder
                     $(pseudoPlaceholder).on('click selectstart',function(event){
-                    handlePlaceHolder(this,true);
-                    $(this).next().trigger('click');
-                    if(event.type=='selectstart') 
-                        return false;
-                }).html(defaultValue);
+                        handlePlaceHolder(this,true);
+                        $(this).next().trigger('click');
+                        if(event.type=='selectstart') 
+                            return false;
+                    }).html(defaultValue);
                     var inputs = $(input).parents('form').eq(0)
                         .find('input:not(:checkbox):not(:radio):not(:hidden):not(:image):not(:reset):not(:submit)');
                     if($(inputs).index(input)==0) input.focus();
@@ -231,7 +228,7 @@ var Scene={
                 var ddv = this.default_data; //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
                 //console.dir(Elem[0]);
                 $(Elem).attr(ddv, defaultValue)// for js.js
-                    .on('blur', function(event){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
+                  .on('blur', function(event){ //console.log('on blur'); //console.log('on blur, name = '+this.name+', value = '+defaultValue);
                         /*
                         * remove validation flag
                         */
@@ -248,19 +245,22 @@ var Scene={
                         }
                 })
                   .on('click keyup input',                    
-                    function(event){ //console.log('Elem id: '+this.id);
+                    function(event){ console.log('input');
                         // oninput
                         if(event.type!='click'){
                             setValidityIcon(event);
                         }
                         // onclick, onkeyup
-                        if(event.type!='input') // imitate a placeholder's behavior
-                            handlePlaceHolder(event);
+                        //if(event.type!='input') // imitate a placeholder's behavior
+                        handlePlaceHolder(event);
                 })
                   .on('keypress blur', function(event){ 
                     // imitate a placeholder's behavior
                     handlePlaceHolder(event);
-                }); //console.log('Elem finish'); console.dir(Elem);
+                })
+                  .on('focus', function(){
+                      $(parentForm.warning).remove();
+                  }); //console.log('Elem finish'); console.dir(Elem);
             },
             /**
              * remove validation flag
@@ -292,12 +292,15 @@ var Scene={
                        parentForm.removeFlagOnDefaultValue(this,defaultValue);
                        setValidityIcon(event);
                     })
-                      .on('blur click keypress keyup', function(event){ 
+                      .on('blur click keypress keyup input', function(event){ 
                           // imitate a placeholder's behaviorselectstart
                           handlePlaceHolder(event);
                     })
                       .on('keyup input',function(event){
                         setValidityIcon(event);
+                    })
+                      .on('focus', function(){
+                      $(parentForm.warning).remove();
                     });                                                  
                 }
             },        
@@ -393,8 +396,8 @@ var Scene={
                                 var Elem = $(element_jid); //console.dir(Elem);
                                 var elementType = $(Elem).attr('type');                             
                                 //console.log('entity_id = '+entity_id+', data2load[1] = '+data2load[1]);
-                                if(entity_id=="my_profile_login"&&data2load[1]=="password") 
-                                    $(Elem).removeAttr('pattern');
+                                /*if(entity_id=="my_profile_login"&&data2load[1]=="password") 
+                                    $(Elem).removeAttr('pattern');*/
                                 // only if the 3th param exists (that means it is a single (not compound) element)
 								if( data2load[2] && 
                                     ( elementType || 
@@ -422,9 +425,9 @@ var Scene={
                                                 $(Elem).after(dFlag);
                                             }
                                         break;
-                                        case 'button':
+                                        /*case 'button':
                                             $(Elem).append(data2load[2]);
-                                        break;
+                                        break;*/
                                         default: // checkbox, radio, label
                                             $(Elem).after(data2load[2]);
                                     }                           
