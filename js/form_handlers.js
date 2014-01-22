@@ -48,8 +48,11 @@ function handlePlaceHolder(Event,psholder){
  */
 function setValidityIcon(Event,form) {
     var input=(form)? Event:Event.target;
-    //console.dir(input);
-    //
+    // skip warnings on the login form
+    if($(input).parent('span[data-skip="warnings"]').eq(0).size()){
+        //console.log('setValidityIcon');
+        return true;
+    }
     var dNext = $(input).next(); //console.dir(dNext); 
     // get the Input object from the Form object
     var inputObj = Scene.active_screen.Form[input.id];

@@ -245,7 +245,7 @@ var Scene={
                         }
                 })
                   .on('click keyup input',                    
-                    function(event){ console.log('input');
+                    function(event){ //console.log('input');
                         // oninput
                         if(event.type!='click'){
                             setValidityIcon(event);
