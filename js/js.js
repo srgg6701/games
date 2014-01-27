@@ -27,9 +27,9 @@ $(function(){
         /*var reg;*/
         var invalid = false;
         $('input',event.currentTarget).each(function(index,element){
-            //console.log('check valid: '+setValidityIcon(element,true));
+            console.log('check valid: '+setValidityIcon(element,true));
             if(!setValidityIcon(element,true)) { //console.log('invalid');
-                invalid = true;
+                invalid = true; console.log('%cinvalid:', 'color:violet'); console.dir(element);
                 return false; // just goes out of the loop, does not cancel submitting 
             }
         });
@@ -50,7 +50,7 @@ $(function(){
             case 'my_profile_login':
                 loginUser();
                 break;
-        }           
+        }   console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);          
         // remove it ONLY on REAL production stage!
         return false;
     })  

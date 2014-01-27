@@ -1,23 +1,27 @@
-/**
- * Comment
- */
-function removeFlag(flag) {
-    $(flag).removeClass('delete')
-           .removeClass('ok');
-    $('.'+Scene.active_screen.Form.warningFlagMess,flag).remove();
-}
 /*
- * some fields allow only one space in place, for example - tel
- * @returns bool
+ * 
+ * @param {type} inputObj
+ * @param {type} dNext
+ * Set flag
+ * @returns flagMessage div
  */
-function removeDoubleSpaces(input){
-	var str=input.value;
-	if(input.type=="tel"||input.id.indexOf("_phone")!=-1) {
-		//console.log("double spaces are found...");
-		input.value=str.replace(/\s{2}/g," "); 
-	}
-    return true;
-}
+function createInvalidityMess(input_id,dNext,error_text){
+    //var inputObj = Scene.active_screen.Form[input_id];
+    //if(!error_text)  error_text=Scene.active_screen.Form[input_id].message;
+    //console.log('input_id = '+input_id);
+        //error_text=inputObj.message; 
+    var flagMessage = $('<div/>',{
+        class:Scene.active_screen.Form.warningFlagMess
+    }).html('<div>x</div>'+error_text)
+      .css({
+          width: error_text.length*4.2+30+'px'
+      });
+    $(dNext).append(flagMessage);
+    $('#'+input_id).on('click', function(){
+        $(flagMessage).remove();
+    });
+    return flagMessage;
+};
 /** 
  * imitate a placeholder's behavior
  */
@@ -43,49 +47,57 @@ function handlePlaceHolder(Event,psholder){
 	} //console.dir(placeholder); console.dir(input); 
 }
 /**
+ * Comment
+ */
+function removeFlag(flag) {
+    $(flag).removeClass(Scene.active_screen.Form.flag_id_error)
+           .removeClass(Scene.active_screen.Form.flag_id_ok);
+    $('.'+Scene.active_screen.Form.warningFlagMess,flag).remove();
+}
+/*
+ * some fields allow only one space in place, for example - tel
+ * @returns bool
+ */
+function removeDoubleSpaces(input){
+	var str=input.value;
+	if(input.type=="tel"||input.id.indexOf("_phone")!=-1) {
+		//console.log("double spaces are found...");
+		input.value=str.replace(/\s{2}/g," "); 
+	}
+    return true;
+}
+/**
  * Set validity icon
  * @return boolean
  */
-function setValidityIcon(Event,form) {
-    var input=(form)? Event:Event.target;
+function setValidityIcon(Event,form) { 
+    var input=(form)? Event:Event.target; 
+    //console.log('setValidityIcon'); console.dir(input);
     // skip warnings on the login form
     if($(input).parent('span[data-skip="warnings"]').eq(0).size()){
         //console.log('setValidityIcon');
-        return true;
+        return (input.value)? true:false;
     }
     var dNext = $(input).next(); //console.dir(dNext); 
     // get the Input object from the Form object
-    var inputObj = Scene.active_screen.Form[input.id];
-    var flagMessage;
-    var warningFlagMessName = Scene.active_screen.Form.warningFlagMess;
-    //    
-    var createInvalidityMess = function(){
-        flagMessage = $('<div/>',{
-            class:warningFlagMessName
-        }).html('<div>x</div>'+inputObj.message)
-          .css({
-              width: inputObj.message.length*4.2+30+'px'
-          });
-        $(dNext).append(flagMessage);
-    };
+    var inputObj=null; 
+    if(!(inputObj=Scene.active_screen.Form[input.id])) return true; 
+    //console.dir(inputObj);
     // checkboxes, radios
     if(form && input.getAttribute('data-req')){
         dNext=$(input).parent('label');
         if(!$('[name="'+input.name+'"]:checked').size()) {
-            createInvalidityMess();
-            $(input).on('click', function(){
-                $(flagMessage).remove();
-            });
+            //console.log('inputObj: '); console.dir(inputObj);
+            var flagMessage = createInvalidityMess(input.id,dNext,inputObj.message);
             $(flagMessage).css('left','0');
             setTimeout(function(){
                 $(flagMessage).fadeOut(3000,function(){
                     $(flagMessage).remove();
                 });
-            },2000);
-            console.log('return false');
+            },2000); //return flagMessage;
             return false;
         } 
-    }
+    } //console.dir(inputObj);
     /*  if the function was called not while the form submitting
         and the input doesn't contain any value */
     if(!form&&!input.value) {
@@ -93,7 +105,8 @@ function setValidityIcon(Event,form) {
         return (inputObj.optional)? true:false;
     }
     // if everything is totally optional, just return true
-    if( !inputObj || !inputObj.pattern ) return true;
+    if(!inputObj||!inputObj.pattern) return true;
+    //console.log('inputValidity = '+inputValidity+', inputObj.pattern = '+inputObj.pattern);
     /*  What to validate:
         Event   validity    length
         ------------------------------------
@@ -136,21 +149,13 @@ function setValidityIcon(Event,form) {
     var handleFlag = function(validationResult){
         //console.log('handleFlag');
         var flagClassName=false;
-        $('div.'+warningFlagMessName,dNext).remove();
+        $('div.'+Scene.active_screen.Form.warningFlagMess,dNext).remove();
         //
         if(validationResult) {
-            flagClassName='ok'; //console.log('valid');
+            flagClassName=Scene.active_screen.Form.flag_id_ok; //console.log('valid');
         }else if(inputObj.name!="email"||Event.type=='blur'){
-            //console.log('not valid');
-            /*var flagMessage = $('<div/>',{
-                class:warningFlagMessName
-            }).html('<div>x</div>'+inputObj.message)
-              .css({
-                  width: inputObj.message.length*4.2+30+'px'
-              });
-            $(dNext).append(flagMessage);*/
-            createInvalidityMess();
-            flagClassName='delete';
+            createInvalidityMess(input.id,dNext,inputObj.message);
+            flagClassName=Scene.active_screen.Form.flag_id_error;
         }
         if(flagClassName) $(dNext).addClass(flagClassName);
     };
@@ -167,6 +172,7 @@ function setValidityIcon(Event,form) {
             return false;
         }          
         handleFlag(inputValidity);
+        //console.log('inputValidity = '+inputValidity);
         return inputValidity;
     }//else console.log('%cno flag','color:red');
     return true;
@@ -174,18 +180,30 @@ function setValidityIcon(Event,form) {
 /**
  * returnы false
  */
-function showErrorMess(data_type,error_text) {
+function showErrorMess(data_type,error_text,input_id) {
+    if(input_id){   
+        // var input = document.getElementById(input_id);
+        var dNext = $('#'+input_id).next();
+        //var flagMessage = 
+        createInvalidityMess(input_id,dNext,error_text);
+        $(dNext).addClass(Scene.active_screen.Form.flag_id_error);
+        $('#'+input_id).on('keyup',function(){removeFlag(dNext);});
+        // console.dir(flagMessage);
+        return false;
+    }
     var dtType, divFlag = $('.flag.'+data_type);
     //console.log('data-flag = %c'+data_type, 'color:orange'); //console.dir(divFlag);
     if($(divFlag).size()){ 
-        $(divFlag).addClass('delete');
+        $(divFlag).addClass(Scene.active_screen.Form.flag_id_error);
         dtType = 'data-flag';
     }else dtType = 'data-warning'; // is set for inputs on Login form, because thre are no containers for flags (no validity)
+   
     Scene.active_screen.Form.warning = $('<div/>',{
         id:'formWarning',
         class:'sys_warning',
         title:'Click to close'
     }).text(error_text);
+    
     var inpContainer = $('['+dtType+'="'+data_type+'"]'); //console.dir(inpContainer);
     $(inpContainer).prepend(Scene.active_screen.Form.warning);
     $(Scene.active_screen.Form.warning).on('click',function(){$(this).remove()});

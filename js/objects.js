@@ -56,6 +56,8 @@ var Scene={
     active_screen:{
         screen_id:false,
         Form:{
+            flag_id_ok:'ok',
+            flag_id_error:'delete',
             name:'user-form',
             default_data:'data-default_value',
             warning:null,
@@ -166,7 +168,8 @@ var Scene={
             },
             username_or_email:{
                 name:'username_or_email',
-                hint:'Your username or your email'
+                hint:'Your username or your email',
+                message:'Your username or e-mail is wrong'
             },
             username:{
                 name:'username',
@@ -258,9 +261,9 @@ var Scene={
                     // imitate a placeholder's behavior
                     handlePlaceHolder(event);
                 })
-                  .on('focus', function(){
+                  /*.on('focus', function(){
                       $(parentForm.warning).remove();
-                  }); //console.log('Elem finish'); console.dir(Elem);
+                  });*/ //console.log('Elem finish'); console.dir(Elem);
             },
             /**
              * remove validation flag
@@ -299,9 +302,9 @@ var Scene={
                       .on('keyup input',function(event){
                         setValidityIcon(event);
                     })
-                      .on('focus', function(){
+                      /*.on('focus', function(){
                       $(parentForm.warning).remove();
-                    });                                                  
+                    })*/;                                                  
                 }
             },        
             /**
@@ -343,7 +346,7 @@ var Scene={
         /*  console.log('file_contents: %c'+file_contents,'color:blue;');
 			console.log('entity_id: %c'+entity_id,'color:goldenrod;');
 			console.log('class: %c'+Scene.user_container_class,'font-weight:bold;');*/
-        var userBlock=null,Labels;
+        var userBlock=null;
 		// create a block for the loaded file 
 		if(!(userBlock=document.getElementById(entity_id))){
             //console.log('!userBlock, build it now!')
@@ -486,7 +489,7 @@ var Scene={
                     it may cause of its fail.   */
 			}).fadeIn(300);              
 		});
-		//console.dir('userBlock: '+userBlock);
+		console.dir('userBlock: '+userBlock);
 		//console.groupEnd();
 	},
     // get data from Cashier section
