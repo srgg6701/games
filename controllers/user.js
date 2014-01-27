@@ -129,7 +129,9 @@ function getRealMoneyRegStages() {
  */
 function loginUser() {
     $.getScript("models/users.js", function(){
-        var localUserData = getUserFormValues(['username_or_email','password']);
+        var username_or_email = 'username_or_email';
+        var password = 'password';
+        var localUserData = getUserFormValues([username_or_email,password]);
         //console.dir(localUserData);
         var usersList,datasetsUsers,data_flag = 'user';
         //first, get all current users if they exist
@@ -138,11 +140,13 @@ function loginUser() {
         else return showErrorMess('user','You are not registered.');
         //-------------------------------------------
         var error_mess=false;
-        var user_login = false;
-        if(!datasetsUsers[localUserData['username_or_email']]){ // no certain username, find out email!
-            error_mess = "Your username or e-mail is wrong";// no username, check email
+        var user_login, input_id = false;
+        if(!datasetsUsers[localUserData[username_or_email]]){ // no certain username, find out email!
+            error_mess = Scene.active_screen.Form[username_or_email].message; 
+            // no username, check email
+            input_id = username_or_email;
             for(var username in datasetsUsers){
-                if(datasetsUsers[username]['email']==localUserData['username_or_email']){
+                if(datasetsUsers[username]['email']==localUserData[username_or_email]){
                     user_login = username;
                     error_mess = false;
                     break;
@@ -151,14 +155,15 @@ function loginUser() {
         }else user_login = localUserData['username_or_email'];
         // username or useremail is found, then check password
         if(!error_mess // this means that we got a real user login  
-           && datasetsUsers[user_login]['password']!=localUserData['password']
+           && datasetsUsers[user_login][password]!=localUserData[password]
           ) {
-            error_mess = "Your password is wrong";
+            error_mess = "Your password is wrong"; // don't use here the Scene...message - it is not appropriate in this case!
+            input_id = password;
             data_flag  = 'password';
         }
         // something went wrong
         if(error_mess)
-            return showErrorMess(data_flag,error_mess);
+            return showErrorMess(data_flag,error_mess,input_id);
         else{
             var extractedUserData = datasetsUsers[user_login];
             // store user data as User Object
@@ -202,14 +207,14 @@ function registerUser(account_type) {  //console.log('registerUser, account_type
                 // users exist, check if pointed data is available
                 var usersList = JSON.parse(datasetsUsers);
                 //console.log('usersList:'); console.dir(usersList);
-                var cancel_register = false;
+                //var cancel_register = false;
                 if(usersList[localUserData['username']])
-                    return showErrorMess('user','Username name is taken!');
+                    return showErrorMess('user','Username name is taken!','username');
                 else{
                     for(var existing_username in usersList){
                         //console.log(usersList[existing_username]['email']+' : '+localUserData['email']);
                         if(usersList[existing_username]['email']==localUserData['email'])
-                            return showErrorMess('email','Email is taken!');
+                            return showErrorMess('email','Email is taken!','email');
                     }
                 }
             }
