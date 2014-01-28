@@ -197,7 +197,7 @@ function registerUser(account_type) {  //console.log('registerUser, account_type
             real_money2=rmrStages[1];
         }
         // get incoming form values
-        var userDataType = (real_money2)? 'xtraData':'mainData'
+        var userDataType = (real_money2)? 'xtraData':'mainData';
         var localUserData = getUserFormValues(getUserParamsNames(userDataType));
         // if NOT Real Money Step 2
         if(!real_money2){
@@ -207,7 +207,6 @@ function registerUser(account_type) {  //console.log('registerUser, account_type
                 // users exist, check if pointed data is available
                 var usersList = JSON.parse(datasetsUsers);
                 //console.log('usersList:'); console.dir(usersList);
-                //var cancel_register = false;
                 if(usersList[localUserData['username']])
                     return showErrorMess('user','Username name is taken!','username');
                 else{

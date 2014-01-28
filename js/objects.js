@@ -254,16 +254,13 @@ var Scene={
                             setValidityIcon(event);
                         }
                         // onclick, onkeyup
-                        //if(event.type!='input') // imitate a placeholder's behavior
+                        // imitate a placeholder's behavior
                         handlePlaceHolder(event);
                 })
                   .on('keypress blur', function(event){ 
                     // imitate a placeholder's behavior
                     handlePlaceHolder(event);
-                })
-                  /*.on('focus', function(){
-                      $(parentForm.warning).remove();
-                  });*/ //console.log('Elem finish'); console.dir(Elem);
+                });
             },
             /**
              * remove validation flag
@@ -274,8 +271,6 @@ var Scene={
                 // if element has default value, remove flags
                 var nxt = $(obj).next('.flag');                    
                 if($(obj).val()==defaultValue||!$(obj).val()){ //console.log('defaultValue: '+defaultValue);
-                    // remove flags                    
-                    // handle flag
                     if($(nxt).size()) removeFlag(nxt);
                 }
             },
@@ -301,10 +296,7 @@ var Scene={
                     })
                       .on('keyup input',function(event){
                         setValidityIcon(event);
-                    })
-                      /*.on('focus', function(){
-                      $(parentForm.warning).remove();
-                    })*/;                                                  
+                    });                                                  
                 }
             },        
             /**
@@ -397,16 +389,12 @@ var Scene={
                         $(element).load(commonPath+data2load[0]+'.html '+element_jid, 
                             function(){
                                 var Elem = $(element_jid); //console.dir(Elem);
-                                var elementType = $(Elem).attr('type');                             
-                                //console.log('entity_id = '+entity_id+', data2load[1] = '+data2load[1]);
-                                /*if(entity_id=="my_profile_login"&&data2load[1]=="password") 
-                                    $(Elem).removeAttr('pattern');*/
+                                var elementType = $(Elem).attr('type'); //console.log('entity_id = '+entity_id+', data2load[1] = '+data2load[1]);
                                 // only if the 3th param exists (that means it is a single (not compound) element)
 								if( data2load[2] && 
                                     ( elementType || 
                                     /*  Warning! The label may not have data2load[2],
-                                        so after that condition it checks again
-                                    */
+                                        so after that condition it checks again */
                                       $(Elem)[0].tagName.toLowerCase()=='label' 
                                     ) 
                                   ){
@@ -427,19 +415,15 @@ var Scene={
                                                 });
                                                 $(Elem).after(dFlag);
                                             }
-                                        break;
-                                        /*case 'button':
-                                            $(Elem).append(data2load[2]);
-                                        break;*/
+                                        break;                                        
                                         default: // checkbox, radio, label
                                             $(Elem).after(data2load[2]);
                                     }                           
                                 }else{                                    
-                                    $(':checkbox',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidity(element)});
-                                    $(':radio',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidity(element)});
+                                    $(':checkbox',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidity(element);});
+                                    $(':radio',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidity(element);});
                                     // load the script to handle dd/month/YYYY cells
-                                    if(element_jid=='#birthday'){
-                                        //console.log('%cbirthday', 'color:green');                                        
+                                    if(element_jid=='#birthday'){ //console.log('%cbirthday', 'color:green');                                        
                                         $.getScript('js/birthday_handler.js');
                                         for(var i =0, dts=['day','month','year'];i<dts.length;i++){
                                             var element = $('#'+dts[i],Elem)[0];
@@ -734,7 +718,7 @@ var menus={
             return (direction==cDir)? 'next':'prev';
         },
         // calculate and store all menu objects tied with scrolling
-        setObjects: function(submenuContainer,direction) { // jQuery (not JS!) object
+        setObjects: function(submenuContainer) { // jQuery (not JS!) object
             //console.dir(submenuContainer);
             var submenu_container_id = $(submenuContainer).attr('id');
             //menus.scroll.oppositePointer=$(submenuContainer)[menus.scroll.getPointerOrder(direction)]();

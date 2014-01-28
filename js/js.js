@@ -76,21 +76,47 @@ $(function(){
                 .parent('label').removeClass(checkedRadioClass);
             $(event.currentTarget).addClass(checkedRadioClass);
     })  //
-        .on('mouseover mouseout mousedown', '.btn_yellow', function(event){
+        .on('mouseover mousedown mouseup', '.btn_yellow', function(event){
             //console.log('Event: '+event.type); console.dir(event.currentTarget);
-            //var btn = document.getElementById('btn_play_now')
+            var setSize = function(btn){ 
+                var W,H;
+                var currentWidth = parseInt(document.defaultView.getComputedStyle(btn,'').width);
+                var currentHeight = parseInt(document.defaultView.getComputedStyle(btn,'').height);
+                var dataW = 'data-width';
+                var dataH = 'data-heignt';
+                if(event.type=='mouseover'){
+                    var dprms;
+                    if(!(dprms=btn.getAttribute(dataW))){
+                        btn.setAttribute(dataW,currentWidth);
+                    }
+                    if(!(dprms=btn.getAttribute(dataH))){
+                        btn.setAttribute(dataH,currentHeight);
+                    }
+                }else{
+                    if(event.type=='mousedown'){
+                        W = currentWidth * 0.94453125;
+                        H = currentHeight * 0.9577464788732394;
+                    }else{
+                        W = btn.getAttribute(dataW);//ratioW = 1.05872622;
+                        H = btn.getAttribute(dataH);//ratioH = 1.044117647;
+                    }
+                    btn.style.width=W+'px';
+                    btn.style.height=H+'px';   
+                }
+                //console.dir(btn);
+            };
             var imgNum = 1;
             switch (event.type){
                 case 'mouseover':
                     imgNum = 2;
                     break;
-                /*case 'mouseout':
-                    imgNum = 1;
-                    break; */
                 case 'mousedown': //case 'click':
                     imgNum = 3;
                     break;
+                case 'mouseup':
+                    break;
             }
+            setSize(event.currentTarget);
             event.currentTarget.style.backgroundImage="url(images/yellowButton"+imgNum+".svg)";
         });
     // Switch to the Deposit/Withdrawal windows

@@ -1,15 +1,9 @@
 /*
- * 
- * @param {type} inputObj
- * @param {type} dNext
  * Set flag
  * @returns flagMessage div
  */
 function createInvalidityMess(input_id,dNext,error_text){
-    //var inputObj = Scene.active_screen.Form[input_id];
-    //if(!error_text)  error_text=Scene.active_screen.Form[input_id].message;
     //console.log('input_id = '+input_id);
-        //error_text=inputObj.message; 
     var flagMessage = $('<div/>',{
         class:Scene.active_screen.Form.warningFlagMess
     }).html('<div>x</div>'+error_text)
@@ -120,9 +114,7 @@ function setValidityIcon(Event,form) {
     /*  if validation is passed and the appropriate event occured,
         validate input's length    */
     if(inputValidity && inputObj.len){
-        /*  Notice that if the input value is not required and doesn't contains 
-            any we already have finished this implementation (see above). 
-            So: - Input value is required OR it CONTAINS smove value    */
+        /*      */
         var minLength,maxLength;
         if(inputObj.len[1]) { //console.log('len[1] = '+inputObj.len[1]);
             minLength = inputObj.len[0];
@@ -206,6 +198,6 @@ function showErrorMess(data_type,error_text,input_id) {
     
     var inpContainer = $('['+dtType+'="'+data_type+'"]'); //console.dir(inpContainer);
     $(inpContainer).prepend(Scene.active_screen.Form.warning);
-    $(Scene.active_screen.Form.warning).on('click',function(){$(this).remove()});
+    $(Scene.active_screen.Form.warning).on('click',function(){$(this).remove();});
     return false;
 }
