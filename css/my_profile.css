@@ -582,21 +582,17 @@ br, hr {
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003440}}
 label.ellipse {
   background-color: white;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
+  background-size: 12px 9px !important;
+  background-position-y: 2px !important;
   display: inline-block;
   float: left;
   height: 12px;
   margin-right: 2px;
   margin-top: 5px;
   width: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003449}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003450}}
   label.ellipse.checked {
-    background-color: #000;
-    border: solid; }
+    background: url(../images/checked.png) white no-repeat; }
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\00003453}}
   label.ellipse input[type="checkbox"] {
     margin: 0;
