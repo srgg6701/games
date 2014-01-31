@@ -1,25 +1,25 @@
 <!--éêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ-->
 <!-- location data -->
 address
-<input type="text" 	id="address" 			name="address" 			tabindex="7"  />
+<input type="text" 	id="address" 			name="address" 			tabindex="7" autocomplete="off"  />
 city
-<input type="text" 	id="city" 				name="city" 			tabindex="9"  />
+<input type="text" 	id="city" 				name="city" 			tabindex="9" autocomplete="off"  />
 country
-<input type="text" 	id="country" 			name="country" 			tabindex="10" />
+<input type="text" 	id="country" 			name="country" 			tabindex="10" autocomplete="off" />
 zip_code
-<input type="text" 	id="zip_code" 			name="zip_code" 		tabindex="8" />
+<input type="text" 	id="zip_code" 			name="zip_code" 		tabindex="8" autocomplete="off" />
 
 <!-- contact data -->
 <!-- Email checks by the native HTML5 validator -->
 email
-<input type="text" id="email" 				name="email" />
+<input type="text" id="email" 				name="email" autocomplete="off" />
 <!--10 numbers (from 0 to 9) and allow spaces (french people used to make 
 	a space every 2 numbers for phone numbers... in the backend, make it 
     appears without the spaces) -->
 home_phone
-<input type="tel" 	id="home_phone" 		name="home_phone"  onKeyUp="removeDoubleSpaces(this);"	tabindex="11"  />
+<input type="tel" 	id="home_phone" 		name="home_phone"  onblur="removeDoubleSpaces(this);"	tabindex="11" autocomplete="off"  />
 mobile_phone
-<input type="tel" 	id="mobile_phone" 		name="mobile_phone"  onKeyUp="removeDoubleSpaces(this);"	tabindex="11" />
+<input type="tel" 	id="mobile_phone" 		name="mobile_phone"  onblur="removeDoubleSpaces(this);"	tabindex="11" autocomplete="off" />
 
 <!-- password fields 6-20-->
 password
@@ -32,11 +32,11 @@ new_password
 
 <!-- personal data group -->
 first_name
-<input type="text" 	id="first_name" 		name="first_name"		tabindex="5" />
+<input type="text" 	id="first_name" 		name="first_name"		tabindex="5" autocomplete="off" />
 last_name
-<input type="text" 	id="last_name" 			name="last_name"		tabindex="6" />
+<input type="text" 	id="last_name" 			name="last_name"		tabindex="6" autocomplete="off" />
 <!--only letters (from a to z) and numbers (from 0 to 9) 6-20-->
 username
-<input type="text" 	id="username" 			name="username" />
+<input type="text" 	id="username" 			name="username" autocomplete="off" />
 username_or_email
 <input type="text" 	id="username_or_email" 	name="username_or_email" />

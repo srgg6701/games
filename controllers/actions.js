@@ -2,9 +2,16 @@
  * Change it, Dude!
  */
 function changePassword(form){
-    form.submit();
+    //form.submit();
     //Scene.enterAccount();
-    return false;
+    if(!form) {
+        var current_password=$('#'+Scene.active_screen.Form.current_password.name);
+        if(!$(current_password).val()){
+            createInvalidityMess(Scene.active_screen.Form.current_password.name,$(current_password).next(),'Please, input your current password')
+            return false;
+        }
+    }
+    alert('Go ahead and change your password, dude!');    
 }
 /* switch to another screen*/
 function goAnotherScreen(screen_id){ //alert('goAnotherScreen(), screen_id = '+screen_id);

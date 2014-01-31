@@ -2,26 +2,26 @@
 	<div>Gender:</div>
     <div>
         <label class="radio">
-        	<input tabindex="0" name="gender" id="radio_male" type="radio" value="male" data-req="required">Male
+        	<input tabindex="0" name="gender" id="radio_male" type="radio" value="male" data-req="gender">Male
         </label>
     </div>
     <div>
         <label class="radio">
-        	<input tabindex="1" name="gender" id="radio_female" type="radio" value="female">Female
+        	<input tabindex="1" name="gender" id="radio_female" type="radio" value="female" data-req="gender" />Female
         </label>
     </div>
 </div>
 <div id="birthday" class="inline clear all-font-normal">
     <div>Birthday:</div>
     <div data-type="year">
-    	<input tabindex="4" name="year" id="year" type="text" value="year" required />
+    	<input tabindex="4" name="year" id="year" type="text" data-req="birthday"  data-default_value="year" value="" />
     	<div class="select">
           <div>
           </div>
         </div>
     </div>
     <div data-type="month">
-    	<input tabindex="3" name="month" id="month" type="text" value="month" required />
+    	<input tabindex="3" name="month" id="month" type="text" data-req="birthday" data-default_value="month" value="" />
     	<div class="select">
           <div>
         	<div>Janvier</div>
@@ -40,7 +40,7 @@
         </div>
     </div>
     <div data-type="day">
-    	<input tabindex="2" name="day" id="day" type="text" value="day" required />
+    	<input tabindex="2" name="day" id="day" type="text" data-req="birthday" data-default_value="day" value="" />
     	<div class="select">
           <div>
         	<div>1</div>

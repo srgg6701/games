@@ -90,7 +90,7 @@ var Scene={
                 name:'country',
                 hint:'Your country.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
-                pattern:"[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+"
+                pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$"
             },
             current_password:{
                 name:'current_password',
@@ -106,7 +106,7 @@ var Scene={
                 name:'email',
                 hint:'Your email',
                 message:'Input your email in appropriate format please',
-                pattern:"[0-9a-zA-Z]{4,20}@[0-9a-zA-Z]+[\.]{1}[a-zA-Z]{2,}"
+                pattern:"^[0-9a-zA-Z]{4,20}@[0-9a-zA-Z]+[\.]{1}[a-zA-Z]{2,}$"
             },
             first_name:{
                 name:'first_name',
@@ -123,8 +123,10 @@ var Scene={
                 name:'home_phone',
                 hint:'Your home phone (optional).'+constMess.alwsymb+constMess.alwsymblsms.phone,
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
-                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}",
-                len:[20]
+                pattern:"^[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*$",
+                len:[10,40],
+                //pattern2:"^[0-9\s]{1,}$",
+                optional:true
             },
             last_name:{
                 name:'last_name',
@@ -137,8 +139,9 @@ var Scene={
                 name:'mobile_phone',
                 hint:'Your mobile phone.'+constMess.alwsymb+constMess.alwsymblsms.phone,
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
-                pattern:"[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}[\s]?[0-9]{1}",
-                len:[20]
+                pattern:"^[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*$",
+                len:[10,40],
+                //pattern2:"^[0-9\s]{1,}$"
             },
             month:{
                 name:'month',
@@ -187,7 +190,7 @@ var Scene={
                 name:'zip_code',
                 hint:'Your zip code.'+constMess.alwsymb+constMess.alwsymblsms.zip,
                 message:constMess.alwsymb+constMess.alwsymblsms.zip,
-                pattern:"[0-9]",
+                pattern:"^[0-9]+$",
                 len:[5],
                 optional:true
             },
@@ -203,7 +206,9 @@ var Scene={
                     input.type == 'tel' ) {
                     var pseudoPlaceholder = $('<div/>',{
                             class:'placeholder'
-                        }).css('left',parseInt($(input).css('margin-left'))+9+'px'); //console.log('input.value after deleting: '+input.value);
+                        }).css({
+                            'left': parseInt($(input).css('margin-left'))+9+'px'
+                        }); //console.log('input.value after deleting: '+input.value);
                     // add pseudoplaceholder to the block
                     $(input).parent().prepend(pseudoPlaceholder);
                     // assign actions onEvent to the pseudoplaceholder
@@ -222,7 +227,11 @@ var Scene={
             /*
              *  NOTICE: Elem here is a jQuery object (i.e. HTML-element is Elem[0]) 
              */
-            setElementContent:function(Elem, defaultValue){
+            setElementContent:function( Elem, 
+                                        /*  get this as data2load[2], i.e. - 
+                                            explicitly from the loaded code */
+                                        defaultValue
+                                      ){
                 var parentForm = this; //console.log('Elem start'); console.dir(Elem);
                 //var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
                 /*  Set pseudoplaceholder */
@@ -238,14 +247,15 @@ var Scene={
                         parentForm.removeFlagOnDefaultValue(this,defaultValue);
                         setValidityIcon(event);
                         // 
-                        if(this.name==parentForm.retype_password.name){
+                        /*if(this.name==parentForm.retype_password.name){
                             var HTMLform = $(this).parents('#'+parentForm.name);
                             var pass1Val=$('#'+parentForm.password.name, HTMLform).val()
                                          || $('#'+parentForm.retype_password.name, HTMLform).val();
-                            var pass2Val=this.value;
+                            var pass2Val=this.value; 
                             parentForm.pass_diff=(pass1Val&&pass2Val&&(pass1Val!=pass2Val))? 
                                                     true:false;
-                        }
+                            console.log('pass_diff = '+parentForm.pass_diff+', pass1Val = '+pass1Val+', pass2Val = '+pass2Val);
+                        }*/
                 })
                   .on('click keyup input',                    
                     function(event){ //console.log('input');
@@ -281,7 +291,8 @@ var Scene={
             */
             attachCustomValidity:function(element){ 
                 var sceneElem,parentForm=this;
-                var defaultValue = element.value;            
+                //
+                var defaultValue = element.getAttribute('data-default_value');            
                 if(this.setPseudoPlaceHolder(element,defaultValue))
                     element.value='';
                 if(sceneElem=Scene.active_screen.Form[element.id]){
@@ -472,8 +483,7 @@ var Scene={
                 /*  because if we need a correction (see arrangeWindow())
                     it may cause of its fail.   */
 			}).fadeIn(300);              
-		});
-		console.dir('userBlock: '+userBlock);
+		}); //console.dir('userBlock: '+userBlock);
 		//console.groupEnd();
 	},
     // get data from Cashier section

@@ -1,6 +1,9 @@
 $(function(){
 	var inputs=$('#birthday input');
-	$(inputs).on('click', function(){
+	/*
+     * Show pseudo drop-down menu 
+     */
+    $(inputs).on('click', function(){
 		//console.log('affected on input');//focus
 		this.disabled=true;
 		$(inputs).next().css('display','none');
@@ -8,22 +11,29 @@ $(function(){
 			display:'block'
 		});
 		
-		if(this.id=="year") addBirthdayContent($('[data-type="year"] .select >div'));
+		if(this.id=="year") 
+            addBirthdayContent($('[data-type="year"] .select >div'));
 		
 	}).on('blur', function(){
 		this.disabled=false;
 	});
-	$('.select').on('mouseleave', function(){
+	$('.select').on('mouseleave click', function(){
 		$(this).css({
 			display:'none'
 		});
 	});
-	$('body').on('click','.select>div>div',function(){
+	$('body').on('click','.select>div>div',function(event){
 		//console.log('clicked text: '+$(this).text());
-		$(this).parents('[data-type]').eq(0)
-			.find('input:first-child')
-				.val($(this).text());
-		//console.dir(this);
+        var cDate = event.currentTarget;
+        var dateBlock = $(cDate).parents('[data-type]').eq(0);
+		var input = $('#'+$(dateBlock).attr('data-type'));
+        $('.placeholder',dateBlock).remove();
+        console.dir(dateBlock);
+        console.log('cDate text = '+$(cDate).text()+', input: ');
+        console.dir(input);		
+        // put date into the input
+        $(input).val($(cDate).text());
+
 	});
 });
 function setDateValue(obj){

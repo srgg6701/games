@@ -214,13 +214,14 @@ br, hr {
   font-style: normal !important;
   left: 28px;
   line-height: 18px;
-  min-height: 40px;
+  min-height: 42px;
   min-width: 200px;
   padding: 6px 14px;
   position: absolute;
   text-align: left;
-  top: -16px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/system\.scss}line{font-family:\0000335}}
+  top: -16px;
+  z-index: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/system\.scss}line{font-family:\0000336}}
   .warningFlagMess > div {
     background: #FFF;
     border-left: solid 2px;

@@ -1,5 +1,17 @@
 // do it!
 $(function(){  
+    
+            setTimeout(function(){
+                $('#username_or_email').val('srgg01');
+                $('#password').val('11111');    
+            },2000);
+            $('#test_inner_submenu').load('test_menu.html')
+              .on('mouseenter', function(){
+                    $(this).fadeTo(300,1);
+            }).on('mouseleave', function(){
+                    $(this).fadeTo(300,0.2);
+            });
+	 
     // load authorization form by default
     // actions by default:
     // show wrapper
@@ -23,17 +35,17 @@ $(function(){
     /* check passwords' coincedence before sending form's data */
     $('body')
         .on('submit', '#'+screenForm.name, function(event){
-        //console.log(event.currentTarget);
+            console.log('Submitting %cForm:','background-color:#eaebec;'); console.dir($('input',event.currentTarget));
         /*var reg;*/
         var invalid = false;
-        $('input',event.currentTarget).each(function(index,element){
-            console.log('check valid: '+setValidityIcon(element,true));
+        $('input:not(:hidden)',event.currentTarget).each(function(index,element){
+            console.groupCollapsed('%c'+element.id,'font-weight:bold'); 
             if(!setValidityIcon(element,true)) { //console.log('invalid');
-                invalid = true; console.log('%cinvalid:', 'color:violet'); console.dir(element);
+                invalid = true; console.log('%cinvalid', 'background-color:lightyellow'); //console.dir(element);
                 return false; // just goes out of the loop, does not cancel submitting 
-            }
+            }   console.groupEnd();
         });
-        if(invalid) { console.log('%csubmit form: invalid','color:red');
+        if(invalid) { //console.log('%csubmit form: invalid','color:red');
             return false;
         }
         //
@@ -50,7 +62,12 @@ $(function(){
             case 'my_profile_login':
                 loginUser();
                 break;
-        }   console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);          
+            case 'my_profile_change_password_form':
+                return changePassword();
+                break;
+        }   
+        //console.log('submitting...'); 
+        //console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);          
         // remove it ONLY on REAL production stage!
         return false;
     })  
@@ -76,7 +93,7 @@ $(function(){
                 .parent('label').removeClass(checkedRadioClass);
             $(event.currentTarget).addClass(checkedRadioClass);
     })  //
-        .on('mouseover mousedown mouseup', '.btn_yellow', function(event){
+        .on('mouseover mousedown mouseout mouseup', '.btn_yellow', function(event){
             //console.log('Event: '+event.type); console.dir(event.currentTarget);
             var setSize = function(btn){ 
                 var W,H;
@@ -107,6 +124,9 @@ $(function(){
             };
             var imgNum = 1;
             switch (event.type){
+                case 'mouseout':
+                    imgNum = 1;
+                    break;
                 case 'mouseover':
                     imgNum = 2;
                     break;
@@ -116,7 +136,7 @@ $(function(){
                 case 'mouseup':
                     break;
             }
-            setSize(event.currentTarget);
+            if(event.type!='mouseout') setSize(event.currentTarget);
             event.currentTarget.style.backgroundImage="url(images/yellowButton"+imgNum+".svg)";
         });
     // Switch to the Deposit/Withdrawal windows

@@ -3,7 +3,10 @@
  * @usersData argument - function gets this only if there are users exist in DB already
  * then it adds new one setting it as unique by assigning an username
  */
-function addUser(localUserData, account_type, usersData) {
+function addUser( localUserData, // user data from form
+                  account_type, // Demo or Money
+                  usersData // existing users
+                ) {
     var real_money1, real_money2;
     if(account_type=="money"){
         var rmrStages = getRealMoneyRegStages();
@@ -17,9 +20,9 @@ function addUser(localUserData, account_type, usersData) {
         // if no users at all:
         if(!usersData) usersData=new Object();
         // store username locally and withis global User object
-        username = User.mainData.username = localUserData['username']; 
+        username =  localUserData['username']; 
         // create new User container for saving in DB later
-        // common data, for all types of account:
+        /*  common data, for all types of account: */
         usersData[username]=setUserData(localUserData,'mainData');
         usersData[username].account_type=User.account_type=account_type;
         /*-if(real_money1){ // test
@@ -57,10 +60,29 @@ function addUser(localUserData, account_type, usersData) {
     }   //console.dir(usersData); //return false;
     // store data in DB - if Demo account or Money, step 2
     if(!real_money1){ 
+        //console.dir(usersData); return false;
+        /*  Here we must get data from usersData being structured like this: 
+            srgg02":{
+                "email":"srgg02@gmail.com",
+                "password":"11111",
+                "account_type":"money", 
+              ...this will be added for Money account:  */                     
+        /*      "gender":"female",
+                "day":"day",
+                "month":"month",
+                "year":"year",
+                "address":"rose street",
+                "zip_code":"347910",
+                "city":"Rome",
+                "country":"Russia",
+                "mobile_phone":"79044428447",
+                "home_phone":"676665"
+            }   */
         window.localStorage.setItem('users', JSON.stringify(usersData));
         // check if user was added:
         var datasetsUsers = JSON.parse(getUsers());
         if(!datasetsUsers[username]){
+            console.log('call showErrorMess()');
             return showErrorMess('user','You are NOT registered.\nSomething went wrong...');
             //console.log('%cError: %cuser not added...','color:red','font-weight:bold');
         }else{
@@ -74,7 +96,7 @@ function addUser(localUserData, account_type, usersData) {
     }
 }
 /**
- * Fill User.mainData object
+ * Fill User.mainData object or set a single data for user
  */
 function setUserData(localUserData,data_name,username) {
     switch (data_name) {
@@ -85,11 +107,14 @@ function setUserData(localUserData,data_name,username) {
             User['mainData'][data_name]=username;
             break;
         default:
+            // fill User.object
             for(var field_name in User[data_name]){ // get fields names from User object
-                if(field_name!='username'){ // User.mainData.email = usersData
-                    User[data_name][field_name]=localUserData[field_name];
-                }                
+                //if(field_name!='username'){ // User.mainData.email = usersData
+                User[data_name][field_name]=localUserData[field_name];
+                /*  User.mainData.[username,email,password]*/
+                //}                
             }
+            return User[data_name];
     }
     return true;
 }
@@ -119,7 +144,7 @@ function getUserParamsNames(paramsTypeName) {
     return user_param_names;
 }
 /**
- * Comment
+ * get stages names
  */
 function getRealMoneyRegStages() {
     return [$('#money_step1').size(),$('#money_step2').size()];
@@ -137,7 +162,10 @@ function loginUser() {
         //first, get all current users if they exist
         if(usersList=getUsers())
             datasetsUsers=JSON.parse(usersList);
-        else return showErrorMess('user','You are not registered.');
+        else {
+            console.log('call showErrorMess()');
+            return showErrorMess('user','You are not registered.');
+        }
         //-------------------------------------------
         var error_mess=false;
         var user_login, input_id = false;
@@ -162,9 +190,10 @@ function loginUser() {
             data_flag  = 'password';
         }
         // something went wrong
-        if(error_mess)
+        if(error_mess){
+            console.log('call showErrorMess()');
             return showErrorMess(data_flag,error_mess,input_id);
-        else{
+        }else{
             var extractedUserData = datasetsUsers[user_login];
             // store user data as User Object
             setUserData(extractedUserData,'mainData'); 
@@ -207,17 +236,20 @@ function registerUser(account_type) {  //console.log('registerUser, account_type
                 // users exist, check if pointed data is available
                 var usersList = JSON.parse(datasetsUsers);
                 //console.log('usersList:'); console.dir(usersList);
-                if(usersList[localUserData['username']])
+                if(usersList[localUserData['username']]){
+                    console.log('call showErrorMess()');
                     return showErrorMess('user','Username name is taken!','username');
-                else{
+                }else{
                     for(var existing_username in usersList){
                         //console.log(usersList[existing_username]['email']+' : '+localUserData['email']);
-                        if(usersList[existing_username]['email']==localUserData['email'])
+                        if(usersList[existing_username]['email']==localUserData['email']){
+                            console.log('call showErrorMess()');
                             return showErrorMess('email','Email is taken!','email');
+                        }
                     }
                 }
             }
-        }
+        } console.dir(localUserData); //return false;
         // register new user        
         addUser(localUserData,account_type,usersList) // true or false
         if(!real_money1) Scene.enterAccount(); // User.account_type is already set in addUser()
