@@ -1,0 +1,26 @@
+.flag.ok{
+    background-position: 0 -8px !important;
+}
+.flag.delete{
+    background-position: 0 -32px !important;
+}
+label.radio:not(:checked){
+    background-position: 0 -37px;
+}
+label.radio.checked{
+    background-position: 0 1px;
+}
+#birthday div[data-type] input[type="text"]{
+    color: rgb(0,0,0);
+}
+#my_profile_login .btn_yellow,
+#my_profile_form .btn_yellow,
+#my_profile_open_demo_account .btn_yellow,
+#my_profile_real_money_account .btn_yellow,
+#my_profile_change_password_form .btn_yellow{
+    background-position: 100%;
+}
+#my_profile_open_demo_account
+    .placeholder{
+    left:32px !important;
+}

@@ -274,11 +274,6 @@ function showErrorMess(data_type,error_text,input_id) {
         //var flagMessage = 
         createInvalidityMess(input_id,dNext,error_text);
         $(dNext).addClass(Scene.active_screen.Form.flag_id_error);
-        /*$('#'+input_id).on('keyup',function(){
-            console.log('calls removeFlag()');
-            removeFlag(dNext);
-        }); */
-        // console.dir(flagMessage);
         return false;
     }
     var dtType, divFlag = $('.flag.'+data_type);

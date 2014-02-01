@@ -16,6 +16,20 @@ document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text
 <!--[if IE]>
 	<link id="css_screen_id" media="screen" rel="stylesheet" type="text/css" href="css/ie.css">
 <![endif]-->
+<script>
+function detectBrowser(){
+	var browsers=['Chrome','Firefox','MSIE','Safari'];
+	for(var i in browsers){
+		if(navigator.userAgent.indexOf(browsers[i])!=-1)
+			return browsers[i];
+	}
+	return false;
+}
+
+if(detectBrowser()=='Firefox') {
+	document.write('<link href="css/ff.css" id="firefox" rel="stylesheet" type="text/css">');
+}
+</script>
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/objects.js"></script>
 <script src="js/zoom.js"></script>

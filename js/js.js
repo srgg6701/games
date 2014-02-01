@@ -1,17 +1,26 @@
 // do it!
 $(function(){  
     
-            setTimeout(function(){
-                $('#username_or_email').val('srgg01');
-                $('#password').val('11111');    
-            },2000);
+        var showTestMenu = function(){
             $('#test_inner_submenu').load('test_menu.html')
-              .on('mouseenter', function(){
-                    $(this).fadeTo(300,1);
-            }).on('mouseleave', function(){
-                    $(this).fadeTo(300,0.2);
-            });
+                .on('mouseenter', function(){
+                      $(this).fadeTo(300,1);
+              }).on('mouseleave', function(){
+                      $(this).fadeTo(300,0.2);
+              });
+        };
+
+        setTimeout(function(){
+            $('#username_or_email').val('srgg01');
+            $('#password').val('11111');    
+            if(detectBrowser()=='Firefox') {
+                showTestMenu();
+                $('#test_inner_submenu').css('display','block');
+            }
+        },2000);
 	 
+        if(detectBrowser()!='Firefox') showTestMenu();
+        
     // load authorization form by default
     // actions by default:
     // show wrapper

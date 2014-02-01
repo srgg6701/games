@@ -154,40 +154,45 @@ function getRealMoneyRegStages() {
  */
 function loginUser() {
     $.getScript("models/users.js", function(){
-        var username_or_email = 'username_or_email';
-        var password = 'password';
+        var username_or_email = Scene.active_screen.Form.username_or_email.name;
+        var password = Scene.active_screen.Form.password.name;
         var localUserData = getUserFormValues([username_or_email,password]);
         //console.dir(localUserData);
         var usersList,datasetsUsers,data_flag = 'user';
         //first, get all current users if they exist
-        if(usersList=getUsers())
+        if(usersList=getUsers()) {
             datasetsUsers=JSON.parse(usersList);
-        else {
-            console.log('call showErrorMess()');
-            return showErrorMess('user','You are not registered.');
-        }
-        //-------------------------------------------
-        var error_mess=false;
-        var user_login, input_id = false;
-        if(!datasetsUsers[localUserData[username_or_email]]){ // no certain username, find out email!
-            error_mess = Scene.active_screen.Form[username_or_email].message; 
-            // no username, check email
-            input_id = username_or_email;
-            for(var username in datasetsUsers){
-                if(datasetsUsers[username]['email']==localUserData[username_or_email]){
-                    user_login = username;
-                    error_mess = false;
-                    break;
+            /*else {
+                console.log('call showErrorMess()');
+                return showErrorMess('user','You are not registered.','username_or_email');
+            }*/
+            //-------------------------------------------
+            var error_mess=false;
+            var user_login, input_id = false;
+            if(!datasetsUsers[localUserData[username_or_email]]){ // no certain username, find out email!
+                error_mess = Scene.active_screen.Form[username_or_email].message; 
+                // no username, check email
+                input_id = username_or_email;
+                for(var username in datasetsUsers){
+                    if(datasetsUsers[username]['email']==localUserData[username_or_email]){
+                        user_login = username;
+                        error_mess = false;
+                        break;
+                    }
                 }
+            }else user_login = localUserData[username_or_email];
+            // username or useremail is found, then check password
+            if(!error_mess // this means that we got a real user login  
+               && datasetsUsers[user_login][password]!=localUserData[password]
+              ) {
+                error_mess = "Your password is wrong"; // don't use here the Scene...message - it is not appropriate in this case!
+                input_id = password;
+                data_flag  = 'password';
             }
-        }else user_login = localUserData['username_or_email'];
-        // username or useremail is found, then check password
-        if(!error_mess // this means that we got a real user login  
-           && datasetsUsers[user_login][password]!=localUserData[password]
-          ) {
-            error_mess = "Your password is wrong"; // don't use here the Scene...message - it is not appropriate in this case!
-            input_id = password;
-            data_flag  = 'password';
+        }else{
+            // data_flag remains by default as 'user'
+            error_mess = Scene.active_screen.Form[username_or_email].message;
+            input_id=username_or_email;
         }
         // something went wrong
         if(error_mess){
