@@ -52,13 +52,18 @@ function switchToPlay(){
  * switch levels
  */
 function manageLevels(level,sublevel) {
-    $('[data-level]').hide(); //console.log('manageLevels: '+level+', '+sublevel);
+    $('[data-level]').hide(); console.log('manageLevels: '+level+', '+sublevel);
     var tLevel = $('[data-level="'+level+'"]');
     $(tLevel).fadeIn(200);
     var bgImg;
-    if(level=='game') bgImg = true;
-    else{
-        $('[data-level="money"]').html(' ');
+    //debugger;
+    if(level=='game') {
+        bgImg = true;
+        $('[data-level="money"]').hide('');
+        if($(tLevel).is(':hidden'))
+            $(tLevel).fadeIn(300);
+    }else{
+        $('[data-level="money"]').html(''); // because will load content
         $(tLevel).load('contents/sublevels/'+sublevel+'.html',function(){
             //console.log('load: contents/sublevels/'+sublevel+'.html');
             $('[data-block]').click(function(){

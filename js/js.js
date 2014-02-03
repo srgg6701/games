@@ -36,23 +36,23 @@ $(function(){
 	 */	
     $('[data-screen]').on('click',function(){
         var data_screen = $(this).attr('data-screen');
-        if(data_screen=='profile')
+        if(data_screen=='profile'){
+            manageLevels('game');
             Scene.appendUserBlock((User.account_type=='demo')? 'my_profile_data':'my_profile_form');
-        else if(data_screen=='logout')
+        }else if(data_screen=='logout')
             logoutUser();
     });    
     /* check passwords' coincedence before sending form's data */
     $('body')
         .on('submit', '#'+screenForm.name, function(event){
-            console.log('Submitting %cForm:','background-color:#eaebec;'); console.dir($('input',event.currentTarget));
-        /*var reg;*/
+            //console.log('Submitting %cForm:','background-color:#eaebec;'); console.dir($('input',event.currentTarget));
         var invalid = false;
         $('input:not(:hidden)',event.currentTarget).each(function(index,element){
-            console.groupCollapsed('%c'+element.id,'font-weight:bold'); 
+            //console.groupCollapsed('%c'+element.id,'font-weight:bold'); 
             if(!setValidityIcon(element,true)) { //console.log('invalid');
-                invalid = true; console.log('%cinvalid', 'background-color:lightyellow'); //console.dir(element);
+                invalid = true; //console.log('%cinvalid', 'background-color:lightyellow'); //console.dir(element);
                 return false; // just goes out of the loop, does not cancel submitting 
-            }   console.groupEnd();
+            }   //console.groupEnd();
         });
         if(invalid) { //console.log('%csubmit form: invalid','color:red');
             return false;

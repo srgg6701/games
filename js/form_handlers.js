@@ -47,7 +47,7 @@ function removeFlag(flag) {
     $(flag).removeClass(Scene.active_screen.Form.flag_id_error)
            .removeClass(Scene.active_screen.Form.flag_id_ok);
     $('.'+Scene.active_screen.Form.warningFlagMess,flag).remove();
-    console.log('%cremoveFlag %c, flag:','color:red;','color:black;'); console.dir(flag);
+    //console.log('%cremoveFlag %c, flag:','color:red;','color:black;'); console.dir(flag);
 }
 /*
  * some fields allow only one space in place, for example - tel
@@ -66,12 +66,12 @@ function removeDoubleSpaces(input){
  * @return boolean
  */
 function setValidityIcon(Event,form) { 
-    if(form) console.log('Event.type: '+Event.type+'; %cform: %c'+form,'color:#ccc','font-weight:bold'); 
-    else{ console.log('No form, event: %c'+Event.type,'font-weight:bold;font-style:italic;'); console.log('id: %c'+Event.target.id,' font-weight:bold; color:#999;');}
+    //if(form) console.log('Event.type: '+Event.type+'; %cform: %c'+form,'color:#ccc','font-weight:bold'); 
+    //else{ console.log('No form, event: %c'+Event.type,'font-weight:bold;font-style:italic;'); console.log('id: %c'+Event.target.id,' font-weight:bold; color:#999;');}
     var input=(form)? Event:Event.target; //console.log('setValidityIcon'); console.dir(input);
     // skip warnings on the login form
     if($(input).parent('span[data-skip="warnings"]').eq(0).size()){
-        (input.value)? console.log('\treturn %ctrue', 'color:green;'):console.log('\treturn %cfalse','color:red;');
+        //(input.value)? console.log('\treturn %ctrue', 'color:green;'):console.log('\treturn %cfalse','color:red;');
         return (input.value)? true:false;
     }
     var dNext = $(input).next(); //console.dir(dNext); 
@@ -85,18 +85,18 @@ function setValidityIcon(Event,form) {
             var empty = false;
             // label or div[data-type]
             dNext=$(input).parents().eq(0);
-            console.dir(dNext);
+            //console.dir(dNext);
             if(input.type=='checkbox'||input.type=='radio'){
-                console.log('checking');
+                //console.log('checking');
                 if(!$('[name="'+input.name+'"]:checked').size()){
-                    empty='checking'; console.log('empty');
+                    empty='checking'; //console.log('empty');
                 }
             }else if(!input.value){
-                empty='birthday'; console.log('empty: birthday');
+                empty='birthday'; //console.log('empty: birthday');
             }
             // A checkbox or radio which must be checked but is isn't
             if(empty){             
-                console.log('%cunchecked:','color:red'); console.dir(input);
+                //console.log('%cunchecked:','color:red'); console.dir(input);
                 var flagMessage = createInvalidityMess(input.id,dNext,inputObj.message);
                 $(dNext).append(flagMessage);
                 setTimeout(function(){
@@ -104,21 +104,21 @@ function setValidityIcon(Event,form) {
                         $(flagMessage).remove();
                     });
                 },2000); //return flagMessage;
-                console.log('\treturn %cfalse','color:red');
+                //console.log('\treturn %cfalse','color:red');
                 return false;
             }else {
-                console.log('\treturn %ctrue', 'color: green'); console.log('checked:'); console.dir(input);
+                //console.log('\treturn %ctrue', 'color: green'); console.log('checked:'); console.dir(input);
                 return true;
             }
         }
     }else{ // no req attribute, no in the Form object, so - is totally optional 
         if(!(inputObj=Scene.active_screen.Form[input.id])) {
-            console.log('\treturn %ctrue', 'color: green');
+            //console.log('\treturn %ctrue', 'color: green');
             return true;
         }else{             
             // if everything is totally optional, just return true
             if(!inputObj.pattern) {
-                console.log('\treturn %ctrue', 'color: green');
+                //console.log('\treturn %ctrue', 'color: green');
                 return true;
             }else{
                 /*  if the function was called not while the form submitting
@@ -126,10 +126,10 @@ function setValidityIcon(Event,form) {
                 if(!input.value) {                
                     if(inputObj.optional){
                         removeFlag(dNext); 
-                        console.log('\toptional: '+inputObj.optional+'\nreturn true');    
+                        //console.log('\toptional: '+inputObj.optional+'\nreturn true');    
                         return true;
                     }else if(!form){
-                        console.log('\treturn %cfalse','color:red;'); //console.dir(input); console.log('return %cfalse','color:red');
+                        //console.log('\treturn %cfalse','color:red;'); //console.dir(input); console.log('return %cfalse','color:red');
                         removeFlag(dNext); 
                         return false;
                     }
@@ -149,7 +149,6 @@ function setValidityIcon(Event,form) {
     /*  check characters' validiti for any cases 
         (this doesn't include lenght's validity yet) */
     var inputValidity = reg.test(input.value); //console.log('inputValidity = '+inputValidity+'\npattern = '+reg);
-    //if(input.id.indexOf('phone')!=-1) console.log('inputValidity = '+inputValidity+', inputObj.len = '+inputObj.len);
     /*  if validation is passed and the appropriate event occured,
         validate input's length    */
     if(inputObj.len){ //console.log('inputObj.len: '+inputObj.len);
@@ -253,15 +252,15 @@ function setValidityIcon(Event,form) {
                && (input.value!=pass2.value)
              ){    
                 handleFlag(); // first, remove all flags, then sets appropriate one
-                console.log('\treturn %cfalse','color:red');
+                //console.log('\treturn %cfalse','color:red');
                 return false;
             }          
         }
         handleFlag(inputValidity); // first, remove all flags, then sets appropriate one
-        console.log('\treturn %c'+inputValidity,'color:violet;');
+        //console.log('\treturn %c'+inputValidity,'color:violet;');
         return inputValidity;
     }
-    console.log('\treturn true (end of the function)');
+    //console.log('\treturn true (end of the function)');
     return true;
 }
 /**

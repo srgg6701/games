@@ -125,7 +125,6 @@ var Scene={
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
                 pattern:"^[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*$",
                 len:[10,40],
-                //pattern2:"^[0-9\s]{1,}$",
                 optional:true
             },
             last_name:{
@@ -140,13 +139,12 @@ var Scene={
                 hint:'Your mobile phone.'+constMess.alwsymb+constMess.alwsymblsms.phone,
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
                 pattern:"^[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*$",
-                len:[10,40],
-                //pattern2:"^[0-9\s]{1,}$"
+                len:[10,40]
             },
             month:{
                 name:'month',
                 hint:'Month of your birth',
-                message:constMess.date_mess //this.date_mess
+                message:constMess.date_mess 
             },
             new_password:{
                 name:'new_password',
@@ -245,17 +243,7 @@ var Scene={
                         * remove validation flag
                         */
                         parentForm.removeFlagOnDefaultValue(this,defaultValue);
-                        setValidityIcon(event);
-                        // 
-                        /*if(this.name==parentForm.retype_password.name){
-                            var HTMLform = $(this).parents('#'+parentForm.name);
-                            var pass1Val=$('#'+parentForm.password.name, HTMLform).val()
-                                         || $('#'+parentForm.retype_password.name, HTMLform).val();
-                            var pass2Val=this.value; 
-                            parentForm.pass_diff=(pass1Val&&pass2Val&&(pass1Val!=pass2Val))? 
-                                                    true:false;
-                            console.log('pass_diff = '+parentForm.pass_diff+', pass1Val = '+pass1Val+', pass2Val = '+pass2Val);
-                        }*/
+                        setValidityIcon(event);                       
                 })
                   .on('click keyup input',                    
                     function(event){ //console.log('input');
@@ -528,11 +516,8 @@ var Scene={
                     (centralAreaViewPort-blockOffset)/2; 
             //wrapperOffset+=Levels.correction_value/2;
             Levels.correction_param=false;
-            console.log('func = '+func+', correction_value (' +
-                    typeof(Levels.correction_value)+')= ' +
-                    Levels.correction_value+', wrapperOffset = '+wrapperOffset +
-                    ', entity_id'+entity_id);
-            console.dir($('#'+entity_id));
+            //console.log('func = '+func+', correction_value (' + typeof(Levels.correction_value)+')= ' + Levels.correction_value+', wrapperOffset = '+wrapperOffset + ', entity_id'+entity_id);
+            //console.dir($('#'+entity_id));
         }else{
             currentOffset=(wrapperOffset-blockOffset)/2;
         }
