@@ -925,13 +925,14 @@ br, hr {
     .left_bottom_box > div > div {
       color: #ffd800;
       font-size: 13.07692px;
+      font-family: AvenirMedium;
       font-style: normal;
       font-weight: bold;
       letter-spacing: -1.46154px;
       position: absolute;
       right: 0;
       top: -20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000346}}
       .left_bottom_box > div > div.last_user {
         color: #CFD0DF;
         font-style: italic;
@@ -941,13 +942,13 @@ br, hr {
         right: 0;
         text-align: right;
         top: -23px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000356}}
         .left_bottom_box > div > div.last_user b {
           color: #FFF;
           font-weight: bold;
           font-style: normal; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000365}}
 #left_bottom_box_1 {
   background: url(../images/copa.png);
   background-position: 10px 16px !important;
@@ -961,22 +962,22 @@ br, hr {
   padding-right: 0;
   top: 405px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000378}}
 #left_bottom_box_2 {
   background: url(../images/flag_germany.png);
   top: 454.5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000382}}
 #left_bottom_box_3 {
   background: url(../images/flag_italy.png);
   top: 505px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000386}}
 #left_bottom_box_4 {
   background: url(../images/flag_gb.png);
   top: 555.5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/left_side\.scss}line{font-family:\0000390}}
 #left_bottom_box_5 {
   background: url(../images/flag_greece.png);
   top: 606px; }
