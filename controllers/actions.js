@@ -68,7 +68,8 @@ function manageLevels(level,sublevel) {
             //console.log('load: contents/sublevels/'+sublevel+'.html');
             $('[data-block]').click(function(){
                 $('.pay_way').text($(this).text());
-                $(Scene.user_container_class).hide(100);
+                $('section.content',tLevel).attr('data-level-content',$(this).attr('data-block'));
+                 $(Scene.user_container_class).hide(100);
                 /*console.group('%cmanageWithdraw()','font-weight:bold');
                     console.log('file_name: %c'+$(obj).attr('data-block'),'color:blue');
                 console.groupEnd();*/
@@ -76,6 +77,52 @@ function manageLevels(level,sublevel) {
                 Scene.appendUserMoneyBlock($(this).attr('data-block'));
                 Levels.setCorrection($('[data-level="money"]'));
             });
+            
+            // TEST MODE:
+            var test = true;
+            if(test){
+                var bgpic;
+                $('[data-block]').on('click',function(){
+                    switch ($(this).attr('data-block')) {
+                        case 'deposit_visa':case 'deposit_visas':case 'deposit_all_cards':
+                            bgpic='credit_card';
+                            break;
+                        case 'deposit_skrill':
+                            bgpic='skrill';
+                            break;
+                        case 'deposit_neteller':
+                            bgpic='Neteller';
+                            break;
+                        case 'deposit_entropay':
+                            bgpic='';
+                            break;
+                        case 'deposit_ukash':
+                            bgpic='ukash';
+                            break;
+                        case 'deposit_paysafecard':
+                            bgpic='Paysafe';
+                            break;
+                    }
+                    $('#bg_substrate').css({
+                        background:'url(sources/substrates/AccountMoney/'+bgpic+'.png)'     
+                    });
+                    console.log('bgpic = '+bgpic); 
+                /*
+                */
+                });
+                
+                var bgImg = $('<div/>',{
+                    id:'bg_substrate'
+                }).css({
+                    opacity: 0.6,
+                    position:'absolute',
+                    top:0,
+                    right:0,
+                    bottom:0,
+                    left:0
+                });
+                $(this).prepend(bgImg);
+            }
         });
         bgImg = false;
     }
