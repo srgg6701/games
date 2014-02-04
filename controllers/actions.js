@@ -52,7 +52,7 @@ function switchToPlay(){
  * switch levels
  */
 function manageLevels(level,sublevel) {
-    $('[data-level]').hide(); console.log('manageLevels: '+level+', '+sublevel);
+    $('[data-level]').hide(); //console.log('manageLevels: '+level+', '+sublevel);
     var tLevel = $('[data-level="'+level+'"]');
     $(tLevel).fadeIn(200);
     var bgImg;
@@ -105,8 +105,7 @@ function manageLevels(level,sublevel) {
                     }
                     $('#bg_substrate').css({
                         background:'url(sources/substrates/AccountMoney/'+bgpic+'.png)'     
-                    });
-                    console.log('bgpic = '+bgpic); 
+                    }); //console.log('bgpic = '+bgpic); 
                 /*
                 */
                 });

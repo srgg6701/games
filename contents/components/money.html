@@ -1,6 +1,6 @@
 <!--amount-->
 <div id="section_amount" class="section">
-    <div class="left text"><span  data-req="req"></span>Amount</div>
+    <div class="left text"><span  data-req="req"></span>Amount:</div>
     <div class="left">
 		<input type="text" id="amount" name="amount" placeholder="" />
     </div>
@@ -42,7 +42,7 @@
 
 <!--bonus_code-->
 <div id="section_bonus_code" class="section">
-    <div class="left text">Bonus Code</div>
+    <div class="left text">Bonus Code:</div>
     <div class="left">
 		<input type="text" id="bonus_code" name="bonus_code" placeholder="" />
 	</div>
@@ -70,76 +70,94 @@
 <!-- Credit Cards -->
 <div id="section_card_type" class="section">
     <div id="card_type">
-        <div class="left text"><span  data-req="req"></span>Card Type</div>
+        <div class="left text"><span  data-req="req"></span>Card Type:</div>
         <div class="left">
             <label>
                 <input type="radio" name="card_type" id="visa" required />
+                <div class="radio-skin">*</div>
             </label>
             <label>
                 <input type="radio" name="card_type" id="mastercard" required />
+                <div class="radio-skin">*</div>
             </label>
             <label>
                 <input type="radio" name="card_type" id="club" required />
+                <div class="radio-skin">*</div>
             </label>    
         </div>
     </div>    
-    <div class="left text"><span  data-req="req"></span>Card Holder/Owner</div>
-    <div class="left"><strong>Jhon K. Doe</strong> <a class="edit" href="#" onClick="return openWindow('money_client_card_holder');" id="change_your_details">Change your details</a></div>
+	<div id="card_handler">
+        <div class="left text"><span  data-req="req"></span>Card Holder/Owner:</div>
+        <div class="left" id="user-name"><strong>John K. Doe</strong> <a class="edit" href="#" onClick="return openWindow('money_client_card_holder');" id="change_your_details">Change your details</a></div>
+    </div>
+	<div id="card_number">
+        <div class="left text"><span  data-req="req"></span>Card Number:</div>
+        <div class="left">
+            <input type="text" id="card_number" name="card_number" placeholder="" />
+        </div>
+ 	</div>
+	<div id="card_expiration_date">
+        <div class="left text"><span  data-req="req"></span>Expiration Date:</div>
+        <div class="left">
+            <span id="span_month">
+            	<select id="month" name="month" required>
+            
+              <option>Month</option>
     
-	<div class="left text"><span  data-req="req"></span>Card Number</div>
-    <div class="left">
-        <input type="text" id="card_number" name="card_number" placeholder="" />
-    </div>
- 
-	<div class="left text"><span  data-req="req"></span>Expiration Date</div>
-    <div class="left">
-    	<select name="month" required>
-        
-          <option>Month</option>
-
-          <option value="1">01</option>
-        
-          <option value="2">02</option>
-        
-          <option value="3">03</option>
-        
-          <option value="4">04</option>
-        
-          <option value="5">05</option>
-        
-          <option value="6">06</option>
-        
-          <option value="7">07</option>
-        
-          <option value="8">08</option>
-        
-          <option value="9">09</option>
-        
-          <option value="10">10</option>
-        
-          <option value="11">11</option>
-        
-          <option value="12">12</option>
-        
-        </select>
-    	<select name="Year" required>
-          <option>Year</option>
-          <option value="2018">2018</option>
-          <option value="2017">2017</option>
-          <option value="2016">2016</option>
-          <option value="2015">2015</option>
-		</select>
-    </div>
- 
-	<div class="left text"><span  data-req="req"></span>CVV</div>
-    <div class="left">
-    	<input type="text" id="cvv" name="cvv" />
+              <option value="1">01</option>
+            
+              <option value="2">02</option>
+            
+              <option value="3">03</option>
+            
+              <option value="4">04</option>
+            
+              <option value="5">05</option>
+            
+              <option value="6">06</option>
+            
+              <option value="7">07</option>
+            
+              <option value="8">08</option>
+            
+              <option value="9">09</option>
+            
+              <option value="10">10</option>
+            
+              <option value="11">11</option>
+            
+              <option value="12">12</option>
+            
+            </select>
+            	<div class="select_pointer">
+                	<span class="unicode_pointer">&#9698;</span>
+                </div>
+            </span>
+            <span id="span_year">
+            	<select id="year" name="year" required>
+              <option>Year</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+            </select>
+            	<div class="select_pointer">
+                	<span class="unicode_pointer">&#9698;</span>
+                </div>
+            </span>
+        </div>
+	</div>
+	<div id="card_cvv">
+        <div class="left text"><span  data-req="req"></span>CVV:</div>
+        <div class="left">
+            <input type="text" id="cvv" name="cvv" />
+        </div>
     </div>
 </div>
 
 <!--quick_deposit-->
 <div id="section_quick_deposit" class="section">
-    <div class="left text">Quick Deposit.</div>
+    <div class="left text">Quick Deposit:</div>
     <div class="left">
 		<input type="button" id="e10" name="e10" value="10&euro;" />
 		<input type="button" id="e25" name="e25" value="25&euro;" />
