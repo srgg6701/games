@@ -77,9 +77,21 @@ function manageLevels(level,sublevel) {
                 Scene.appendUserMoneyBlock($(this).attr('data-block'));
                 Levels.setCorrection($('[data-level="money"]'));
             });
-            
+            // load common components
+            //var common_content_container_id = '#common_content';
+            var common_component_path = 'contents/components/money.html';
+            var innerElemAttrName = 'data-common';
+            //console.log('elements size: '+$('['+innerElemAttrName+']', this).size());
+            $('['+innerElemAttrName+']', this)
+                .each( function(index,element){
+                    $(element)
+                        .load(common_component_path+' #'+$(element).attr(innerElemAttrName), 
+                function(){
+                    $('#common_content',tLevel).append(element); //console.dir(element);
+                });
+            });/**/
             // TEST MODE:
-            var test = true;
+            var test = false;
             if(test){
                 var bgpic;
                 $('[data-block]').on('click',function(){

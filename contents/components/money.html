@@ -2,7 +2,8 @@
 <div id="section_amount" class="section">
     <div class="left text"><span  data-req="req"></span>Amount:</div>
     <div class="left">
-		<input type="text" id="amount" name="amount" placeholder="" />
+		<input type="text" id="amount" name="amount" placeholder="amount" required />
+        <div class="checked_green"></div>    
     </div>
 </div>
 
@@ -44,7 +45,7 @@
 <div id="section_bonus_code" class="section">
     <div class="left text">Bonus Code:</div>
     <div class="left">
-		<input type="text" id="bonus_code" name="bonus_code" placeholder="" />
+		<input type="text" id="bonus_code" name="bonus_code" placeholder="Bonus Code" />
 	</div>
 </div>
 
@@ -83,7 +84,8 @@
             <label>
                 <input type="radio" name="card_type" id="club" required />
                 <div class="radio-skin">*</div>
-            </label>    
+            </label>
+            <div class="checked_green"></div>    
         </div>
     </div>    
 	<div id="card_handler">
@@ -93,7 +95,8 @@
 	<div id="card_number">
         <div class="left text"><span  data-req="req"></span>Card Number:</div>
         <div class="left">
-            <input type="text" id="card_number" name="card_number" placeholder="" />
+            <input type="text" id="card_number" name="card_number" placeholder="" required />
+            <div class="checked_green"></div>    
         </div>
  	</div>
 	<div id="card_expiration_date">
@@ -150,7 +153,8 @@
 	<div id="card_cvv">
         <div class="left text"><span  data-req="req"></span>CVV:</div>
         <div class="left">
-            <input type="text" id="cvv" name="cvv" />
+            <input type="text" id="cvv" name="cvv" required placeholder="CVV" />
+            <div class="question_grey"></div>    
         </div>
     </div>
 </div>
@@ -172,5 +176,24 @@
     <div class="left text">Email</div>
     <div class="left">
 		<input type="text" id="email" name="email" />
+    </div>
+</div>
+<!-- common content -->
+<div id="safe_and_secure">
+	<b>100%</b> Safe &amp; Secure
+</div>
+<div id="content_right_panels">
+	<div>
+    	<h4>Live Support</h4>
+        <div class="image">24/7</div>
+        <button>Chat Now!</button>
+    </div>
+    <div>
+    	<h4>Upload Document</h4>
+        <div id="upload_docs">
+        	Click Here and upload your documents
+        </div>
+    </div>
+    <div id="verysign2">
     </div>
 </div>
