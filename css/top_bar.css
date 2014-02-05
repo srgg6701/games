@@ -200,11 +200,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003166}}
 .unicode_pointer {
   display: inline-block;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -webkit-transform: scale(1.9, 0.9);
+  -moz-transform: scale(1.9, 0.9);
+  -ms-transform: scale(1.9, 0.9);
+  -o-transform: scale(1.9, 0.9);
+  transform: scale(1.9, 0.9);
   height: 0;
   width: 0; }
 
