@@ -67,7 +67,7 @@ function manageLevels(level,sublevel) {
         $(tLevel).load('contents/sublevels/'+sublevel+'.html',function(){
             //console.log('load: contents/sublevels/'+sublevel+'.html');
             $('[data-block]').click(function(){
-                $('.pay_way').text($(this).text());
+                $('.pay_way').text($(this).attr('data-header')||$(this).text());
                 $('section.content',tLevel).attr('data-level-content',$(this).attr('data-block'));
                  $(Scene.user_container_class).hide(100);
                 /*console.group('%cmanageWithdraw()','font-weight:bold');
@@ -114,12 +114,20 @@ function manageLevels(level,sublevel) {
                         case 'deposit_paysafecard':
                             bgpic='Paysafe';
                             break;
+                        case 'withdraw_bank':
+                            bgpic='bank';
+                            break;  
+                        case 'withdraw_visa':
+                            bgpic='visa2';
+                            break;  
+                        case 'withdraw_skrill':
+                            bgpic='skrill2';
+                            break;
                     }
-                    $('#bg_substrate').css({
-                        background:'url(sources/substrates/AccountMoney/'+bgpic+'.png)'     
-                    }); //console.log('bgpic = '+bgpic); 
-                /*
-                */
+                    if(bgpic) 
+                        $('#bg_substrate').css({
+                            background:'url(sources/substrates/AccountMoney/'+bgpic+'.png)'     
+                        }); //console.log('bgpic = '+bgpic); 
                 });
                 
                 var bgImg = $('<div/>',{

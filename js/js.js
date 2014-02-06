@@ -145,7 +145,7 @@ $(function(){
                 case 'mouseup':
                     break;
             }
-            if(event.type!='mouseout') setSize(event.currentTarget);
+            setSize(event.currentTarget);
             event.currentTarget.style.backgroundImage="url(images/yellowButton"+imgNum+".svg)";
         });
     // Switch to the Deposit/Withdrawal windows
