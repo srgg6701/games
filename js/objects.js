@@ -64,140 +64,243 @@ var Scene={
             warningFlagMess:'warningFlagMess',
             pass_diff:false,
             mess_diff:"Please fill out this field",
+            /*  NOTE: if the actual field hasn't the placeholder attribute, its 
+                text is assigned in the data-load[2] parameter within the parent 
+                element which uploads it from an appropriate template */
             address:{
-                name:'address',
+                id:'address',
                 hint:'Your address.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
                 pattern:"^[\-a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
                 len:[2,60]
             },
             agreement:{
-                name:'terms_and_conditions',
+                id:'terms_and_conditions',
                 message:'Please check the box to continue'
             },
             birthday:{
-                name:'birthday',
+                id:'birthday',
                 message:'Please select a full Birthday date'
             },
             city:{
-                name:'city',
-                hint:'Your city.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                id:'city',
+                //hint:'Your city.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$",
                 len:[2,30]
             },
             country:{
-                name:'country',
-                hint:'Your country.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                id:'country',
+                //hint:'Your country.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$"
             },
             current_password:{
-                name:'current_password',
-                hint:'Your current password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
+                id:'current_password',
+                //hint:'Your current password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
                 message:constMess.alwsymb+constMess.alwsymblsms.password
             },
             day:{
-                name:'day',
-                hint:'Day of your birth',
+                id:'day',
+                //hint:'Day of your birth',
                 message:constMess.date_mess
             },
             email:{
-                name:'email',
-                hint:'Your email',
+                id:'email',
+                //hint:'Your email',
                 message:'Input your email in appropriate format please',
                 pattern:"^[0-9a-zA-Z]{4,20}@[0-9a-zA-Z]+[\.]{1}[a-zA-Z]{2,}$"
             },
             first_name:{
-                name:'first_name',
-                hint:'Your first name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                id:'first_name',
+                //hint:'Your first name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$",
                 len:[2,30]
             },
-            gender:{
-                name:'gender',
+            gender:{ // * radios *
+                id:'gender', // not in use as id literally because is radio type, but is necessary here
                 message: constMess.gender
             },
             home_phone:{
-                name:'home_phone',
-                hint:'Your home phone (optional).'+constMess.alwsymb+constMess.alwsymblsms.phone,
+                id:'home_phone',
+                //hint:'Your home phone (optional).'+constMess.alwsymb+constMess.alwsymblsms.phone,
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
                 pattern:"^[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*$",
                 len:[10,40],
                 optional:true
             },
             last_name:{
-                name:'last_name',
-                hint:'Your last name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
+                id:'last_name',
+                //hint:'Your last name.'+constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_only2_30,
                 pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ]+$",
                 len:[2,30]
             },
             mobile_phone:{
-                name:'mobile_phone',
-                hint:'Your mobile phone.'+constMess.alwsymb+constMess.alwsymblsms.phone,
+                id:'mobile_phone',
+                //hint:'Your mobile phone.'+constMess.alwsymb+constMess.alwsymblsms.phone,
                 message:constMess.alwsymb+constMess.alwsymblsms.phone,
                 pattern:"^[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*$",
                 len:[10,40]
             },
             month:{
-                name:'month',
-                hint:'Month of your birth',
+                id:'month',
+                //hint:'Month of your birth',
                 message:constMess.date_mess 
             },
             new_password:{
-                name:'new_password',
-                hint:'Your new password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
+                id:'new_password',
+                //hint:'Your new password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
                 message:constMess.alwsymb+constMess.alwsymblsms.password,
                 pattern:"^[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
                 len:[6,20]
             },
             password:{
-                name:'password',
-                hint:'Your password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
+                id:'password',
+                //hint:'Your password.'+constMess.alwsymb+constMess.alwsymblsms.password,                
                 message:constMess.alwsymb+constMess.alwsymblsms.password,
                 pattern:"^[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
                 len:[6,20]
             },
             retype_password:{
-                name:'retype_password',
+                id:'retype_password',
                 message:'The passwords are different',
-                hint:'Re-type password',
+                //hint:'Re-type password',
                 pattern:"^[\!@#\$%\^&\*a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
                 len:[6,20]
             },
             username_or_email:{
-                name:'username_or_email',
-                hint:'Your username or your email',
+                id:'username_or_email',
+                //hint:'Your username or your email',
                 message:'Your username or e-mail is wrong'
-            },
+            },                        
             username:{
-                name:'username',
-                hint:'Your username.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
+                id:'username',
+                //hint:'Your username.'+constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
                 message:constMess.alwsymb+constMess.alwsymblsms.letters_and_numbers6_20,
                 pattern:"^[a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
                 len:[6,20]
             },
             year:{
-                name:'year',
+                id:'year',
                 hint:'Year of your birth',
                 message:constMess.date_mess
             },
             zip_code:{
-                name:'zip_code',
+                id:'zip_code',
                 hint:'Your zip code.'+constMess.alwsymb+constMess.alwsymblsms.zip,
                 message:constMess.alwsymb+constMess.alwsymblsms.zip,
                 pattern:"^[0-9]+$",
                 len:[5],
                 optional:true
             },
+            //-----------------------------------------
+            card_type:{ // * radios *
+                id:'card_type', // not in use as id literally because is radio type, but is necessary here
+                //hint:'',
+                message:'Point out the Card Type'
+            },
+            money_amount:{
+                id:'money_amount',
+                //hint:'Money amount',
+                message:constMess.alwsymb+'numbers only',
+                pattern:"^[0-9]+$",
+                len:[3,6]
+            },
+            money_bank_name:{
+                id:'money_bank_name',
+                //hint:'',
+                message:'Point out the Bank Name',
+                pattern:"[\w]+",
+                len:[2,]
+            },
+            money_bank_address:{
+                id:'money_bank_address',
+                //hint:'',
+                message:'Point out the Bank Address',
+                pattern:"^[\-a-zA-ZéêèëàâùûôöîïçÉÊÈËÀÂÙÛÔÖÎÏÇ0-9]+$",
+                len:[2,60]
+            },
+            money_bank_bic_code:{
+                id:'money_bank_bic_code',
+                //hint:'',
+                message:'Point out the Bank Swift/BIC Code',
+                pattern:"[\w]",
+                len:[2,30]
+            },
+            money_bank_sort_code:{
+                id:'money_bank_sort_code',
+                //hint:'',
+                message:'Point out the Bank Sort Code',
+                pattern:"[\w]",
+                len:[2,30]
+            },
+            money_bank_iban_no:{
+                id:'money_bank_iban_no',
+                //hint:'',
+                message:'Point out the Bank IBAN No.',
+                pattern:"[\w]",
+                len:[2,30]
+            },
+            money_card_holder:{ // hidden
+                id:'money_card_holder',
+                //hint:'',
+                message:'Fill out the Card Holder/Owner form',
+                pattern:"[\w]",
+                len:[1]
+            },
+            money_card_number:{
+                id:'money_card_number',
+                //hint:
+                message: constMess.alwsymb+'16 numbers and spaces',
+                        //'Point out the Card Number',
+                pattern:"^[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*[0-9]{1}[\s]*$",
+                len:[16,80]
+            },
+            money_cvv:{
+                id:'money_cvv',
+                //hint:'',
+                message:constMess.alwsymb+'3 numbers',
+                pattern:"^[0-9]+$",
+                len:[3]
+            },
+            money_email:{
+                id:'money_email',
+                //hint:'',
+                message:'Point out the Email',
+                pattern:"^[0-9a-zA-Z]{4,20}@[0-9a-zA-Z]+[\.]{1}[a-zA-Z]{2,}$"
+            },
+            money_month:{
+                id:'money_month',
+                //hint:'',
+                message:'Point out the Month'
+            },
+            money_voucher_number:{
+                id:'money_voucher_number',
+                //hint:'',
+                message:'Point out the Voucher Number',
+                pattern:"^[0-9]+$",
+                len:[3,20],
+            },
+            money_voucher_value:{
+                id:'money_voucher_value',
+                //hint:'',
+                message:'Point out the Voucher Value',
+                pattern:"^[0-9]+$",
+                len:[3,20],
+            },
+            money_year:{
+                id:'money_year',
+                //hint:'',
+                message:'Point out the Year'
+            },
             /** 
              * set pseudoplaceholder
              * Warning! We CANNOT extract the value of input within the function,
              *  so we MUST pass it here 
              */
-            setPseudoPlaceHolder:function(input,defaultValue){ // HTML-element, not jQuery obj
+            setPseudoPlaceHolder:function(input,defaultValue){ // HTML-element, not jQuery obj        
                 if( input.type=='text'          ||
                     input.type == 'password'    ||
                     input.type == 'email'       ||
@@ -222,17 +325,22 @@ var Scene={
                 }
                 return true;
             },
-            /*
-             *  NOTICE: Elem here is a jQuery object (i.e. HTML-element is Elem[0]) 
+            /**
+             * Handle field - pseudoplaceholder, flag
+             * NOTICE: Elem here is a jQuery object (i.e. HTML-element is Elem[0]) 
              */
             setElementContent:function( Elem, 
-                                        /*  get this as data2load[2], i.e. - 
-                                            explicitly from the loaded code */
+                                        /*  sets as input's default value 
+                                            and the placeholder's text;  
+                                        gets this from: 
+                                            - data-load[2] attribute for UserProfile level 
+                                            - the value of  data-default_value for Money level*/
                                         defaultValue
                                       ){
                 var parentForm = this; //console.log('Elem start'); console.dir(Elem);
                 //var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
                 /*  Set pseudoplaceholder */
+                if(arguments[2]) console.dir(Elem);
                 this.setPseudoPlaceHolder(Elem[0],defaultValue);
                 //
                 var ddv = this.default_data; //test: if(parentForm[Elem[0].id] && parentForm[Elem[0].id].message) console.log('input.message = '+parentForm[Elem[0].id].message); 
@@ -275,11 +383,11 @@ var Scene={
             /*
             * set custom validaty message to the deeply included element 
             * (which is being extracted from template)
-            * NOTE: element here is HTML-object unlike of setElementContent()
+            * NOTE: element here is a HTML-object unlike of setElementContent()
             */
             attachCustomValidity:function(element){ 
                 var sceneElem,parentForm=this;
-                //
+                // data-default_value is used for date fields (selects)
                 var defaultValue = element.getAttribute('data-default_value');            
                 if(this.setPseudoPlaceHolder(element,defaultValue))
                     element.value='';
@@ -353,87 +461,10 @@ var Scene={
 		$('#'+Scene.shade_id).before(userBlock); //console.log('%cshade block: ', 'background-color:#333; color:white'); console.dir($('#'+Scene.shade_id));
 		// load the file from /contents/ dir
 		$(userBlock).load(file_contents,function(){ 
-            /*  console.log('userBlock is loaded. file_contents: '+file_contents);
-                console.groupCollapsed('%cuserBlock:', 'color:blue');console.log($(userBlock).html());console.groupEnd();
+            //console.log('userBlock is loaded. file_contents: '+file_contents);
+                /*console.groupCollapsed('%cuserBlock:', 'color:blue');console.log($(userBlock).html());console.groupEnd();
                 drop passwords diff mark */
             Scene.active_screen.Form.pass_diff=false;                    
-			// Be ready to load all contents!
-			var commonPath='contents/components/';			
-			// go through elements which must load elements from templates
-			var handleBlocks=function(){ //console.log('entity_id = '+entity_id);
-                /*  loading User Profile screen's elements.
-                    For example:
-                        <span data-load="input|username|username"></span>
-                        <span data-load="input|email|email address"></span>
-                        <span data-load="input|password|password"></span>
-                        etc... =>
-                            
-                    load content for every element with data-load attribute
-                    <input type="text" id="username" name="username" />
-                    <input type="text" id="email" name="email" />
-                    <input type="text" id="password" name="password" />
-                */
-                if(data_load){ // if we didn't get it, we don't need any subtemplates
-                    $('['+data_load+']').each( function(index, element) {
-                        //console.log('element: '); console.dir(element);
-                        /*  get file_name to load a certain element's content, 
-                            element id, 
-                            element value */
-                        var data2load=$(element).attr(data_load).split('|');
-                        /*  load file and its element by id
-                            input.html or person.html
-                            #element_id */
-                        var element_jid='#'+data2load[1];
-                        // for example: load contents/components/input.html #mobile_phone
-                        $(element).load(commonPath+data2load[0]+'.html '+element_jid, 
-                            function(){
-                                var Elem = $(element_jid); //console.dir(Elem);
-                                var elementType = $(Elem).attr('type'); //console.log('entity_id = '+entity_id+', data2load[1] = '+data2load[1]);
-                                // only if the 3th param exists (that means it is a single (not compound) element)
-								if( data2load[2] && 
-                                    ( elementType || 
-                                    /*  Warning! The label may not have data2load[2],
-                                        so after that condition it checks again */
-                                      $(Elem)[0].tagName.toLowerCase()=='label' 
-                                    ) 
-                                  ){
-                                    switch(elementType){
-                                        case 'submit':
-                                        case 'text':
-                                        case 'password':
-                                        case 'email':
-                                        case 'number':
-                                        case 'search':
-                                        case 'tel':
-                                            Scene.active_screen.Form.setElementContent(Elem, data2load[2]); 
-                                            // add the block for *flag*
-                                            var d_flag;
-                                            if(d_flag=$(this).attr('data-flag')) {
-                                                var dFlag = $('<div/>',{
-                                                    class:"flag "+d_flag
-                                                });
-                                                $(Elem).after(dFlag);
-                                            }
-                                        break;                                        
-                                        default: // checkbox, radio, label
-                                            $(Elem).after(data2load[2]);
-                                    }                           
-                                }else{                                    
-                                    $(':checkbox',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidity(element);});
-                                    $(':radio',Elem).each(function(i,element){Scene.active_screen.Form.attachCustomValidity(element);});
-                                    // load the script to handle dd/month/YYYY cells
-                                    if(element_jid=='#birthday'){ //console.log('%cbirthday', 'color:green');                                        
-                                        $.getScript('js/birthday_handler.js');
-                                        for(var i =0, dts=['day','month','year'];i<dts.length;i++){
-                                            var element = $('#'+dts[i],Elem)[0];
-                                            Scene.active_screen.Form.attachCustomValidity(element);
-                                        }
-                                    }
-                                }                                   
-                        });
-                    });                    
-                }
-			};
 			/*  Warning!
 					Don't mix the files:
 					*   my_profile_real_money_account.html - commont contentainer 
@@ -442,8 +473,10 @@ var Scene={
 					*   my_profile_real_money_account2.html - step 2 content */
 			if(entity_id==real_money_account){ //console.log('file to load: contents/'+incomingEntityId+'.html');
 				// load the my_profile_real_money_account1 or my_profile_real_money_account2 content
-				$('#account_real_money_inner_content').load('contents/'+incomingEntityId+'.html', function(){
-					handleBlocks();
+				$('#account_real_money_inner_content')
+                    .load('contents/'+incomingEntityId+'.html', function(){
+					// handle blocks within the template which has been uploaded
+                    Scene.handleBlocks(data_load);
 					var btn_text,step_class;
 					// step1
 					if(incomingEntityId==real_money_account+'1'){
@@ -458,12 +491,14 @@ var Scene={
 					}
                     $('.user_profile').addClass(step_class);
 					$('#btn_real_money_account')
-						.text(btn_text).addClass(step_class);
+						.text(btn_text)
+                            .addClass(step_class);
 				});
-			}else
-				handleBlocks();
-            // Scene.active_screen=entity_id;            
-			// assign styles for the loaded content
+			}else{ // handle blocks within the template which has been uploaded
+				//console.log('call handleBlocks()');
+                Scene.handleBlocks(data_load);
+            }
+            // assign styles for the loaded content
 			$('#'+entity_id).css({
                 // Don't change this order!:
 				left: Scene.arrangeWindow(entity_id,'outerWidth'),
@@ -479,23 +514,21 @@ var Scene={
         // all contents already deleted
         var loaded_component_class_name='loaded_component';
         $('.'+loaded_component_class_name).remove();
-        var userBlock=null;
-        if(!(userBlock=document.getElementById(entity_id))){
-            userBlock=$('<div/>',{
+        var userMoneyBlock=null;
+        this.active_screen.screen_id=entity_id;
+        if(!(userMoneyBlock=document.getElementById(entity_id))){
+            userMoneyBlock=$('<div/>',{
                 id:entity_id,
                 class:loaded_component_class_name
             });
         }
 		// append the block to the wrapper
-		$('.pay_way').after(userBlock);
-        //console.dir(userBlock);
-        $(userBlock).load('contents/'+entity_id+'.html',function(){
+		$('.pay_way').after(userMoneyBlock);
+        //console.dir(userMoneyBlock);
+        // [deposit|withdraw]_[file_name].html
+        $(userMoneyBlock).load('contents/'+entity_id+'.html',function(){
             //console.log('The '+entity_id+' is loading...');
-            $('[data-load]').each( function(index, element){
-                var component_id = $(element).attr('data-load');
-                //console.dir('150: component_id = '+component_id,element);  
-                $(element).load('contents/components/money.html #section_'+component_id);
-            });
+            Scene.handleBlocks('data-load', true);
         });
         $('section.content [type="submit"]').css('visibility','visible').show();
     },
@@ -530,33 +563,6 @@ var Scene={
 		console.groupEnd();*/		
 		return currentOffset+'px';
 	},
-    // cover the page with shadow
-    obscureWindow:function(){
-        //console.log('obscureWindow');
-        if(!document.getElementById(this.shade_id))
-            $(Levels.wrapperContainer)
-                .prepend('<div id="'+this.shade_id+'" class="shade cover"></div>');
-    },
-    // remove shade from page
-    removeShading:function(){
-        $('#'+this.shade_id).remove();
-    },
-	// Enter into account. All the user's data currently is stored in the User object
-    enterAccount:function(){ // account_type: 'demo' or 'money'
-        //console.log('screen_id = '+this.active_screen.screen_id+', account_type = '+User.account_type);
-        // remove screen
-        $('#'+this.active_screen.screen_id).remove();
-        // wash shadow away
-        this.removeShading(); //console.log('account type: '+User.account_type);
-        // arrange User Account depending of its type
-        $('#btn_bottom_switcher')
-                .addClass(User.account_type)
-                .text((User.account_type=='demo')? "Switch to Money Player":"Make a deposit");
-        $('#user-coin').addClass((User.account_type=='demo')? 'silver':'gold');
-        User.logged=true;
-        // TODO: remove on production:
-        $('#test_inner_submenu').fadeIn('400');
-    },
     // 
 	closeUserScreen:function(){
         if(this.active_screen.screen_id==this.user_container_id_default){//'my_profile_login'
@@ -575,7 +581,200 @@ var Scene={
                 this.appendUserBlock(this.user_container_id_default);
             }
         }
-	}
+	},
+	// Enter into account. All the user's data currently is stored in the User object
+    enterAccount:function(){ // account_type: 'demo' or 'money'
+        //console.log('screen_id = '+this.active_screen.screen_id+', account_type = '+User.account_type);
+        // remove screen
+        $('#'+this.active_screen.screen_id).remove();
+        // wash shadow away
+        this.removeShading(); //console.log('account type: '+User.account_type);
+        // arrange User Account depending of its type
+        $('#btn_bottom_switcher')
+                .addClass(User.account_type)
+                .text((User.account_type=='demo')? "Switch to Money Player":"Make a deposit");
+        $('#user-coin').addClass((User.account_type=='demo')? 'silver':'gold');
+        User.logged=true;
+        // TODO: remove on production:
+        $('#test_inner_submenu').fadeIn('400');
+    },
+    // go through elements which must load their inner elements from templates
+	handleBlocks:function(data_load,level_money){ //console.log('entity_id = '+entity_id);
+        /*  loading User Profile screen's elements.
+            For example:
+                <span data-load="input|username|username"></span>
+                <span data-load="input|email|email address"></span>
+                <span data-load="input|password|password"></span>
+                etc... =>
+
+            load content for every element with data-load attribute
+            <input type="text" id="username" name="username" />
+            <input type="text" id="email" name="email" />
+            <input type="text" id="password" name="password" />
+        */
+        //
+        if(data_load){ // if we didn't get it, we don't need any subtemplates
+            // upload template files in loop
+            /*  * for UserProfile level 
+                    - my_profile_[...].html
+                * for Money level:
+                    - deposit_[...].html
+                    - withdraw_[...].html
+                    NOTE:   up to this point the suptemplate containing the menu - 
+                            deposit.html OR withdrawal.html already is loaded
+            */
+            $('['+data_load+']').each( function(index, element) {
+                var defaultValue,element_id;
+                var commonPath='contents/components/';		           
+                //console.log('element: '); console.dir(element);
+                /*  get file_name to load a certain element's content, 
+                    element id, 
+                    element value */
+                var data2load=$(element).attr(data_load).split('|');
+                //
+                if(level_money){
+                    commonPath+='/money';
+                    element_id='#section_'+data2load[0];                    
+                }else{
+                    element_id='#'+data2load[1];
+                    commonPath+=data2load[0];
+                    defaultValue=data2load[2];
+                }
+                /*  upload components from the current template:
+                    * for UserProfile level:
+                        - input.html
+                        - blocks.html
+                        - person.html
+                    * for Money level:
+                        - money.html
+                */
+                $(element).load(commonPath+'.html '+element_id, 
+                    function(){
+                        //var Elem = $(element_id); //console.dir(Elem);
+                        //var elementType = $(Elem).attr('type'); //console.log('entity_id = '+entity_id+', data2load[1] = '+data2load[1]);
+                        var req = false;
+                        if(level_money){ //console.dir(element); //console.dir(this);console.dir($(element_id));
+                            //console.log('data-reqs inside:'); 
+                            $('[data-req]',this).each(function(index,block){ //console.log('text: '+$(block).parent().text());console.dir(block);
+                                var contentBlock = $(block).parent().next();
+                                var targets = $('input',contentBlock);
+                                if(!$(targets).size()) targets = $('select',contentBlock);
+                                //console.groupCollapsed('%c'+$(block).parent().text(),'color:blue'); 
+                                //console.dir(targets);
+                                $(targets).each(function(i,field){
+                                    //console.log('element id: '+$(field)[0].id);
+                                    defaultValue=$(field).attr('data-default_value')||'';
+                                    //console.log($(field)[0].id+', '+$(field)[0].tagName); 
+                                    //console.dir(field);
+                                    //if($(field)[0].tagName=='INPUT') 
+                                    Scene.handleInputField(element,defaultValue,true,$(field));
+                                }); 
+                                //console.groupEnd();
+                                /*if(!(input=$(block).parent().next().find('input'))){
+                                    //console.log('try to find the select; next: ');
+                                    //console.dir($(block).parent().next());
+                                    input=$(block).parent().next().find('select');
+                                    
+                                }else{ 
+                                    if(!$(input).attr('id')) {
+                                        console.log('%cNo input.',' color:red');
+                                        console.dir(input);
+                                        console.log('req parent: '); console.dir($(block).parent()); 
+                                        console.log('req parent next: '); console.dir($(block).parent().next()); 
+                                        console.log('req parent next selects: '); console.dir($(block).parent().next().find('select'));
+                                    }
+                                    else{
+                                        defaultValue=$(input).attr('data-default_value')||''; 
+                                        console.log('input.id = '+$(input).attr('id'));
+                                        console.dir(input);//console.log('defaultValue = '+defaultValue+', input.id = '+input.id); console.dir(element);
+                                        Scene.handleInputField(element,defaultValue,true,input);
+                                    }
+                                }*/
+                            });
+                        }else
+                            Scene.handleInputField( this,
+                                                    defaultValue,
+                                                    req, 
+                                                    element_id
+                                                  );
+                });
+            });                    
+        }
+    },
+    /* handle field and pass it next to the placeholder's handler*/
+    handleInputField:function( span,
+                               defaultValue, 
+                               req,
+                               element
+                             ){
+        var Elem,elementTagName;
+        if(typeof(element)!='object') Elem = $(element); //console.dir(Elem);
+        else Elem = element;
+            
+        //console.dir(Elem);
+        
+        elementTagName=$(Elem)[0].tagName.toLowerCase();    
+        
+        var elementType = $(Elem).attr('type'); //console.log('entity_id = '+entity_id+', data2load[1] = '+data2load[1]);
+                        
+        if( ( defaultValue || req ) && 
+            ( elementType || 
+            /*  Warning! The label may not have defaultValue,
+                so after that condition it checks again */
+              elementTagName=='label' 
+            ) 
+          ){
+            switch(elementType){
+                case 'submit':
+                case 'text':
+                case 'password':
+                case 'email':
+                case 'number':
+                case 'search':
+                case 'tel': 
+                    //if(!Elem) console.log('no Elem');
+                    //console.dir(Elem);
+                    Scene.active_screen.Form.setElementContent(Elem, defaultValue); 
+                    // add the block for *flag*
+                    var d_flag;
+                    if(d_flag=$(span).attr('data-flag')) {
+                        var dFlag = $('<div/>',{
+                            class:"flag "+d_flag
+                        });
+                        $(Elem).after(dFlag);
+                    }
+                break;                                        
+                default: // checkbox, radio, label
+                    $(Elem).after(defaultValue);
+            }                           
+        }else{                                    
+            $(':checkbox',Elem).each(function(i1,checkBox){
+				Scene.active_screen.Form.attachCustomValidity(checkBox);
+			});
+            $(':radio',Elem).each(function(i2,radioButton){
+				Scene.active_screen.Form.attachCustomValidity(radioButton);
+			});
+            // load the script to handle dd/month/YYYY cells
+            if(element=='#birthday'){ //console.log('%cbirthday', 'color:green');                                        
+                $.getScript('js/birthday_handler.js');
+                for(var i =0, dts=['day','month','year'];i<dts.length;i++){
+                    var dateInput = $('#'+dts[i],Elem)[0];
+                    Scene.active_screen.Form.attachCustomValidity(dateInput);
+                }
+            }
+        } 
+    },
+    // cover the page with shadow
+    obscureWindow:function(){
+        //console.log('obscureWindow');
+        if(!document.getElementById(this.shade_id))
+            $(Levels.wrapperContainer)
+                .prepend('<div id="'+this.shade_id+'" class="shade cover"></div>');
+    },
+    // remove shade from page
+    removeShading:function(){
+        $('#'+this.shade_id).remove();
+    }
 };
 var User = {
     logged:false,

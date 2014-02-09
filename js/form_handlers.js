@@ -152,7 +152,15 @@ function setValidityIcon(Event,form) {
     /*  if validation is passed and the appropriate event occured,
         validate input's length    */
     if(inputObj.len){ //console.log('inputObj.len: '+inputObj.len);
-        if(inputValidity||input.id.indexOf('phone')!=-1){ 
+        /*  Here are the special fields - they may have exact amount of numbers 
+            mixed with any amount of spaces */
+        var idPhone = (input.id.indexOf('phone')==-1)? false:true;
+        var idCardNumber = (input.id.indexOf('money_card_number')==-1)? false:true;
+        var idCVV = (input.id.indexOf('money_cvv')==-1)? false:true;
+        var idMoneyAmount = (input.id.indexOf('money_amount')==-1)? false:true;
+        var special_digital_format=(idPhone||idCardNumber||idCVV||idMoneyAmount) 
+                                                    ? true : false;
+        if(inputValidity||special_digital_format){ 
             /*      */  //console.log('VALID: '+input.id);
             var minLength,maxLength;
             if(inputObj.len[1]) { //console.log('len[1] = '+inputObj.len[1]);
@@ -167,9 +175,9 @@ function setValidityIcon(Event,form) {
             if(input.value.length > maxLength) inputValidity = false;
             // if user inputed amything, check it:
             else{
-                var wrong_phone = false;
+                var wrong_digital_format = false;
                 /* the phones need a special checking */
-                if( input.id.indexOf('phone')!=-1 
+                if( special_digital_format 
                     /*  we don't know if there were invalid charachters or just 
                         too short value*/
                     && !inputValidity){
@@ -190,8 +198,8 @@ function setValidityIcon(Event,form) {
                             /*   otherwise just keep inputValidity as false  */
                         } //console.log('digits = '+digits+', inputValidity = '+inputValidity);      
                     }else {
-                        console.log('wrong_phone');
-                        wrong_phone = true;
+                        console.log('wrong special_digital_format, inputValidity = '+inputValidity);
+                        wrong_digital_format = true;
                     } //console.log('inputValidity = '+inputValidity+', input.value = '+input.value);
                 }
                 // CONDITION matters:
@@ -202,7 +210,7 @@ function setValidityIcon(Event,form) {
                     if(Event.type=='blur'||form) inputValidity = false; // set flag next           
                     /*  if it happens not while form submitting AND not by the blur event - 
                         remove flag and finish execution... */
-                    else if(!wrong_phone){ 
+                    else if(!wrong_digital_format){ 
                         // keep the default flag
                         console.log('calls removeFlag()');
                         removeFlag(dNext);
@@ -222,9 +230,9 @@ function setValidityIcon(Event,form) {
             removeFlag(dNext);
             flagClassName=Scene.active_screen.Form.flag_id_ok; console.log('valid, flagClassName = '+flagClassName);
         }else{ 
-            if( inputObj.name!="email" 
+            if( inputObj.id!="email" 
                 || // wrong_email
-                ( inputObj.name=="email"
+                ( inputObj.id=="email"
                   && (Event.type=='blur'||form)
                 ) 
                 || Event.type=='blur'
@@ -244,7 +252,7 @@ function setValidityIcon(Event,form) {
         //removeFlag(dNext);
         /*  if the current field is *re-type password* and the value
             is not the same like the password value */
-        if(input.id==Scene.active_screen.Form.retype_password.name){
+        if(input.id==Scene.active_screen.Form.retype_password.id){
            var pass2; 
            if(!(pass2=document.getElementById('new_password')))
                   pass2 = document.getElementById('password');

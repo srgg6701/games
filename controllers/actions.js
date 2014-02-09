@@ -5,9 +5,9 @@ function changePassword(form){
     //form.submit();
     //Scene.enterAccount();
     if(!form) {
-        var current_password=$('#'+Scene.active_screen.Form.current_password.name);
+        var current_password=$('#'+Scene.active_screen.Form.current_password.id);
         if(!$(current_password).val()){
-            createInvalidityMess(Scene.active_screen.Form.current_password.name,$(current_password).next(),'Please, input your current password')
+            createInvalidityMess(Scene.active_screen.Form.current_password.id,$(current_password).next(),'Please, input your current password')
             return false;
         }
     }

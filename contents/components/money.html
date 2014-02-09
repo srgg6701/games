@@ -2,8 +2,8 @@
 <div id="section_amount" class="section">
     <div class="left text"><span  data-req="req"></span>Amount:</div>
     <div class="left">
-		<input type="text" id="amount" name="amount" placeholder="5000" required />
-        <div class="checked_green"></div>    
+		<input type="text" id="money_amount" name="amount" data-default_value="5000" />
+        <div class="flag"></div>    
     </div>
 </div>
 
@@ -14,7 +14,7 @@
         Bank Name:
     </div>
     <div class="left">
-		<input type="text" id="bank_name" name="bank_name" placeholder="" />
+		<input type="text" id="money_bank_name" name="bank_name" data-default_value="" />
 	</div>
 
     <div class="left text">
@@ -22,7 +22,7 @@
         Bank Account Name:
     </div>
     <div class="left">
-		<input type="text" id="bank_account_name" name="bank_account_name" placeholder="" />
+		<input type="text" id="money_bank_account_name" name="bank_account_name" data-default_value="" />
 	</div>
 
     <div class="left text">
@@ -30,7 +30,7 @@
         Bank Address:
     </div>
     <div class="left">
-		<input type="text" id="bank_address" name="bank_address" placeholder="" />
+		<input type="text" id="money_bank_address" name="bank_address" data-default_value="" />
 	</div>
 
     <div class="left text">
@@ -38,7 +38,7 @@
         Bank Swift/BIC Code
     </div>
     <div class="left">
-		<input type="text" id="bank_bic_code" name="bank_bic_code" placeholder="" />
+		<input type="text" id="money_bank_bic_code" name="bank_bic_code" data-default_value="" />
 	</div>
 
     <div class="left text">
@@ -46,7 +46,7 @@
         Bank Sort Code:
     </div>
     <div class="left">
-		<input type="text" id="bank_sort_code" name="bank_sort_code" placeholder="" />
+		<input type="text" id="money_bank_sort_code" name="bank_sort_code" data-default_value="" />
 	</div>
 
     <div class="left text">
@@ -54,7 +54,7 @@
         Bank IBAN No.:
     </div>
     <div class="left">
-		<input type="text" id="bank_iban_no" name="bank_iban_no" placeholder="" />
+		<input type="text" id="money_bank_iban_no" name="bank_iban_no" data-default_value="" />
 	</div>
 
 </div>
@@ -63,7 +63,7 @@
 <div id="section_bonus_code" class="section">
     <div class="left text">Bonus Code:</div>
     <div class="left">
-		<input type="text" id="bonus_code" name="bonus_code" placeholder="Not Mandatory" /><!--Bonus Code-->
+		<input type="text" id="money_bonus_code" name="bonus_code" data-default_value="Not Mandatory" /><!--Bonus Code-->
 	</div>
 </div>
 
@@ -74,7 +74,7 @@
         Voucher Number:
     </div>
     <div class="left">
-        <input type="text" id="voucher_number" name="voucher_number" placeholder="" />
+        <input type="text" id="money_voucher_number" name="voucher_number" data-default_value="" />
     </div>
     
     <div class="left text">
@@ -82,52 +82,57 @@
     	Voucher Value:
     </div>
     <div class="left">
-        <input type="text" id="voucher_value" name="voucher_value" placeholder="" />
-        <input type="text" id="voucher_value2" name="voucher_value2" placeholder="" />	<a href="javascript:void(0)" class="minor">View currency exchange rates</a>
+        <input type="text" id="money_voucher_value" name="voucher_value" data-default_value="" />
+        <input type="text" id="money_voucher_value2" name="voucher_value2" data-default_value="" />	<a href="javascript:void(0)" class="minor">View currency exchange rates</a>
     </div>
     <div class="left text">
     Bonus Coupon:</div>
     <div class="left">
-        <input type="text" id="bonus_coupon" name="bonus_coupon" placeholder="" />
+        <input type="text" id="money_bonus_coupon" name="bonus_coupon" data-default_value="" />
 	</div>
 </div>   
  
 <!-- Credit Cards -->
 <div id="section_card_type" class="section">
-    <div id="card_type">
+    <div id="money_card_type">
         <div class="left text"><span  data-req="req"></span>Card Type:</div>
         <div class="left">
             <label>
-                <input type="radio" name="card_type" id="visa" required />
+                <input type="radio" name="card_type" id="money_visa" data-default_value="" />
                 <div class="radio-skin">*</div>
             </label>
             <label>
-                <input type="radio" name="card_type" id="mastercard" required />
+                <input type="radio" name="card_type" id="money_mastercard" data-default_value="" />
                 <div class="radio-skin">*</div>
             </label>
             <label>
-                <input type="radio" name="card_type" id="club" required />
+                <input type="radio" name="card_type" id="money_club" data-default_value="" />
                 <div class="radio-skin">*</div>
             </label>
-            <div class="checked_green"></div>    
+            <div class="flag"></div>    
         </div>
     </div>    
 	<div id="card_handler">
         <div class="left text"><span  data-req="req"></span>Card Holder/Owner:</div>
-        <div class="left" id="user-name"><strong>John K. Doe</strong> <a class="minor" href="#" onClick="return openWindow('money_client_card_holder');" id="change_your_details">Change your details</a></div>
+        <div class="left" id="money_user-name">
+            <!-- is hidden because its value is
+            assigned after pop-up window is being opened, data is set, stored in DB and the responce is got	-->
+        	<input type="hidden" id="money_card_holder" value="1"/>
+            <strong>John K. Doe</strong> <a class="minor" href="#" onClick="return openWindow('money_client_card_holder');" id="money_change_your_details">Change your details</a></div>
     </div>
 	<div id="card_number">
         <div class="left text"><span  data-req="req"></span>Card Number:</div>
         <div class="left">
-            <input type="text" id="card_number" name="card_number" placeholder="" required />
-            <div class="checked_green"></div>    
+            <input type="text" id="money_card_number" name="card_number" data-default_value="" />
+            <div class="flag"></div>    
         </div>
  	</div>
 	<div id="card_expiration_date">
-        <div class="left text"><span  data-req="req"></span>Expiration Date:</div>
+        <div class="left text"><span  data-req="req"></span>Expiration Date:
+        </div>
         <div class="left">
-            <span id="span_month">
-            	<select id="month" name="month" required>
+            <span id="money_span_month">
+            	<select id="money_month" name="month"  data-default_value="Month" value="" >
             
               <option>Month</option>
     
@@ -160,8 +165,8 @@
                 	<span class="unicode_pointer">&#9660;</span>
                 </div>
             </span>
-            <span id="span_year">
-            	<select id="year" name="year" required>
+            <span id="money_span_year">
+            	<select id="money_year" name="year" data-default_value="Year" >
               <option>Year</option>
               <option value="2018">2018</option>
               <option value="2017">2017</option>
@@ -177,8 +182,9 @@
 	<div id="card_cvv">
         <div class="left text"><span  data-req="req"></span>CVV:</div>
         <div class="left">
-            <input type="text" id="cvv" name="cvv" required placeholder="" /><!--CVV-->
-            <div class="question_grey"></div>    
+            <input type="text" id="money_cvv" name="cvv" data-default_value="" /><!--CVV-->
+            <div class="flag"></div>            
+            <div class="question_grey"></div>
         </div>
     </div>
 </div>
@@ -187,11 +193,11 @@
 <div id="section_quick_deposit" class="section">
     <div class="left text">Quick Deposit:</div>
     <div class="left">
-		<input type="button" id="e10" name="e10" value="10&euro;" />
-		<input type="button" id="e25" name="e25" value="25&euro;" />
-		<input type="button" id="e50" name="e50" value="50&euro;" />
-		<input type="button" id="e100" name="e100" value="100&euro;" />
-		<input type="button" id="e200" name="e200" value="200&euro;" />
+		<input type="button" id="money_e10" name="e10" value="10&euro;" />
+		<input type="button" id="money_e25" name="e25" value="25&euro;" />
+		<input type="button" id="money_e50" name="e50" value="50&euro;" />
+		<input type="button" id="money_e100" name="e100" value="100&euro;" />
+		<input type="button" id="money_e200" name="e200" value="200&euro;" />
     </div>
 </div>
 
@@ -199,9 +205,10 @@
 <div id="section_email" class="section">
     <div class="left text"><span data-req="req"></span>Email</div>
     <div class="left">
-		<input type="text" id="email" name="email" placeholder="john@doe.com" />
+		<input type="text" id="money_email" name="email" data-default_value="" />
     </div>
 </div>
+
 <!-- common content -->
 <div id="safe_and_secure">
 	<b>100%</b> Safe &amp; Secure

@@ -125,9 +125,17 @@ function getUserFormValues(inputsNames) {
     var localUserData = []; //console.dir(inputsNames);
     for(var i = 0, j = inputsNames.length; i<j; i++){
         //console.log('inputsNames[i] = '+inputsNames[i]+', current localUserData: ');
-        localUserData[inputsNames[i]]=(inputsNames[i]=='gender')? 
-            $('[name="gender"]:checked').val() : document.getElementById(inputsNames[i]).value;
-        //console.dir(localUserData[inputsNames[i]]);
+        switch (inputsNames[i]) {
+            case 'gender': // radios
+                localUserData[inputsNames[i]]=$('[name="gender"]:checked').val();
+                break;
+            case 'card_type': // radios
+                localUserData[inputsNames[i]]=$('[name="card_type"]:checked').val();
+                break;      
+            default:    // inputs
+                localUserData[inputsNames[i]]=document.getElementById(inputsNames[i]).value;
+                break;
+        }
     }
     return localUserData;
 }
@@ -154,18 +162,14 @@ function getRealMoneyRegStages() {
  */
 function loginUser() {
     $.getScript("models/users.js", function(){
-        var username_or_email = Scene.active_screen.Form.username_or_email.name;
-        var password = Scene.active_screen.Form.password.name;
+        var username_or_email = Scene.active_screen.Form.username_or_email.id;
+        var password = Scene.active_screen.Form.password.id; //console.log('call loginUser');
         var localUserData = getUserFormValues([username_or_email,password]);
         //console.dir(localUserData);
         var usersList,datasetsUsers,data_flag = 'user';
         //first, get all current users if they exist
         if(usersList=getUsers()) {
             datasetsUsers=JSON.parse(usersList);
-            /*else {
-                console.log('call showErrorMess()');
-                return showErrorMess('user','You are not registered.','username_or_email');
-            }*/
             //-------------------------------------------
             var error_mess=false;
             var user_login, input_id = false;

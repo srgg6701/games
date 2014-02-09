@@ -1,4 +1,5 @@
 // do it!
+
 $(function(){  
     
         var showTestMenu = function(){
@@ -30,6 +31,7 @@ $(function(){
     Scene.appendUserBlock(Scene.user_container_id_default);
     // The form in the active screen
     var screenForm = Scene.active_screen.Form;
+    
     /* Events */	 
     /**
      * Show My Profile data
@@ -45,7 +47,7 @@ $(function(){
     /* check passwords' coincedence before sending form's data */
     $('body')
         .on('submit', '#'+screenForm.name, function(event){
-            //console.log('Submitting %cForm:','background-color:#eaebec;'); console.dir($('input',event.currentTarget));
+            console.log('Submitting %cForm:','background-color:#eaebec;'); console.dir($('input',event.currentTarget));
         var invalid = false;
         $('input:not(:hidden)',event.currentTarget).each(function(index,element){
             //console.groupCollapsed('%c'+element.id,'font-weight:bold'); 
@@ -61,6 +63,7 @@ $(function(){
         if(screenForm.pass_diff) return false;
         // handle screens:
         makeConnection('controllers/user'); //console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);
+        makeConnection('controllers/money');
         switch(Scene.active_screen.screen_id){
             case 'my_profile_open_demo_account':
                 registerUser('demo');
@@ -74,6 +77,16 @@ $(function(){
             case 'my_profile_change_password_form':
                 return changePassword();
                 break;
+            default:
+                switch (Scene.active_screen.screen_id) {
+                    case 'deposit_visa':
+                        deposit_visa();
+                        break;
+
+                    default:
+                        console.log('active_screen: '+Scene.active_screen.screen_id);
+                        break;
+                }
         }   
         //console.log('submitting...'); 
         //console.log('Scene.active_screen.screen_id = '+Scene.active_screen.screen_id);          
