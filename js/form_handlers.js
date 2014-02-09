@@ -41,7 +41,7 @@ function handlePlaceHolder(Event,psholder){
 	} //console.dir(placeholder); console.dir(input); 
 }
 /**
- * Comment
+ * removes additional flags
  */
 function removeFlag(flag) {
     $(flag).removeClass(Scene.active_screen.Form.flag_id_error)
@@ -66,15 +66,18 @@ function removeDoubleSpaces(input){
  * @return boolean
  */
 function setValidityIcon(Event,form) { 
-    //if(form) console.log('Event.type: '+Event.type+'; %cform: %c'+form,'color:#ccc','font-weight:bold'); 
-    //else{ console.log('No form, event: %c'+Event.type,'font-weight:bold;font-style:italic;'); console.log('id: %c'+Event.target.id,' font-weight:bold; color:#999;');}
-    var input=(form)? Event:Event.target; //console.log('setValidityIcon'); console.dir(input);
+    if(form) console.log('Event.type: '+Event.type+'; %cform: %c'+form,'color:#ccc','font-weight:bold'); 
+    else{ console.log('No form, event: %c'+Event.type,'font-weight:bold;font-style:italic;'); console.log('id: %c'+Event.target.id,' font-weight:bold; color:#999;');}
+    var input=(form)? Event:Event.target;
+	var inputVal = $(input).val();
+	//console.log('setValidityIcon'); 
+	console.dir(input);
     // skip warnings on the login form
     if($(input).parent('span[data-skip="warnings"]').eq(0).size()){
-        //(input.value)? console.log('\treturn %ctrue', 'color:green;'):console.log('\treturn %cfalse','color:red;');
-        return (input.value)? true:false;
+        //(inputVal)? console.log('\treturn %ctrue', 'color:green;'):console.log('\treturn %cfalse','color:red;');
+        return (inputVal)? true:false;
     }
-    var dNext = $(input).next(); //console.dir(dNext); 
+    var dNext = $(input).next(); console.dir(dNext); 
     // get the Input object from the Form object
     var dataReq,inputObj=null; 
     // console.dir(inputObj);
@@ -91,7 +94,7 @@ function setValidityIcon(Event,form) {
                 if(!$('[name="'+input.name+'"]:checked').size()){
                     empty='checking'; //console.log('empty');
                 }
-            }else if(!input.value){
+            }else if(!inputVal){
                 empty='birthday'; //console.log('empty: birthday');
             }
             // A checkbox or radio which must be checked but is isn't
@@ -123,7 +126,7 @@ function setValidityIcon(Event,form) {
             }else{
                 /*  if the function was called not while the form submitting
                 and the input doesn't contain any value */
-                if(!input.value) {                
+                if(!inputVal) {                
                     if(inputObj.optional){
                         removeFlag(dNext); 
                         //console.log('\toptional: '+inputObj.optional+'\nreturn true');    
@@ -148,7 +151,7 @@ function setValidityIcon(Event,form) {
     var reg = new RegExp(inputObj.pattern);
     /*  check characters' validiti for any cases 
         (this doesn't include lenght's validity yet) */
-    var inputValidity = reg.test(input.value); //console.log('inputValidity = '+inputValidity+'\npattern = '+reg);
+    var inputValidity = reg.test(inputVal); if(form) console.log('inputValidity = '+inputValidity+'\npattern = '+reg+'\nvalue = '+inputVal);
     /*  if validation is passed and the appropriate event occured,
         validate input's length    */
     if(inputObj.len){ //console.log('inputObj.len: '+inputObj.len);
@@ -168,11 +171,11 @@ function setValidityIcon(Event,form) {
                 maxLength = inputObj.len[1];
             }else{  //console.log('no len[1]');
                 maxLength = minLength = inputObj.len[0];
-            }   //console.log('input.length = '+input.value.length+', minLength = '+minLength+', maxLength = '+maxLength);
+            }   //console.log('input.length = '+inputVal.length+', minLength = '+minLength+', maxLength = '+maxLength);
             // validate lengths
             /*  the value's length is bigger than the allowed max allowed value
                 it is not allowed anyway */
-            if(input.value.length > maxLength) inputValidity = false;
+            if(inputVal.length > maxLength) inputValidity = false;
             // if user inputed amything, check it:
             else{
                 var wrong_digital_format = false;
@@ -183,9 +186,9 @@ function setValidityIcon(Event,form) {
                     && !inputValidity){
                     // validate characters
                     // remember - up to this point inputValidity is FALSE!
-                    if(/^[0-9\s]+$/.test(input.value)){ 
+                    if(/^[0-9\s]+$/.test(inputVal)){ 
                         // count just digits
-                        var digits = input.value.replace(/\s/g,'');
+                        var digits = inputVal.replace(/\s/g,'');
                         if(digits.length==minLength){
                             inputValidity=true; 
                         }else if(digits.length<minLength&&Event.type!='blur'){
@@ -200,13 +203,13 @@ function setValidityIcon(Event,form) {
                     }else {
                         console.log('wrong special_digital_format, inputValidity = '+inputValidity);
                         wrong_digital_format = true;
-                    } //console.log('inputValidity = '+inputValidity+', input.value = '+input.value);
+                    } //console.log('inputValidity = '+inputValidity+', inputVal = '+inputVal);
                 }
                 // CONDITION matters:
                 /*  if the input.value has length > minLength, 
                 we skip the next block. In that case we just pass 
                 further the boolean value of inputValidity */
-                if( input.value.length && input.value.length < minLength ){ // too short length
+                if( inputVal.length && inputVal.length < minLength ){ // too short length
                     if(Event.type=='blur'||form) inputValidity = false; // set flag next           
                     /*  if it happens not while form submitting AND not by the blur event - 
                         remove flag and finish execution... */
@@ -256,8 +259,8 @@ function setValidityIcon(Event,form) {
            var pass2; 
            if(!(pass2=document.getElementById('new_password')))
                   pass2 = document.getElementById('password');
-           if( input.value && pass2.value
-               && (input.value!=pass2.value)
+           if( inputVal && pass2.value
+               && (inputVal!=pass2.value)
              ){    
                 handleFlag(); // first, remove all flags, then sets appropriate one
                 //console.log('\treturn %cfalse','color:red');

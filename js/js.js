@@ -47,15 +47,39 @@ $(function(){
     /* check passwords' coincedence before sending form's data */
     $('body')
         .on('submit', '#'+screenForm.name, function(event){
-            console.log('Submitting %cForm:','background-color:#eaebec;'); console.dir($('input',event.currentTarget));
+            //  console.log('Submitting %cForm:','background-color:#eaebec;'); 
+			//console.dir($('input',event.currentTarget));
+			//console.dir($('select',event.currentTarget));
         var invalid = false;
-        $('input:not(:hidden)',event.currentTarget).each(function(index,element){
-            //console.groupCollapsed('%c'+element.id,'font-weight:bold'); 
+		$('select, input:not(:hidden):not(:button):not(:submit)',event.currentTarget)
+            .each(function(index,element){
+			if(!setValidityIcon(element,true)) { 
+			    invalid = true;
+				return false;
+            }
+		});		
+		/*var innerCheckInvalid=function(element){
             if(!setValidityIcon(element,true)) { //console.log('invalid');
-                invalid = true; //console.log('%cinvalid', 'background-color:lightyellow'); //console.dir(element);
-                return false; // just goes out of the loop, does not cancel submitting 
-            }   //console.groupEnd();
+                return true; // just goes out of the loop, does not cancel submitting 
+            }
+			return false;
+			   //console.groupEnd();
+		};
+		// check inputs
+        $('input:not(:hidden)',event.currentTarget).each(function(index,element){
+           if(innerCheckInvalid(element)) {
+			   invalid = true;
+			   return false;
+		   }
         });
+		// check selects
+		$('select',event.currentTarget).each(function(index,element){
+			if(innerCheckInvalid(element)) {
+			   invalid = true;
+			   return false;
+		   }	
+		});*/
+		
         if(invalid) { //console.log('%csubmit form: invalid','color:red');
             return false;
         }

@@ -14,10 +14,15 @@ $(function(){
             // set the class name (see levels.scss) for the "options box (list)"
             var opt_box_class = 'opt_box';
             // get the real select
-            var sel = $(event.currentTarget).prev();
+            var sel = $(event.currentTarget)
+							.parent('span')
+								.find('select');
             // remove all "options" within the select's wrapper
             $('.'+select_pointer_class+' .'+opt_box_class).remove();
-            var opts = $('<div/>',{
+			var flag = $(event.currentTarget).prev();
+			removeFlag(flag);
+			
+			var opts = $('<div/>',{
                 class: opt_box_class
             });
             // add "options"

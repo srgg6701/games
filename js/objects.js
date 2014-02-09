@@ -274,7 +274,9 @@ var Scene={
             money_month:{
                 id:'money_month',
                 //hint:'',
-                message:'Point out the Month'
+                message:'Point out the Month',
+                pattern:"^[0-9]+$",
+                len:[1,2]
             },
             money_voucher_number:{
                 id:'money_voucher_number',
@@ -293,7 +295,9 @@ var Scene={
             money_year:{
                 id:'money_year',
                 //hint:'',
-                message:'Point out the Year'
+                message:'Point out the Year',
+                pattern:"^[0-9]+$",
+                len:[4]
             },
             /** 
              * set pseudoplaceholder
