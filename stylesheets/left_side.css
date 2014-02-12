@@ -1,0 +1,300 @@
+/* variables, mixins etc */
+/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* inc clearfix */
+@font-face {
+  font-family: 'Amaranth';
+  src: url("../sources/fonts/Amaranth.ttf") format("truetype");
+}
+
+/* recalculate */
+/* common classes */
+/* line 73, ../sass/shared.scss */
+.absolute {
+  position: absolute !important;
+}
+
+/* line 76, ../sass/shared.scss */
+.btn {
+  cursor: default;
+}
+
+/* line 79, ../sass/shared.scss */
+.clear {
+  display: block;
+}
+/* line 64, ../sass/shared.scss */
+.clear:after {
+  clear: both !important;
+  content: " " !important;
+  display: block;
+}
+
+/* line 82, ../sass/shared.scss */
+.close {
+  background: url("../images/close_white.png") no-repeat 8px 8px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px;
+}
+
+/* line 88, ../sass/shared.scss */
+.color-white {
+  color: white;
+}
+
+/* line 91, ../sass/shared.scss */
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* for all child elements */
+/* line 101, ../sass/shared.scss */
+.all-font-normal {
+  font-style: normal !important;
+}
+/* line 103, ../sass/shared.scss */
+.all-font-normal * {
+  font-style: normal !important;
+}
+
+/* line 107, ../sass/shared.scss */
+.half_wide {
+  width: 50% !important;
+}
+
+/* line 110, ../sass/shared.scss */
+.left {
+  float: left !important;
+}
+
+/* line 113, ../sass/shared.scss */
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+
+/* line 116, ../sass/shared.scss */
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+
+/* line 119, ../sass/shared.scss */
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 122, ../sass/shared.scss */
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+/* line 125, ../sass/shared.scss */
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 128, ../sass/shared.scss */
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+/* line 131, ../sass/shared.scss */
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* line 134, ../sass/shared.scss */
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 137, ../sass/shared.scss */
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+
+/* line 140, ../sass/shared.scss */
+.right {
+  float: right !important;
+}
+
+/* line 143, ../sass/shared.scss */
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4;
+}
+
+/* line 148, ../sass/shared.scss */
+br, hr {
+  clear: both;
+}
+
+/* line 6, ../sass/left_side.scss */
+#left_top_box,
+.left_bottom_box,
+#left_bottom_palette {
+  left: 10px;
+  width: 178.61538px;
+}
+
+/* line 10, ../sass/left_side.scss */
+.left_bottom_box {
+  background-repeat: no-repeat !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-position: 11px 28px !important;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #FFF;
+  height: 51px;
+  font-family: AvenirBlack;
+  font-size: 13.84615px;
+  font-weight: bold;
+  letter-spacing: -0.9px;
+  line-height: 23.07692px;
+  padding: 3px 13px 0 15px;
+}
+/* line 25, ../sass/left_side.scss */
+.left_bottom_box > div {
+  color: #FFF;
+  font-family: AvenirMedium;
+  font-size: 12.30769px;
+  font-style: italic;
+  font-weight: 100;
+  left: 41.53846px;
+  letter-spacing: -0.13846px;
+  top: 25.38462px;
+  width: 128px;
+}
+/* line 35, ../sass/left_side.scss */
+.left_bottom_box > div > div {
+  font-size: 13.07692px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -1.46154px;
+  position: absolute;
+  right: 0;
+  top: 1px;
+}
+
+/* line 46, ../sass/left_side.scss */
+#left_bottom_box_1 {
+  background: url(../images/copa.png);
+  background-position: 10px 16px !important;
+  background-size: 21px;
+  font-family: Amaranth;
+  font-style: italic;
+  font-size: 18px;
+  letter-spacing: -0.26923px;
+  padding-top: 12.30769px;
+  padding-left: 38.46154px;
+  padding-right: 0;
+  top: 405px;
+}
+
+/* line 59, ../sass/left_side.scss */
+#left_bottom_box_2 {
+  background: url(../images/flag_germany.png);
+  top: 454.5px;
+}
+
+/* line 63, ../sass/left_side.scss */
+#left_bottom_box_3 {
+  background: url(../images/flag_italy.png);
+  top: 505px;
+}
+
+/* line 67, ../sass/left_side.scss */
+#left_bottom_box_4 {
+  background: url(../images/flag_gb.png);
+  top: 555.5px;
+}
+
+/* line 71, ../sass/left_side.scss */
+#left_bottom_box_5 {
+  background: url(../images/flag_greece.png);
+  top: 606px;
+}

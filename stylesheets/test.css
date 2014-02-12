@@ -1,0 +1,15 @@
+/* 
+    Created on : Dec 19, 2013, 5:18:34 PM
+    Author     : Srgg
+*/
+/* line 5, ../sass/test.scss */
+blockquote {
+  border: solid 2px #01040B;
+  padding: 10px;
+}
+/* line 8, ../sass/test.scss */
+blockquote div {
+  background-color: lightgoldenrodyellow;
+  font-size: 18px;
+  padding: 20px;
+}

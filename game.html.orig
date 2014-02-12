@@ -1,0 +1,677 @@
+<!DOCTYPE HTML>
+<html>
+<<<<<<< HEAD
+    <head>
+        <meta charset="utf-8">
+        <title>Las Vegas</title>
+        <link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="css/fonts_common.css">
+        <script>
+            var font_table = (navigator.platform.indexOf('Win') != -1) ? 'windows' : 'common';
+
+<!-- ******************************* -->
+            font_table = 'common';
+<!-- ******************************* -->
+            document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="css/fonts_' + font_table + '.css">');
+        </script>
+        <link id="css_screen_common" media="screen" rel="stylesheet" type="text/css" href="css/screen.css">
+        <!--[if IE]>
+                <link id="css_screen_id" media="screen" rel="stylesheet" type="text/css" href="css/ie.css">
+        <![endif]-->
+        <script>
+            function detectBrowser() {
+                var browsers = ['Chrome', 'Firefox', 'MSIE', 'Safari'];
+                for (var i in browsers) {
+                    if (navigator.userAgent.indexOf(browsers[i]) != -1)
+                        return browsers[i];
+                }
+                return false;
+            }
+
+            if (detectBrowser() == 'Firefox') {
+                document.write('<link href="css/ff.css" id="firefox" rel="stylesheet" type="text/css">');
+            }
+        </script>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/objects.js"></script>
+        <script src="js/zoom.js"></script>
+        <script src="js/debug.js"></script>
+        <script src="js/js.js"></script>
+        <script src="js/js_money.js"></script>
+        <script src="js/form_handlers.js"></script>
+        <script src="controllers/actions.js"></script>
+        <!-- NOTE: on production some scripts are loaded by calling controllers/actions.js/ makeConnection() while form's submitting
+        -->
+        <script src="controllers/user.js"></script>
+        <script src="controllers/money.js"></script>
+        <!-- -->
+    </head>
+    <body>
+        <div id="wrapper">
+
+            <div id="test_inner_submenu"></div>
+
+            <div id="top_bar">
+            </div>
+
+            <div id="current_time">
+                <b>17:06</b> GMT - Friday 07 Sept, 2013
+            </div>
+
+            <div id="logo">Brand<span>.com</span></div>
+
+            <!-- GAME LEVEL -->            
+            <div data-level="game">
+                <div id="total">
+                    Total Winings
+                </div>
+
+                <div id="hell_trinity"></div>
+
+                <div id="hell666_1" class="h666">
+                    <span>999</span>
+                    <span>999</span>
+                </div>
+
+                <div id="hell666_2" class="h666">
+                    <span>999</span>
+                    <span>999</span>
+                </div>
+
+                <div id="hell666_3" class="h666">
+                    <span>999</span>
+                    <span>999</span>
+                </div>
+
+
+                <div id="welcome_back">
+                    <div class="coin" id="user-coin"><!-- 
+                        class must be added:
+                        gold -      for Money players
+                        silver -    for Demo players
+                        --></div>
+
+                    <div class="user_name" data-container_id="user_menu_container">
+                        <p>Welcome back,</p>
+                        Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
+                        <div class="menu_container" id="user_menu_container">
+                            <menu id="user_profile_menu" class="top_user_menu" data-slow-children="all">
+                                <!--    By clicking this menu the User Profile container fits 
+                                        by an appropriate screen. Its id is defined in the 
+                                        test_menu.html / a[data-block] element. This attribute
+                                        passes as an argument to the objects.js / Scene.appendUserBlock(entity_id) 
+                                -->
+                                <li><div></div><a data-screen="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
+                                <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
+                                    <menu class="short top_user_menu" id="cashier_submenu">
+                                        <li><a href="#" data-level-go="deposit">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
+                                        <li><a href="#" data-level-go="withdrawal">Withdraw Money</a></li>
+                                    </menu>
+                                </li>
+                                <li><div></div><a href="#" data-screen="logout">Logout</a></li>
+                            </menu>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="free"></div>
+                <div id="take_it">Take it, it's Yours!</div>
+                <div id="seven"></div>
+                <div id="get_it_now">Get it now!</div>
+                <div id="no_deposit_required">No deposit required</div>
+
+                <div class="left_bottom_box" id="left_bottom_box_1">Resent Winners
+                </div>
+                <div class="left_bottom_box" id="left_bottom_box_2">Slot Machine
+                    <div>A.F.
+                        <div>500 &euro;</div>
+                        <div class="last_user">il y a <b>12</b> sec</div>
+                    </div>
+                </div>
+                <div class="left_bottom_box" id="left_bottom_box_3">Bingo
+                    <div>A.F.
+                        <div>500 &euro;</div>
+                        <div class="last_user">il y a <b>38</b> sec</div>
+                    </div>
+                </div>
+                <div class="left_bottom_box" id="left_bottom_box_4">Scratch to win
+                    <div>A.F.
+                        <div>500 &euro;</div>
+                        <div class="last_user">il y a <b>1</b> min</div>
+                    </div>
+                </div>
+                <div class="left_bottom_box" id="left_bottom_box_5">Rotate it
+                    <div>A.F.
+                        <div>500 &euro;</div>
+                        <div class="last_user">il y a <b>3</b> min</div>
+                    </div>
+                </div>
+
+                <!-- Pointers -->
+                <div class="pointer_left top" id="left"></div>
+                <div class="pointer_left middle" id="left"></div>
+                <div class="pointer_left bottom" id="left"></div>
+                <div class="pointer_right top" id="left"></div>
+                <div class="pointer_right middle" id="left"></div>
+                <div class="pointer_right bottom" id="left"></div>
+
+                <!--Main scene-->
+
+                <div id="bingo_header_1">
+                    <div>
+                        <div> </div><div>Instant Games<div>Instant Games</div><div>Instant Games</div></div><div> </div>
+                    </div>
+                </div>
+
+                <div class="scene_bingo top left" id="scene_bingo_top_1"></div>
+                <div><div class="btn">Cool Farmers</div></div>
+                <div class="scene_bingo top center_left" id="scene_bingo_top_2"></div>
+                <div><div class="btn">Las Vegas Party</div></div>
+                <div class="scene_bingo top center_right" id="scene_bingo_top_3"></div>
+                <div><div class="btn">Cool Farmers</div></div>
+                <div class="scene_bingo top right" id="scene_bingo_top_4"></div>						
+                <div><div class="btn">Las Vegas Party</div></div>
+
+                <div id="bingo_header_2">
+                    <div>
+                        <div> </div><div>Scratch Games<div>Scratch Games</div><div>Scratch Games</div></div><div> </div>
+                    </div>
+                </div>
+
+                <div class="scene_bingo middle left" id="scene_bingo_middle_1"></div>
+                <div><div class="btn">Cool Farmers</div></div>
+                <div class="scene_bingo middle center_left" id="scene_bingo_middle_2"></div>
+                <div><div class="btn">Las Vegas Party</div></div>
+                <div class="scene_bingo middle center_right" id="scene_bingo_middle_3"></div>
+                <div><div class="btn">Cool Farmers</div></div>
+                <div class="scene_bingo middle right" id="scene_bingo_middle_4"></div>
+                <div><div class="btn">Las Vegas Party</div></div>
+
+                <div id="bingo_header_3">
+                    <div>
+                        <div> </div><div>Slots Machine<div>Slots Machine</div><div>Slots Machine</div></div><div> </div>
+                    </div>
+                </div>
+
+                <div class="scene_bingo bottom left" id="scene_bingo_bottom_1"></div>
+                <div><div class="btn">Cool Farmers</div></div>
+                <div class="scene_bingo bottom center_left" id="scene_bingo_bottom_2"></div>
+                <div><div class="btn">Las Vegas Party</div></div>
+                <div class="scene_bingo bottom center_right" id="scene_bingo_bottom_3"></div>
+                <div><div class="btn">Cool Farmers</div></div>
+                <div class="scene_bingo bottom right" id="scene_bingo_bottom_4"></div>
+                <div><div class="btn">Las Vegas Party</div></div>
+
+                <div class="right_block" id="right_block_promotions"></div>
+
+                <div class="right_panel" id="right_promotion">
+                    <div class="panel_content">
+                        <p>
+                            <b>100% Welcome Bonus</b>
+                        </p>
+                        <p>
+                            You measure your-
+                            self by the people
+                            who measure themselves.
+                        </p>
+                    </div>
+                    <div class="small_header">
+                        <div class="subsrtrate">&nbsp;</div>
+                        <div class="subheader">Promotions</div>
+                    </div>
+                </div>       
+
+                <div class="right_block" id="right_block_live_support"></div>
+
+                <div class="right_panel" id="right_live_support">
+                    <div class="panel_content">
+                        <p>
+                            <img class="block" src="images/girl.jpg" width="105" height="66" />
+                        </p>
+
+                    </div>
+                    <div class="small_header">
+                        <div class="subsrtrate">&nbsp;</div>
+                        <div class="subheader">Live Support</div>
+                    </div>
+                </div>     
+
+                <div class="right_block" id="right_block_contactez-nous"></div>
+                <div class="right_panel" id="right_contactez-nous">
+
+                    <div class="panel_content">
+                        <p>Nous vous 
+                            répondrons dans 
+                            un délai de 24 h</p>
+
+                    </div>
+                    <div class="small_header">
+                        <div class="subsrtrate">&nbsp;</div>
+                        <div class="subheader">Contactez-nous</div>
+                    </div>
+                </div>
+
+                <div class="right_block" id="right_block_jouez-partout"></div>
+                <div class="right_panel" id="right_jouez-partout">
+                    <div class="panel_content">
+                        &nbsp;
+                    </div>
+                    <div class="small_header">
+                        <div class="subsrtrate">&nbsp;</div>
+                        <div class="subheader">Jouez Partout</div>
+                    </div>
+
+
+                </div>
+            </div>                               
+
+            <!-- MONEY LEVEL --> 
+            <div data-level="money" data-level-content="">
+                <!-- Here the Money sections (contents/sublevels/[deposit/withdrawal].html) should be loaded.
+                        See /controllers/actions.js : manageLevels() for details	-->
+            </div>
+
+            <div id="bottom_top_left"></div>
+
+            <div id="bottom_menu_left_side"></div>
+
+            <div id="my_balance">My <b>Balance</b>
+            </div>
+
+            <div id="currency_sum">
+                3.520 &euro;
+            </div>
+
+            <div id="bleaks_top"></div>
+
+            <div id="bleaks_bottom"></div>
+
+            <div id="bottom_menu_right_side">
+                <div id="btn_bottom_switcher"><!-- 
+                Must be added class / text
+                demo    "Switch to Money Player"
+                money   "Make a deposit"
+                    --></div>
+            </div>
+
+            <!-- Bottom menu -->
+            <div class="bottom_menu_item"  id="bottom_menu_item_profile" data-screen="profile">Profile</div>
+            <div class="bottom_menu_item"  id="bottom_menu_item_cashier" data-container_id="bottom_menu_container_cashier">Cashier
+                <div class="menu_container" id="bottom_menu_container_cashier">
+
+                    <!--	Menu to load Cashier section.
+                                    Clicking by it calls js.js / manageLevels()
+                    -->
+                    <menu>
+                        <li class="header"><div></div>Cashier</li>
+                        <li>
+                            <a href="javascript:void(0);" data-level-go="deposit">Deposit Money</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" data-level-go="withdrawal">Withdraw Money</a>	
+                        </li>
+                    </menu>
+                </div>
+            </div>
+            <div class="bottom_menu_item"  id="bottom_menu_item_games" data-container_id="bottom_menu_container_games">Games
+                <div class="menu_container" id="bottom_menu_container_games">
+                    <menu class="parent">
+                        <li class="header"><div></div>Games</li>
+                        <li>
+                            <a href="#">Instant Games</a>
+=======
+<head>
+<meta charset="utf-8">
+<title>Las Vegas</title>
+<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="css/fonts_common.css">
+<script>
+var font_table=(navigator.platform.indexOf('Win')!=-1)? 'windows':'common';
+
+<!-- ******************************* -->
+font_table='common';
+<!-- ******************************* -->
+document.write('<link id="css_screen" media="screen" rel="stylesheet" type="text/css" href="css/fonts_'+font_table+'.css">');
+</script>
+<link id="css_screen_common" media="screen" rel="stylesheet" type="text/css" href="css/screen.css">
+<!--[if IE]>
+	<link id="css_screen_id" media="screen" rel="stylesheet" type="text/css" href="css/ie.css">
+<![endif]-->
+<script>
+function detectBrowser(){
+	var browsers=['Chrome','Firefox','MSIE','Safari'];
+	for(var i in browsers){
+		if(navigator.userAgent.indexOf(browsers[i])!=-1)
+			return browsers[i];
+	}
+	return false;
+}
+
+if(detectBrowser()=='Firefox') {
+	document.write('<link href="css/ff.css" id="firefox" rel="stylesheet" type="text/css">');
+}
+</script>
+<!-- NOTE: some scripts are loaded by calling controllers/actions.js/ makeConnection() while form's submitting
+-->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/objects.js"></script>
+<script src="js/zoom.js"></script>
+<script src="js/debug.js"></script>
+<script src="js/js.js"></script>
+<script src="js/js_money.js"></script>
+<script src="js/form_handlers.js"></script>
+<script src="controllers/actions.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    
+    <div id="test_inner_submenu"></div>
+	
+  <div id="top_bar">
+    </div>
+        
+        <div id="current_time">
+          <b>17:06</b> GMT - Friday 07 Sept, 2013
+  </div>
+    	
+        <div id="logo">Brand<span>.com</span></div>
+
+<!-- GAME LEVEL -->            
+<div data-level="game">
+            <div id="total">
+            	Total Winings
+            </div>
+
+	<div id="hell_trinity"></div>
+    
+	<div id="hell666_1" class="h666">
+    	<span>999</span>
+    	<span>999</span>
+    </div>
+
+	<div id="hell666_2" class="h666">
+    	<span>999</span>
+    	<span>999</span>
+    </div>
+
+	<div id="hell666_3" class="h666">
+    	<span>999</span>
+    	<span>999</span>
+    </div>
+
+    	
+        <div id="welcome_back">
+            <div class="coin" id="user-coin"><!-- 
+                class must be added:
+                gold -      for Money players
+                silver -    for Demo players
+            --></div>
+    	 
+        <div class="user_name" data-container_id="user_menu_container">
+        	<p>Welcome back,</p>
+        Jhon Doe <img id="user_profile_menu_pointer" src="images/pointer_down.png" width="11" height="5">
+        	<div class="menu_container" id="user_menu_container">
+                <menu id="user_profile_menu" class="top_user_menu" data-slow-children="all">
+                    <!--    By clicking this menu the User Profile container fits 
+                            by an appropriate screen. Its id is defined in the 
+                            test_menu.html / a[data-block] element. This attribute
+                            passes as an argument to the objects.js / Scene.appendUserBlock(entity_id) 
+                            -->
+                    <li><div></div><a data-screen="profile" id="menu_my_profile" href="#">My Profile</a><div class="owner" id="user_profile_menu_pointer_top"></div></li>
+                    <li><div></div><a href="#">Cashier</a>	<div id="user_profile_menu_pointer_cashier" class="menu_pointer"></div>
+                        <menu class="short top_user_menu" id="cashier_submenu">
+                            <li><a href="#" data-level-go="deposit">Deposit Money</a><div class="owner" id="user_profile_menu_pointer_submenu"></div></li>
+                            <li><a href="#" data-level-go="withdrawal">Withdraw Money</a></li>
+                        </menu>
+                    </li>
+                    <li><div></div><a href="#" data-screen="logout">Logout</a></li>
+                </menu>
+            </div>
+        </div>
+  </div>
+    
+        	<div id="free"></div>
+        	<div id="take_it">Take it, it's Yours!</div>
+            <div id="seven"></div>
+            <div id="get_it_now">Get it now!</div>
+            <div id="no_deposit_required">No deposit required</div>
+  			
+            <div class="left_bottom_box" id="left_bottom_box_1">Resent Winners
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_2">Slot Machine
+            	<div>A.F.
+                	<div>500 &euro;</div>
+                    <div class="last_user">il y a <b>12</b> sec</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_3">Bingo
+            	<div>A.F.
+                	<div>500 &euro;</div>
+                    <div class="last_user">il y a <b>38</b> sec</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_4">Scratch to win
+            	<div>A.F.
+                	<div>500 &euro;</div>
+                    <div class="last_user">il y a <b>1</b> min</div>
+                </div>
+            </div>
+        	<div class="left_bottom_box" id="left_bottom_box_5">Rotate it
+            	<div>A.F.
+                	<div>500 &euro;</div>
+                    <div class="last_user">il y a <b>3</b> min</div>
+                </div>
+            </div>
+ 
+            <!-- Pointers -->
+            <div class="pointer_left top" id="left"></div>
+            <div class="pointer_left middle" id="left"></div>
+            <div class="pointer_left bottom" id="left"></div>
+            <div class="pointer_right top" id="left"></div>
+            <div class="pointer_right middle" id="left"></div>
+            <div class="pointer_right bottom" id="left"></div>
+            
+            <!--Main scene-->
+        
+            <div id="bingo_header_1">
+            	<div>
+                    <div> </div><div>Instant Games<div>Instant Games</div><div>Instant Games</div></div><div> </div>
+                </div>
+            </div>
+
+        	<div class="scene_bingo top left" id="scene_bingo_top_1"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo top center_left" id="scene_bingo_top_2"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+        	<div class="scene_bingo top center_right" id="scene_bingo_top_3"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo top right" id="scene_bingo_top_4"></div>						
+            	<div><div class="btn">Las Vegas Party</div></div>
+        
+            <div id="bingo_header_2">
+            	<div>
+                    <div> </div><div>Scratch Games<div>Scratch Games</div><div>Scratch Games</div></div><div> </div>
+                </div>
+            </div>
+        
+            <div class="scene_bingo middle left" id="scene_bingo_middle_1"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo middle center_left" id="scene_bingo_middle_2"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+        	<div class="scene_bingo middle center_right" id="scene_bingo_middle_3"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo middle right" id="scene_bingo_middle_4"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+
+            <div id="bingo_header_3">
+            	<div>
+                    <div> </div><div>Slots Machine<div>Slots Machine</div><div>Slots Machine</div></div><div> </div>
+                </div>
+            </div>
+        
+        	<div class="scene_bingo bottom left" id="scene_bingo_bottom_1"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo bottom center_left" id="scene_bingo_bottom_2"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+        	<div class="scene_bingo bottom center_right" id="scene_bingo_bottom_3"></div>
+				<div><div class="btn">Cool Farmers</div></div>
+        	<div class="scene_bingo bottom right" id="scene_bingo_bottom_4"></div>
+				<div><div class="btn">Las Vegas Party</div></div>
+
+        <div class="right_block" id="right_block_promotions"></div>
+        	
+            <div class="right_panel" id="right_promotion">
+                <div class="panel_content">
+                    <p>
+                    	<b>100% Welcome Bonus</b>
+                    </p>
+                    <p>
+                        You measure your-
+                        self by the people
+                        who measure themselves.
+                    </p>
+                </div>
+                <div class="small_header">
+                    <div class="subsrtrate">&nbsp;</div>
+                    <div class="subheader">Promotions</div>
+                  </div>
+            </div>       
+        
+        <div class="right_block" id="right_block_live_support"></div>
+    
+            <div class="right_panel" id="right_live_support">
+                <div class="panel_content">
+                    <p>
+                    	<img class="block" src="images/girl.jpg" width="105" height="66" />
+                    </p>
+                    
+				</div>
+            	<div class="small_header">
+                    <div class="subsrtrate">&nbsp;</div>
+                	<div class="subheader">Live Support</div>
+                </div>
+            </div>     
+                    
+        <div class="right_block" id="right_block_contactez-nous"></div>
+        <div class="right_panel" id="right_contactez-nous">
+        
+                <div class="panel_content">
+                    <p>Nous vous 
+répondrons dans 
+un délai de 24 h</p>
+                    
+                </div>
+                <div class="small_header">
+                    <div class="subsrtrate">&nbsp;</div>
+                    <div class="subheader">Contactez-nous</div>
+                </div>
+        </div>
+
+        <div class="right_block" id="right_block_jouez-partout"></div>
+        <div class="right_panel" id="right_jouez-partout">
+                <div class="panel_content">
+                    &nbsp;
+                </div>
+                <div class="small_header">
+                    <div class="subsrtrate">&nbsp;</div>
+                    <div class="subheader">Jouez Partout</div>
+                </div>
+        
+            
+        </div>
+</div>                               
+
+<!-- MONEY LEVEL --> 
+<div data-level="money" data-level-content="">
+<!-- Here the Money sections (contents/sublevels/[deposit/withdrawal].html) should be loaded.
+	See /controllers/actions.js : manageLevels() for details	-->
+</div>
+        
+        <div id="bottom_top_left"></div>
+
+        <div id="bottom_menu_left_side"></div>
+    	
+        	<div id="my_balance">My <b>Balance</b>
+            </div>
+            
+                <div id="currency_sum">
+                	3.520 &euro;
+                </div>
+            	
+        <div id="bleaks_top"></div>
+
+        <div id="bleaks_bottom"></div>
+
+        <div id="bottom_menu_right_side">
+        	<div id="btn_bottom_switcher"><!-- 
+                Must be added class / text
+                demo    "Switch to Money Player"
+                money   "Make a deposit"
+                --></div>
+        </div>
+			
+        <!-- Bottom menu -->
+	        <div class="bottom_menu_item"  id="bottom_menu_item_profile" data-screen="profile">Profile</div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_cashier" data-container_id="bottom_menu_container_cashier">Cashier
+                <div class="menu_container" id="bottom_menu_container_cashier">
+
+<!--	Menu to load Cashier section.
+		Clicking by it calls js.js / manageLevels()
+-->
+                    <menu>
+                    	<li class="header"><div></div>Cashier</li>
+                        <li>
+                        	<a href="javascript:void(0);" data-level-go="deposit">Deposit Money</a>
+                        </li>
+                        <li>
+                        	<a href="javascript:void(0);" data-level-go="withdrawal">Withdraw Money</a>	
+                        </li>
+            		</menu>
+                </div>
+            </div>
+	        <div class="bottom_menu_item"  id="bottom_menu_item_games" data-container_id="bottom_menu_container_games">Games
+                <div class="menu_container" id="bottom_menu_container_games">
+                    <menu class="parent">
+                    	<li class="header"><div></div>Games</li>
+                        <li>
+                        	<a href="#">Instant Games</a>
+>>>>>>> 0c45f5d01b7f71897036d48626c98ff255aebc50
+                            <div id="bm_instant_games" class="menu_pointer"></div>
+                            <menu id="instant_games_submenu">
+                            </menu>
+                        </li>
+                        <li>
+<<<<<<< HEAD
+                            <a href="#">Scratch Games</a>	
+=======
+                        	<a href="#">Scratch Games</a>	
+>>>>>>> 0c45f5d01b7f71897036d48626c98ff255aebc50
+                            <div id="bm_scratch_games" class="menu_pointer"></div>
+                            <menu id="scratch_games_submenu">
+                            </menu>
+                        </li>
+                        <li>
+<<<<<<< HEAD
+                            <a href="#">Slots Machine</a>
+=======
+                        	<a href="#">Slots Machine</a>
+>>>>>>> 0c45f5d01b7f71897036d48626c98ff255aebc50
+                            <div id="bm_slots_machine" class="menu_pointer"></div>
+                            <menu id="slots_machine_submenu">
+                            </menu>
+                        </li>
+                    </menu>
+                </div>
+            </div>
+<<<<<<< HEAD
+            <div class="bottom_menu_item" id="bottom_menu_item_chat">Live Chat</div>
+            <div class="bottom_menu_item" id="bottom_menu_item_logout" data-screen="logout">Logout</div>
+        </div>
+        <script src="js/menus.js"></script>
+    </body>
+=======
+	        <div class="bottom_menu_item" id="bottom_menu_item_chat">Live Chat</div>
+	        <div class="bottom_menu_item" id="bottom_menu_item_logout" data-screen="logout">Logout</div>
+</div>
+<script src="js/menus.js"></script>
+</body>
+>>>>>>> 0c45f5d01b7f71897036d48626c98ff255aebc50
+</html>

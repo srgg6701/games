@@ -1,0 +1,40 @@
+/* inc clearfix */
+@font-face {
+  font-family: 'AvenirBook';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirMedium';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirHeavy';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirOblique';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirBlackOblique';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirLight';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url("../sources/fonts/Helvetica_CE_Regular.ttf") format("truetype");
+}
