@@ -1,0 +1,35 @@
+	<div>
+        <div class="overlight"> </div>
+        <h4>
+            <div class="pyct"></div>Login to your Account
+        </h4>
+    </div>
+    <section data-order="first" class="narrow bg_overlight">
+        <form name="user-form" id="user-form"  method="post" action="">
+            <!-- Username or Email Address  
+            	 data-flag="user"
+                 data-flag="password"
+            -->
+        	<span data-flag="user" data-load="input|username_or_email|username or email" data-skip="warnings"></span>
+            <span data-flag="password" data-load="input|password|password" data-skip="warnings"></span>
+            <div class="remember_me clear">    
+                <label data-box="remember_me" class="ellipse"><input name="remember_me" id="remember_me" type="checkbox" value=""></label> 
+                <span id="remember_me_text">Remember me</span>
+            </div>
+            <button type="submit" id="btn_play_now" class="btn_yellow">PLAY NOW!</button>
+            <a class="link-question" href="javascript:void(0);">Forgot password or username?</a>
+        </form>
+    </section>
+    <section data-order="last">
+    	<h4 class="clear second">New Player?</h4>
+        <button class="btn_blue left" onClick="goAnotherScreen('my_profile_open_demo_account');">
+        	<div class="pyct"></div>
+            Open a Account<br>DEMO
+        </button> 
+        <button class="btn_blue right" onClick="goAnotherScreen('my_profile_real_money_account1');">
+        	<div class="pyct"></div>
+            Open a Account<br>REAL MONEY
+        </button>
+    </section>
+<div class="bg_overlight_bottom"></div>
+<div class="close"></div>

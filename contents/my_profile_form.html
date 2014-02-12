@@ -1,0 +1,59 @@
+    <form name="user-form" id="user-form"  method="post" action="">
+	<table class="bg_overlight" width="100%" cellpadding="10">
+      <thead>
+      	<tr>
+      		<td colspan="2">
+            	<div class="overlight"> </div>
+            	<h4><div class="pyct my_profile"></div>My Profile</h4></td>
+        </tr>
+      </thead>
+      <tr class="separator_top_under_header"><td colspan="2"></td></tr>
+      <tr class="first" id="tr-first">
+        <td><span data-flag="user" data-load="input|username|username"></span>
+        </td>
+        <td><span data-flag="email" data-load="input|email|email"></span>
+        </td>
+      </tr>
+      <tr id="tr-second">
+        <td><span data-flag="password" data-load="input|password|password"></span>
+        </td>
+        <td><!--  -->
+        <button onClick="return changePassword(this.form);" type="button" id="btn_change_password" class="btn_yellow">Change password</button></td>
+      </tr>
+      <tr class="padding-top-bottom-null font-common" id="tr-third">
+        <td>
+        	<span data-load="person|gender"></span>
+        </td>
+        <td>
+        	<span data-load="person|birthday"></span>
+        </td>
+      </tr>
+      <tr id="tr-fourth">
+        <td><span data-flag="address" data-load="input|address|address"></span>
+        </td>
+        <td><span data-flag="zip_code" data-load="input|zip_code|zip_code"></span>
+        </td>
+      </tr>
+      <tr id="tr-fifth">
+        <td><span data-flag="city" data-load="input|city|city"></span>
+        </td>
+        <td><span data-flag="country" data-load="input|country|country"></span>
+        </td>
+      </tr>
+      <tr id="tr-sixth">
+        <td><span data-flag="mobile_phone" data-load="input|mobile_phone|mobile_phone"></span>
+        </td>
+        <td><span data-flag="home_phone" data-load="input|home_phone|home phone (optional)"></span>
+        </td>
+      </tr>
+      <tfoot>
+      	<tr>
+      		<td colspan="2" class="bg_overlight_bottom skip_height">
+            	<!--  -->
+                <button onClick="return saveProfileChanges(this.form);" type="button" id="btn_save_changes" class="btn btn_blue">Save Changes</button>
+            </td>
+        </tr>
+     </tfoot>
+    </table>
+	</form>
+<div class="close"></div>

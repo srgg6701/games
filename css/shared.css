@@ -1,0 +1,212 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000322}}
+html {
+  line-height: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000324}}
+ol, ul {
+  list-style: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000326}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000328}}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000330}}
+q, blockquote {
+  quotes: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003103}}
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000332}}
+a img {
+  border: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003116}}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/* inc clearfix */
+@font-face {
+  font-family: 'Amaranth';
+  src: url("../sources/fonts/Amaranth.ttf") format("truetype"); }
+
+/* recalculate */
+/* common classes */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000376}}
+.absolute {
+  position: absolute !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000379}}
+.btn {
+  cursor: default; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000382}}
+.coin {
+  background: url(../images/coins.png) no-repeat 0 2px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000385}}
+.clear {
+  display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000367}}
+  .clear:after {
+    clear: both !important;
+    content: " " !important;
+    display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000388}}
+.close {
+  background: url("../images/close_white.png") no-repeat 8px 8px black;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -ms-border-radius: 0 4px 4px 0;
+  -o-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  height: 27px;
+  width: 26px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000394}}
+.color-white {
+  color: white; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000397}}
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5; }
+
+/* for all child elements */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003107}}
+.all-font-normal {
+  font-style: normal !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003109}}
+  .all-font-normal * {
+    font-style: normal !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003113}}
+.btn_yellow {
+  background: url(../images/yellowButton1.svg) no-repeat;
+  background-position-x: -80px;
+  background-size: 170%;
+  border: solid 1px #333;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  color: #060415;
+  font-size: 17px;
+  font-weight: bolder;
+  height: 46px;
+  line-height: 46px;
+  margin: auto;
+  width: 260px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003127}}
+.half_wide {
+  width: 50% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003130}}
+.left {
+  float: left !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003133}}
+.opacity01 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003136}}
+.opacity02 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003139}}
+.opacity03 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003142}}
+.opacity04 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003145}}
+.opacity05 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003148}}
+.opacity06 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003151}}
+.opacity07 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003154}}
+.opacity08 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003157}}
+.opacity09 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003160}}
+.right {
+  float: right !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003163}}
+.shade {
+  background-color: #03040F;
+  opacity: 0.8;
+  z-index: 4; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003168}}
+.unicode_pointer {
+  display: inline-block;
+  -webkit-transform: scale(1.9, 0.9);
+  -moz-transform: scale(1.9, 0.9);
+  -ms-transform: scale(1.9, 0.9);
+  -o-transform: scale(1.9, 0.9);
+  transform: scale(1.9, 0.9);
+  height: 0;
+  width: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003174}}
+br, hr {
+  clear: both; }

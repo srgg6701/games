@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Start game</title>
+<link rel="stylesheet" type="text/css" href="css/start_game.css">
+<script>
+function openGameWindow(test){
+	var filename='game.html';
+	if(test) filename='http://quirktools.com/screenfly/#u=http%3A//'+window.location.host+window.location.pathname+filename+'&w=1280&h=900&a=1';
+	window.open(filename,'game','width='+screen.width+',height='+screen.height);
+}
+</script>
+</head>
+<body>
+<div id="button_place">
+		<button onClick="openGameWindow()">Play Now</button>
+    </div>
+    <div id="open_test" style="background-color:#FF6; position:absolute; bottom:0; right:0; padding:10px;"><a href="javascript:openGameWindow(true);">Open in test mode</a></div>
+</body>
+</html>
