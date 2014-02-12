@@ -1,7 +1,9 @@
 $(function(){
     // assign the options box name
     var select_pointer_class = 'select_pointer';
-    // handle pseudocheckboxes
+    // handle Money level objects
+    // set events' identifiers
+    var euroMoney = '#section_quick_deposit input[type="button"]';
     $('body')
         // click on the "radiobutton"
         .on('click', 'label:has(.radio-skin)', function(event){
@@ -14,9 +16,7 @@ $(function(){
             // set the class name (see levels.scss) for the "options box (list)"
             var opt_box_class = 'opt_box';
             // get the real select
-            var sel = $(event.currentTarget)
-							.parent('span')
-								.find('select');
+            var sel = $(event.currentTarget).parent('span').find('select');
             // remove all "options" within the select's wrapper
             $('.'+select_pointer_class+' .'+opt_box_class).remove();
 			var flag = $(event.currentTarget).prev();
@@ -45,7 +45,11 @@ $(function(){
                     $(this).remove();
                 });
             });
-    });
+    })
+        .on('click',euroMoney, function(event){
+            $(euroMoney).removeClass();
+            $(event.currentTarget).addClass('button_gray_hover');
+        });
     // hide "options" by clicking outside of options box
     $(document).on('click',function(event){
         var ev = event.target; //console.dir(event);
