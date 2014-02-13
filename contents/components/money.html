@@ -223,9 +223,21 @@
     </div>
     <div>
     	<h4>Upload Document</h4>
-        <div id="upload_docs">
+        <div id="upload_docs" style="cursor:pointer">
         	Click Here and upload your documents
         </div>
+        <form id="form_upload_doc" style="display:none;">
+            <input type="file" value="">
+        </form>
+        <div id="upload_now">
+  			<div style="height: auto;">
+				<div id="uploaded_file_name">
+                </div>
+                <button id="btn_upload_now" type="button">Upload now</button>
+				<a id="cancel_uploading" href="javascript:void(0)">
+                	Cancel</a>
+			</div>
+		</div>
     </div>
     <div id="verysign2">
     </div>

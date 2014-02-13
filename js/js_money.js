@@ -55,7 +55,56 @@ $(function(){
         // back to LOBBY link on the Withdrawal Methods section
         .on('click','#back_to_lobby', function(){
             manageLevels('game');
-        });
+    })
+        // upload document
+        .on('click','#upload_docs', function(event){ 
+            // block which is visible by default
+            var doc_uploader_box=event.currentTarget; 
+            // file upload field
+            var doc_upload_input=$('#form_upload_doc input[type="file"]');
+            console.dir(doc_upload_input);
+            // the second block which appears after user pointed out the file to upload
+            var doc_upload_confirm_box='#upload_now'; 
+            // the file name container to show for the User
+            var file_name_block='#uploaded_file_name';
+            // if User has choosen the file to upload
+            $(doc_upload_input).trigger('click');
+            // ask user to confirm uploading
+            $(doc_upload_input).on('change', function(){
+                var file_name,max_len=40;
+                if(file_name=this.value){
+                    if(file_name.length>max_len)
+                        file_name='... '+file_name.substr(file_name.length-max_len);
+                    $(file_name_block).html(file_name); //console.dir($(doc_uploader_box));
+                    $(doc_uploader_box).animate({ opacity: 0 }, 200, function(){
+                        $(doc_upload_confirm_box).fadeIn(200);
+                    });
+                }                   
+            });
+            
+            var dropStateToDefault = function(){
+                $(doc_upload_confirm_box).fadeOut(200, function(){
+                    $(doc_upload_input).val('');
+                    $(file_name_block).html('');
+                    $(doc_uploader_box).animate({ opacity: 1 }, 200);
+                });                
+            };
+            // cancel uploading
+            $('#cancel_uploading').on('click',dropStateToDefault);
+            
+            var upload = function(){
+                // just in the test mode
+                setTimeout(
+                    function(){
+                        dropStateToDefault();
+                        alert('Your file has been uploaded!');
+                    } ,1000);
+            };
+            
+            $('#btn_upload_now').on('click',function(){
+                upload();
+            });
+    });
     // hide "options" by clicking outside of options box
     $(document).on('click',function(event){
         var ev = event.target; //console.dir(event);
