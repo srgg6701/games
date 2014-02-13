@@ -217,7 +217,6 @@ var Scene = {
             },
             money_amount: {
                 id: 'money_amount',
-                //hint:'Money amount',
                 message: constMess.alwsymb + 'numbers only',
                 pattern: "^[0-9]+$",
                 len: [3, 6]
@@ -354,8 +353,7 @@ var Scene = {
                      gets this from: 
                      - data-load[2] attribute for UserProfile level 
                      - the value of  data-default_value for Money level*/
-                    defaultValue
-                    ) {
+                    defaultValue ) {
                 var parentForm = this; //console.log('Elem start'); console.dir(Elem);
                 //var parentFormElement = parentForm[Elem[0].id]; //console.log('parentForm['+Elem[0].id+']');console.dir(parentForm[Elem[0].id]);
                 /*  Set pseudoplaceholder */
@@ -677,8 +675,12 @@ var Scene = {
                                  Don't mix the attribute *data-req* here which is equal to "req"
                                  with such an attribute which is equal to the filed's NAME. 
                                  There is a crucial difference here! */
-                                $('[data-req="req"]', this).each(function(index, block) { //console.log('text: '+$(block).parent().text());console.dir(block);
-                                    var contentBlock = $(block).parent().next();
+                                $('[data-req="req"], [data-placeholder]', this).each(function(index, block) { //console.log('text: '+$(block).parent().text());console.dir(block);
+                                    // if optional, but need to set a placeholder 
+                                    var contentBlock = block;
+                                    // if is required, get the next block which contains the target field
+                                    if($(block).attr('data-req')) 
+                                        contentBlock = $(block).parent().next();
                                     var targets = $('input', contentBlock); // also may be radio
                                     if (!$(targets).size())
                                         targets = $('select', contentBlock);
@@ -690,10 +692,7 @@ var Scene = {
                                     }); //console.groupEnd();
                                 });
                             } else
-                                Scene.handleInputField(this,
-                                        defaultValue,
-                                        element_id
-                                        );
+                                Scene.handleInputField(this, defaultValue, element_id);
                         });
             });
         }
