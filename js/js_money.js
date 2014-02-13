@@ -11,7 +11,8 @@ $(function(){
             var rDotClassSkinName = '.radio-skin';
             $(rDotClassSkinName,'label').removeClass(rClassName);
             $(rDotClassSkinName,event.currentTarget).addClass(rClassName); //console.dir(radioDiv);
-    })  // click on the "select's pointer"
+    })  
+        // click on the "select's pointer"
         .on('click', '.'+select_pointer_class, function(event){
             // set the class name (see levels.scss) for the "options box (list)"
             var opt_box_class = 'opt_box';
@@ -46,9 +47,14 @@ $(function(){
                 });
             });
     })
+        // button with euros: 10, 25 ... 200
         .on('click',euroMoney, function(event){
             $(euroMoney).removeClass();
             $(event.currentTarget).addClass('button_gray_hover');
+    })
+        // back to LOBBY link on the Withdrawal Methods section
+        .on('click','#back_to_lobby', function(){
+            manageLevels('game');
         });
     // hide "options" by clicking outside of options box
     $(document).on('click',function(event){

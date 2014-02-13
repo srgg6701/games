@@ -13,7 +13,7 @@ $(function(){
 
         setTimeout(function(){
             $('#username_or_email').val('srgg01');
-            $('#password').val('11111');    
+            $('#password').val('111111');    
             if(detectBrowser()=='Firefox') {
                 showTestMenu();
                 $('#test_inner_submenu').css('display','block');
@@ -40,7 +40,8 @@ $(function(){
         var data_screen = $(this).attr('data-screen');
         if(data_screen=='profile'){
             manageLevels('game');
-            Scene.appendUserBlock((User.account_type=='demo')? 'my_profile_data':'my_profile_form');
+            Scene.appendUserBlock((User.account_type=='demo')? 
+                'my_profile_data':'my_profile_form');
         }else if(data_screen=='logout')
             logoutUser();
     });    
