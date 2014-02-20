@@ -1326,61 +1326,63 @@ button,
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\000037}}
 .pointer_left {
   background: url(../images/pointer_left.png);
+  cursor: pointer;
   left: 204.69231px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000312}}
 .pointer_right {
   background: url(../images/pointer_right.png);
+  cursor: pointer;
   right: 146px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000317}}
 [class^="pointer_"] {
   background-size: 95%;
   height: 40px;
   width: 40px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000322}}
 [class^="pointer_"].top {
   top: 151px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000325}}
 [class^="pointer_"].middle {
   top: 352px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000328}}
 [class^="pointer_"].bottom {
   top: 553px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000331}}
 [id^="bingo_header_"] {
   /* outer containers fot sections' headers - stars, headers*/
   /* Stretch the layer: */
   left: 200px;
   right: 133px;
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000336}}
   [id^="bingo_header_"] div {
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000339}}
   [id^="bingo_header_"] > div {
     /* inner container, should be centered */
     margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000341}}
     [id^="bingo_header_"] > div > div {
       /* stars, headers*/
       display: inline-block;
       position: relative;
       /* stars */ }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000346}}
       [id^="bingo_header_"] > div > div:first-child, [id^="bingo_header_"] > div > div:last-child {
         background: url(../images/star.png) no-repeat 0 1px;
         height: 27px;
         margin-top: 2px;
         width: 18px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000352}}
       [id^="bingo_header_"] > div > div:last-child {
         margin-left: 3px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000355}}
       [id^="bingo_header_"] > div > div:nth-child(2) {
         /* headers */
         color: #ffd800;
@@ -1395,56 +1397,52 @@ button,
         text-shadow: #222222 1.5px 1.5px 0, #222222 -1.5px -1.5px 0, #222222 -2px 0 0;
         top: -8px;
         white-space: nowrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000368}}
         [id^="bingo_header_"] > div > div:nth-child(2) div {
           position: absolute;
           left: 0;
           top: 0;
           overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000373}}
           [id^="bingo_header_"] > div > div:nth-child(2) div:first-child {
             height: 16px;
             z-index: 2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000377}}
           [id^="bingo_header_"] > div > div:nth-child(2) div:last-child {
             color: #FB0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000385}}
 #bingo_header_1 {
   top: 92px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000389}}
   #bingo_header_1 > div > div:first-child {
     width: 21px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000390}}
   #bingo_header_1 > div > div:last-child {
     width: 22px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000394}}
 #bingo_header_2 {
   top: 295px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000398}}
   #bingo_header_2 > div > div:first-child {
     width: 23px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\0000399}}
   #bingo_header_2 > div > div:last-child {
     width: 25px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003103}}
 #bingo_header_3 {
   top: 498px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003107}}
   #bingo_header_3 > div > div:first-child {
     width: 22px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003108}}
   #bingo_header_3 > div > div:last-child {
     width: 24px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003112}}
 .scene_game_box {
-  /*  background-position-y: -9px;
-      background-size: 100%;
-      background: url(sources/images/A4_hover.png) no-repeat;  */
-  /* beams - common background    */
   height: 140px;
   width: 125px;
   /* позиции по горизонтали */
@@ -1453,29 +1451,29 @@ button,
   /* третья колонка */
   /* четвёртая колонка */
   /*  */
-  /**/ }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003125}}
+  /* games icons */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003115}}
   .scene_game_box.top {
     top: 118px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003117}}
     .scene_game_box.top + div {
       /*кнопка в первом ряду: позиция по вертикали*/
       top: 236px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003122}}
   .scene_game_box.middle {
     top: 321px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003124}}
     .scene_game_box.middle + div {
       /*кнопка во втором ряду: позиция по вертикали*/
       top: 439px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003129}}
   .scene_game_box.bottom {
     top: 523px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003131}}
     .scene_game_box.bottom + div {
       /*кнопка в третьем ряду: позиция по вертикали*/
       top: 641px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003136}}
   .scene_game_box + div {
     /*кнопки во всех рядах: высота, ширина*/
     display: block;
@@ -1484,7 +1482,7 @@ button,
     font-family: AvenirBlack;
     text-align: center;
     width: 125px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003144}}
     .scene_game_box + div > div {
       background-color: #EAE4FD;
       border: solid 1px #000;
@@ -1495,40 +1493,42 @@ button,
       margin: auto;
       position: static;
       white-space: nowrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003158}}
   .scene_game_box.left {
     left: 252px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003160}}
     .scene_game_box.left + div {
       left: 252px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003165}}
   .scene_game_box.center_left {
     left: 405px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003167}}
     .scene_game_box.center_left + div {
       left: 405px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003172}}
   .scene_game_box.center_right {
     left: 559px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003174}}
     .scene_game_box.center_right + div {
       left: 559px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003179}}
   .scene_game_box.right {
     left: 708px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003181}}
     .scene_game_box.right + div {
       left: 708px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003186}}
   .scene_game_box .go_play {
-    background-size: 211%;
-    background-position: -49px -66px;
     height: 74px;
-    left: 30.5px;
-    top: 28.5px;
+    left: 32px;
+    top: 26px;
     width: 74px;
     z-index: 2; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003192}}
+    .scene_game_box .go_play:hover {
+      background: url(../images/games_icons/go_play.svg) no-repeat -49px -66px;
+      background-size: 211%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003197}}
     .scene_game_box .go_play div:first-child {
       -moz-border-radius-topright: 23px;
       -webkit-border-top-right-radius: 23px;
@@ -1553,79 +1553,65 @@ button,
       -o-transform: scale(2, 1);
       transform: scale(2, 1);
       width: 23px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003216}}
   .scene_game_box > div:last-child {
     background-repeat: no-repeat !important;
     background-size: 95% !important;
     background-position-x: 4px !important;
+    background-position-y: 2px !important;
     height: 140px;
     top: -10px;
     width: 125px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003230}}
 #scene_game_box_top_1 > div:last-child {
-  background: url(../sources/regular/png24_beams/A1_donkey_beams.png);
-  background-position-y: 2px; }
+  background-image: url(../images/games_icons/A1_donkey_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003246}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003237}}
 #scene_game_box_top_2 > div:last-child {
-  background: url(../sources/regular/png24_beams/A2_astronaut_beams.png);
-  background-position-y: 12px; }
+  background-image: url(../images/games_icons/A2_astronaut_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003244}}
 #scene_game_box_top_3 > div:last-child {
-  background: url(../sources/regular/png24_beams/A3_fair_carnival_beams.png);
-  background-position-y: 2px;
-  background-size: 113% !important;
-  background-position-x: -10px !important; }
+  background-image: url(../images/games_icons/A3_fair_carnival_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003251}}
 #scene_game_box_top_4 > div:last-child {
-  background: url(../sources/regular/png24_beams/A4_elvis_beams.png);
-  background-position-y: 12px; }
+  background-image: url(../images/games_icons/A4_elvis_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003259}}
 #scene_game_box_middle_1 > div:last-child {
-  background: url(../sources/regular/png24_beams/B1_dolphin_beams.png);
-  background-position-y: 12px; }
+  background-image: url(../images/games_icons/B1_dolphin_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003266}}
 #scene_game_box_middle_2 > div:last-child {
-  background: url(../sources/regular/png24_beams/B2_racing_tour_beams.png);
-  background-size: 113% !important;
-  background-position-x: -9px !important; }
+  background-image: url(../images/games_icons/B2_racing_tour_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003273}}
 #scene_game_box_middle_3 > div:last-child {
-  background: url(../sources/regular/png24_beams/B3_birthday_beams.png);
-  background-position-y: 12px; }
+  background-image: url(../images/games_icons/B3_birthday_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003280}}
 #scene_game_box_middle_4 > div:last-child {
-  background: url(../sources/regular/png24_beams/B4_palms_beams.png);
-  background-position-y: 12px; }
+  background-image: url(../images/games_icons/B4_palms_beams.png); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003287}}
+#scene_game_box_bottom_1 > div:last-child {
+  background-image: url(../images/games_icons/C1_parrot_beams.png); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003294}}
+#scene_game_box_bottom_2 > div:last-child {
+  background-image: url(../images/games_icons/C2_casino_beams.png); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003301}}
+#scene_game_box_bottom_3 > div:last-child {
+  background-image: url(../images/games_icons/C3_chocolat_beams.png); }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003308}}
-#scene_game_box_bottom_1 > div:last-child {
-  background: url(../sources/regular/png24_beams/C1_parrot_beams.png);
-  background-position-y: 12px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003316}}
-#scene_game_box_bottom_2 > div:last-child {
-  background: url(../sources/regular/png24_beams/C2_casino_beams.png);
-  background-position-y: 12px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003324}}
-#scene_game_box_bottom_3 > div:last-child {
-  background: url(../sources/regular/png24_beams/C3_chocolat_beams.png);
-  background-position-y: 12px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003332}}
 #scene_game_box_bottom_4 > div:last-child {
-  background: url(../sources/regular/png24_beams/C4_egypt_beams.png);
-  background-position-y: 8px; }
+  background-image: url(../images/games_icons/C4_egypt_beams.png); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003314}}
 #shell-corner-left {
   background: url(../images/shell_corners/vertical_left.jpg);
   left: 217px;
@@ -1634,7 +1620,7 @@ button,
   width: 32px;
   z-index: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/scene\.scss}line{font-family:\00003322}}
 #shell-corner-right {
   background: url(../images/shell_corners/vertical_right.jpg);
   left: 841px;

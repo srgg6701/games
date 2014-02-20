@@ -774,6 +774,58 @@ var Scene = {
     // remove shade from page
     removeShading: function() {
         $('#' + this.shade_id).remove();
+    },
+    icons:{
+        games:{
+            top:   [
+                    ['A1_donkey_beams','Cool Farmers'],
+                    ['A2_astronaut_beams','Space discovery'],
+                    ['A3_fair_carnival_beams','Foire du carnaval'],
+                    ['A4_elvis_beams','Disco!']
+                ],
+            middle:[
+                    // xtra icons
+                    ['B5_funcky_noel_beams','Funky Noel'], //4
+                    ['B6_copa_beams','Football Cup'],        //5
+                    ['B7_money_beams','Joli Pactole!'],       //6
+                    // common icons
+                    ['B1_dolphin_beams','Aqua Fun'],
+                    ['B2_racing_tour_beams','F1 Racing Tour'],
+                    ['B3_birthday_beams','Happy Birthday!'],
+                    ['B4_palms_beams','Bora Bora'],
+                    // xtra icons
+                    ['B8_female_beams','Miss Caniche'],      //7
+                    ['B9_halloween_beams','Halloween Party'],   //8
+                    ['B10_horse_beams','Turf & Cash!']
+                ],     //9
+            bottom:[
+                    ['C1_parrot_beams','Tropicash'],
+                    ['C2_casino_beams','Monaco Royale'],
+                    ['C3_chocolat_beams','Choco Crush'],
+                    ['C4_egypt_beams','Cleopatra']
+                ]
+        },
+        startIndex:{
+            top:null,
+            middle:null,
+            bottom:null
+        },
+        setDefaultGamesNames:function(){
+            //var gamesBoxes=$('.scene_game_box');
+            for(var rowName in Scene.icons.startIndex){
+                var gameName = Scene.icons.games[rowName];
+                var startIndex = (Math.round(gameName.length-4))/2; //3
+                $('.scene_game_box.'+rowName)
+                    .each(function(index,element){
+                        Scene.icons.setDefaultGameNameText(element,gameName[startIndex+index][1]);
+                });
+            }
+        },
+        setDefaultGameNameText:function(element,text){
+            //console.log('text = '+text); console.dir($(element).next().find('div.btn'));
+            $(element).next().find('div.btn')
+                .text(text);
+        }
     }
 };
 var User = {

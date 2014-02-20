@@ -1,5 +1,4 @@
 // do it!
-
 $(function(){  
     
         var showTestMenu = function(){
@@ -26,6 +25,8 @@ $(function(){
     // actions by default:
     // show wrapper
     document.getElementById(Scene.container_id).style.display='block';
+    //
+    Scene.icons.setDefaultGamesNames();
     // show user login form
     manageLevels('game');
     Scene.appendUserBlock(Scene.user_container_id_default);
@@ -180,4 +181,58 @@ $(function(){
         if($('#'+Scene.shade_id).length&&e.keyCode == 27)
 			Scene.closeUserScreen();
     });
+    // handle games icons like a carousel
+    $('.pointer_left, .pointer_right').on('click',function(){
+        
+        var pointer = this;
+        
+        for(var row in Scene.icons.games){
+            var currentGame = Scene.icons.games[row];
+            if($(pointer).hasClass(row)){
+                var xtraPixLen;
+                
+                var iconsRow = $('.scene_game_box.'+row);
+                var iconsRowSize = $(iconsRow).size(); // 4
+                var iconBlox= $('>div:last-child',iconsRow);
+                
+                var iconsTotalLength=currentGame.length;       //10
+                // if there are xtra pix
+                if(xtraPixLen=iconsTotalLength-iconsRowSize){
+                    var go_carousel=false; 
+                    var pointerLeftClass = 'pointer_left';
+                    var direction=($(pointer).hasClass(pointerLeftClass)) ? 
+                                'left':'right';
+                    var offsetIconsLeftLength = Math.round(xtraPixLen/2); // 6/2 = 3
+                    // this is the first click 
+                    if(Scene.icons.startIndex[row]===null){
+                        Scene.icons.startIndex[row]=offsetIconsLeftLength;
+                        go_carousel=true;                          
+                    }else if( ( direction=='left'
+                                && Scene.icons.startIndex[row]<xtraPixLen // ie < 6
+                              ) ||
+                              ( direction=='right'
+                                && Scene.icons.startIndex[row] // ie > 0
+                              ) 
+                            ) go_carousel=true;
+                    
+                    if(go_carousel){                        
+                        (direction=='left')?
+                            Scene.icons.startIndex[row]++
+                            : Scene.icons.startIndex[row]--;
+                        var imgDir='images/games_icons/';                             
+                        $(iconBlox).each(function(index,element){ // 0,1,2,3
+                            $(element).fadeOut(100,function(){
+                                Scene.icons.setDefaultGameNameText($(this).parent(),currentGame[Scene.icons.startIndex[row]+index][1]);
+                                $(this).css({
+                                    'background-image':
+                                        'url('+imgDir+currentGame[Scene.icons.startIndex[row]+index][0]+'.png)'
+                                }).fadeIn(100);
+                            }); //console.log('background-image: '+$(element).css('background-image'));
+                        }); 
+                    }else console.log('carousel is stopped');
+                    break;
+                }
+            }
+        }
+    })
 });

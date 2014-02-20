@@ -26,8 +26,8 @@ function getUrlParams(){
     The image src see bellow: */
 $(function(){
     var bgSrc = 'sources/debug_bg/bg_full_white_transp.jpg';
-    var bg;
-    if(bg=getUrlParams()){ console.dir(bg);
+    var bg=getUrlParams();
+    if(bg){ //console.dir(bg);
         if (bg.bg){
             if(bg.bg!=='0'){
                 var bgs=bg.bg.split(",");
