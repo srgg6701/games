@@ -59,28 +59,86 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* inc clearfix */
 @font-face {
   font-family: 'Amaranth';
-  src: url("../sources/fonts/Amaranth.ttf") format("truetype"); }
+  src: url("../sources/fonts/amaranth-bold-webfont.eot");
+  src: url("../sources/fonts/amaranth-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/amaranth-bold-webfont.woff") format("woff"), url("../sources/fonts/amaranth-bold-webfont.ttf") format("truetype"), url("../sources/fonts/amaranth-bold-webfont.svg#amaranthbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirBook';
+  src: url("../sources/fonts/avenir-book-webfont.eot");
+  src: url("../sources/fonts/avenir-book-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenir-book-webfont.woff") format("woff"), url("../sources/fonts/avenir-book-webfont.ttf") format("truetype"), url("../sources/fonts/avenir-book-webfont.svg#avenir_45_bookregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirMedium';
+  src: url("../sources/fonts/avenir-medium-webfont.eot");
+  src: url("../sources/fonts/avenir-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenir-medium-webfont.woff") format("woff"), url("../sources/fonts/avenir-medium-webfont.ttf") format("truetype"), url("../sources/fonts/avenir-medium-webfont.svg#avenir_65medium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url("avenirltstd-black-webfont-webfont.eot");
+  src: url("../sources/fonts/avenirltstd-black-webfont-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenirltstd-black-webfont-webfont.woff") format("woff"), url("../sources/fonts/avenirltstd-black-webfont-webfont.ttf") format("truetype"), url("../sources/fonts/avenirltstd-black-webfont-webfont.svg#avenir_lt_std95_black") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirHeavy';
+  src: url("../sources/fonts/avenir-heavy-webfont.eot");
+  src: url("../sources/fonts/avenir-heavy-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenir-heavy-webfont.woff") format("woff"), url("../sources/fonts/avenir-heavy-webfont.ttf") format("truetype"), url("../sources/fonts/avenir-heavy-webfont.svg#avenir_85_heavyregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirOblique';
+  src: url("../sources/fonts/avenirltstd-oblique-webfont-webfont.eot");
+  src: url("../sources/fonts/avenirltstd-oblique-webfont-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenirltstd-oblique-webfont-webfont.woff") format("woff"), url("../sources/fonts/avenirltstd-oblique-webfont-webfont.ttf") format("truetype"), url("../sources/fonts/avenirltstd-oblique-webfont-webfont.svg#avenir_lt_std55_oblique") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AvenirBlackOblique';
+  src: url("../sources/fonts/avenirltstd-oblique-webfont-webfont.eot");
+  src: url("../sources/fonts/avenirltstd-oblique-webfont-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenirltstd-oblique-webfont-webfont.woff") format("woff"), url("../sources/fonts/avenirltstd-oblique-webfont-webfont.ttf") format("truetype"), url("../sources/fonts/avenirltstd-oblique-webfont-webfont.svg#avenir_lt_std55_oblique") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*  http://everythingfonts.com/font-face - iefix is missed
+    see the explanation here: 
+    http://stackoverflow.com/questions/14207425/css-font-face-iefix  */
+@font-face {
+  font-family: 'AvenirLight';
+  src: url("../sources/fonts/avenirltstd-light.eot");
+  src: url("../sources/fonts/avenirltstd-light.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenirltstd-light.woff") format("woff"), url("../sources/fonts/avenirltstd-light.ttf") format("truetype"), url("../sources/fonts/avenirltstd-light.svg#AvenirLTStd35Light") format("svg"); }
+
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url("../sources/fonts/avenir-lt-55-roman-webfont.eot");
+  src: url("../sources/fonts/avenir-lt-55-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenir-lt-55-roman.woff") format("woff"), url("../sources/fonts/avenir-lt-55-roman.ttf") format("truetype"), url("../sources/fonts/avenir-lt-55-roman.svg#AvenirLT55RomanRegular") format("svg"); }
 
 /* recalculate */
 /* common classes */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003158}}
 .absolute {
   position: absolute !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003161}}
 .coin {
   background: url(../images/coins.png) no-repeat 0 2px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003164}}
 .clear {
   display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003150}}
   .clear:after {
     clear: both !important;
     content: " " !important;
     display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003167}}
 .close {
   background: url("../images/close_white.png") no-repeat 8px 8px black;
   -webkit-border-radius: 0 4px 4px 0;
@@ -91,11 +149,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 27px;
   width: 26px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003173}}
 .color-white {
   color: white; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003176}}
 .cover {
   position: absolute;
   top: 0;
@@ -105,14 +163,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 5; }
 
 /* for all child elements */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003186}}
 .all-font-normal {
   font-style: normal !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003188}}
   .all-font-normal * {
     font-style: normal !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003192}}
 .btn_yellow {
   background: url(../images/yellowButton1.svg) no-repeat;
   background-position-x: -80px;
@@ -131,70 +189,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin: auto;
   width: 260px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003206}}
 .half_wide {
   width: 50% !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003209}}
 .left {
   float: left !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003212}}
 .opacity01 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
   opacity: 0.1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003215}}
 .opacity02 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
   opacity: 0.2; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003218}}
 .opacity03 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003221}}
 .opacity04 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003224}}
 .opacity05 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003227}}
 .opacity06 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003230}}
 .opacity07 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003233}}
 .opacity08 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003236}}
 .opacity09 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
   opacity: 0.9; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003239}}
 .right {
   float: right !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003242}}
 .shade {
   background-color: #03040F;
   opacity: 0.8;
   z-index: 4; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003247}}
 .unicode_pointer {
   display: inline-block;
   -webkit-transform: scale(1.9, 0.9);
@@ -205,11 +263,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 0;
   width: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003253}}
 br, hr {
   clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003262}}
 input[type="submit"],
 input[type="button"],
 button,
@@ -218,7 +276,7 @@ button,
 .btn {
   cursor: pointer !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003265}}
 .link {
   cursor: pointer !important; }
 

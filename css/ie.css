@@ -1,40 +1,53 @@
+/*
 @font-face {
-  font-family: 'AvenirBlackOblique';
-  src: url("../sources/fonts/avenirltstd-blackoblique-webfont.woff") format("woff"), url("../sources/fonts/avenirltstd-blackoblique-webfont.ttf") format("truetype"); }
-
+    font-family: 'AvenirBlackOblique';
+    src: url('../sources/fonts/avenirltstd-blackoblique-webfont.woff') format('woff'),
+         url('../sources/fonts/avenirltstd-blackoblique-webfont.ttf') format('truetype');
+}
 @font-face {
-  font-family: 'AvenirBook';
-  src: url("../sources/fonts/avenir-book-webfont.woff") format("woff"), url("../sources/fonts/avenir-book-webfont.ttf") format("truetype"); }
-
+    font-family: 'AvenirBook';
+    src: url('../sources/fonts/avenir-book-webfont.woff') format('woff'),
+         url('../sources/fonts/avenir-book-webfont.ttf') format('truetype');
+}
 @font-face {
-  font-family: 'AvenirMedium';
-  src: url("../sources/fonts/avenir-medium-webfont.woff") format("woff"), url("../sources/fonts/avenir-medium-webfont.ttf") format("truetype"); }
-
+    font-family: 'AvenirMedium';
+    src: url('../sources/fonts/avenir-medium-webfont.woff') format('woff'),
+         url('../sources/fonts/avenir-medium-webfont.ttf') format('truetype');
+}
 @font-face {
-  font-family: 'AvenirHeavy';
-  src: url("../sources/fonts/avenirltstd-heavy-webfont.woff") format("woff"), url("../sources/fonts/avenirltstd-heavy-webfont.ttf") format("truetype"); }
-
+    font-family: 'AvenirHeavy';
+    src: url('../sources/fonts/avenirltstd-heavy-webfont.woff') format('woff'),
+         url('../sources/fonts/avenirltstd-heavy-webfont.ttf') format('truetype');
+}
 @font-face {
-  font-family: 'AvenirOblique';
-  src: url("../sources/fonts/avenirltstd-oblique-webfont.woff") format("woff"), url("../sources/fonts/avenirltstd-oblique-webfont.ttf") format("truetype"); }
-
+    font-family: 'AvenirOblique';
+    src: url('../sources/fonts/avenirltstd-oblique-webfont.woff') format('woff'),
+         url('../sources/fonts/avenirltstd-oblique-webfont.ttf') format('truetype');
+}
 @font-face {
-  font-family: 'AvenirBlack';
-  src: url("../sources/fonts/avenirltstd-black-webfont.eot");
-  src: url("../sources/fonts/avenirltstd-black-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenirltstd-black-webfont.woff") format("woff"), url("../sources/fonts/avenirltstd-black-webfont.ttf") format("truetype"), url("../sources/fonts/avenirltstd-black-webfont.svg#avenir_lt_std95_black") format("svg"); }
-
+    font-family: 'AvenirBlack';
+    src: url('../sources/fonts/avenirltstd-black-webfont.eot');
+    src: url('../sources/fonts/avenirltstd-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../sources/fonts/avenirltstd-black-webfont.woff') format('woff'),
+         url('../sources/fonts/avenirltstd-black-webfont.ttf') format('truetype'),
+         url('../sources/fonts/avenirltstd-black-webfont.svg#avenir_lt_std95_black') format('svg');
+}
 @font-face {
-  font-family: 'AvenirLight';
-  src: url("../sources/fonts/avenir-lt-35-light-1361499806-webfont.woff") format("woff"), url("../sources/fonts/avenir-lt-35-light-1361499806-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
+    font-family: 'AvenirLight';
+    src: url('../sources/fonts/avenir-lt-35-light-1361499806-webfont.woff') format('woff'),
+         url('../sources/fonts/avenir-lt-35-light-1361499806-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
-  font-family: 'AvenirRoman';
-  src: url("../sources/fonts/avenir-lt-55-roman-webfont.eot");
-  src: url("../sources/fonts/avenir-lt-55-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../sources/fonts/avenir-lt-55-roman-webfont.woff") format("woff"), url("../sources/fonts/avenir-lt-55-roman-webfont.ttf") format("truetype"), url("../sources/fonts/avenir-lt-55-roman-webfont.svg#avenir_lt_55_romanregular") format("svg"); }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/WebServers\/home\/localhost\/www\/-WMSoftware\/games\/sass\/ie\.scss}line{font-family:\0000351}}
+    font-family: 'AvenirRoman';
+    src: url('../sources/fonts/avenir-lt-55-roman-webfont.eot');
+    src: url('../sources/fonts/avenir-lt-55-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../sources/fonts/avenir-lt-55-roman-webfont.woff') format('woff'),
+         url('../sources/fonts/avenir-lt-55-roman-webfont.ttf') format('truetype'),
+         url('../sources/fonts/avenir-lt-55-roman-webfont.svg#avenir_lt_55_romanregular') format('svg');
+}*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/ie\.scss}line{font-family:\0000352}}
 body {
   background: url(../images/bg_body.jpg) 0 0 black;
   background-size: 100% 100%; }
