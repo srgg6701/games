@@ -189,20 +189,18 @@ $(function(){
         for(var row in Scene.icons.games){
             var currentGame = Scene.icons.games[row];
             if($(pointer).hasClass(row)){
-                var xtraPixLen;
-                
+                var xtraPixLen;                
                 var iconsRow = $('.scene_game_box.'+row);
                 var iconsRowSize = $(iconsRow).size(); // 4
-                var iconBlox= $('>div:last-child',iconsRow);
-                
+                var iconBlox= $('>div:last-child',iconsRow);                
                 var iconsTotalLength=currentGame.length;       //10
                 // if there are xtra pix
                 if(xtraPixLen=iconsTotalLength-iconsRowSize){
                     var go_carousel=false; 
-                    var pointerLeftClass = 'pointer_left';
+                    var pointerLeftClass = 'pointer_right'; //pointer_left
                     var direction=($(pointer).hasClass(pointerLeftClass)) ? 
-                                'left':'right';
-                    var offsetIconsLeftLength = Math.round(xtraPixLen/2); // 6/2 = 3
+                                'left':'right';// 6/2 = 3
+                    var offsetIconsLeftLength = Math.round(xtraPixLen/2); 
                     // this is the first click 
                     if(Scene.icons.startIndex[row]===null){
                         Scene.icons.startIndex[row]=offsetIconsLeftLength;
