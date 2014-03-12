@@ -11,8 +11,14 @@ $(function(){
         };
 
         setTimeout(function(){
-            $('#username_or_email').val('srgg01');
-            $('#password').val('111111');    
+            var login = $('#username_or_email');
+            var password = $('#password');
+            $(login).val('srgg01');
+            $(password).val('111111'); 
+            
+            $(login).prev('.placeholder').hide();
+            $(password).prev('.placeholder').hide();
+            
             if(detectBrowser()=='Firefox') {
                 showTestMenu();
                 $('#test_inner_submenu').css('display','block');
