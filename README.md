@@ -1,3 +1,2 @@
-
 ##The front-end of the Game portal.
-###HTML/JS/jQuery
+###HTML/JS/jQuery/SASS
