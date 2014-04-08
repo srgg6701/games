@@ -3881,6 +3881,7 @@ label.ellipse {
     text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/my_profile\.scss}line{font-family:\0000328}}
     #my_profile_login .narrow button.btn_yellow {
+      background-size: auto 46px !important;
       float: left;
       font-size: 17px;
       font-weight: bold;
