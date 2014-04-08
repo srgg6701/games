@@ -109,10 +109,8 @@ function setUserData(localUserData,data_name,username) {
         default:
             // fill User.object
             for(var field_name in User[data_name]){ // get fields names from User object
-                //if(field_name!='username'){ // User.mainData.email = usersData
+                //
                 User[data_name][field_name]=localUserData[field_name];
-                /*  User.mainData.[username,email,password]*/
-                //}                
             }
             return User[data_name];
     }
@@ -165,6 +163,8 @@ function loginUser() {
         var username_or_email = Scene.active_screen.Form.username_or_email.id;
         var password = Scene.active_screen.Form.password.id; //console.log('call loginUser');
         var localUserData = getUserFormValues([username_or_email,password]);
+        // check (and add if can't find) demo data:
+        checkDemoData(username_or_email);
         //console.dir(localUserData);
         var usersList,datasetsUsers,data_flag = 'user';
         //first, get all current users if they exist
@@ -203,7 +203,8 @@ function loginUser() {
             console.log('call showErrorMess()');
             return showErrorMess(data_flag,error_mess,input_id);
         }else{
-            var extractedUserData = datasetsUsers[user_login];
+            var extractedUserData;
+            extractedUserData = datasetsUsers[user_login];
             // store user data as User Object
             setUserData(extractedUserData,'mainData'); 
             setUserData(extractedUserData,'xtraData');
@@ -258,10 +259,41 @@ function registerUser(account_type) {  //console.log('registerUser, account_type
                     }
                 }
             }
-        } console.dir(localUserData); //return false;
+        } //console.dir(localUserData); //return false;
         // register new user        
         addUser(localUserData,account_type,usersList) // true or false
         if(!real_money1) Scene.enterAccount(); // User.account_type is already set in addUser()
         else Scene.appendUserBlock('my_profile_real_money_account2');
     });
+}
+
+function checkDemoData(login_id){
+    var login = document.getElementById(login_id).value;
+    if (login==demo_login){
+        var datasetsUsers=null;        
+        var setDemo = function(){
+            datasetsUsers={};
+            datasetsUsers[login]={};
+            var usersData=new Object();
+            usersData[login]={};
+            usersData[login].email = "demouser@demo.com";
+            usersData[login].password = demo_pass;
+            usersData[login].account_type='money';
+            usersData[login].gender = "male";
+            usersData[login].day   = "1";
+            usersData[login].month = "April";
+            usersData[login].year  = "1975";
+            usersData[login].address = "MonMartr";
+            usersData[login].zip_code = "347917";
+            usersData[login].city = "Paris";
+            usersData[login].country = "France";
+            usersData[login].mobile_phone = "79044428447";
+            usersData[login].home_phone = "88634677372";
+            console.dir(usersData[login]);
+            datasetsUsers[login]=usersData[login]; 
+        };
+        if(!(datasetsUsers=JSON.parse(getUsers()))) setDemo();
+        else if(!datasetsUsers[login])setDemo();
+        window.localStorage.setItem('users', JSON.stringify(datasetsUsers));
+    }
 }

@@ -9,20 +9,6 @@ console.log("Starting web server at " + serverUrl + ":" + port);
 
 http.createServer( function(req, res) {
   
-	/* 	// Test 1 - write it down:
-	res.writeHead(200, {"Content-Type": "text/plain"});
-	res.write("Hello, sweety! What about Node?");
-	res.end();*/
-
-	/*	// Test 2 - get the file content:
-	fs.readFile('index.html',function (err, data){
-		res.writeHead( 200, {'Content-Type': 'text/html','Content-Length':data.length});
-		res.write(data);
-		res.end();
-	});*/
-  
-	// Test 3
-	
 	var uri = url.parse(req.url).pathname, filename = path.join(process.cwd(), uri);
 
 	path.exists(filename, function(exists) {

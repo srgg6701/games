@@ -176,7 +176,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003192}}
 .btn_yellow {
-  background: url(../images/yellowButton1.svg) no-repeat;
+  background: url(../images/yellowButton1.svg);
   background-position-x: -80px;
   background-size: 170%;
   border: solid 1px #333;
@@ -502,7 +502,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003192}}
 .btn_yellow {
-  background: url(../images/yellowButton1.svg) no-repeat;
   background-position-x: -80px;
   background-size: 170%;
   border: solid 1px #333;
@@ -1069,7 +1068,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003192}}
 .btn_yellow {
-  background: url(../images/yellowButton1.svg) no-repeat;
   background-position-x: -80px;
   background-size: 170%;
   border: solid 1px #333;
@@ -1447,7 +1445,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003192}}
 .btn_yellow {
-  background: url(../images/yellowButton1.svg) no-repeat;
   background-position-x: -80px;
   background-size: 170%;
   border: solid 1px #333;
@@ -2035,7 +2032,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003192}}
 .btn_yellow {
-  background: url(../images/yellowButton1.svg) no-repeat;
   background-position-x: -80px;
   background-size: 170%;
   border: solid 1px #333;
@@ -5824,7 +5820,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/shared\.scss}line{font-family:\00003192}}
 .btn_yellow {
-  background: url(../images/yellowButton1.svg) no-repeat;
   background-position-x: -80px;
   background-size: 170%;
   border: solid 1px #333;
@@ -5992,3 +5987,7 @@ button,
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WebServers\/home\/localhost\/www\/WMSoftware\/games\/sass\/screen\.scss}line{font-family:\00003275}}
 #test_inner_submenu {
   opacity: 0.2; }
+
+.btn_yellow {
+  background: url(../images/yellowButton1.svg) no-repeat #FFD000;
+}
